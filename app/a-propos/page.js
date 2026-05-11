@@ -72,7 +72,7 @@ export default function AProposPage() {
         <div className="premium-image">
           <div className="relative aspect-[2/3] w-full">
             <Image
-              src="/images/moi3.webp"
+              src="/images/moi2.webp"
               alt="Portrait d’Alexis Yvonnou"
               fill
               priority
