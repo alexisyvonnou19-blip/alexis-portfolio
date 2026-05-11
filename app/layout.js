@@ -8,6 +8,9 @@ export const metadata = {
     default: "Alexis Yvonnou — Photographe & créateur de contenus en Bretagne",
     template: "%s — Alexis Yvonnou",
   },
+verification: {
+  google: "sHbK5ZGDzN9NQfX4KPbwg3Giosm4LN90QtpjpXcESts",
+},
   description:
   "Photographe et créateur de contenus basé à Concarneau en Bretagne, spécialisé dans le nautisme, le sport, l’outdoor, l’événementiel et l’artisanat.",
   keywords: [
