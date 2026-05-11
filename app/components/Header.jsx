@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 const navigationLinks = [
   { label: "Qui suis-je ?", href: "/#qui-suis-je" },
@@ -16,7 +16,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-black/5 bg-[#f7f4ef]/88 backdrop-blur-2xl">
+    <header className="fixed inset-x-0 top-0 z-[999] border-b border-black/5 bg-[#f7f4ef]/95 backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         <Link href="/#top" className="flex items-center gap-4 text-stone-950">
           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-stone-950 text-sm font-semibold text-white">
@@ -49,9 +49,9 @@ export default function Header() {
 
         <button
           type="button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-stone-300 bg-white/60 text-stone-950 backdrop-blur-md lg:hidden"
-          aria-label="Ouvrir le menu"
+          onClick={() => setMenuOpen((value) => !value)}
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-stone-300 bg-white/70 text-stone-950 backdrop-blur-md lg:hidden"
+          aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
           {menuOpen ? <X size={18} /> : <Menu size={18} />}
         </button>
@@ -64,9 +64,9 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.22, ease: "easeOut" }}
-            className="border-t border-black/5 bg-[#f7f4ef]/95 px-5 py-6 backdrop-blur-xl md:hidden"
+            className="absolute left-0 right-0 top-full z-[998] border-t border-black/5 bg-[#f7f4ef]/98 px-5 py-6 shadow-xl shadow-stone-900/10 backdrop-blur-xl lg:hidden"
           >
-            <div className="flex flex-col gap-5 text-lg text-stone-800">
+            <div className="mx-auto flex max-w-7xl flex-col gap-5 text-lg text-stone-800">
               {navigationLinks.map((link) => (
                 <Link
                   key={link.href}
