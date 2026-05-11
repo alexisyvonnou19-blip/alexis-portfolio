@@ -28,12 +28,12 @@ export default function Header() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-10 text-sm text-stone-700 md:flex lg:gap-12">
+        <div className="hidden items-center gap-8 text-sm text-stone-700 lg:flex xl:gap-12">
           {navigationLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="transition hover:text-stone-950"
+              className="max-w-[140px] text-center leading-tight transition hover:text-stone-950 xl:max-w-none"
             >
               {link.label}
             </Link>
@@ -50,7 +50,7 @@ export default function Header() {
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-stone-300 bg-white/60 text-stone-950 backdrop-blur-md md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-full border border-stone-300 bg-white/60 text-stone-950 backdrop-blur-md lg:hidden"
           aria-label="Ouvrir le menu"
         >
           {menuOpen ? <X size={18} /> : <Menu size={18} />}
