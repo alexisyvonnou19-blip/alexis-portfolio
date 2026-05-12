@@ -2,7 +2,12 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, ChevronUp } from "lucide-react";
+import React, { useState } from "react";
+import {
+  ArrowRight,
+  Mail,
+  ChevronUp,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 const photographyCategories = [
