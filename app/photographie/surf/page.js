@@ -12,6 +12,45 @@ const gallery = [
   25, 24, 15, 29, 30,
 ];
 
+const surfStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id": "https://alexisyvonnou.com/photographie/surf#gallery",
+  name: "Surf — Photographies d’Alexis Yvonnou",
+  url: "https://alexisyvonnou.com/photographie/surf",
+  description:
+    "Galerie photo dédiée au surf, à l’océan, à la glisse et au mouvement par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
+  inLanguage: "fr-FR",
+  creator: {
+    "@type": "Person",
+    "@id": "https://alexisyvonnou.com/#person",
+    name: "Alexis Yvonnou",
+    jobTitle: "Photographe et créateur de contenus",
+    url: "https://alexisyvonnou.com",
+  },
+  about: [
+    "Surf",
+    "Photographie de surf",
+    "Glisse",
+    "Océan",
+    "Sport outdoor",
+    "Photographie sportive",
+    "Bretagne",
+    "Concarneau",
+    "Finistère",
+  ],
+  image: gallery.map((num) => ({
+    "@type": "ImageObject",
+    url: `https://alexisyvonnou.com${getPhoto(num)}`,
+    name: `Photographie de surf ${num}`,
+    caption:
+      "Photographie de surf, de glisse et d’océan par Alexis Yvonnou.",
+    creator: {
+      "@id": "https://alexisyvonnou.com/#person",
+    },
+  })),
+};
+
 export default function SurfPage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
@@ -70,6 +109,12 @@ export default function SurfPage() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(surfStructuredData),
+  }}
+/>
       <section className="gallery-mobile-hero relative h-[82vh] min-h-[560px] w-full overflow-hidden">
         <button type="button" onClick={() => openImage(3)} className="relative h-full w-full">
           <Image
@@ -107,7 +152,7 @@ export default function SurfPage() {
               Une série entre puissance, équilibre et mouvement.
             </h2>
             <p className="mt-6 text-lg leading-9 text-stone-600">
-              Des images de glisse, de concentration et d’océan, où chaque vague devient un instant à saisir.
+              Cette série rassemble des images de surf entre glisse, concentration, mouvement et énergie de l’océan. Une galerie pensée pour capter l’instant juste : la trajectoire, l’équilibre, la lumière, la vague et la présence du sportif dans son environnement.
             </p>
           </div>
         </div>
