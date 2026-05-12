@@ -3,9 +3,26 @@ import Link from "next/link";
 import { ArrowRight, Mail, Camera, Clapperboard, Smartphone } from "lucide-react";
 
 export const metadata = {
-  title: "Création de contenus",
+  title: "Création de contenus — Photo, vidéo & réseaux sociaux",
   description:
-    "Photographie, vidéo courte, storytelling et contenus digitaux par Alexis Yvonnou.",
+    "Création de contenus photo, vidéo courte, reels, carrousels, stories et communication digitale par Alexis Yvonnou, photographe et créateur de contenus basé à Concarneau en Bretagne.",
+  alternates: {
+    canonical: "https://alexisyvonnou.com/creation-de-contenus",
+  },
+  openGraph: {
+    title: "Création de contenus — Alexis Yvonnou",
+    description:
+      "Photographie, vidéos courtes, reels, storytelling, réseaux sociaux et communication digitale pour marques, événements, projets nautiques et sportifs.",
+    url: "https://alexisyvonnou.com/creation-de-contenus",
+    images: [
+      {
+        url: "/og-cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Alexis Yvonnou — Création de contenus en Bretagne",
+      },
+    ],
+  },
 };
 
 const services = [
@@ -40,13 +57,65 @@ const projects = [
   "Ino-Rope",
   "PL Yachting",
   "EFTM",
-  "Snip Yahchting",
+  "SNIP Yachting",
   "Trampoline Park",
 ];
+
+const contentCreationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://alexisyvonnou.com/creation-de-contenus#service",
+  name: "Création de contenus photo, vidéo et réseaux sociaux",
+  url: "https://alexisyvonnou.com/creation-de-contenus",
+  provider: {
+    "@type": "ProfessionalService",
+    "@id": "https://alexisyvonnou.com/#business",
+    name: "Alexis Yvonnou",
+    url: "https://alexisyvonnou.com",
+  },
+  areaServed: [
+    {
+      "@type": "AdministrativeArea",
+      name: "Bretagne",
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Finistère",
+    },
+    {
+      "@type": "Country",
+      name: "France",
+    },
+  ],
+  serviceType: [
+    "Création de contenus",
+    "Photographie",
+    "Vidéo courte",
+    "Reels",
+    "Stories",
+    "Carrousels",
+    "Communication digitale",
+    "Storytelling de marque",
+    "Réseaux sociaux",
+  ],
+  audience: {
+    "@type": "Audience",
+    audienceType:
+      "Marques, événements, entreprises, projets nautiques, projets sportifs et acteurs de l’artisanat",
+  },
+  description:
+    "Service de création de contenus par Alexis Yvonnou : photographie, vidéos courtes, reels, carrousels, stories, storytelling et communication digitale pour marques, événements, projets nautiques, sportifs et artisanaux.",
+};
 
 export default function CreationContenusPage() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(contentCreationStructuredData),
+  }}
+/>
       {/* HERO */}
       <section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
         <div className="mx-auto max-w-7xl">
@@ -265,12 +334,12 @@ export default function CreationContenusPage() {
                   alexisyvonnou@hotmail.fr
                 </a>
 
-                <a
-    href="tel:+33602379318"
-    className="hover:text-stone-950"
-  >
-    06 02 37 93 18
-  </a>
+               <a
+  href="tel:+33602379318"
+  className="transition hover:text-white"
+>
+  06 02 37 93 18
+</a>
 
                 <a
                   href="https://www.instagram.com/alexis_yvonnou"
