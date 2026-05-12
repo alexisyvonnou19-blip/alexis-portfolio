@@ -9,6 +9,46 @@ const getPhoto = (num) => `/images/photos/retour-charlie-dalin/${num}.webp`;
 
 const gallery = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 
+const retourCharlieStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id":
+    "https://alexisyvonnou.com/photographie/retour-charlie-dalin-vendee-globe-24-25#gallery",
+  name: "Retour de Charlie Dalin à Concarneau — Vendée Globe 2024",
+  url: "https://alexisyvonnou.com/photographie/retour-charlie-dalin-vendee-globe-24-25",
+  description:
+    "Reportage photo du retour de Charlie Dalin à Concarneau après le Vendée Globe 2024 : foule, attente, arrivée, émotions, course au large et célébration populaire.",
+  inLanguage: "fr-FR",
+  creator: {
+    "@type": "Person",
+    "@id": "https://alexisyvonnou.com/#person",
+    name: "Alexis Yvonnou",
+    jobTitle: "Photographe et créateur de contenus",
+    url: "https://alexisyvonnou.com",
+  },
+  about: [
+    "Charlie Dalin",
+    "Vendée Globe 2024",
+    "Course au large",
+    "Concarneau",
+    "Photographie événementielle",
+    "Photographie nautique",
+    "Reportage photo",
+    "Voile",
+    "Bretagne",
+  ],
+  image: gallery.map((num) => ({
+    "@type": "ImageObject",
+    url: `https://alexisyvonnou.com${getPhoto(num)}`,
+    name: `Retour de Charlie Dalin à Concarneau ${num}`,
+    caption:
+      "Photographie du retour de Charlie Dalin à Concarneau après le Vendée Globe 2024 par Alexis Yvonnou.",
+    creator: {
+      "@id": "https://alexisyvonnou.com/#person",
+    },
+  })),
+};
+
 export default function RetourCharlieDalinPage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
@@ -78,6 +118,12 @@ export default function RetourCharlieDalinPage() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(retourCharlieStructuredData),
+  }}
+/>
       <section className="gallery-mobile-hero relative h-[82vh] min-h-[560px] w-full overflow-hidden">
         <button type="button" onClick={() => openImage(6)} className="relative h-full w-full cursor-zoom-in">
           <Image
