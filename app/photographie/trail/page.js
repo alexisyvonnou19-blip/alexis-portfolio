@@ -12,6 +12,46 @@ const gallery = [
   21, 22, 23, 24, 25, 26, 27, 28,
 ];
 
+const trailStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id": "https://alexisyvonnou.com/photographie/trail#gallery",
+  name: "Trail — Photographies d’Alexis Yvonnou",
+  url: "https://alexisyvonnou.com/photographie/trail",
+  description:
+    "Galerie photo dédiée au trail, au sport outdoor, à l’effort et aux paysages naturels par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
+  inLanguage: "fr-FR",
+  creator: {
+    "@type": "Person",
+    "@id": "https://alexisyvonnou.com/#person",
+    name: "Alexis Yvonnou",
+    jobTitle: "Photographe et créateur de contenus",
+    url: "https://alexisyvonnou.com",
+  },
+  about: [
+    "Trail",
+    "Photographie sportive",
+    "Sport outdoor",
+    "Course nature",
+    "Trail running",
+    "Outdoor",
+    "Photographie événementielle",
+    "Bretagne",
+    "Concarneau",
+    "Finistère",
+  ],
+  image: gallery.map((num) => ({
+    "@type": "ImageObject",
+    url: `https://alexisyvonnou.com${getPhoto(num)}`,
+    name: `Photographie de trail ${num}`,
+    caption:
+      "Photographie de trail, d’effort et de sport outdoor par Alexis Yvonnou.",
+    creator: {
+      "@id": "https://alexisyvonnou.com/#person",
+    },
+  })),
+};
+
 export default function TrailPage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
@@ -66,7 +106,7 @@ const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
       src={getPhoto(num)}
       alt={`Trail - photo ${num} par Alexis Yvonnou`}
       fill
-      sizes="(max-width: 768px) 100vw, 33vw"
+      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
       className="object-cover transition duration-700 ease-out group-hover:scale-[1.018] group-hover:brightness-90"
     />
 
@@ -82,6 +122,12 @@ const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(trailStructuredData),
+  }}
+/>
       {/* HERO IMMERSIF */}
       <section className="gallery-mobile-hero relative h-[82vh] min-h-[560px] w-full overflow-hidden">
         <button type="button" onClick={() => openImage(1)} className="relative h-full w-full">
@@ -127,8 +173,7 @@ const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
               Une histoire d’effort, de terrain et d’émotions.
             </h2>
             <p className="mt-6 text-lg leading-9 text-stone-600">
-              Une série pensée pour raconter l’énergie d’un trail : les coureurs, les paysages,
-              les regards, la fatigue, l’ambiance et les moments qui restent.
+              Cette galerie rassemble des images de trail entre effort, nature, mouvement et émotions. Une série pensée pour raconter l’intensité d’une course : les coureurs, les terrains, les regards, la fatigue, l’ambiance et les instants qui marquent.
             </p>
           </motion.div>
         </div>

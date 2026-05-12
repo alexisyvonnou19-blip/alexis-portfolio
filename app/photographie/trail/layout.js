@@ -1,11 +1,14 @@
 export const metadata = {
-  title: "Trail — Photographies",
+  title: "Trail — Photographies outdoor et sportives",
   description:
-    "Galerie photo trail par Alexis Yvonnou : effort, sport outdoor, terrain, émotions, coureurs et ambiance de course.",
+    "Galerie photo trail par Alexis Yvonnou, photographe basé à Concarneau en Bretagne : effort, terrain, nature, émotions, sport outdoor et instants de course.",
+  alternates: {
+    canonical: "https://alexisyvonnou.com/photographie/trail",
+  },
   openGraph: {
     title: "Trail — Photographies d’Alexis Yvonnou",
     description:
-      "Une galerie dédiée au trail, entre effort, terrain, paysages, visages, fatigue, ambiance et émotions sportives.",
+      "Une galerie photo dédiée au trail, entre effort, terrain, nature, émotions et énergie du sport outdoor.",
     url: "https://alexisyvonnou.com/photographie/trail",
     images: [
       {
