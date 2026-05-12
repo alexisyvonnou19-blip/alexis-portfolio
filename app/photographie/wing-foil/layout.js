@@ -1,11 +1,14 @@
 export const metadata = {
-  title: "Wing Foil — Photographies",
+  title: "Wing Foil — Photographies de glisse et sport nautique",
   description:
-    "Galerie photo wing foil par Alexis Yvonnou : glisse, vitesse, envol, équilibre et sensations au-dessus de l’eau.",
+    "Galerie photo wing foil par Alexis Yvonnou, photographe basé à Concarneau en Bretagne : glisse, vitesse, équilibre, envol, sport nautique et instants suspendus au-dessus de l’eau.",
+  alternates: {
+    canonical: "https://alexisyvonnou.com/photographie/wing-foil",
+  },
   openGraph: {
     title: "Wing Foil — Photographies d’Alexis Yvonnou",
     description:
-      "Une galerie autour du wing foil, entre mouvement, lumière, vitesse, équilibre et instants suspendus.",
+      "Une galerie photo dédiée au wing foil, entre envol, vitesse, équilibre, lumière, sensations de glisse et sport nautique.",
     url: "https://alexisyvonnou.com/photographie/wing-foil",
     images: [
       {

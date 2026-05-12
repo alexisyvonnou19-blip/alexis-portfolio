@@ -9,6 +9,47 @@ const getPhoto = (num) => `/images/photos/wing-foil/${num}.webp`;
 
 const gallery = [1, 3, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
+const wingFoilStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id": "https://alexisyvonnou.com/photographie/wing-foil#gallery",
+  name: "Wing Foil — Photographies d’Alexis Yvonnou",
+  url: "https://alexisyvonnou.com/photographie/wing-foil",
+  description:
+    "Galerie photo dédiée au wing foil, à la glisse, à l’équilibre et au sport nautique par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
+  inLanguage: "fr-FR",
+  creator: {
+    "@type": "Person",
+    "@id": "https://alexisyvonnou.com/#person",
+    name: "Alexis Yvonnou",
+    jobTitle: "Photographe et créateur de contenus",
+    url: "https://alexisyvonnou.com",
+  },
+  about: [
+    "Wing Foil",
+    "Photographie de glisse",
+    "Sport nautique",
+    "Glisse",
+    "Voile légère",
+    "Océan",
+    "Sport outdoor",
+    "Photographie sportive",
+    "Bretagne",
+    "Concarneau",
+    "Finistère",
+  ],
+  image: gallery.map((num) => ({
+    "@type": "ImageObject",
+    url: `https://alexisyvonnou.com${getPhoto(num)}`,
+    name: `Photographie de wing foil ${num}`,
+    caption:
+      "Photographie de wing foil, de glisse et de sport nautique par Alexis Yvonnou.",
+    creator: {
+      "@id": "https://alexisyvonnou.com/#person",
+    },
+  })),
+};
+
 export default function WingFoilPage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
@@ -63,7 +104,7 @@ export default function WingFoilPage() {
         src={getPhoto(num)}
         alt={`Wing Foil - photo ${num} par Alexis Yvonnou`}
         fill
-        sizes="(max-width: 768px) 100vw, 33vw"
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
         className="object-cover transition duration-700 ease-out group-hover:scale-[1.018] group-hover:brightness-90"
       />
 
@@ -78,6 +119,12 @@ export default function WingFoilPage() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(wingFoilStructuredData),
+  }}
+/>
       <section className="gallery-mobile-hero relative h-[82vh] min-h-[560px] w-full overflow-hidden">
         <button type="button" onClick={() => openImage(1)} className="relative h-full w-full cursor-zoom-in">
           <Image
@@ -121,8 +168,7 @@ export default function WingFoilPage() {
               Entre envol, vitesse et équilibre.
             </h2>
             <p className="mt-6 text-lg leading-9 text-stone-600">
-              Une série autour du wing foil, entre mouvement, lumière, sensations de glisse
-              et instants suspendus au-dessus de l’eau.
+              Cette galerie rassemble des images de wing foil entre glisse, vitesse, équilibre et lumière. Une série pensée pour capter l’envol, le mouvement, les sensations et ces instants suspendus au-dessus de l’eau propres aux sports nautiques.
             </p>
           </motion.div>
         </div>
