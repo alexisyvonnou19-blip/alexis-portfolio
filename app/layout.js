@@ -38,33 +38,47 @@ const structuredData = {
     },
 
     {
-      "@type": "ProfessionalService",
-      "@id": "https://alexisyvonnou.com/#business",
-      name: "Alexis Yvonnou",
-      url: "https://alexisyvonnou.com",
-      logo: "https://alexisyvonnou.com/favicon.ico",
-      image: "https://alexisyvonnou.com/og-cover.jpg",
-      description:
-        "Photographe et créateur de contenus basé à Concarneau en Bretagne, spécialisé dans le nautisme, le sport, l’outdoor, l’événementiel et l’artisanat.",
-      founder: {
-        "@id": "https://alexisyvonnou.com/#person",
-      },
-      email: "mailto:alexisyvonnou@hotmail.fr",
-      telephone: "+33602379318",
-      areaServed: [
-        {
-          "@type": "AdministrativeArea",
-          name: "Bretagne",
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Finistère",
-        },
-        {
-          "@type": "Country",
-          name: "France",
-        },
-      ],
+  "@type": "ProfessionalService",
+  "@id": "https://alexisyvonnou.com/#business",
+  name: "Alexis Yvonnou",
+  url: "https://alexisyvonnou.com",
+  logo: "https://alexisyvonnou.com/favicon.ico",
+  image: "https://alexisyvonnou.com/og-cover.jpg",
+
+  description:
+    "Photographe et créateur de contenus basé à Concarneau en Bretagne, spécialisé dans le nautisme, le sport, l’outdoor, l’événementiel et l’artisanat.",
+
+  founder: {
+    "@id": "https://alexisyvonnou.com/#person",
+  },
+
+  email: "mailto:alexisyvonnou@hotmail.fr",
+  telephone: "+33602379318",
+
+  priceRange: "€€",
+
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Concarneau",
+    addressRegion: "Bretagne",
+    postalCode: "29900",
+    addressCountry: "FR",
+  },
+
+  areaServed: [
+    {
+      "@type": "AdministrativeArea",
+      name: "Bretagne",
+    },
+    {
+      "@type": "AdministrativeArea",
+      name: "Finistère",
+    },
+    {
+      "@type": "Country",
+      name: "France",
+    },
+  ],
       serviceType: [
         "Photographie",
         "Création de contenus",
