@@ -12,6 +12,44 @@ const gallery = [
   21, 23, 26, 24, 25, 27, 28, 29,
 ];
 
+const mini650StructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id": "https://alexisyvonnou.com/photographie/mini-650#gallery",
+  name: "Mini 6.50 — Banque d’images nautisme",
+  url: "https://alexisyvonnou.com/photographie/mini-650",
+  description:
+    "Banque d’images dédiée au Mini 6.50, à la course au large et à l’univers nautique par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
+  inLanguage: "fr-FR",
+  creator: {
+    "@type": "Person",
+    "@id": "https://alexisyvonnou.com/#person",
+    name: "Alexis Yvonnou",
+    jobTitle: "Photographe et créateur de contenus",
+    url: "https://alexisyvonnou.com",
+  },
+  about: [
+    "Mini 6.50",
+    "Classe Mini",
+    "Course au large",
+    "Photographie nautique",
+    "Voile de compétition",
+    "Nautisme en Bretagne",
+    "Concarneau",
+    "Finistère",
+  ],
+  image: gallery.map((num) => ({
+    "@type": "ImageObject",
+    url: `https://alexisyvonnou.com${getPhoto(num)}`,
+    name: `Photographie Mini 6.50 ${num}`,
+    caption:
+      "Photographie de Mini 6.50, course au large et univers nautique par Alexis Yvonnou.",
+    creator: {
+      "@id": "https://alexisyvonnou.com/#person",
+    },
+  })),
+};
+
 export default function MiniPage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
@@ -82,6 +120,12 @@ export default function MiniPage() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(mini650StructuredData),
+  }}
+/>
       <section className="gallery-mobile-hero relative h-[82vh] min-h-[560px] w-full overflow-hidden">
         <button type="button" onClick={() => openImage(1)} className="relative h-full w-full cursor-zoom-in">
           <Image
@@ -125,7 +169,7 @@ export default function MiniPage() {
               Une série pensée comme une banque d’images vivante.
             </h2>
             <p className="mt-6 text-lg leading-9 text-stone-600">
-              Cette galerie rassemble une sélection d’images autour du Mini 6.50 : portraits, détails, gestes, bateaux, préparation et atmosphères.
+              Cette banque d’images a été réalisée lors d’une journée d’entraînement en Mini 6.50 afin de construire des contenus de communication autour du projet. On y retrouve des images du bateau, du skipper, des partenaires d’entraînement, du coach, ainsi que des scènes de préparation et de navigation qui documentent l’univers du projet dans son ensemble.
             </p>
           </motion.div>
         </div>

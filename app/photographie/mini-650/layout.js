@@ -1,23 +1,26 @@
 export const metadata = {
-  title: "Mini 6.50 — Banque images",
+  title: "Mini 6.50 — Banque d’images nautisme & course au large",
   description:
-    "Banque d’images Mini 6.50 par Alexis Yvonnou : bateaux, marins, portraits, pontons, préparation et atmosphères de course.",
+    "Banque d’images Mini 6.50 par Alexis Yvonnou, photographe basé à Concarneau en Bretagne : bateaux, marins, préparation, pontons, course au large et atmosphères nautiques.",
+  alternates: {
+    canonical: "https://alexisyvonnou.com/photographie/mini-650",
+  },
   openGraph: {
-    title: "Mini 6.50 — Banque images d’Alexis Yvonnou",
+    title: "Mini 6.50 — Banque d’images d’Alexis Yvonnou",
     description:
-      "Une banque d’images autour de l’univers Mini 6.50 : bateaux, marins, portraits, gestes, pontons et moments de course.",
+      "Une galerie photo dédiée à l’univers Mini 6.50 : bateaux, marins, gestes, pontons, préparation et atmosphères de course au large.",
     url: "https://alexisyvonnou.com/photographie/mini-650",
     images: [
       {
         url: "/images/photos/mini-650/1.webp",
         width: 1200,
         height: 630,
-        alt: "Banque images Mini 6.50 par Alexis Yvonnou",
+        alt: "Photographie Mini 6.50 par Alexis Yvonnou",
       },
     ],
   },
 };
 
-export default function MiniLayout({ children }) {
+export default function Mini650Layout({ children }) {
   return children;
 }
