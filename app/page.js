@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, ChevronUp } from "lucide-react";
 import { motion } from "framer-motion";
+import ContactForm from "./components/ContactForm";
 
 const photographyCategories = [
   {
@@ -389,17 +390,11 @@ export default function AlexisYvonnouHomepage() {
           </h3>
 
           <p className="mt-5 text-lg leading-8 text-stone-600">
-            Présentez-moi brièvement votre projet, la date, le lieu et vos besoins. Je réponds généralement sous 24 à 48h.
+            Présentez-moi brièvement votre projet, la date, le lieu et vos besoins. Je reviendrai vers vous dès que possible.
           </p>
         </div>
 
-        <a
-          href="mailto:alexisyvonnou@hotmail.fr?subject=Demande%20de%20contact%20-%20site%20Alexis%20Yvonnou"
-          className="mt-10 inline-flex items-center justify-center gap-3 rounded-full bg-stone-950 px-7 py-4 text-sm font-medium text-white transition hover:bg-stone-800"
-        >
-          <Mail size={18} />
-          Écrire un mail
-        </a>
+        <ContactForm />
 
         <div className="mt-10 grid gap-3 text-sm text-stone-500">
           <a href="mailto:alexisyvonnou@hotmail.fr" className="hover:text-stone-950">
