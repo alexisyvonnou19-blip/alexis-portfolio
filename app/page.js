@@ -121,8 +121,6 @@ function Button({ children, href = "#contact", variant = "primary" }) {
 }
 
 export default function AlexisYvonnouHomepage() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
     <main className="min-h-screen bg-[#f7f4ef] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.7),transparent_45%)] text-stone-950">
       
