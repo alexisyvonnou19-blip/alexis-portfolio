@@ -12,6 +12,45 @@ const gallery = [
   19, 20, 21, 24, 26, 12, 23,
 ];
 
+const portraitsStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id": "https://alexisyvonnou.com/photographie/portraits#gallery",
+  name: "Portraits — Photographies d’Alexis Yvonnou",
+  url: "https://alexisyvonnou.com/photographie/portraits",
+  description:
+    "Galerie de portraits naturels, lifestyle, sportifs et professionnels réalisée par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
+  inLanguage: "fr-FR",
+  creator: {
+    "@type": "Person",
+    "@id": "https://alexisyvonnou.com/#person",
+    name: "Alexis Yvonnou",
+    jobTitle: "Photographe et créateur de contenus",
+    url: "https://alexisyvonnou.com",
+  },
+  about: [
+    "Portrait",
+    "Photographie portrait",
+    "Portrait lifestyle",
+    "Portrait professionnel",
+    "Portrait sportif",
+    "Storytelling visuel",
+    "Bretagne",
+    "Concarneau",
+    "Finistère",
+  ],
+  image: gallery.map((num) => ({
+    "@type": "ImageObject",
+    url: `https://alexisyvonnou.com${getPhoto(num)}`,
+    name: `Portrait photographique ${num}`,
+    caption:
+      "Portrait naturel et incarné photographié par Alexis Yvonnou.",
+    creator: {
+      "@id": "https://alexisyvonnou.com/#person",
+    },
+  })),
+};
+
 export default function PortraitsPage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
@@ -81,6 +120,12 @@ export default function PortraitsPage() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(portraitsStructuredData),
+  }}
+/>
       <section className="gallery-mobile-hero relative h-[82vh] min-h-[560px] w-full overflow-hidden">
         <button type="button" onClick={() => openImage(1)} className="relative h-full w-full cursor-zoom-in">
           <Image
@@ -125,8 +170,7 @@ export default function PortraitsPage() {
               Des visages, des présences, des histoires.
             </h2>
             <p className="mt-6 text-lg leading-9 text-stone-600">
-              Une sélection de portraits entre naturel, spontanéité et intention.
-              L’idée : faire ressortir une présence, une énergie ou un fragment d’histoire.
+              Cette galerie rassemble différents portraits réalisés dans des contextes variés : sport, projets personnels, univers professionnels ou moments plus spontanés. L’idée reste la même : faire ressortir une présence, une énergie, une personnalité ou une histoire à travers une image sincère et naturelle.
             </p>
           </motion.div>
         </div>
