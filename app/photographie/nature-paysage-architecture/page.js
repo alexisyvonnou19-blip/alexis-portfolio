@@ -12,6 +12,46 @@ const gallery = [
   21, 27, 22, 24, 25, 26, 23,
 ];
 
+const natureStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id":
+    "https://alexisyvonnou.com/photographie/nature-paysage-architecture#gallery",
+  name: "Nature & architecture — Photographies d’Alexis Yvonnou",
+  url: "https://alexisyvonnou.com/photographie/nature-paysage-architecture",
+  description:
+    "Galerie photo autour de la nature, des paysages, de l’architecture, des détails, des textures et des lumières par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
+  inLanguage: "fr-FR",
+  creator: {
+    "@type": "Person",
+    "@id": "https://alexisyvonnou.com/#person",
+    name: "Alexis Yvonnou",
+    jobTitle: "Photographe et créateur de contenus",
+    url: "https://alexisyvonnou.com",
+  },
+  about: [
+    "Photographie de nature",
+    "Photographie de paysage",
+    "Photographie d’architecture",
+    "Détails",
+    "Textures",
+    "Lumières naturelles",
+    "Bretagne",
+    "Concarneau",
+    "Finistère",
+  ],
+  image: gallery.map((num) => ({
+    "@type": "ImageObject",
+    url: `https://alexisyvonnou.com${getPhoto(num)}`,
+    name: `Photographie nature et architecture ${num}`,
+    caption:
+      "Photographie de nature, paysage, architecture, détails et lumières par Alexis Yvonnou.",
+    creator: {
+      "@id": "https://alexisyvonnou.com/#person",
+    },
+  })),
+};
+
 export default function NaturePage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
@@ -81,6 +121,12 @@ export default function NaturePage() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(natureStructuredData),
+  }}
+/>
       <section className="gallery-mobile-hero relative h-[82vh] min-h-[560px] w-full overflow-hidden">
         <button type="button" onClick={() => openImage(1)} className="relative h-full w-full cursor-zoom-in">
           <Image
@@ -125,8 +171,7 @@ export default function NaturePage() {
               Des images pour ralentir le regard.
             </h2>
             <p className="mt-6 text-lg leading-9 text-stone-600">
-              Une sélection de photographies entre nature, paysages, architecture, détails,
-              textures et lumières. Une galerie plus calme, pensée comme une respiration visuelle.
+              Cette galerie rassemble des images plus calmes, entre paysages, lignes architecturales, matières, détails, textures et lumières naturelles. Une série pensée comme une respiration visuelle, où le regard se pose sur les formes, les ambiances et les lieux.
             </p>
           </motion.div>
         </div>

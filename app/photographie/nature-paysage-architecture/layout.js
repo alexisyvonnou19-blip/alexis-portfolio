@@ -1,11 +1,15 @@
 export const metadata = {
-  title: "Nature & architecture — Photographies",
+  title: "Nature & architecture — Photographies de paysages et détails",
   description:
-    "Galerie photo nature, paysage et architecture par Alexis Yvonnou : lumières, lignes, matières, atmosphères et détails.",
+    "Galerie photo nature, paysages, architecture, détails, textures et lumières par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
+  alternates: {
+    canonical:
+      "https://alexisyvonnou.com/photographie/nature-paysage-architecture",
+  },
   openGraph: {
     title: "Nature & architecture — Photographies d’Alexis Yvonnou",
     description:
-      "Une galerie sensible autour des paysages, de l’architecture, des lumières, des matières et des atmosphères.",
+      "Une galerie plus calme autour des paysages, des formes, des matières, des lignes architecturales, des détails et des lumières.",
     url: "https://alexisyvonnou.com/photographie/nature-paysage-architecture",
     images: [
       {
@@ -18,6 +22,6 @@ export const metadata = {
   },
 };
 
-export default function NatureLayout({ children }) {
+export default function NaturePaysageArchitectureLayout({ children }) {
   return children;
 }
