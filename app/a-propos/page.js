@@ -3,9 +3,26 @@ import Link from "next/link";
 import { ArrowRight, Mail } from "lucide-react";
 
 export const metadata = {
-  title: "À propos",
+  title: "À propos — Photographe & créateur de contenus à Concarneau",
   description:
-    "En savoir plus sur Alexis Yvonnou, photographe et créateur de contenus en Bretagne.",
+    "Découvrez le parcours d’Alexis Yvonnou, photographe et créateur de contenus basé à Concarneau en Bretagne, spécialisé dans le nautisme, le sport, l’événementiel, l’outdoor et les récits humains.",
+  alternates: {
+    canonical: "https://alexisyvonnou.com/a-propos",
+  },
+  openGraph: {
+    title: "À propos — Alexis Yvonnou",
+    description:
+      "Photographe et créateur de contenus basé à Concarneau en Bretagne. Un regard de terrain construit autour du nautisme, du sport, de l’événementiel et des récits humains.",
+    url: "https://alexisyvonnou.com/a-propos",
+    images: [
+      {
+        url: "/og-cover.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Alexis Yvonnou — Photographe et créateur de contenus en Bretagne",
+      },
+    ],
+  },
 };
 
 const experiences = [
@@ -17,13 +34,54 @@ const experiences = [
   "PL Yachting",
   "Ino-Rope",
   "EFTM",
-  "Snip Yahchting",
+  "SNIP Yachting",
   "Trampoline Park",
 ];
+
+const aboutPageStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "@id": "https://alexisyvonnou.com/a-propos#webpage",
+  url: "https://alexisyvonnou.com/a-propos",
+  name: "À propos — Alexis Yvonnou",
+  description:
+    "Page à propos d’Alexis Yvonnou, photographe et créateur de contenus basé à Concarneau en Bretagne.",
+  inLanguage: "fr-FR",
+  about: {
+    "@type": "Person",
+    "@id": "https://alexisyvonnou.com/#person",
+    name: "Alexis Yvonnou",
+    jobTitle: "Photographe et créateur de contenus",
+    url: "https://alexisyvonnou.com",
+    image: "https://alexisyvonnou.com/images/moi4.webp",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Concarneau",
+      addressRegion: "Bretagne",
+      postalCode: "29900",
+      addressCountry: "FR",
+    },
+    knowsAbout: [
+      "Photographie nautique",
+      "Course au large",
+      "Sport outdoor",
+      "Événementiel sportif",
+      "Création de contenus",
+      "Communication digitale",
+      "Storytelling visuel",
+    ],
+  },
+};
 
 export default function AProposPage() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(aboutPageStructuredData),
+  }}
+/>
       {/* HERO */}
 <section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
   <div className="mx-auto max-w-7xl">
@@ -42,8 +100,8 @@ export default function AProposPage() {
 
         <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600 md:text-xl">
           Je suis Alexis Yvonnou, photographe et créateur de contenus basé
-          en Bretagne. Mon univers tourne autour du sport, du nautisme,
-          des événements et des récits humains.
+à Concarneau, en Bretagne. Mon univers s’est construit autour du
+sport, du nautisme, des événements, de l’outdoor et des récits humains.
         </p>
 
         <div className="mt-10 flex flex-wrap gap-3">
@@ -292,7 +350,7 @@ export default function AProposPage() {
 
                 <a
     href="tel:+33602379318"
-    className="hover:text-stone-950"
+    className="transition hover:text-white"
   >
     06 02 37 93 18
   </a>
