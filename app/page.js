@@ -2,17 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
-import {
-  ArrowRight,
-  Mail,
-  ChevronUp,
-  Menu,
-  X,
-  Camera,
-  LinkIcon,
-} from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
+import { ArrowRight, Mail, ChevronUp } from "lucide-react";
+import { motion } from "framer-motion";
 
 const photographyCategories = [
   {
@@ -86,13 +77,6 @@ const domains = [
     title: "Artisanat",
     text: "Mettre en valeur les gestes, les savoir-faire, les matières, les ateliers et les projets portés par des indépendant·es, marques ou commerces.",
   },
-];
-
-const navigationLinks = [
-  { label: "Qui suis-je ?", href: "#qui-suis-je" },
-  { label: "Photographie", href: "#photographie" },
-  { label: "Création de contenus", href: "#contenus" },
-  { label: "Terrains de jeu", href: "#domaines" },
 ];
 
 function SectionTitle({ eyebrow, title, text }) {
@@ -225,11 +209,15 @@ export default function AlexisYvonnouHomepage() {
 
             <div className="relative">
               <div className="overflow-hidden rounded-[2rem] shadow-xl shadow-stone-900/10">
-                <img
-                  src="/images/moi.webp"
-                  alt="Portrait d’Alexis Yvonnou"
-                  className="h-full w-full object-cover"
-                />
+                <div className="relative aspect-[4/5] w-full">
+  <Image
+    src="/images/moi.webp"
+    alt="Portrait d’Alexis Yvonnou, photographe et créateur de contenus basé à Concarneau en Bretagne"
+    fill
+    sizes="(max-width: 768px) 100vw, 50vw"
+    className="object-cover"
+  />
+</div>
               </div>
               <div className="absolute -bottom-6 -left-6 rounded-2xl bg-white p-4 shadow-lg">
                 <p className="text-sm font-medium text-stone-900">Alexis Yvonnou</p>
@@ -263,12 +251,14 @@ export default function AlexisYvonnouHomepage() {
                 key={category.title}
                 className="group relative overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10 transition duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-stone-900/20"
               >
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img
-                    src={category.image}
-                    alt={category.title}
-                    className="h-full w-full object-cover opacity-90 transition duration-1000 group-hover:scale-[1.015] group-hover:opacity-75"
-                  />
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+  src={category.image}
+  alt={`Galerie photo ${category.title} par Alexis Yvonnou`}
+  fill
+  sizes="(max-width: 768px) 100vw, 50vw"
+  className="object-cover opacity-90 transition duration-1000 group-hover:scale-[1.015] group-hover:opacity-75"
+/>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-9">
@@ -291,11 +281,15 @@ export default function AlexisYvonnouHomepage() {
       <section id="contenus" className="px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:items-center">
           <div className="overflow-hidden rounded-[2rem] shadow-xl shadow-stone-900/10 max-h-[620px]">
-            <img
-              src="/images/crea2.webp"
-              alt="Création de contenus photo et vidéo"
-              className="h-full w-full object-cover"
-            />
+            <div className="relative aspect-[4/5] w-full">
+  <Image
+    src="/images/crea2.webp"
+    alt="Création de contenus photo, vidéo et réseaux sociaux par Alexis Yvonnou"
+    fill
+    sizes="(max-width: 768px) 100vw, 50vw"
+    className="object-cover"
+  />
+</div>
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
