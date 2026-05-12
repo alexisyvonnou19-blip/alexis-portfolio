@@ -12,6 +12,43 @@ const gallery = [
   8, 10, 26, 27, 28, 15, 20,
 ];
 
+const courseAuLargeStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "@id": "https://alexisyvonnou.com/photographie/course-au-large#gallery",
+  name: "Course au large — Photographies d’Alexis Yvonnou",
+  url: "https://alexisyvonnou.com/photographie/course-au-large",
+  description:
+    "Galerie photo dédiée à la course au large, au nautisme et à la voile de compétition par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
+  inLanguage: "fr-FR",
+  creator: {
+    "@type": "Person",
+    "@id": "https://alexisyvonnou.com/#person",
+    name: "Alexis Yvonnou",
+    jobTitle: "Photographe et créateur de contenus",
+    url: "https://alexisyvonnou.com",
+  },
+  about: [
+    "Course au large",
+    "Photographie nautique",
+    "Voile de compétition",
+    "Nautisme en Bretagne",
+    "Photographie sportive",
+    "Concarneau",
+    "Finistère",
+  ],
+  image: gallery.map((num) => ({
+    "@type": "ImageObject",
+    url: `https://alexisyvonnou.com${getPhoto(num)}`,
+    name: `Photographie de course au large ${num}`,
+    caption:
+      "Photographie de course au large, voile de compétition et univers nautique par Alexis Yvonnou.",
+    creator: {
+      "@id": "https://alexisyvonnou.com/#person",
+    },
+  })),
+};
+
 export default function CourseAuLargePage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
@@ -81,6 +118,12 @@ export default function CourseAuLargePage() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(courseAuLargeStructuredData),
+  }}
+/>
       <section className="gallery-mobile-hero relative h-[82vh] min-h-[560px] w-full overflow-hidden">
         <button type="button" onClick={() => openImage(1)} className="relative h-full w-full cursor-zoom-in">
           <Image
@@ -124,7 +167,7 @@ export default function CourseAuLargePage() {
               Une immersion dans l’univers de la course au large.
             </h2>
             <p className="mt-6 text-lg leading-9 text-stone-600">
-              Une sélection d’images entre action, préparation, détails, pontons, marins et atmosphères de course.
+              Basé à Concarneau en Bretagne, je photographie la course au large comme un univers complet : les marins, les bateaux, les pontons, les départs, les retours, les préparations et les détails qui racontent la voile de compétition au-delà de l’action pure.
             </p>
           </motion.div>
         </div>
