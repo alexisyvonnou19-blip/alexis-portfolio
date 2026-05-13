@@ -44,7 +44,7 @@ const photographyCategories = [
     href: "/photographie/trail",
   },
   {
-    title: "Retour Charlie Dalin - Vendée Globe 24-25",
+    title: "Charlie Dalin, le retour",
     text: "Un moment fort de course au large, entre émotion populaire, image sportive et récit maritime.",
     image: "/images/homecharlie.webp",
     href: "/photographie/retour-charlie-dalin-vendee-globe-24-25",

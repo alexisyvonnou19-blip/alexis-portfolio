@@ -143,7 +143,7 @@ export default function RetourCharlieDalinPage() {
             Photographie
           </p>
           <h1 className="gallery-mobile-title max-w-6xl text-5xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-7xl">
-            Retour de Charlie Dalin à Concarneau
+            Charlie Dalin, le retour
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
             Vendée Globe 2024 · Un retour chargé d’émotions, entre foule, mer,
