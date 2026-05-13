@@ -46,7 +46,7 @@ const photographyCategories = [
   {
     title: "Charlie Dalin, le retour",
     text: "Un moment fort de course au large, entre émotion populaire, image sportive et récit maritime.",
-    image: "/images/homecharlie.webp",
+    image: "/images/homecharliedalin2.webp",
     href: "/photographie/retour-charlie-dalin-vendee-globe-24-25",
   },
   {
