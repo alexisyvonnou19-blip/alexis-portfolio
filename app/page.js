@@ -361,25 +361,64 @@ export default function AlexisYvonnouHomepage() {
       <section id="contact" className="px-5 py-24 md:px-8 md:py-28">
   <div className="mx-auto max-w-7xl overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
     <div className="grid gap-0 md:grid-cols-[0.95fr_1.05fr]">
-      <div className="p-8 md:p-14">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/45">
-          Contact
-        </p>
+      <div className="flex flex-col justify-between p-8 md:p-14">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/45">
+            Contact
+          </p>
 
-        <h2 className="mt-5 text-5xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-7xl">
-          Discutons de votre projet.
-        </h2>
+          <h2 className="mt-5 text-5xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-7xl">
+            Discutons de votre projet.
+          </h2>
 
-        <p className="mt-8 max-w-md text-lg leading-9 text-white/65">
-          Chaque projet commence par un échange simple autour de vos besoins, de votre univers et des images à créer.
-        </p>
+          <p className="mt-10 max-w-md text-lg leading-9 text-white/65">
+            Chaque projet commence par un échange simple autour de vos besoins,
+            de votre univers et des images à créer.
+          </p>
+        </div>
 
-        <p className="mt-5 text-sm uppercase tracking-[0.25em] text-white/40">
-          Basé à Concarneau en Bretagne · Déplacements possibles partout en France
-        </p>
+          <div className="mt-10 grid gap-3 text-sm text-white/75">
+            <a
+              href="mailto:alexisyvonnou@hotmail.fr"
+              className="transition hover:text-white"
+            >
+              alexisyvonnou@hotmail.fr
+            </a>
+
+            <a
+              href="tel:+33602379318"
+              className="transition hover:text-white"
+            >
+              06 02 37 93 18
+            </a>
+
+            <a
+              href="https://www.instagram.com/alexis_yvonnou"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-white"
+            >
+              Instagram · @alexis_yvonnou
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/alexis-yvonnou/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-white"
+            >
+              LinkedIn · Alexis Yvonnou
+            </a>
+          </div>
+
+        <div className="mt-14 grid gap-3 text-sm text-white/45">
+          <p>Basé à Concarneau, en Bretagne</p>
+          <p>Déplacements possibles en France</p>
+          <p>Photo · contenus · communication digitale</p>
+        </div>
       </div>
 
-      <div className="flex flex-col justify-between bg-white p-8 text-stone-950 md:p-14">
+      <div className="bg-white p-8 text-stone-950 md:p-14">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
             Me contacter
@@ -390,38 +429,14 @@ export default function AlexisYvonnouHomepage() {
           </h3>
 
           <p className="mt-5 text-lg leading-8 text-stone-600">
-            Présentez-moi brièvement votre projet, la date, le lieu et vos besoins. Je reviendrai vers vous dès que possible.
+            Expliquez-moi simplement votre projet, le contexte, la date et le
+            lieu si vous les connaissez déjà. Je reviendrai vers vous dans les
+            plus brefs délais.
           </p>
         </div>
 
-        <ContactForm />
-
-        <div className="mt-10 grid gap-3 text-sm text-stone-500">
-          <a href="mailto:alexisyvonnou@hotmail.fr" className="hover:text-stone-950">
-            alexisyvonnou@hotmail.fr
-          </a>
-
-          <a href="tel:+33602379318" className="hover:text-stone-950">
-            06 02 37 93 18
-          </a>
-
-          <a
-            href="https://www.instagram.com/alexis_yvonnou"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-stone-950"
-          >
-            Instagram · @alexis_yvonnou
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/alexis-yvonnou/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-stone-950"
-          >
-            LinkedIn · Alexis Yvonnou
-          </a>
+        <div className="mt-10">
+          <ContactForm />
         </div>
       </div>
     </div>
