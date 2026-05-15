@@ -16,7 +16,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[999] border-b border-black/5 bg-[#f7f4ef]/95 backdrop-blur-2xl">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-black/5 bg-[#f7f4ef]/95 backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
         <Link href="/#top" className="flex items-center gap-4 text-stone-950">
           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-stone-950 text-sm font-semibold text-white">
