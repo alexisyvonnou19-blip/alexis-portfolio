@@ -295,7 +295,7 @@ const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
         {activeIndex !== null && activePhoto && (
           
           <motion.div
-  className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-3 text-white md:p-6"
+  className="fixed inset-0 z-[999] flex items-center justify-center bg-black/95 p-3 text-white md:p-6"
   onClick={closeImage}
   onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
   onTouchEnd={(e) => {
