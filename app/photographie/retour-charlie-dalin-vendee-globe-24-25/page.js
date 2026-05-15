@@ -124,7 +124,7 @@ export default function RetourCharlieDalinPage() {
     __html: JSON.stringify(retourCharlieStructuredData),
   }}
 />
-      <section className="gallery-mobile-hero relative h-[82vh] min-h-[560px] w-full overflow-hidden">
+      <section className="gallery-mobile-hero relative mt-[92px] h-[calc(82vh-92px)] min-h-[468px] w-full overflow-hidden">
         <button type="button" onClick={() => openImage(6)} className="relative h-full w-full cursor-zoom-in">
           <Image
             src={getPhoto(6)}
@@ -143,7 +143,7 @@ export default function RetourCharlieDalinPage() {
             Photographie
           </p>
           <h1 className="gallery-mobile-title max-w-6xl text-5xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-7xl">
-            Charlie Dalin, le retour
+            Retour de Charlie Dalin à Concarneau
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
             Vendée Globe 2024 · Un retour chargé d’émotions, entre foule, mer,

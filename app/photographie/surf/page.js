@@ -115,7 +115,7 @@ export default function SurfPage() {
     __html: JSON.stringify(surfStructuredData),
   }}
 />
-      <section className="gallery-mobile-hero relative h-[82vh] min-h-[560px] w-full overflow-hidden">
+      <section className="gallery-mobile-hero relative mt-[92px] h-[calc(82vh-92px)] min-h-[468px] w-full overflow-hidden">
         <button type="button" onClick={() => openImage(3)} className="relative h-full w-full">
           <Image
             src={getPhoto(3)}
