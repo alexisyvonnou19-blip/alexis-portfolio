@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, ChevronUp } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ContactForm from "./components/ContactForm";
 
 const photographyCategories = [
@@ -117,6 +117,10 @@ function Button({ children, href = "#contact", variant = "primary" }) {
 }
 
 export default function AlexisYvonnouHomepage() {
+  const { scrollY } = useScroll();
+
+const heroY = useTransform(scrollY, [0, 900], [0, 36]);
+const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
   return (
     <main className="min-h-screen bg-[#f7f4ef] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.7),transparent_45%)] text-stone-950">
       
@@ -153,16 +157,26 @@ export default function AlexisYvonnouHomepage() {
             transition={{ duration: 1, delay: 0.15 }}
             className="relative overflow-hidden rounded-[2.5rem] shadow-2xl shadow-stone-900/15"
           >
-            <div className="relative h-[52vh] min-h-[340px] w-full md:h-[68vh]">
-  <Image
-    src="/images/hero5.webp"
-    alt="Image principale du portfolio d’Alexis Yvonnou"
-    fill
-    priority
-    quality={82}
-    sizes="100vw"
-    className="object-cover"
-  />
+            <div className="relative h-[52vh] min-h-[340px] w-full overflow-hidden md:h-[68vh]">
+
+  <motion.div
+    style={{
+      y: heroY,
+      scale: heroScale,
+    }}
+    className="absolute inset-0"
+  >
+    <Image
+      src="/images/hero5.webp"
+      alt="Image principale du portfolio d’Alexis Yvonnou"
+      fill
+      priority
+      quality={82}
+      sizes="100vw"
+      className="object-cover"
+    />
+  </motion.div>
+
 </div>
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent p-6 md:p-10">
               <div className="max-w-3xl text-white">

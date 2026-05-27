@@ -1,6 +1,7 @@
 import "./globals.css";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import TransitionProvider from "./components/TransitionProvider";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -227,8 +228,12 @@ export default function RootLayout({ children }) {
         />
 
         <Header />
-        {children}
-        <Footer />
+
+<TransitionProvider>
+  {children}
+</TransitionProvider>
+
+<Footer />
       </body>
     </html>
   );
