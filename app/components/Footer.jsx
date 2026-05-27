@@ -139,6 +139,15 @@ export default function Footer() {
 
         <div className="flex flex-col gap-4 pt-8 text-sm text-white/40 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Alexis Yvonnou</p>
+          <div className="flex flex-wrap justify-center gap-4 text-sm text-white/35">
+  <Link href="/mentions-legales" className="transition hover:text-white">
+    Mentions légales
+  </Link>
+
+  <Link href="/politique-confidentialite" className="transition hover:text-white">
+    Politique de confidentialité
+  </Link>
+</div>
           <p>Bretagne · Nautisme · Sport · Outdoor · Artisanat</p>
         </div>
       </div>
