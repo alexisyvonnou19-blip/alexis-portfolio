@@ -449,6 +449,23 @@ export default function AlexisYvonnouHomepage() {
       >
         <ChevronUp size={18} />
       </Link>
+      <footer className="px-5 pb-10 pt-4 md:px-8">
+  <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-6 text-sm text-stone-500">
+    <Link
+      href="/mentions-legales"
+      className="transition hover:text-stone-950"
+    >
+      Mentions légales
+    </Link>
+
+    <Link
+      href="/politique-confidentialite"
+      className="transition hover:text-stone-950"
+    >
+      Politique de confidentialité
+    </Link>
+  </div>
+</footer>
     </main>
   );
 }

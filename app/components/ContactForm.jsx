@@ -13,9 +13,9 @@ export default function ContactForm() {
           Message envoyé.
         </h3>
 
-        <p className="mt-4 text-stone-600 leading-8">
-          Merci pour votre message.  
-          Je vous répondrai dès que possible.
+        <p className="mt-4 leading-8 text-stone-600">
+          Merci pour votre message. Je reviendrai vers vous dans les plus brefs
+          délais.
         </p>
       </div>
     );
@@ -104,6 +104,11 @@ export default function ContactForm() {
       >
         Envoyer le message
       </button>
+
+      <p className="mt-6 text-sm leading-6 text-stone-500">
+        Les informations transmises via ce formulaire servent uniquement à vous
+        recontacter.
+      </p>
     </motion.form>
   );
 }
