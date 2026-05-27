@@ -362,13 +362,13 @@ export default function CreationContenusPage() {
             </div>
 
             <div className="flex flex-col gap-3 md:items-end">
-              <a
-                href="mailto:alexisyvonnou@hotmail.fr?subject=Demande%20de%20contact%20-%20site%20Alexis%20Yvonnou"
-                className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-medium text-stone-950 transition hover:-translate-y-0.5 hover:bg-stone-200"
-              >
-                <Mail size={18} />
-                Me contacter
-              </a>
+              <Link
+  href="/#contact"
+  className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-medium text-stone-950 transition hover:-translate-y-0.5 hover:bg-stone-200"
+>
+  <Mail size={18} />
+  Me contacter
+</Link>
 
               <Link
                 href="/"

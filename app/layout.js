@@ -132,7 +132,7 @@ export const metadata = {
 
   title: {
     default: "Alexis Yvonnou — Photographe & créateur de contenus en Bretagne",
-    template: "%s — Alexis Yvonnou",
+    template: "%s - Alexis Yvonnou",
   },
 
   description:
