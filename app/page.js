@@ -248,7 +248,7 @@ export default function AlexisYvonnouHomepage() {
               <Link
                 href={category.href}
                 key={category.title}
-                className="group relative overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10 transition duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-stone-900/20"
+                className="group premium-hover premium-image-hover relative overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
@@ -256,7 +256,7 @@ export default function AlexisYvonnouHomepage() {
   alt={`Galerie photo ${category.title} par Alexis Yvonnou`}
   fill
   sizes="(max-width: 768px) 100vw, 50vw"
-  className="object-cover opacity-90 transition duration-1000 group-hover:scale-[1.015] group-hover:opacity-75"
+  className="object-cover opacity-90"
 />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />

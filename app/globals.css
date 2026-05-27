@@ -170,3 +170,36 @@ html {
     justify-content: center;
   }
 }
+.premium-hover {
+  transition:
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.premium-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 80px rgba(28, 25, 23, 0.18);
+}
+
+.premium-image-hover img,
+.premium-image-hover [data-nimg="fill"] {
+  transition:
+    transform 1200ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.premium-image-hover:hover img,
+.premium-image-hover:hover [data-nimg="fill"] {
+  transform: scale(1.025);
+  filter: brightness(0.88);
+}
+
+.premium-link-arrow {
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.group:hover .premium-link-arrow {
+  transform: translateX(4px);
+}
