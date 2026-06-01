@@ -119,7 +119,7 @@ function Button({ children, href = "#contact", variant = "primary" }) {
 export default function AlexisYvonnouHomepage() {
   const { scrollY } = useScroll();
 
-const heroY = useTransform(scrollY, [0, 900], [0, 36]);
+const heroY = useTransform(scrollY, [0, 900], [0, -20]);
 const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
   return (
     <main className="min-h-screen bg-[#f7f4ef] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.7),transparent_45%)] text-stone-950">
