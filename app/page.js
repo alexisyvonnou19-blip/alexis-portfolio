@@ -312,7 +312,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               Communication, réseaux sociaux et création de contenus.
             </h2>
             <p className="mt-6 text-lg leading-9 text-stone-700">
-              Les réseaux sociaux sont devenus un véritable outil de visibilité. Photos, réels, carrousels ou stories : je crée des contenus pensés pour aider un projet, un artisant, un commerçant, une marque ou un événement à communiquer de manière claire, cohérente et incarnée.
+              Aujourd’hui, être visible ne se résume plus à publier quelques photos. J’accompagne les entreprises, marques, événements, artisans et commerçants dans la création de contenus et l’animation de leurs réseaux sociaux, afin de développer leur visibilité, valoriser leur savoir-faire et construire une communication claire, cohérente et régulière.
             </p>
             <div className="mt-8 grid gap-3 text-stone-700 sm:grid-cols-2">
               <div className="rounded-2xl bg-white p-5">Photographie & Posts</div>
