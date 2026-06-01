@@ -315,9 +315,9 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               Les réseaux sociaux sont devenus un véritable outil de visibilité. Photos, réels, carrousels ou stories : je crée des contenus pensés pour aider un projet, un artisant, un commerçant, une marque ou un événement à communiquer de manière claire, cohérente et incarnée.
             </p>
             <div className="mt-8 grid gap-3 text-stone-700 sm:grid-cols-2">
-              <div className="rounded-2xl bg-white p-5">Photographie</div>
+              <div className="rounded-2xl bg-white p-5">Photographie & Posts</div>
 <div className="rounded-2xl bg-white p-5">Réels & vidéos verticales</div>
-<div className="rounded-2xl bg-white p-5">Carrousels</div>
+<div className="rounded-2xl bg-white p-5">Site Internet</div>
 <div className="rounded-2xl bg-white p-5">Stories & contenus immersifs</div>
             </div>
             <div className="mt-10">
