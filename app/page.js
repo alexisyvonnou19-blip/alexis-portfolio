@@ -132,7 +132,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
     >
-      <div className="grid gap-8 md:grid-cols-[1fr_0.55fr] md:items-end">
+      <div className="mb-10 grid gap-8 md:grid-cols-[1fr_0.55fr] md:items-end">
         <div>
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
             Photographe & créateur de contenus · Bretagne
@@ -150,7 +150,9 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button href="#photographie">Découvrir mes photos</Button>
+            <Button href="#photographie">
+              Découvrir mes photos
+            </Button>
 
             <Button href="/creation-de-contenus">
               Création de contenus
@@ -163,8 +165,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
       </div>
 
-      <div className="mt-12 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-stone-900/15">
-        <div className="relative h-[54vh] min-h-[380px] w-full overflow-hidden md:h-[66vh]">
+      <div className="overflow-hidden rounded-[2.5rem] shadow-2xl shadow-stone-900/15">
+        <div className="relative h-[48vh] min-h-[360px] w-full overflow-hidden md:h-[66vh]">
           <motion.div
             style={{
               y: heroY,
@@ -179,24 +181,24 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               priority
               quality={82}
               sizes="100vw"
-              className="object-cover"
+              className="object-cover object-center"
             />
           </motion.div>
 
           <div className="absolute left-5 top-5 rounded-full bg-white/85 px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-950 backdrop-blur-md md:left-8 md:top-8">
             Concarneau · France
           </div>
+
+          <div className="absolute right-5 top-5 max-w-sm rounded-[1.5rem] bg-white/85 px-5 py-4 backdrop-blur-md md:right-8 md:top-8">
+            <p className="text-sm font-semibold leading-6 tracking-tight text-stone-950 md:text-base">
+              Raconter en images des histoires, des savoir-faire et des émotions.
+            </p>
+
+            <p className="mt-2 text-xs text-stone-500">
+              Nautisme · Sport · Événementiel · Artisanat
+            </p>
+          </div>
         </div>
-      </div>
-
-      <div className="mt-8 grid gap-5 border-b border-stone-200 pb-10 md:grid-cols-[0.7fr_0.3fr] md:items-start">
-        <p className="max-w-4xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-stone-950 md:text-5xl">
-          Raconter en images des histoires, des savoir-faire et des émotions.
-        </p>
-
-        <p className="text-base leading-8 text-stone-500 md:text-right">
-          Nautisme · Sport · Événementiel · Artisanat
-        </p>
       </div>
     </motion.div>
   </div>
