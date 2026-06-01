@@ -259,7 +259,7 @@ export default function CreationContenusPage() {
             </p>
 
             <h2 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-              Des projets entre événementiel, sport et communication.
+              Des projets entre événementiel, sport et entreprises locales.
             </h2>
 
             <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600">
