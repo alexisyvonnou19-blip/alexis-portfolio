@@ -165,7 +165,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       </div>
 
       <div className="mt-14">
-        <div className="relative overflow-hidden rounded-[2.75rem] bg-stone-200 shadow-[0_35px_120px_rgba(28,25,23,0.14)]">
+        <div className="relative overflow-hidden rounded-[2.75rem] shadow-[0_35px_120px_rgba(28,25,23,0.14)]">
           <div className="relative h-[48vh] min-h-[380px] w-full overflow-hidden md:h-[64vh]">
             <motion.div
               style={{
