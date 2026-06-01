@@ -44,7 +44,7 @@ const services = [
   {
     icon: ArrowRight,
     title: "Site internet",
-    text: "Création ou accompagnement sur des sites vitrines simples, clairs et cohérents avec votre image.",
+    text: "Création de site internet performant, moderne et cohérent avec votre image.",
   },
 ];
 
