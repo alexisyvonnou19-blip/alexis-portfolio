@@ -66,14 +66,13 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  scroll={false}
                   className="transition hover:text-white"
                 >
                   {link.label}
                 </Link>
               ))}
 
-              <Link href="/#contact" scroll={false} className="transition hover:text-white">
+              <Link href="/#contact" className="transition hover:text-white">
                 Contact
               </Link>
             </div>
@@ -83,25 +82,23 @@ export default function Footer() {
             <p className="text-sm font-medium text-white">Galeries & pages</p>
 
             <div className="mt-5 flex flex-col gap-3 text-sm text-white/55">
-              <Link href="/a-propos" scroll={false} className="transition hover:text-white">
+              <Link href="/a-propos" className="transition hover:text-white">
                 À propos
               </Link>
 
               <Link
                 href="/creation-de-contenus"
-                scroll={false}
                 className="transition hover:text-white"
               >
                 Création de contenus
               </Link>
 
-              <Link href="/photographie/portraits" scroll={false} className="transition hover:text-white">
+              <Link href="/photographie/portraits" className="transition hover:text-white">
                 Portraits
               </Link>
 
               <Link
                 href="/photographie/nature-paysage-architecture"
-                scroll={false}
                 className="transition hover:text-white"
               >
                 Nature & architecture
@@ -109,33 +106,31 @@ export default function Footer() {
 
               <Link
                 href="/photographie/course-au-large"
-                scroll={false}
                 className="transition hover:text-white"
               >
                 Course au large
               </Link>
 
-              <Link href="/photographie/surf" scroll={false} className="transition hover:text-white">
+              <Link href="/photographie/surf" className="transition hover:text-white">
                 Surf
               </Link>
 
-              <Link href="/photographie/wing-foil" scroll={false} className="transition hover:text-white">
+              <Link href="/photographie/wing-foil" className="transition hover:text-white">
                 Wing Foil
               </Link>
 
-              <Link href="/photographie/trail" scroll={false} className="transition hover:text-white">
+              <Link href="/photographie/trail" className="transition hover:text-white">
                 Trail
               </Link>
 
               <Link
                 href="/photographie/retour-charlie-dalin-vendee-globe-24-25"
-                scroll={false}
                 className="transition hover:text-white"
               >
                 Retour Charlie Dalin
               </Link>
 
-              <Link href="/photographie/mini-650" scroll={false} className="transition hover:text-white">
+              <Link href="/photographie/mini-650" className="transition hover:text-white">
                 Banque images Mini 6.50
               </Link>
             </div>
@@ -145,11 +140,11 @@ export default function Footer() {
         <div className="flex flex-col gap-4 pt-8 text-sm text-white/40 md:flex-row md:items-center md:justify-between">
           <p>© {new Date().getFullYear()} Alexis Yvonnou</p>
           <div className="flex flex-wrap justify-center gap-4 text-sm text-white/35">
-  <Link href="/mentions-legales" scroll={false} className="transition hover:text-white">
+  <Link href="/mentions-legales" className="transition hover:text-white">
     Mentions légales
   </Link>
 
-  <Link href="/politique-confidentialite" scroll={false} className="transition hover:text-white">
+  <Link href="/politique-confidentialite" className="transition hover:text-white">
     Politique de confidentialité
   </Link>
 </div>

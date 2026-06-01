@@ -109,7 +109,7 @@ function Button({ children, href = "#contact", variant = "primary" }) {
       : "border border-stone-300 text-stone-950 hover:-translate-y-0.5 hover:border-stone-950 hover:bg-white";
 
   return (
-    <Link href={href} scroll={false} className={`${base} ${styles}`}>
+    <Link href={href} className={`${base} ${styles}`}>
       {children}
       <ArrowRight size={16} />
     </Link>
@@ -261,7 +261,6 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             {photographyCategories.map((category) => (
               <Link
                 href={category.href}
-                scroll={false}
                 key={category.title}
                 className="group premium-hover premium-image-hover relative overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10"
               >

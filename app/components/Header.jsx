@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 border-b border-black/5 bg-[#f7f4ef]/95 backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-        <Link href="/#top" scroll={false} className="flex items-center gap-4 text-stone-950">
+        <Link href="/#top" className="flex items-center gap-4 text-stone-950">
           <div className="flex h-11 w-11 items-center justify-center rounded-full bg-stone-950 text-sm font-semibold text-white">
             AY
           </div>
@@ -33,7 +33,6 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              scroll={false}
               className="max-w-[140px] text-center leading-tight transition hover:text-stone-950 xl:max-w-none"
             >
               {link.label}
@@ -42,7 +41,6 @@ export default function Header() {
 
           <Link
             href="/#contact"
-            scroll={false}
             className="rounded-full bg-stone-950 px-6 py-2.5 text-white transition hover:-translate-y-0.5 hover:bg-stone-800"
           >
             Contact
@@ -73,7 +71,6 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  scroll={false}
                   onClick={() => setMenuOpen(false)}
                   className="transition hover:text-stone-950"
                 >
@@ -83,7 +80,6 @@ export default function Header() {
 
               <Link
                 href="/#contact"
-                scroll={false}
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 rounded-full bg-stone-950 px-5 py-3 text-center text-sm font-medium text-white"
               >
