@@ -127,7 +127,7 @@ export default function CreationContenusPage() {
               </p>
 
               <h1 className="max-w-5xl text-2xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-7xl lg:text-8xl">
-                Créer des contenus pensés pour raconter, valoriser et diffuser.
+                Créer des contenus pensés pour raconter et valoriser.
               </h1>
 
               <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600 md:text-xl">
