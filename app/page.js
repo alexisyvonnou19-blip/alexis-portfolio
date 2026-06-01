@@ -309,10 +309,10 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               Création de contenus
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-              Des contenus visuels pensés pour le digital.
+              Communication, réseaux sociaux et création de contenus.
             </h2>
             <p className="mt-6 text-lg leading-9 text-stone-700">
-              Les réseaux sociaux sont devenus un véritable outil de visibilité. Photos, réels, carrousels ou stories : je crée des contenus pensés pour aider un projet, une marque ou un événement à communiquer de manière claire, cohérente et incarnée.
+              Les réseaux sociaux sont devenus un véritable outil de visibilité. Photos, réels, carrousels ou stories : je crée des contenus pensés pour aider un projet, un artisant, un commerçant, une marque ou un événement à communiquer de manière claire, cohérente et incarnée.
             </p>
             <div className="mt-8 grid gap-3 text-stone-700 sm:grid-cols-2">
               <div className="rounded-2xl bg-white p-5">Photographie</div>
