@@ -131,22 +131,24 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
+      className="grid gap-10"
     >
-      <div className="mb-10 grid gap-8 md:grid-cols-[1fr_0.55fr] md:items-end">
+      <div className="grid gap-8 md:grid-cols-[0.72fr_0.28fr] md:items-end">
         <div>
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
-            Photographe & créateur de contenus · Bretagne
+            Alexis Yvonnou · Bretagne
           </p>
 
-          <h1 className="text-6xl font-semibold leading-[0.9] tracking-[-0.055em] text-stone-950 md:text-8xl lg:text-[8.8rem]">
-            Alexis Yvonnou
+          <h1 className="max-w-6xl text-5xl font-semibold leading-[0.92] tracking-[-0.055em] text-stone-950 md:text-7xl lg:text-[7.8rem]">
+            Images, contenus et communication pour les projets qui ont quelque chose à raconter.
           </h1>
         </div>
 
-        <div className="max-w-md md:pb-3">
-          <p className="text-lg leading-8 text-stone-600 md:text-xl">
-            Des images et des contenus pensés pour raconter votre projet,
-            renforcer votre visibilité et nourrir votre communication.
+        <div className="md:pb-2">
+          <p className="text-lg leading-8 text-stone-600">
+            Photographe et créateur de contenus basé à Concarneau, j’accompagne
+            les marques, entreprises et événements dans la création d’images utiles,
+            incarnées et pensées pour leur visibilité.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
@@ -165,8 +167,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-[2.5rem] shadow-2xl shadow-stone-900/15">
-        <div className="relative h-[48vh] min-h-[360px] w-full overflow-hidden md:h-[66vh]">
+      <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl shadow-stone-900/15">
+        <div className="relative h-[50vh] min-h-[360px] w-full overflow-hidden md:h-[64vh]">
           <motion.div
             style={{
               y: heroY,
@@ -184,20 +186,20 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               className="object-cover object-center"
             />
           </motion.div>
+        </div>
 
-          <div className="absolute left-5 top-5 rounded-full bg-white/85 px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-950 backdrop-blur-md md:left-8 md:top-8">
-            Concarneau · France
-          </div>
+        <div className="absolute left-5 top-5 rounded-full bg-white/85 px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-950 backdrop-blur-md md:left-8 md:top-8">
+          Concarneau · France
+        </div>
 
-          <div className="absolute right-5 top-5 max-w-sm rounded-[1.5rem] bg-white/85 px-5 py-4 backdrop-blur-md md:right-8 md:top-8">
-            <p className="text-sm font-semibold leading-6 tracking-tight text-stone-950 md:text-base">
-              Raconter en images des histoires, des savoir-faire et des émotions.
-            </p>
+        <div className="absolute bottom-5 left-5 right-5 flex flex-col gap-3 rounded-[1.7rem] bg-white/85 p-5 backdrop-blur-md md:bottom-8 md:left-8 md:right-8 md:flex-row md:items-center md:justify-between md:p-6">
+          <p className="max-w-xl text-sm font-medium leading-6 text-stone-950 md:text-base">
+            Nautisme · Sport · Événementiel · Artisanat
+          </p>
 
-            <p className="mt-2 text-xs text-stone-500">
-              Nautisme · Sport · Événementiel · Artisanat
-            </p>
-          </div>
+          <p className="text-sm leading-6 text-stone-600 md:text-right">
+            Photos · Réels · Carrousels · Réseaux sociaux
+          </p>
         </div>
       </div>
     </motion.div>
