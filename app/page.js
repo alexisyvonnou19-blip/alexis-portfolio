@@ -131,31 +131,28 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7 }}
-      className="relative"
     >
-      <div className="mb-8 grid gap-8 md:grid-cols-[1fr_0.55fr] md:items-end">
+      <div className="grid gap-8 md:grid-cols-[1fr_0.55fr] md:items-end">
         <div>
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-stone-500">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
             Photographe & créateur de contenus · Bretagne
           </p>
 
-          <h1 className="text-[18vw] font-semibold leading-[0.78] tracking-[-0.09em] text-stone-950 md:text-[10.5rem] lg:text-[13rem]">
-            Alexis
-            <br />
-            Yvonnou
+          <h1 className="text-6xl font-semibold leading-[0.9] tracking-[-0.055em] text-stone-950 md:text-8xl lg:text-[8.8rem]">
+            Alexis Yvonnou
           </h1>
         </div>
 
         <div className="max-w-md md:pb-3">
-          <p className="text-lg leading-8 text-stone-650 md:text-xl">
-            Des images, des contenus et une communication pensée pour raconter
-            votre projet, renforcer votre visibilité et donner du fond à votre présence en ligne.
+          <p className="text-lg leading-8 text-stone-600 md:text-xl">
+            Des images et des contenus pensés pour raconter votre projet,
+            renforcer votre visibilité et nourrir votre communication.
           </p>
 
           <div className="mt-7 flex flex-wrap gap-3">
-            <Button href="#photographie">Voir mon travail</Button>
+            <Button href="#photographie">Découvrir mes photos</Button>
 
-            <Button href="/creation-de-contenus" variant="secondary">
+            <Button href="/creation-de-contenus">
               Création de contenus
             </Button>
 
@@ -166,8 +163,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
       </div>
 
-      <div className="relative overflow-hidden rounded-[2.8rem] shadow-2xl shadow-stone-900/15">
-        <div className="relative h-[56vh] min-h-[420px] w-full overflow-hidden md:h-[66vh]">
+      <div className="mt-12 overflow-hidden rounded-[2.5rem] shadow-2xl shadow-stone-900/15">
+        <div className="relative h-[54vh] min-h-[380px] w-full overflow-hidden md:h-[66vh]">
           <motion.div
             style={{
               y: heroY,
@@ -185,23 +182,21 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               className="object-cover"
             />
           </motion.div>
-        </div>
 
-        <div className="absolute left-5 top-5 rounded-full bg-white/80 px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-950 backdrop-blur-md md:left-8 md:top-8">
-          Concarneau · France
-        </div>
-
-        <div className="absolute bottom-5 left-5 right-5 rounded-[2rem] bg-stone-950/82 p-5 text-white backdrop-blur-md md:bottom-8 md:left-8 md:right-8 md:p-7">
-          <div className="grid gap-5 md:grid-cols-[0.65fr_0.35fr] md:items-end">
-            <p className="text-2xl font-semibold leading-tight tracking-[-0.035em] md:text-4xl">
-              Raconter en images des histoires, des savoir-faire et des émotions.
-            </p>
-
-            <p className="text-sm leading-7 text-white/65 md:text-base">
-              Nautisme · Sport · Événementiel · Artisanat
-            </p>
+          <div className="absolute left-5 top-5 rounded-full bg-white/85 px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-950 backdrop-blur-md md:left-8 md:top-8">
+            Concarneau · France
           </div>
         </div>
+      </div>
+
+      <div className="mt-8 grid gap-5 border-b border-stone-200 pb-10 md:grid-cols-[0.7fr_0.3fr] md:items-start">
+        <p className="max-w-4xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-stone-950 md:text-5xl">
+          Raconter en images des histoires, des savoir-faire et des émotions.
+        </p>
+
+        <p className="text-base leading-8 text-stone-500 md:text-right">
+          Nautisme · Sport · Événementiel · Artisanat
+        </p>
       </div>
     </motion.div>
   </div>
