@@ -131,7 +131,10 @@ export default function CreationContenusPage() {
               </h1>
 
               <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600 md:text-xl">
-                Aujourd’hui, les réseaux sociaux sont devenus de véritables outils d’image, de visibilité et de communication. Mais c'est aussi de puissants outils de fidélisation et de conversion lorsqu'ils sont utilisés de manière stratégique. Mon rôle est de créer des contenus cohérents, incarnés et adaptés aux usages actuels, pour vous permettre de raconter votre projet, valoriser votre image et diffuser votre message de manière claire et efficace.
+                Aujourd’hui, les réseaux sociaux sont devenus de véritables outils d’image, de visibilité et de communication. Mais c'est aussi de puissants outils de fidélisation et de conversion lorsqu'ils sont utilisés de manière stratégique. 
+                </p>
+                <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600 md:text-xl">
+                Mon rôle est de créer des contenus cohérents, incarnés et adaptés aux usages actuels, pour vous permettre de raconter votre projet, valoriser votre image et diffuser votre message de manière claire et efficace.
               </p>
             </div>
 
