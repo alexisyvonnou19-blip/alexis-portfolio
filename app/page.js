@@ -144,11 +144,16 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               Raconter en images des histoires, des savoir-faire et des émotions.
             </p>
             <div className="mt-9 flex flex-wrap justify-center gap-4">
-              <Button href="#photographie">Voir mon travail</Button>
-              <Button href="#contact" variant="secondary">
-                Me contacter
-              </Button>
-            </div>
+  <Button href="#photographie">Découvrir mes photos</Button>
+
+  <Button href="/creation-de-contenus" variant="secondary">
+    Création de contenus
+  </Button>
+
+  <Button href="#contact" variant="secondary">
+    Me contacter
+  </Button>
+</div>
           </motion.div>
 
           <motion.div
