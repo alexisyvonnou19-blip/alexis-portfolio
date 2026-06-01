@@ -146,7 +146,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             <div className="mt-9 flex flex-wrap justify-center gap-4">
   <Button href="#photographie">Découvrir mes photos</Button>
 
-  <Button href="/creation-de-contenus" variant="secondary">
+  <Button href="/creation-de-contenus">
     Création de contenus
   </Button>
 
