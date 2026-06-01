@@ -125,77 +125,82 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
     <main className="min-h-screen bg-[#f7f4ef] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.7),transparent_45%)] text-stone-950">
       
 
-      <section id="top" className="px-5 pt-28 md:px-8 md:pt-32">
-        <div className="mx-auto max-w-7xl">
+      <section id="top" className="px-5 pt-24 md:px-8 md:pt-32">
+  <div className="mx-auto max-w-7xl">
+    <motion.div
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="relative"
+    >
+      <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
+            Photographe & créateur de contenus
+          </p>
+
+          <h1 className="text-6xl font-semibold leading-[0.86] tracking-[-0.075em] text-stone-950 md:text-8xl lg:text-[9.5rem]">
+            Alexis
+            <br />
+            Yvonnou
+          </h1>
+        </div>
+
+        <p className="max-w-md pb-2 text-lg leading-8 text-stone-600 md:text-xl">
+          Basé à Concarneau, j’accompagne les marques, entreprises et événements
+          dans la création d’images et de contenus pensés pour leur communication.
+        </p>
+      </div>
+
+      <div className="relative overflow-hidden rounded-[2.8rem] shadow-2xl shadow-stone-900/15">
+        <div className="relative h-[58vh] min-h-[430px] w-full overflow-hidden md:h-[64vh]">
           <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="mx-auto mb-12 max-w-6xl text-center"
+            style={{
+              y: heroY,
+              scale: heroScale,
+            }}
+            className="absolute inset-0"
           >
-            <p className="mb-5 text-sm text-stone-600">Bretagne · France</p>
-            <h1 className="text-5xl font-semibold leading-[0.98] tracking-[-0.05em] text-stone-950 md:text-7xl lg:text-8xl">
-              Alexis Yvonnou
-            </h1>
-            <p className="mx-auto mt-6 max-w-3xl text-xl leading-8 text-stone-700 md:text-2xl">
-              Photographe & créateur de contenus basé à Concarneau, en Bretagne.
-            </p>
-            <p className="mx-auto mt-5 max-w-5xl text-2xl font-medium leading-9 text-stone-950 md:text-4xl md:leading-[1.15]">
-              Raconter en images des histoires, des savoir-faire et des émotions.
-            </p>
-            <div className="mt-9 flex flex-wrap justify-center gap-4">
-  <Button href="#photographie">Découvrir mes photos</Button>
-
-  <Button href="/creation-de-contenus">
-    Création de contenus
-  </Button>
-
-  <Button href="#contact" variant="secondary">
-    Me contacter
-  </Button>
-</div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 28, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 1, delay: 0.15 }}
-            className="relative overflow-hidden rounded-[2.5rem] shadow-2xl shadow-stone-900/15"
-          >
-            <div className="relative h-[52vh] min-h-[340px] w-full overflow-hidden md:h-[68vh]">
-
-  <motion.div
-    style={{
-      y: heroY,
-      scale: heroScale,
-    }}
-    className="absolute inset-0"
-  >
-    <Image
-      src="/images/hero5.webp"
-      alt="Image principale du portfolio d’Alexis Yvonnou"
-      fill
-      priority
-      quality={82}
-      sizes="100vw"
-      className="object-cover"
-    />
-  </motion.div>
-
-</div>
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent p-6 md:p-10">
-              <div className="max-w-3xl text-white">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/75">
-                  Univers
-                </p>
-                <p className="mt-3 text-2xl font-semibold tracking-tight md:text-4xl">
-                  Nautisme · Sport · Événementiel · Artisanat
-                </p>
-              </div>
-            </div>
+            <Image
+              src="/images/hero5.webp"
+              alt="Image principale du portfolio d’Alexis Yvonnou"
+              fill
+              priority
+              quality={82}
+              sizes="100vw"
+              className="object-cover"
+            />
           </motion.div>
         </div>
-      </section>
+
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 md:p-10">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/65">
+                Bretagne · France
+              </p>
+              <p className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight text-white md:text-4xl">
+                Raconter en images des histoires, des savoir-faire et des émotions.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <Button href="#photographie">Photos</Button>
+
+              <Button href="/creation-de-contenus" variant="secondary">
+                Contenus
+              </Button>
+
+              <Button href="#contact" variant="secondary">
+                Contact
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       <section id="qui-suis-je" className="px-5 py-24 md:px-8">
         <div className="mx-auto max-w-7xl">
