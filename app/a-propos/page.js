@@ -378,6 +378,7 @@ sport, du nautisme, des événements, de l’outdoor et des récits humains.
             <div className="flex flex-col gap-3 md:items-end">
               <Link
   href="/#contact"
+  scroll={false}
   className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-medium text-stone-950 transition hover:-translate-y-0.5 hover:bg-stone-200"
 >
   <Mail size={18} />
@@ -386,6 +387,7 @@ sport, du nautisme, des événements, de l’outdoor et des récits humains.
 
               <Link
                 href="/"
+                scroll={false}
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-4 text-sm font-medium text-white/75 transition hover:border-white/40 hover:text-white"
               >
                 Retour à l’accueil
