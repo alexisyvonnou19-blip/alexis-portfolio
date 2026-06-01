@@ -133,27 +133,41 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       transition={{ duration: 0.7 }}
       className="relative"
     >
-      <div className="mb-8 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div className="mb-8 grid gap-8 md:grid-cols-[1fr_0.55fr] md:items-end">
         <div>
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-stone-500">
-            Photographe & créateur de contenus
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-stone-500">
+            Photographe & créateur de contenus · Bretagne
           </p>
 
-          <h1 className="text-6xl font-semibold leading-[0.86] tracking-[-0.075em] text-stone-950 md:text-8xl lg:text-[9.5rem]">
+          <h1 className="text-[18vw] font-semibold leading-[0.78] tracking-[-0.09em] text-stone-950 md:text-[10.5rem] lg:text-[13rem]">
             Alexis
             <br />
             Yvonnou
           </h1>
         </div>
 
-        <p className="max-w-md pb-2 text-lg leading-8 text-stone-600 md:text-xl">
-          Basé à Concarneau, j’accompagne les marques, entreprises et événements
-          dans la création d’images et de contenus pensés pour leur communication.
-        </p>
+        <div className="max-w-md md:pb-3">
+          <p className="text-lg leading-8 text-stone-650 md:text-xl">
+            Des images, des contenus et une communication pensée pour raconter
+            votre projet, renforcer votre visibilité et donner du fond à votre présence en ligne.
+          </p>
+
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Button href="#photographie">Voir mon travail</Button>
+
+            <Button href="/creation-de-contenus" variant="secondary">
+              Création de contenus
+            </Button>
+
+            <Button href="#contact" variant="secondary">
+              Me contacter
+            </Button>
+          </div>
+        </div>
       </div>
 
       <div className="relative overflow-hidden rounded-[2.8rem] shadow-2xl shadow-stone-900/15">
-        <div className="relative h-[58vh] min-h-[430px] w-full overflow-hidden md:h-[64vh]">
+        <div className="relative h-[56vh] min-h-[420px] w-full overflow-hidden md:h-[66vh]">
           <motion.div
             style={{
               y: heroY,
@@ -173,28 +187,19 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           </motion.div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 md:p-10">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.28em] text-white/65">
-                Bretagne · France
-              </p>
-              <p className="mt-3 max-w-2xl text-2xl font-semibold tracking-tight text-white md:text-4xl">
-                Raconter en images des histoires, des savoir-faire et des émotions.
-              </p>
-            </div>
+        <div className="absolute left-5 top-5 rounded-full bg-white/80 px-5 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-stone-950 backdrop-blur-md md:left-8 md:top-8">
+          Concarneau · France
+        </div>
 
-            <div className="flex flex-wrap gap-3">
-              <Button href="#photographie">Photos</Button>
+        <div className="absolute bottom-5 left-5 right-5 rounded-[2rem] bg-stone-950/82 p-5 text-white backdrop-blur-md md:bottom-8 md:left-8 md:right-8 md:p-7">
+          <div className="grid gap-5 md:grid-cols-[0.65fr_0.35fr] md:items-end">
+            <p className="text-2xl font-semibold leading-tight tracking-[-0.035em] md:text-4xl">
+              Raconter en images des histoires, des savoir-faire et des émotions.
+            </p>
 
-              <Button href="/creation-de-contenus" variant="secondary">
-                Contenus
-              </Button>
-
-              <Button href="#contact" variant="secondary">
-                Contact
-              </Button>
-            </div>
+            <p className="text-sm leading-7 text-white/65 md:text-base">
+              Nautisme · Sport · Événementiel · Artisanat
+            </p>
           </div>
         </div>
       </div>
