@@ -191,15 +191,15 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               Concarneau · France
             </div>
 
-            <div className="absolute bottom-5 left-5 right-5 flex flex-col gap-3 rounded-[1.6rem] bg-white/78 px-5 py-4 shadow-sm backdrop-blur-md md:bottom-8 md:left-8 md:right-8 md:flex-row md:items-center md:justify-between md:px-6">
-              <p className="text-sm font-medium text-stone-950 md:text-base">
-                Nautisme · Sport · Événementiel · Artisanat
-              </p>
+            <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3 md:bottom-8 md:left-8 md:right-8 md:flex-row md:items-end md:justify-between">
+  <p className="inline-flex w-fit rounded-full bg-white/82 px-5 py-3 text-sm font-medium text-stone-950 shadow-sm backdrop-blur-md md:text-base">
+    Nautisme · Sport · Événementiel · Artisanat
+  </p>
 
-              <p className="text-sm text-stone-500 md:text-right">
-                Photo · Vidéo · Réseaux sociaux
-              </p>
-            </div>
+  <p className="inline-flex w-fit rounded-full bg-black/35 px-5 py-3 text-sm font-medium text-white shadow-sm backdrop-blur-md md:ml-auto">
+    Photo · Vidéo · Réseaux sociaux
+  </p>
+</div>
           </div>
         </div>
       </div>
