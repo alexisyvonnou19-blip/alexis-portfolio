@@ -176,14 +176,14 @@ export default function CreationContenusPage() {
   </p>
 
   <h2 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-    Comprendre un projet avant de produire des images.
+    Comprendre, puis construire et mettre en oeuvre une stratégie de contenus adaptée à votre projet.
   </h2>
 
             <div className="mt-8 space-y-6 text-lg leading-9 text-stone-700">
               <p>
-                Mon parcours entre événementiel, communication et terrain me
+                Mon parcours entre gestion de projets événementiel, communication et logistique me
                 permet d’aborder un projet dans son ensemble : ses besoins, son
-                public, son image et la manière dont les contenus seront utilisés.
+                public, son image et ses enjeux.
               </p>
 
               <p>
@@ -192,7 +192,7 @@ export default function CreationContenusPage() {
               </p>
 
               <p>
-                Le sport, le nautisme, l’événementiel, l’artisanat et les projets humains font partie des univers avec lesquels je travaille le plus régulièrement. Des expériences qui nourrissent aujourd’hui ma compréhension des enjeux d’image, de visibilité et de communication digitale.
+                Le sport, le nautisme, l’événementiel, l’artisanat et les projets humains font partie des univers avec lesquels je travaille le plus régulièrement. Des expériences dans des secteurs variés qui nourrissent ma capacité à m’adapter à différents projets, à comprendre leurs enjeux et à créer des contenus qui leur correspondent.
               </p>
             </div>
           </div>
