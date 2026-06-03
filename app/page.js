@@ -321,19 +321,19 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-              Création de contenus
+              Mes services
             </p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-              Communication, réseaux sociaux et création de contenus.
+              Développer votre visibilité grâce à des contenus cohérents et authentiques qui valorisent votre savoir-faire.
             </h2>
             <p className="mt-6 text-lg leading-9 text-stone-700">
               Aujourd’hui, être visible ne se résume plus à publier quelques photos. J’accompagne les entreprises, marques, événements, artisans et commerçants dans la création de contenus et l’animation de leurs réseaux sociaux, afin de développer leur visibilité, valoriser leur savoir-faire et construire une communication claire, cohérente et régulière.
             </p>
             <div className="mt-8 grid gap-3 text-stone-700 sm:grid-cols-2">
-              <div className="rounded-2xl bg-white p-5">Photographie & Posts</div>
-<div className="rounded-2xl bg-white p-5">Réels & vidéos verticales</div>
-<div className="rounded-2xl bg-white p-5">Site Internet</div>
-<div className="rounded-2xl bg-white p-5">Stories & contenus immersifs</div>
+              <div className="rounded-2xl bg-white p-5">Photographie</div>
+<div className="rounded-2xl bg-white p-5">Contenus digitaux</div>
+<div className="rounded-2xl bg-white p-5">Stratégie éditoriale</div>
+<div className="rounded-2xl bg-white p-5">Sites internet & newsletters</div>
             </div>
             <div className="mt-10">
   <Button href="/creation-de-contenus" variant="secondary">
