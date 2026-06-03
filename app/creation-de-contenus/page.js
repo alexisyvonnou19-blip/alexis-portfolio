@@ -179,7 +179,7 @@ export default function CreationContenusPage() {
   </p>
 
   <h2 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-    Comprendre et mettre en oeuvre une stratégie de contenus adaptée à votre projet.
+    Créer et mettre en oeuvre une stratégie de contenus adaptée à votre projet.
   </h2>
 
             <div className="mt-8 space-y-6 text-lg leading-9 text-stone-700">
