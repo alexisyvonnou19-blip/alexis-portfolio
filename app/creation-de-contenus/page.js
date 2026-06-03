@@ -33,16 +33,16 @@ const services = [
   },
   {
     icon: Clapperboard,
-    title: "Création de contenus",
+    title: "Contenus digitaux",
     text: "Réels, vidéos verticales, carrousels, stories et contenus adaptés aux usages des réseaux sociaux.",
   },
   {
     icon: Smartphone,
-    title: "Communication digitale",
+    title: "Stratégie éditoriale",
     text: "Ligne éditoriale, stratégie de contenus, animation de réseaux sociaux, communication visuelle et accompagnement global.",
   },
   {
-    icon: ArrowRight,
+    icon: Computer,
     title: "Site internet",
     text: "Création de site internet performant, moderne et cohérent avec votre image.",
   },
@@ -211,7 +211,7 @@ export default function CreationContenusPage() {
         <div className="mx-auto max-w-7xl">
           <div className="max-w-5xl">
             <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-white/40">
-              Services
+              Mes services
             </p>
 
             <h2 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
