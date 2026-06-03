@@ -42,7 +42,7 @@ const services = [
     text: "Ligne éditoriale, stratégie de contenus, animation de réseaux sociaux, communication visuelle et accompagnement global.",
   },
   {
-    icon: Computer,
+    icon: ArrowRight,
     title: "Site internet",
     text: "Création de site internet performant, moderne et cohérent avec votre image.",
   },
