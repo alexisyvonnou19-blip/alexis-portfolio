@@ -271,17 +271,17 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         },
         {
           name: "PL Yachting",
-          text: "Création de contenus · réseaux sociaux · valorisation des bateaux",
+          text: "Création de contenus photographiques · réseaux sociaux · valorisation des chantiers",
           image: "/images/pl-yachting.webp",
         },
         {
           name: "Good Boats",
-          text: "Formats courts · communication digitale · contenus nautiques",
+          text: "Création de contenus · communication digitale · gestion de projet",
           image: "/images/good-boats.webp",
         },
         {
           name: "SNIP Yachting",
-          text: "Création de contenus · animation réseaux sociaux · image de marque",
+          text: "Création de contenus · animation réseaux sociaux",
           image: "/images/snip-yachting.webp",
         },
       ].map((project) => (
