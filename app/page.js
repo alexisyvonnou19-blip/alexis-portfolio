@@ -378,11 +378,11 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       ].map((project, index) => (
         <article
           key={project.name}
-          className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 md:grid-cols-[0.58fr_0.42fr] ${
-            index % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""
+          className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 md:grid-cols-[0.52fr_0.48fr] ${
+            index % 2 === 1 ? "md:[&>div:first-child]:order-2 md:[&>div:nth-child(2)]:order-1" : ""
           }`}
         >
-          <div className="relative min-h-[360px] md:min-h-[440px]">
+          <div className="relative min-h-[340px] md:min-h-[440px]">
             <Image
               src={project.image}
               alt={`${project.name} - projet accompagné par Alexis Yvonnou`}
