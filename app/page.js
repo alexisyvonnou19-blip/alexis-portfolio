@@ -207,53 +207,40 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
   </div>
 </section>
 
-      <section id="qui-suis-je" className="px-5 py-24 md:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-12 md:grid-cols-2 md:items-center">
-            <div>
-              <SectionTitle
-                eyebrow="Qui suis-je ?"
-                title="Un regard de terrain, entre sport, mer et récits humains."
-              />
-              <div className="space-y-6 text-lg leading-9 text-stone-700">
-  <p>
-    Basé à Concarneau, en Bretagne, je travaille comme photographe et créateur de contenus auprès de marques, d’événements, de sportifs et de projets qui ont besoin d’images fortes, utiles et sincères.
-  </p>
-  <p>
-    Mon univers s’est construit autour du nautisme, de la course au large et du sport. J’aime être au plus près de l’action, mais aussi des moments plus calmes : les préparations, les visages, les détails et tout ce qui raconte une histoire au-delà de l’image seule.
-  </p>
-  <p>
-    Au-delà de la photographie, j’accompagne aussi des projets dans la création de contenus pensés pour le digital : réseaux sociaux, formats courts, vidéo, storytelling et communication visuelle.
-  </p>
-</div>
-
-<div className="mt-10">
-  <Button href="/a-propos" variant="secondary">
-    En savoir plus
-  </Button>
-</div>
-          
-            </div>
-
-            <div className="relative">
-              <div className="overflow-hidden rounded-[2rem] shadow-xl shadow-stone-900/10">
-                <div className="relative aspect-[4/5] w-full">
+<section id="services" className="px-5 py-20 md:px-8 md:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:items-center">
+          <div className="overflow-hidden rounded-[2rem] shadow-xl shadow-stone-900/10 max-h-[620px]">
+            <div className="relative aspect-[4/5] w-full">
   <Image
-    src="/images/moi.webp"
-    alt="Portrait d’Alexis Yvonnou, photographe et créateur de contenus basé à Concarneau en Bretagne"
+    src="/images/crea2.webp"
+    alt="Création de contenus photo, vidéo et réseaux sociaux par Alexis Yvonnou"
     fill
     sizes="(max-width: 768px) 100vw, 50vw"
     className="object-cover"
   />
 </div>
-              </div>
-              <div className="absolute -bottom-6 -left-6 rounded-2xl bg-white p-4 shadow-lg">
-                <p className="text-sm font-medium text-stone-900">Alexis Yvonnou</p>
-                <p className="text-xs text-stone-500">
-                  Photographe & créateur de contenus
-                </p>
-              </div>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
+              Mes services
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
+              Développer votre visibilité grâce à des contenus cohérents et authentiques qui valorisent votre savoir-faire.
+            </h2>
+            <p className="mt-6 text-lg leading-9 text-stone-700">
+              Aujourd’hui, être visible ne se résume plus à publier quelques photos. J’accompagne les entreprises, marques, événements, artisans et commerçants dans la création de contenus et l’animation de leurs réseaux sociaux, afin de développer leur visibilité, valoriser leur savoir-faire et construire une communication claire, cohérente et régulière.
+            </p>
+            <div className="mt-8 grid gap-3 text-stone-700 sm:grid-cols-2">
+              <div className="rounded-2xl bg-white p-5">Photographie</div>
+<div className="rounded-2xl bg-white p-5">Contenus digitaux</div>
+<div className="rounded-2xl bg-white p-5">Stratégie éditoriale</div>
+<div className="rounded-2xl bg-white p-5">Sites internet & newsletters</div>
             </div>
+            <div className="mt-10">
+  <Button href="/creation-de-contenus" variant="secondary">
+    En savoir plus
+  </Button>
+</div>
           </div>
         </div>
       </section>
@@ -306,40 +293,54 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
       </section>
 
-      <section id="contenus" className="px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:items-center">
-          <div className="overflow-hidden rounded-[2rem] shadow-xl shadow-stone-900/10 max-h-[620px]">
-            <div className="relative aspect-[4/5] w-full">
+
+      <section id="qui-suis-je" className="px-5 py-24 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-12 md:grid-cols-2 md:items-center">
+            <div>
+              <SectionTitle
+                eyebrow="Qui suis-je ?"
+                title="Un regard de terrain, entre sport, mer et récits humains."
+              />
+              <div className="space-y-6 text-lg leading-9 text-stone-700">
+  <p>
+    Basé à Concarneau, en Bretagne, je travaille comme photographe et créateur de contenus auprès de marques, d’événements, de sportifs et de projets qui ont besoin d’images fortes, utiles et sincères.
+  </p>
+  <p>
+    Mon univers s’est construit autour du nautisme, de la course au large et du sport. J’aime être au plus près de l’action, mais aussi des moments plus calmes : les préparations, les visages, les détails et tout ce qui raconte une histoire au-delà de l’image seule.
+  </p>
+  <p>
+    Au-delà de la photographie, j’accompagne aussi des projets dans la création de contenus pensés pour le digital : réseaux sociaux, formats courts, vidéo, storytelling et communication visuelle.
+  </p>
+</div>
+
+<div className="mt-10">
+  <Button href="/a-propos" variant="secondary">
+    En savoir plus
+  </Button>
+</div>
+          
+            </div>
+
+            <div className="relative">
+              <div className="overflow-hidden rounded-[2rem] shadow-xl shadow-stone-900/10">
+                <div className="relative aspect-[4/5] w-full">
   <Image
-    src="/images/crea2.webp"
-    alt="Création de contenus photo, vidéo et réseaux sociaux par Alexis Yvonnou"
+    src="/images/moi.webp"
+    alt="Portrait d’Alexis Yvonnou, photographe et créateur de contenus basé à Concarneau en Bretagne"
     fill
     sizes="(max-width: 768px) 100vw, 50vw"
     className="object-cover"
   />
 </div>
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-              Mes services
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-              Développer votre visibilité grâce à des contenus cohérents et authentiques qui valorisent votre savoir-faire.
-            </h2>
-            <p className="mt-6 text-lg leading-9 text-stone-700">
-              Aujourd’hui, être visible ne se résume plus à publier quelques photos. J’accompagne les entreprises, marques, événements, artisans et commerçants dans la création de contenus et l’animation de leurs réseaux sociaux, afin de développer leur visibilité, valoriser leur savoir-faire et construire une communication claire, cohérente et régulière.
-            </p>
-            <div className="mt-8 grid gap-3 text-stone-700 sm:grid-cols-2">
-              <div className="rounded-2xl bg-white p-5">Photographie</div>
-<div className="rounded-2xl bg-white p-5">Contenus digitaux</div>
-<div className="rounded-2xl bg-white p-5">Stratégie éditoriale</div>
-<div className="rounded-2xl bg-white p-5">Sites internet & newsletters</div>
+              </div>
+              <div className="absolute -bottom-6 -left-6 rounded-2xl bg-white p-4 shadow-lg">
+                <p className="text-sm font-medium text-stone-900">Alexis Yvonnou</p>
+                <p className="text-xs text-stone-500">
+                  Photographe & créateur de contenus
+                </p>
+              </div>
             </div>
-            <div className="mt-10">
-  <Button href="/creation-de-contenus" variant="secondary">
-    En savoir plus
-  </Button>
-</div>
           </div>
         </div>
       </section>
