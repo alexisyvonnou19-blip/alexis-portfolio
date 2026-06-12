@@ -310,7 +310,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         <ul className="mt-6 space-y-2 text-stone-600">
           <li>• Réels</li>
           <li>• Vidéos YouTube</li>
-          <li>• Réseaux sociaux</li>
+          <li>• Réseaux sociau</li>
           <li>• Communication nautique</li>
         </ul>
       </div>
