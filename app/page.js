@@ -154,7 +154,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           Photographe & créateur de contenus · Bretagne
         </p>
 
-        <h1 className="text-6xl font-semibold leading-[0.9] tracking-[-0.06em] text-stone-950 md:text-8xl lg:text-[8.4rem]">
+        <h1 className="text-6xl font-semibold leading-[0.9] tracking-[-0.06em] text-stone-950 md:text-8xl lg:text-[7rem]">
   Des images,
   <br />
   des contenus,
@@ -189,7 +189,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
       </div>
 
-      <div className="mt-14">
+      <div className="mt-6">
         <div className="relative overflow-hidden rounded-[2.75rem] shadow-[0_35px_120px_rgba(28,25,23,0.14)]">
           <div className="relative h-[48vh] min-h-[380px] w-full overflow-hidden md:h-[64vh]">
             <motion.div
