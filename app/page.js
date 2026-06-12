@@ -435,44 +435,53 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
       </section>
 
-      <section id="domaines" className="bg-black px-5 py-28 text-white md:px-8">
+      <section id="domaines" className="bg-[#f7f4ef] px-5 py-28 text-stone-950 md:px-8">
   <div className="mx-auto max-w-7xl">
-    <div className="mb-16">
-      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/45">
-        Mes terrains de jeu
-      </p>
+    <div className="mb-16 grid gap-8 md:grid-cols-[0.65fr_0.35fr] md:items-end">
+      <div>
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
+          Mes terrains de jeu
+        </p>
 
-      <h2 className="max-w-6xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
-        Là où mon regard prend tout son sens.
-      </h2>
+        <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+          Des univers concrets, vivants et visuels.
+        </h2>
+      </div>
+
+      <p className="text-lg leading-9 text-stone-600">
+        Nautisme, sport, événementiel ou artisanat : je travaille au plus près du terrain,
+        des gestes, des lieux et des personnes.
+      </p>
     </div>
 
-    <div className="space-y-4">
-      {domains.map((domain) => (
+    <div className="grid gap-6 md:grid-cols-2">
+      {domains.map((domain, index) => (
         <article
           key={domain.title}
-          className="group relative min-h-[260px] overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 md:min-h-[320px]"
+          className={`group relative overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10 ${
+            index === 0 ? "md:col-span-2 min-h-[520px]" : "min-h-[420px]"
+          }`}
         >
           <Image
             src={domain.image}
             alt={domain.title}
             fill
-            sizes="100vw"
-            className="object-cover opacity-45 transition duration-1000 group-hover:scale-[1.04] group-hover:opacity-60"
+            sizes={index === 0 ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
+            className="object-cover opacity-85 transition duration-1000 group-hover:scale-[1.035] group-hover:opacity-75"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-          <div className="relative z-10 grid h-full min-h-[260px] gap-8 p-7 md:min-h-[320px] md:grid-cols-[0.15fr_0.45fr_0.4fr] md:items-end md:p-10">
-            <p className="text-sm text-white/35">
-              {domain.number}
-            </p>
+          <div className="absolute left-6 top-6 rounded-full bg-[#d8c6ad]/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-stone-950 backdrop-blur-md md:left-8 md:top-8">
+            {domain.number}
+          </div>
 
-            <h3 className="text-5xl font-semibold tracking-[-0.05em] transition duration-500 group-hover:translate-x-2 md:text-7xl">
+          <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-10">
+            <h3 className="text-5xl font-semibold tracking-[-0.05em] md:text-7xl">
               {domain.title}
             </h3>
 
-            <p className="max-w-xl text-base leading-8 text-white/70 md:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-8 text-white/75 md:text-lg">
               {domain.description}
             </p>
           </div>
