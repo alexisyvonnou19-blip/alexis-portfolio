@@ -154,17 +154,25 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           Photographe & créateur de contenus · Bretagne
         </p>
 
-        <h1 className="text-6xl font-semibold leading-[0.9] tracking-[-0.06em] text-stone-950 md:text-8xl lg:text-[9.5rem]">
-          Alexis Yvonnou
-        </h1>
+        <h1 className="text-6xl font-semibold leading-[0.9] tracking-[-0.06em] text-stone-950 md:text-8xl lg:text-[8.4rem]">
+  Des images,
+  <br />
+  des contenus,
+  <br />
+  de la visibilité.
+</h1>
 
-        <p className="mx-auto mt-8 max-w-4xl text-2xl font-medium leading-tight tracking-[-0.035em] text-stone-950 md:text-4xl md:leading-[1.12]">
-          Des images et des contenus pour raconter votre projet, renforcer votre visibilité et nourrir votre communication.
-        </p>
+<p className="mx-auto mt-8 max-w-3xl text-xl font-medium leading-tight tracking-[-0.035em] text-stone-950 md:text-3xl md:leading-[1.15]">
+  J’aide les entreprises, marques et événements à construire une communication plus claire, plus cohérente et plus incarnée.
+</p>
 
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-stone-600 md:text-lg">
-          Basé à Concarneau, j’accompagne les marques, entreprises, événements et projets de terrain dans la création de contenus photo, vidéo et réseaux sociaux.
-        </p>
+<p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-stone-600 md:text-lg">
+  Photographie, création de contenus, réseaux sociaux, site internet et identité visuelle — avec une approche indépendante, directe et ancrée dans le terrain.
+</p>
+
+<p className="mt-7 text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
+  Alexis Yvonnou · Concarneau
+</p>
 
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Button href="#photographie">
@@ -196,7 +204,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
                 alt="Image principale du portfolio d’Alexis Yvonnou"
                 fill
                 priority
-                quality={86}
+                quality={82}
                 sizes="100vw"
                 className="object-cover object-center"
               />
@@ -224,43 +232,79 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
   </div>
 </section>
 
-<section id="services" className="px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:items-center">
-          <div className="overflow-hidden rounded-[2rem] shadow-xl shadow-stone-900/10 max-h-[620px]">
-            <div className="relative aspect-[4/5] w-full">
-  <Image
-    src="/images/crea2.webp"
-    alt="Création de contenus photo, vidéo et réseaux sociaux par Alexis Yvonnou"
-    fill
-    sizes="(max-width: 768px) 100vw, 50vw"
-    className="object-cover"
-  />
-</div>
+<section id="services" className="bg-[#0b0b0a] px-5 py-28 text-white md:px-8">
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-16 grid gap-10 md:grid-cols-[0.42fr_0.58fr] md:items-end">
+      <div>
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+          Services
+        </p>
+
+        <h2 className="max-w-4xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+          De l’image à la diffusion.
+        </h2>
+      </div>
+
+      <p className="max-w-2xl text-lg leading-9 text-white/60">
+        J’interviens là où votre communication a besoin de clarté : stratégie éditoriale, création de contenus, réseaux sociaux, site internet ou identité visuelle.
+      </p>
+    </div>
+
+    <div className="border-y border-white/10">
+      {[
+        {
+          number: "01",
+          title: "Réseaux sociaux",
+          text: "Définir une ligne éditoriale, organiser les prises de parole et faire vivre vos réseaux avec régularité.",
+        },
+        {
+          number: "02",
+          title: "Création de contenus",
+          text: "Produire des photos, vidéos courtes, réels, stories et contenus pensés pour capter l’attention.",
+        },
+        {
+          number: "03",
+          title: "Sites internet",
+          text: "Créer une présence claire, crédible et durable, au-delà des plateformes sociales.",
+        },
+        {
+          number: "04",
+          title: "Identité visuelle",
+          text: "Donner une direction graphique cohérente pour rendre votre projet plus reconnaissable.",
+        },
+      ].map((service) => (
+        <article
+          key={service.number}
+          className="group grid gap-6 border-b border-white/10 py-9 last:border-b-0 md:grid-cols-[0.12fr_0.38fr_0.38fr_0.12fr] md:items-center md:py-11"
+        >
+          <p className="text-sm font-semibold tracking-[0.3em] text-[#e26a2c]">
+            {service.number}
+          </p>
+
+          <h3 className="text-4xl font-semibold tracking-[-0.05em] transition duration-500 group-hover:translate-x-2 md:text-6xl">
+            {service.title}
+          </h3>
+
+          <p className="max-w-xl text-base leading-8 text-white/58 md:text-lg">
+            {service.text}
+          </p>
+
+          <div className="flex justify-start md:justify-end">
+            <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 transition duration-500 group-hover:border-[#e26a2c] group-hover:bg-[#e26a2c] group-hover:text-black">
+              <ArrowRight size={18} />
+            </span>
           </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-              MES SERVICES
-            </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-              Développer votre visibilité grâce à des contenus cohérents et authentiques qui valorisent votre savoir-faire.
-            </h2>
-            <p className="mt-6 text-lg leading-9 text-stone-700">
-              Aujourd’hui, être visible ne se résume plus à publier quelques photos. J’accompagne les entreprises, marques, événements, artisans et commerçants dans la création de contenus et l’animation de leurs réseaux sociaux, afin de développer leur visibilité, valoriser leur savoir-faire et construire une communication claire, cohérente et régulière.
-            </p>
-            <div className="mt-8 grid gap-3 text-stone-700 sm:grid-cols-2">
-              <div className="rounded-2xl bg-white p-5">Photographie</div>
-<div className="rounded-2xl bg-white p-5">Contenus digitaux</div>
-<div className="rounded-2xl bg-white p-5">Stratégie éditoriale</div>
-<div className="rounded-2xl bg-white p-5">Sites internet & newsletters</div>
-            </div>
-            <div className="mt-10">
-  <Button href="/creation-de-contenus" variant="secondary">
-    En savoir plus
-  </Button>
-</div>
-          </div>
-        </div>
-      </section>
+        </article>
+      ))}
+    </div>
+
+    <div className="mt-10">
+      <Button href="/creation-de-contenus" variant="secondary">
+        Découvrir mes services
+      </Button>
+    </div>
+  </div>
+</section>
 
       <section id="projets" className="px-5 py-28 md:px-8">
   <div className="mx-auto max-w-7xl">
