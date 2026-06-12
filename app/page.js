@@ -378,11 +378,17 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       ].map((project, index) => (
         <article
           key={project.name}
-          className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 md:grid-cols-[0.52fr_0.48fr] ${
-  index % 2 === 1 ? "md:ml-24" : "md:mr-24"
+          className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 ${
+  index % 2 === 1
+    ? "md:grid-cols-[0.42fr_0.58fr]"
+    : "md:grid-cols-[0.58fr_0.42fr]"
 }`}
         >
-          <div className="relative min-h-[340px] md:min-h-[440px]">
+          <div
+  className={`relative min-h-[340px] md:min-h-[440px] ${
+    index % 2 === 1 ? "md:order-2" : "md:order-1"
+  }`}
+>
             <Image
               src={project.image}
               alt={`${project.name} - projet accompagné par Alexis Yvonnou`}
@@ -393,7 +399,11 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
           </div>
 
-          <div className="flex flex-col justify-between p-8 md:p-10">
+          <div
+  className={`flex flex-col justify-between p-8 md:p-10 ${
+    index % 2 === 1 ? "md:order-1" : "md:order-2"
+  }`}
+>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
                 Projet accompagné
