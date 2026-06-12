@@ -379,8 +379,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         <article
           key={project.name}
           className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 md:grid-cols-[0.52fr_0.48fr] ${
-            index % 2 === 1 ? "md:[&>div:first-child]:order-2 md:[&>div:nth-child(2)]:order-1" : ""
-          }`}
+  index % 2 === 1 ? "md:ml-24" : "md:mr-24"
+}`}
         >
           <div className="relative min-h-[340px] md:min-h-[440px]">
             <Image
