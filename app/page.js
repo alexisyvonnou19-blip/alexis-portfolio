@@ -245,6 +245,81 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
       </section>
 
+      <section id="projets" className="px-5 py-28 md:px-8">
+  <div className="mx-auto max-w-7xl">
+
+    <div className="max-w-3xl">
+      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
+        Réalisations
+      </p>
+
+      <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
+        Quelques projets accompagnés.
+      </h2>
+
+      <p className="mt-6 text-lg text-stone-600">
+        Sites internet, identité visuelle, réseaux sociaux et création de contenus.
+      </p>
+    </div>
+
+    <div className="mt-16 grid gap-6 md:grid-cols-3">
+
+      <div className="rounded-3xl border border-stone-200 bg-white p-8">
+        <p className="text-sm uppercase tracking-[0.2em] text-stone-500">
+          Didier Yvonnou
+        </p>
+
+        <h3 className="mt-4 text-2xl font-semibold">
+          Accompagnement global
+        </h3>
+
+        <ul className="mt-6 space-y-2 text-stone-600">
+          <li>• Site internet</li>
+          <li>• Identité visuelle</li>
+          <li>• Création de contenus</li>
+          <li>• Accompagnement stratégique</li>
+        </ul>
+      </div>
+
+      <div className="rounded-3xl border border-stone-200 bg-white p-8">
+        <p className="text-sm uppercase tracking-[0.2em] text-stone-500">
+          PL Yachting
+        </p>
+
+        <h3 className="mt-4 text-2xl font-semibold">
+          Communication digitale
+        </h3>
+
+        <ul className="mt-6 space-y-2 text-stone-600">
+          <li>• Réseaux sociaux</li>
+          <li>• Création de contenus</li>
+          <li>• Formats courts</li>
+          <li>• Valorisation des bateaux</li>
+        </ul>
+      </div>
+
+      <div className="rounded-3xl border border-stone-200 bg-white p-8">
+        <p className="text-sm uppercase tracking-[0.2em] text-stone-500">
+          Good Boats
+        </p>
+
+        <h3 className="mt-4 text-2xl font-semibold">
+          Contenus & visibilité
+        </h3>
+
+        <ul className="mt-6 space-y-2 text-stone-600">
+          <li>• Réels</li>
+          <li>• Vidéos YouTube</li>
+          <li>• Réseaux sociaux</li>
+          <li>• Communication nautique</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
       <section id="photographie" className="px-5 pb-24 pt-12 md:px-8 md:pt-16">
         <div className="mx-auto max-w-7xl">
           <div className="mb-16 max-w-5xl">
