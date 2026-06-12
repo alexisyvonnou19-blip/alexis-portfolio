@@ -299,9 +299,13 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
     </div>
 
     <div className="mt-10">
-      <Button href="/creation-de-contenus" variant="secondary">
-        Découvrir mes services
-      </Button>
+      <Link
+  href="/creation-de-contenus"
+  className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition duration-300 hover:border-white hover:bg-white hover:text-stone-950"
+>
+  Découvrir mes services
+  <ArrowRight size={16} />
+</Link>
     </div>
   </div>
 </section>
