@@ -394,7 +394,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               alt={`${project.name} - projet accompagné par Alexis Yvonnou`}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover opacity-85 transition duration-1000 group-hover:scale-[1.04] group-hover:opacity-70"
+              className="object-cover opacity-85 transition duration-1000 group-hover:opacity-70"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
           </div>
