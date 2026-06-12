@@ -64,35 +64,35 @@ const domains = [
     title: "Nautisme",
     description:
       "Un univers que je connais de l’intérieur, entre pontons, entraînements, événements, marques nautiques et projets de course au large.",
-    image: "/images/domaines/imoca.webp",
+    image: "/images/imoca.webp",
   },
   {
     number: "02",
     title: "Sport",
     description:
       "Capturer l’effort, le mouvement, les émotions et l’énergie d’une pratique, d’un événement ou d’un projet sportif.",
-    image: "/images/domaines/sport.webp",
+    image: "/images/sport.webp",
   },
   {
     number: "03",
     title: "Outdoor",
     description:
       "Raconter les pratiques en extérieur, les environnements naturels, les aventures et les expériences vécues sur le terrain.",
-    image: "/images/domaines/outdoor.webp",
+    image: "/images/outdoor.webp",
   },
   {
     number: "04",
     title: "Événementiel",
     description:
       "Documenter une journée dans son ensemble : ambiance, public, coulisses, moments clés, détails et images fortes.",
-    image: "/images/domaines/event.webp",
+    image: "/images/event.webp",
   },
   {
     number: "05",
     title: "Artisanat",
     description:
       "Mettre en valeur les gestes, les savoir-faire, les matières et les personnes qui font vivre un métier.",
-    image: "/images/domaines/artisanat.webp",
+    image: "/images/artisanat.webp",
   },
 ];
 
