@@ -267,22 +267,22 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         {
           name: "Didier Yvonnou",
           text: "Site internet · identité visuelle · accompagnement éditorial",
-          image: "/images/projets/didier.webp",
+          image: "/images/didier.webp",
         },
         {
           name: "PL Yachting",
           text: "Création de contenus · réseaux sociaux · valorisation des bateaux",
-          image: "/images/projets/pl-yachting.webp",
+          image: "/images/pl-yachting.webp",
         },
         {
           name: "Good Boats",
           text: "Formats courts · communication digitale · contenus nautiques",
-          image: "/images/projets/good-boats.webp",
+          image: "/images/good-boats.webp",
         },
         {
           name: "SNIP Yachting",
           text: "Création de contenus · animation réseaux sociaux · image de marque",
-          image: "/images/projets/snip-yachting.webp",
+          image: "/images/snip-yachting.webp",
         },
       ].map((project) => (
         <article
