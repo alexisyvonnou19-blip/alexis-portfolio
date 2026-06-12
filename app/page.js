@@ -435,77 +435,49 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
       </section>
 
-      <section
-  id="domaines"
-  className="bg-black px-5 py-28 text-white md:px-8"
->
+      <section id="domaines" className="bg-black px-5 py-28 text-white md:px-8">
   <div className="mx-auto max-w-7xl">
-
     <div className="mb-16">
       <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/45">
         Mes terrains de jeu
       </p>
 
-      <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+      <h2 className="max-w-6xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
         Là où mon regard prend tout son sens.
       </h2>
     </div>
 
-    <div className="grid gap-16 lg:grid-cols-[1fr_520px]">
+    <div className="space-y-4">
+      {domains.map((domain) => (
+        <article
+          key={domain.title}
+          className="group relative min-h-[260px] overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/5 md:min-h-[320px]"
+        >
+          <Image
+            src={domain.image}
+            alt={domain.title}
+            fill
+            sizes="100vw"
+            className="object-cover opacity-45 transition duration-1000 group-hover:scale-[1.04] group-hover:opacity-60"
+          />
 
-      <div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-black/20" />
 
-        {domains.map((domain) => (
-          <button
-            key={domain.title}
-            onMouseEnter={() => setActiveDomain(domain)}
-            onFocus={() => setActiveDomain(domain)}
-            className="group w-full border-t border-white/10 py-10 text-left transition"
-          >
-            <div className="grid gap-6 md:grid-cols-[80px_1fr_1fr]">
+          <div className="relative z-10 grid h-full min-h-[260px] gap-8 p-7 md:min-h-[320px] md:grid-cols-[0.15fr_0.45fr_0.4fr] md:items-end md:p-10">
+            <p className="text-sm text-white/35">
+              {domain.number}
+            </p>
 
-              <span className="text-white/30">
-                {domain.number}
-              </span>
+            <h3 className="text-5xl font-semibold tracking-[-0.05em] transition duration-500 group-hover:translate-x-2 md:text-7xl">
+              {domain.title}
+            </h3>
 
-              <h3 className="text-4xl font-semibold transition group-hover:translate-x-2">
-                {domain.title}
-              </h3>
-
-              <p className="text-white/60 leading-8">
-                {domain.description}
-              </p>
-
-            </div>
-          </button>
-        ))}
-
-      </div>
-
-      <div className="sticky top-28 h-[650px] overflow-hidden rounded-[2.5rem]">
-
-        <Image
-          src={activeDomain.image}
-          alt={activeDomain.title}
-          fill
-          sizes="520px"
-          className="object-cover transition duration-700"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-
-        <div className="absolute bottom-8 left-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-            Terrain principal
-          </p>
-
-          <h3 className="mt-3 text-5xl font-semibold">
-            {activeDomain.title}
-          </h3>
-        </div>
-
-      </div>
-
+            <p className="max-w-xl text-base leading-8 text-white/70 md:text-lg">
+              {domain.description}
+            </p>
+          </div>
+        </article>
+      ))}
     </div>
   </div>
 </section>
