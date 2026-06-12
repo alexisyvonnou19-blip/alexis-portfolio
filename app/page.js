@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, ChevronUp } from "lucide-react";
@@ -59,24 +60,39 @@ const photographyCategories = [
 
 const domains = [
   {
+    number: "01",
     title: "Nautisme",
-    text: "Un univers que je connais de l’intérieur, entre pontons, entraînements, événements, marques nautiques et projets de course au large.",
+    description:
+      "Un univers que je connais de l’intérieur, entre pontons, entraînements, événements, marques nautiques et projets de course au large.",
+    image: "/images/domaines/imoca.webp",
   },
   {
+    number: "02",
     title: "Sport",
-    text: "Capturer l’effort, le mouvement, les émotions et l’énergie d’une pratique, d’un événement ou d’un projet sportif.",
+    description:
+      "Capturer l’effort, le mouvement, les émotions et l’énergie d’une pratique, d’un événement ou d’un projet sportif.",
+    image: "/images/domaines/sport.webp",
   },
   {
+    number: "03",
     title: "Outdoor",
-    text: "Raconter les pratiques en extérieur, les environnements naturels, les aventures et les expériences vécues sur le terrain.",
+    description:
+      "Raconter les pratiques en extérieur, les environnements naturels, les aventures et les expériences vécues sur le terrain.",
+    image: "/images/domaines/outdoor.webp",
   },
   {
+    number: "04",
     title: "Événementiel",
-    text: "Documenter une journée dans son ensemble : ambiance, public, coulisses, moments clés, détails et images fortes.",
+    description:
+      "Documenter une journée dans son ensemble : ambiance, public, coulisses, moments clés, détails et images fortes.",
+    image: "/images/domaines/event.webp",
   },
   {
+    number: "05",
     title: "Artisanat",
-    text: "Mettre en valeur les gestes, les savoir-faire, les matières, les ateliers et les projets portés par des indépendant·es, marques ou commerces.",
+    description:
+      "Mettre en valeur les gestes, les savoir-faire, les matières et les personnes qui font vivre un métier.",
+    image: "/images/domaines/artisanat.webp",
   },
 ];
 
@@ -117,6 +133,7 @@ function Button({ children, href = "#contact", variant = "primary" }) {
 }
 
 export default function AlexisYvonnouHomepage() {
+  const [activeDomain, setActiveDomain] = useState(domains[0]);
   const { scrollY } = useScroll();
 
 const heroY = useTransform(scrollY, [0, 900], [0, -20]);
@@ -418,48 +435,80 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
       </section>
 
-      <section id="domaines" className="bg-stone-950 px-5 py-28 text-white md:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-20">
-  <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/45">
-    Mes terrains de jeu
-  </p>
+      <section
+  id="domaines"
+  className="bg-black px-5 py-28 text-white md:px-8"
+>
+  <div className="mx-auto max-w-7xl">
 
-  <h2 className="max-w-7xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] text-white md:text-7xl lg:text-[7rem]">
-    Là où mon regard prend
-    <br />
-    tout son sens.
-  </h2>
+    <div className="mb-16">
+      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/45">
+        Mes terrains de jeu
+      </p>
 
-  <div className="mt-10 grid gap-8 md:grid-cols-12">
-    <p className="md:col-span-9 text-xl leading-10 text-white/68 lg:text-[1.45rem] lg:leading-[2.4rem]">
-      Le nautisme, le sport, l’événementiel, l’artisanat et les projets humains font partie des univers avec lesquels je travaille le plus souvent. Ce sont des terrains qui ont façonné mon regard, ma manière de raconter des histoires et ma compréhension des enjeux d’image, tout en gardant une approche ouverte et adaptable à chaque projet.
-    </p>
-  </div>
-</div>
+      <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+        Là où mon regard prend tout son sens.
+      </h2>
+    </div>
 
-          <div className="divide-y divide-white/10 border-y border-white/10">
-            {domains.map((domain, index) => (
-              <article
-                key={domain.title}
-                className="group grid gap-6 py-8 md:grid-cols-[0.18fr_0.82fr] md:items-start md:py-10"
-              >
-                <p className="text-sm font-medium text-white/35 md:text-base">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <div className="grid gap-4 md:grid-cols-[0.45fr_0.55fr] md:items-start">
-                  <h3 className="text-3xl font-semibold tracking-tight text-white transition group-hover:translate-x-2 md:text-5xl">
-                    {domain.title}
-                  </h3>
-                  <p className="max-w-2xl text-base leading-8 text-white/60 md:text-lg">
-                    {domain.text}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
+    <div className="grid gap-16 lg:grid-cols-[1fr_520px]">
+
+      <div>
+
+        {domains.map((domain) => (
+          <button
+            key={domain.title}
+            onMouseEnter={() => setActiveDomain(domain)}
+            onFocus={() => setActiveDomain(domain)}
+            className="group w-full border-t border-white/10 py-10 text-left transition"
+          >
+            <div className="grid gap-6 md:grid-cols-[80px_1fr_1fr]">
+
+              <span className="text-white/30">
+                {domain.number}
+              </span>
+
+              <h3 className="text-4xl font-semibold transition group-hover:translate-x-2">
+                {domain.title}
+              </h3>
+
+              <p className="text-white/60 leading-8">
+                {domain.description}
+              </p>
+
+            </div>
+          </button>
+        ))}
+
+      </div>
+
+      <div className="sticky top-28 h-[650px] overflow-hidden rounded-[2.5rem]">
+
+        <Image
+          src={activeDomain.image}
+          alt={activeDomain.title}
+          fill
+          sizes="520px"
+          className="object-cover transition duration-700"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+
+        <div className="absolute bottom-8 left-8">
+          <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+            Terrain principal
+          </p>
+
+          <h3 className="mt-3 text-5xl font-semibold">
+            {activeDomain.title}
+          </h3>
         </div>
-      </section>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
       <section id="contact" className="px-5 py-24 md:px-8 md:py-28">
   <div className="mx-auto max-w-7xl overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
