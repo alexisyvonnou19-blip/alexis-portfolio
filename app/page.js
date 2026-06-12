@@ -378,11 +378,11 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       ].map((project, index) => (
         <article
           key={project.name}
-          className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 md:grid-cols-2 ${
+          className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 md:grid-cols-[0.58fr_0.42fr] ${
             index % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""
           }`}
         >
-          <div className="relative min-h-[360px] md:min-h-[520px]">
+          <div className="relative min-h-[360px] md:min-h-[440px]">
             <Image
               src={project.image}
               alt={`${project.name} - projet accompagné par Alexis Yvonnou`}
@@ -393,13 +393,13 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
           </div>
 
-          <div className="flex flex-col justify-between p-8 md:p-12">
+          <div className="flex flex-col justify-between p-8 md:p-10">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
                 Projet accompagné
               </p>
 
-              <h3 className="mt-6 text-5xl font-semibold tracking-[-0.05em] md:text-7xl">
+              <h3 className="mt-6 text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
                 {project.name}
               </h3>
             </div>
