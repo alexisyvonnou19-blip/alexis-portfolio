@@ -334,10 +334,9 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         {
           name: "Didier Yvonnou",
           context:
-            "Repositionner un univers personnel autour du développement humain, de la transmission et du retour à soi.",
+            "Créer un univers personnel autour du développement humain, de la transmission et du retour à soi.",
           mission: [
             "Site internet",
-            "Direction artistique",
             "Identité visuelle",
             "Accompagnement éditorial",
           ],
@@ -346,22 +345,20 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         {
           name: "PL Yachting",
           context:
-            "Valoriser l’expertise d’un professionnel du nautisme, les bateaux accompagnés et les projets clients.",
+            "Valoriser l’expertise d’un professionnel du nautisme par le biais de ses projets.",
           mission: [
             "Photographie",
             "Création de contenus",
             "Réseaux sociaux",
-            "Valorisation des chantiers",
           ],
           image: "/images/pl-yachting.webp",
         },
         {
           name: "Good Boats",
           context:
-            "Développer la visibilité d’une entreprise nautique à travers des contenus réguliers, clairs et incarnés.",
+            "Développer la visibilité d’un média nautique à travers des contenus réguliers, clairs et incarnés.",
           mission: [
             "Création de contenus",
-            "Formats courts",
             "Communication digitale",
             "Gestion éditoriale",
           ],
@@ -370,12 +367,11 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         {
           name: "SNIP Yachting",
           context:
-            "Rendre plus visibles les bateaux, les marques distribuées, les refits et les projets accompagnés.",
+            "Rendre plus visibles les bateaux, les marques distribuées et les refits.",
           mission: [
             "Animation réseaux sociaux",
             "Création de contenus",
             "Communication digitale",
-            "Valorisation de marque",
           ],
           image: "/images/snip-yachting.webp",
         },
