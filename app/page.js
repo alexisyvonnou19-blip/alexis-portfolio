@@ -312,70 +312,130 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
       <section id="projets" className="px-5 py-28 md:px-8">
   <div className="mx-auto max-w-7xl">
-    <div className="mb-16 max-w-4xl">
-      <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-        Réalisations
-      </p>
+    <div className="mb-16 grid gap-8 md:grid-cols-[0.6fr_0.4fr] md:items-end">
+      <div>
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
+          Réalisations
+        </p>
 
-      <h2 className="mt-4 text-5xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-7xl">
-        Quelques projets accompagnés.
-      </h2>
+        <h2 className="mt-4 text-5xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-7xl">
+          Des projets, des contextes, des résultats.
+        </h2>
+      </div>
 
-      <p className="mt-8 max-w-2xl text-lg leading-9 text-stone-600">
-        Des projets menés autour de l’identité, des contenus, des réseaux sociaux
-        et de la présence en ligne.
+      <p className="text-lg leading-9 text-stone-600">
+        Quelques collaborations menées autour de l’image, des contenus, des réseaux sociaux,
+        de l’identité et de la présence en ligne.
       </p>
     </div>
 
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="grid gap-8">
       {[
         {
           name: "Didier Yvonnou",
-          text: "Site internet · identité visuelle · accompagnement éditorial",
+          context:
+            "Repositionner un univers personnel autour du développement humain, de la transmission et du retour à soi.",
+          mission: [
+            "Site internet",
+            "Direction artistique",
+            "Identité visuelle",
+            "Accompagnement éditorial",
+          ],
           image: "/images/didier.webp",
         },
         {
           name: "PL Yachting",
-          text: "Création de contenus photographiques · réseaux sociaux · valorisation des chantiers",
+          context:
+            "Valoriser l’expertise d’un professionnel du nautisme, les bateaux accompagnés et les projets clients.",
+          mission: [
+            "Photographie",
+            "Création de contenus",
+            "Réseaux sociaux",
+            "Valorisation des chantiers",
+          ],
           image: "/images/pl-yachting.webp",
         },
         {
           name: "Good Boats",
-          text: "Création de contenus · communication digitale · gestion de projet",
+          context:
+            "Développer la visibilité d’une entreprise nautique à travers des contenus réguliers, clairs et incarnés.",
+          mission: [
+            "Création de contenus",
+            "Formats courts",
+            "Communication digitale",
+            "Gestion éditoriale",
+          ],
           image: "/images/good-boats.webp",
         },
         {
           name: "SNIP Yachting",
-          text: "Création de contenus · animation réseaux sociaux",
+          context:
+            "Rendre plus visibles les bateaux, les marques distribuées, les refits et les projets accompagnés.",
+          mission: [
+            "Animation réseaux sociaux",
+            "Création de contenus",
+            "Communication digitale",
+            "Valorisation de marque",
+          ],
           image: "/images/snip-yachting.webp",
         },
-      ].map((project) => (
+      ].map((project, index) => (
         <article
           key={project.name}
-          className="group relative min-h-[420px] overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10"
+          className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 md:grid-cols-2 ${
+            index % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""
+          }`}
         >
-          <Image
-            src={project.image}
-            alt={`${project.name} - projet accompagné par Alexis Yvonnou`}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover opacity-80 transition duration-1000 group-hover:scale-[1.04] group-hover:opacity-65"
-          />
+          <div className="relative min-h-[360px] md:min-h-[520px]">
+            <Image
+              src={project.image}
+              alt={`${project.name} - projet accompagné par Alexis Yvonnou`}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover opacity-85 transition duration-1000 group-hover:scale-[1.04] group-hover:opacity-70"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+          </div>
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+          <div className="flex flex-col justify-between p-8 md:p-12">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
+                Projet accompagné
+              </p>
 
-          <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-9">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Projet accompagné
-            </p>
+              <h3 className="mt-6 text-5xl font-semibold tracking-[-0.05em] md:text-7xl">
+                {project.name}
+              </h3>
+            </div>
 
-            <h3 className="text-4xl font-semibold tracking-tight md:text-5xl">
-              {project.name}
-            </h3>
+            <div className="mt-12 grid gap-8">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35">
+                  Contexte
+                </p>
 
-            <p className="mt-5 max-w-xl text-base leading-8 text-white/75">
-              {project.text}
-            </p>
+                <p className="mt-4 max-w-xl text-base leading-8 text-white/70 md:text-lg">
+                  {project.context}
+                </p>
+              </div>
+
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35">
+                  Mission
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.mission.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/15 px-4 py-2 text-sm text-white/75"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </article>
       ))}
