@@ -247,76 +247,74 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
       <section id="projets" className="px-5 py-28 md:px-8">
   <div className="mx-auto max-w-7xl">
-
-    <div className="max-w-3xl">
+    <div className="mb-16 max-w-4xl">
       <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
         Réalisations
       </p>
 
-      <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-6xl">
+      <h2 className="mt-4 text-5xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-7xl">
         Quelques projets accompagnés.
       </h2>
 
-      <p className="mt-6 text-lg text-stone-600">
-        Sites internet, identité visuelle, réseaux sociaux et création de contenus.
+      <p className="mt-8 max-w-2xl text-lg leading-9 text-stone-600">
+        Des projets menés autour de l’identité, des contenus, des réseaux sociaux
+        et de la présence en ligne.
       </p>
     </div>
 
-    <div className="mt-16 grid gap-6 md:grid-cols-3">
+    <div className="grid gap-6 md:grid-cols-2">
+      {[
+        {
+          name: "Didier Yvonnou",
+          text: "Site internet · identité visuelle · accompagnement éditorial",
+          image: "/images/projets/didier.webp",
+        },
+        {
+          name: "PL Yachting",
+          text: "Création de contenus · réseaux sociaux · valorisation des bateaux",
+          image: "/images/projets/pl-yachting.webp",
+        },
+        {
+          name: "Good Boats",
+          text: "Formats courts · communication digitale · contenus nautiques",
+          image: "/images/projets/good-boats.webp",
+        },
+        {
+          name: "SNIP Yachting",
+          text: "Création de contenus · animation réseaux sociaux · image de marque",
+          image: "/images/projets/snip-yachting.webp",
+        },
+      ].map((project) => (
+        <article
+          key={project.name}
+          className="group relative min-h-[420px] overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10"
+        >
+          <Image
+            src={project.image}
+            alt={`${project.name} - projet accompagné par Alexis Yvonnou`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover opacity-80 transition duration-1000 group-hover:scale-[1.04] group-hover:opacity-65"
+          />
 
-      <div className="rounded-3xl border border-stone-200 bg-white p-8">
-        <p className="text-sm uppercase tracking-[0.2em] text-stone-500">
-          Didier Yvonnou
-        </p>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
 
-        <h3 className="mt-4 text-2xl font-semibold">
-          Accompagnement global
-        </h3>
+          <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-9">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
+              Projet accompagné
+            </p>
 
-        <ul className="mt-6 space-y-2 text-stone-600">
-          <li>• Site internet</li>
-          <li>• Identité visuelle</li>
-          <li>• Création de contenus</li>
-          <li>• Accompagnement stratégique</li>
-        </ul>
-      </div>
+            <h3 className="text-4xl font-semibold tracking-tight md:text-5xl">
+              {project.name}
+            </h3>
 
-      <div className="rounded-3xl border border-stone-200 bg-white p-8">
-        <p className="text-sm uppercase tracking-[0.2em] text-stone-500">
-          PL Yachting
-        </p>
-
-        <h3 className="mt-4 text-2xl font-semibold">
-          Communication digitale
-        </h3>
-
-        <ul className="mt-6 space-y-2 text-stone-600">
-          <li>• Réseaux sociaux</li>
-          <li>• Création de contenus</li>
-          <li>• Formats courts</li>
-          <li>• Valorisation des bateaux</li>
-        </ul>
-      </div>
-
-      <div className="rounded-3xl border border-stone-200 bg-white p-8">
-        <p className="text-sm uppercase tracking-[0.2em] text-stone-500">
-          Good Boats
-        </p>
-
-        <h3 className="mt-4 text-2xl font-semibold">
-          Contenus & visibilité
-        </h3>
-
-        <ul className="mt-6 space-y-2 text-stone-600">
-          <li>• Réels</li>
-          <li>• Vidéos YouTube</li>
-          <li>• Réseaux sociaux</li>
-          <li>• Communication nautique</li>
-        </ul>
-      </div>
-
+            <p className="mt-5 max-w-xl text-base leading-8 text-white/75">
+              {project.text}
+            </p>
+          </div>
+        </article>
+      ))}
     </div>
-
   </div>
 </section>
 
