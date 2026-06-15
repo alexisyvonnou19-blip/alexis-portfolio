@@ -696,34 +696,31 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {[
-              ["01", "Nautisme"],
-              ["02", "Sport & événementiel"],
-              ["03", "Entreprises & artisanat"],
-              ["04", "Aventure"],
-            ].map(([number, title]) => (
+              ["01", "Nautisme", "Mer, ports, bateaux, équipages."],
+              ["02", "Sport & événementiel", "Effort, émotions, moments forts."],
+              ["03", "Entreprises & artisanat", "Savoir-faire, gestes, équipes."],
+              ["04", "Aventure", "Outdoor, voyage, territoires."],
+            ].map(([number, title, text]) => (
               <div
                 key={title}
-                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] px-5 py-5 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
+                className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] px-5 py-5"
               >
-                <div className="pointer-events-none absolute -right-4 -top-6 text-7xl font-semibold tracking-[-0.08em] text-white/[0.035] transition duration-300 group-hover:text-[#e26a2c]/20">
+                <div className="pointer-events-none absolute -right-4 -top-6 text-7xl font-semibold tracking-[-0.08em] text-white/[0.035]">
                   {number}
                 </div>
 
-                <div className="relative z-10 flex items-center justify-between gap-6">
-                  <div>
-                    <p className="mb-3 text-xs font-semibold tracking-[0.25em] text-[#e26a2c]">
-                      {number}
-                    </p>
+                <div className="relative z-10">
+                  <p className="mb-3 text-xs font-semibold tracking-[0.25em] text-[#e26a2c]">
+                    {number}
+                  </p>
 
-                    <p className="text-xl font-semibold tracking-[-0.04em] text-white">
-                      {title}
-                    </p>
-                  </div>
+                  <p className="text-xl font-semibold tracking-[-0.04em] text-white">
+                    {title}
+                  </p>
 
-                  <ArrowRight
-                    size={18}
-                    className="shrink-0 text-white/35 transition duration-300 group-hover:translate-x-1 group-hover:text-[#e26a2c]"
-                  />
+                  <p className="mt-3 max-w-xs text-sm leading-6 text-white/45">
+                    {text}
+                  </p>
                 </div>
               </div>
             ))}
