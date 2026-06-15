@@ -500,69 +500,82 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
       <section id="qui-suis-je" className="px-5 py-28 md:px-8">
   <div className="mx-auto max-w-7xl">
-    <div className="grid gap-6 md:grid-cols-[0.42fr_0.58fr] md:items-stretch">
+    <div className="grid gap-6 md:grid-cols-[0.44fr_0.56fr] md:items-stretch">
       <div className="relative overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10">
-        <div className="relative min-h-[520px] md:min-h-full">
+        <div className="relative min-h-[540px] md:min-h-full">
           <Image
             src="/images/moi.webp"
             alt="Portrait d’Alexis Yvonnou, photographe et créateur de contenus basé à Concarneau en Bretagne"
             fill
-            sizes="(max-width: 768px) 100vw, 42vw"
+            sizes="(max-width: 768px) 100vw, 44vw"
             className="object-cover"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/20 to-transparent" />
+
+          <div className="absolute left-6 top-6 rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:left-8 md:top-8">
+            Concarneau · Bretagne
+          </div>
 
           <div className="absolute bottom-0 left-0 right-0 p-7 md:p-9">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
               Alexis Yvonnou
             </p>
 
-            <p className="mt-4 max-w-sm text-2xl font-semibold leading-tight tracking-[-0.04em] md:text-4xl">
-              Photographe, créateur de contenus, profil terrain.
+            <p className="mt-4 max-w-sm text-3xl font-semibold leading-tight tracking-[-0.05em] md:text-5xl">
+              Sur le terrain, avant d’être derrière l’écran.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="rounded-[2.75rem] bg-white/60 p-8 shadow-xl shadow-stone-900/5 ring-1 ring-stone-200/70 md:p-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
-          Qui suis-je ?
-        </p>
+      <div className="relative overflow-hidden rounded-[2.75rem] bg-stone-950 p-8 text-white shadow-xl shadow-stone-900/10 md:p-12">
+        <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#e26a2c]/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-28 left-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
 
-        <h2 className="mt-5 max-w-4xl text-5xl font-semibold leading-[0.95] tracking-[-0.055em] text-stone-950 md:text-7xl">
-          Un regard construit dehors.
-        </h2>
-
-        <div className="mt-10 grid gap-6 text-lg leading-9 text-stone-700">
-          <p>
-            Basé à Concarneau, je travaille comme photographe et créateur de contenus auprès de marques, d’événements, de sportifs et d’entreprises qui ont besoin d’images fortes, utiles et sincères.
+        <div className="relative z-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+            Qui suis-je ?
           </p>
 
-          <p>
-            Mon univers s’est construit autour du nautisme, de la course au large et du sport : des environnements où il faut comprendre vite, bouger juste et capter les moments qui comptent.
-          </p>
+          <h2 className="mt-5 max-w-4xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+            Comprendre le terrain. Capter le vrai. Construire le récit.
+          </h2>
 
-          <p>
-            Aujourd’hui, la photographie reste mon point de départ, mais elle s’inscrit dans une approche plus large : contenus digitaux, réseaux sociaux, storytelling, sites internet et communication visuelle.
-          </p>
-        </div>
+          <div className="mt-10 grid gap-6 text-lg leading-9 text-white/70">
+            <p>
+              Basé à Concarneau, je travaille comme photographe et créateur de contenus auprès de marques, d’événements, de sportifs et d’entreprises qui ont besoin d’images fortes, utiles et sincères.
+            </p>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-3">
-          {["Comprendre", "Produire", "Diffuser"].map((item) => (
-            <div
-              key={item}
-              className="rounded-2xl bg-[#f7f4ef] px-5 py-4 text-sm font-semibold text-stone-950"
+            <p>
+              Mon univers s’est construit autour du nautisme, de la course au large et du sport : des environnements où il faut comprendre vite, bouger juste et capter les moments qui comptent.
+            </p>
+
+            <p>
+              Aujourd’hui, la photographie reste mon point de départ, mais elle s’inscrit dans une approche plus large : contenus digitaux, réseaux sociaux, storytelling, sites internet et communication visuelle.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-3 sm:grid-cols-3">
+            {["Comprendre", "Capter", "Diffuser"].map((item) => (
+              <div
+                key={item}
+                className="rounded-2xl border border-white/10 bg-white/8 px-5 py-4 text-sm font-semibold text-white backdrop-blur-md"
+              >
+                {item}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10">
+            <Link
+              href="/a-propos"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
             >
-              {item}
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-10">
-          <Button href="/a-propos" variant="secondary">
-            En savoir plus
-          </Button>
+              En savoir plus
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
