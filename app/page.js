@@ -258,7 +258,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           title: "Photographie",
           subtitle: "Images de terrain",
           text: "Reportages, portraits, événements, sport, nautisme et savoir-faire : produire des images fortes, utiles et sincères.",
-          image: "/images/homecal5.webp",
+          image: "/images/1.webp",
         },
         {
           title: "Création de contenus",
