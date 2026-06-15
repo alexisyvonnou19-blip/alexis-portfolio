@@ -671,14 +671,20 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
       <section id="domaines" className="px-5 py-24 md:px-8">
   <div className="mx-auto max-w-7xl">
-    <div className="rounded-[2.75rem] bg-stone-950 px-8 py-12 text-white md:px-12 md:py-16">
-      <div className="grid gap-12 md:grid-cols-[0.48fr_0.52fr] md:items-start">
+    <div className="relative overflow-hidden rounded-[2.75rem] bg-stone-950 px-8 py-12 text-white md:px-12 md:py-16">
+
+      {/* Éléments graphiques */}
+      <div className="pointer-events-none absolute right-[-120px] top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full border border-white/[0.04]" />
+      <div className="pointer-events-none absolute right-[-40px] top-1/2 h-[320px] w-[320px] -translate-y-1/2 rounded-full border border-white/[0.04]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(226,106,44,0.12),transparent_40%)]" />
+
+      <div className="relative z-10 grid gap-12 md:grid-cols-[0.48fr_0.52fr] md:items-start">
         <div>
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
             Terrains de jeu
           </p>
 
-          <h2 className="text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
+          <h2 className="text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-[5.2rem]">
             Des univers
             <br />
             différents.
@@ -690,21 +696,21 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
 
         <div>
-          <p className="mb-12 max-w-2xl text-lg leading-9 text-white/60">
+          <p className="mb-8 max-w-2xl text-lg leading-9 text-white/60">
             Être présent, comprendre le terrain et raconter ce qui compte —
             avec des images utiles, sincères et pensées pour durer.
           </p>
 
-          <div className="space-y-5">
+          <div className="space-y-8">
             {[
-              "Nautisme",
-              "Sport & événementiel",
-              "Entreprises & artisanat",
-              "Aventure",
+              "Nautisme & course au large",
+              "Sport & événements",
+              "Entreprises & savoir-faire",
+              "Voyage & aventure",
             ].map((item, index) => (
               <div
                 key={item}
-                className="group flex items-center gap-6 border-b border-white/10 pb-5"
+                className="group flex items-center gap-6"
               >
                 <span className="text-xs font-semibold tracking-[0.3em] text-[#e26a2c]">
                   {(index + 1).toString().padStart(2, "0")}
