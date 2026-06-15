@@ -142,15 +142,15 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
     <main className="min-h-screen bg-[#f7f4ef] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.7),transparent_45%)] text-stone-950">
       
 
-     <section id="top" className="px-4 pt-10 md:px-8 md:pt-28">
+     <section id="top" className="px-4 pt-8 md:px-8 md:pt-28">
   <div className="mx-auto max-w-7xl">
     <motion.div
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-      className="relative overflow-hidden rounded-[2.25rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)] md:rounded-[3rem]"
+      className="relative overflow-hidden rounded-[2rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)] md:rounded-[3rem]"
     >
-      <div className="relative min-h-[620px] overflow-hidden md:min-h-[700px]">
+      <div className="relative min-h-[650px] overflow-hidden md:min-h-[700px]">
         <motion.div
           style={{
             y: heroY,
@@ -165,14 +165,14 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             priority
             quality={75}
             sizes="100vw"
-            className="object-cover object-center"
+            className="object-cover object-center md:object-center"
           />
         </motion.div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/34 to-black/8" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/18 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/38 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/16 to-transparent" />
 
-        <div className="absolute left-5 top-5 z-10 rounded-full bg-white/90 px-4 py-2.5 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-stone-950 shadow-sm backdrop-blur-md md:left-8 md:top-8 md:px-5 md:py-3 md:text-[0.68rem]">
+        <div className="absolute left-5 top-5 z-10 hidden rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:block">
           Alexis Yvonnou
         </div>
 
@@ -181,7 +181,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-12 lg:p-14">
-          <div className="grid gap-7 md:grid-cols-[0.64fr_0.36fr] md:items-end">
+          <div className="grid gap-8 md:grid-cols-[0.64fr_0.36fr] md:items-end">
             <div>
               <p className="mb-4 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-white/55 md:mb-5 md:text-xs md:tracking-[0.34em]">
                 Photographie · communication
@@ -198,7 +198,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               </p>
             </div>
 
-            <div className="max-w-md md:pb-2">
+            <div className="max-w-md md:translate-y-8">
               <p className="text-base leading-7 text-white/72 md:text-lg md:leading-8">
                 Photographie, création de contenus et communication pour les entreprises, marques et événements.
               </p>
@@ -215,7 +215,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             </div>
           </div>
 
-          <div className="mt-7 flex flex-wrap gap-2 md:mt-10 md:gap-3">
+          <div className="mt-7 flex flex-wrap gap-2 md:mt-14 md:gap-3">
             {["Nautisme", "Sport", "Outdoor", "Événementiel", "Artisanat"].map(
               (item) => (
                 <span
