@@ -497,7 +497,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           title: "Course au large",
           label: "La mer comme terrain.",
           text: "Marins, bateaux, pontons, départs et retours : l’intensité de la voile de compétition.",
-          image: "/images/homecal5.webp",
+          image: "/images/IMG_1003.webp",
           href: "/photographie/course-au-large",
           className: "md:col-span-7 md:min-h-[520px]",
           titleClass: "md:text-6xl",
@@ -549,31 +549,35 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             alt={`Galerie photo ${category.title} par Alexis Yvonnou`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover opacity-95 transition duration-700 group-hover:scale-[1.02] group-hover:opacity-85"
+            className="object-cover transition duration-700 group-hover:scale-105"
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/10 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/24 via-transparent to-transparent" />
 
-          <div className="absolute bottom-0 left-0 right-0 p-7 text-white transition duration-500 group-hover:-translate-y-2 md:p-9">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
-              {category.label}
-            </p>
+          <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-9">
+            <div className="translate-y-8 transition-all duration-500 group-hover:translate-y-0">
+  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
+    {category.label}
+  </p>
 
-            <h3
-              className={`mt-4 max-w-4xl text-4xl font-semibold leading-[0.9] tracking-[-0.055em] ${category.titleClass}`}
-            >
-              {category.title}
-            </h3>
+  <h3
+    className={`mt-4 max-w-4xl text-4xl font-semibold leading-[0.9] tracking-[-0.055em] ${category.titleClass}`}
+  >
+    {category.title}
+  </h3>
 
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-white/0 transition duration-500 group-hover:text-white/78 md:text-base">
-              {category.text}
-            </p>
+  <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:mt-5 group-hover:max-h-40 group-hover:opacity-100">
+    <p className="max-w-2xl text-base leading-7 text-white/75">
+      {category.text}
+    </p>
 
-            <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-white/0 transition duration-500 group-hover:text-white/85">
-              Voir la galerie
-              <ArrowRight size={16} />
-            </div>
+    <div className="mt-5 flex items-center gap-2 text-sm font-semibold">
+      Voir la galerie
+      <ArrowRight size={16} />
+    </div>
+  </div>
+</div>
           </div>
         </Link>
       ))}
