@@ -449,84 +449,53 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
   </div>
 </section>
 
-      <section id="photographie" className="px-5 pb-24 pt-16 md:px-8 md:pt-20">
-  <div className="mx-auto max-w-7xl">
-    <div className="mb-16 grid gap-8 md:grid-cols-[0.62fr_0.38fr] md:items-end">
-      <div>
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-          Photographie
-        </p>
-
-        <h2 className="text-5xl font-semibold leading-[0.95] tracking-[-0.05em] text-stone-950 md:text-7xl">
-          Des images pour entrer dans le réel.
-        </h2>
-      </div>
-
-      <p className="text-lg leading-9 text-stone-600">
-        Des séries construites autour d’un terrain, d’une ambiance, d’une lumière
-        ou d’une énergie particulière.
-      </p>
-    </div>
-
-    <div className="grid gap-6 md:grid-cols-12">
-      {photographyCategories.map((category, index) => (
-        <Link
-          href={category.href}
-          key={category.title}
-          className={`group relative overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10 ${
-            index === 0
-              ? "md:col-span-7"
-              : index === 1
-              ? "md:col-span-5"
-              : index === 2
-              ? "md:col-span-5"
-              : index === 3
-              ? "md:col-span-7"
-              : index === 4
-              ? "md:col-span-6"
-              : index === 5
-              ? "md:col-span-6"
-              : index === 6
-              ? "md:col-span-8"
-              : "md:col-span-4"
-          }`}
-        >
-          <div
-            className={`relative overflow-hidden ${
-              index === 0 || index === 3 || index === 6
-                ? "aspect-[16/10]"
-                : "aspect-[4/3]"
-            }`}
-          >
-            <Image
-              src={category.image}
-              alt={`Galerie photo ${category.title} par Alexis Yvonnou`}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover opacity-90 transition duration-700 group-hover:opacity-75"
-            />
-          </div>
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/18 to-transparent" />
-
-          <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-9">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/55">
-              Galerie photo
+      <section id="photographie" className="px-5 pb-24 pt-12 md:px-8 md:pt-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-16 max-w-5xl">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
+              Photographie
             </p>
-
-            <h3 className="max-w-xl text-4xl font-semibold tracking-[-0.04em] md:text-5xl">
-              {category.title}
-            </h3>
-
-            <p className="mt-4 max-w-xl text-sm leading-7 text-white/75 md:text-base">
-              {category.text}
+            <h2 className="text-5xl font-semibold leading-[0.95] tracking-[-0.05em] text-stone-950 md:text-7xl">
+              Des galeries pour entrer dans chaque univers.
+            </h2>
+            <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600">
+              Chaque série raconte un terrain, une ambiance, une lumière ou une énergie particulière.
             </p>
           </div>
-        </Link>
-      ))}
-    </div>
-  </div>
-</section>
+
+          <div className="grid gap-6 md:grid-cols-2">
+            {photographyCategories.map((category) => (
+              <Link
+                href={category.href}
+                key={category.title}
+                className="group premium-hover premium-image-hover relative overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+  src={category.image}
+  alt={`Galerie photo ${category.title} par Alexis Yvonnou`}
+  fill
+  sizes="(max-width: 768px) 100vw, 50vw"
+  className="object-cover opacity-90"
+/>
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-9">
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
+                    Galerie photo
+                  </p>
+                  <h3 className="max-w-xl text-3xl font-semibold tracking-tight md:text-5xl">
+                    {category.title}
+                  </h3>
+                  <p className="mt-4 max-w-xl text-sm leading-7 text-white/75 md:text-base">
+                    {category.text}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
 
       <section id="qui-suis-je" className="px-5 py-24 md:px-8">
