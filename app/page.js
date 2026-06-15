@@ -148,95 +148,91 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-      className="relative"
+      className="relative overflow-hidden rounded-[3rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)]"
     >
-      <div className="grid gap-5 lg:grid-cols-[0.42fr_0.58fr]">
-        <div className="relative z-10 flex min-h-[560px] flex-col justify-between rounded-[2.75rem] bg-stone-950 p-8 text-white md:p-10 lg:min-h-[690px]">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.34em] text-[#e26a2c]">
-              Alexis Yvonnou
+      <div className="relative min-h-[720px] overflow-hidden md:min-h-[780px]">
+        <motion.div
+          style={{
+            y: heroY,
+            scale: heroScale,
+          }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="/images/hero5.webp"
+            alt="Image principale du portfolio d’Alexis Yvonnou"
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </motion.div>
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/25 to-transparent" />
+
+        <div className="absolute left-6 top-6 z-10 rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:left-8 md:top-8">
+          Alexis Yvonnou
+        </div>
+
+        <div className="absolute right-6 top-6 z-10 hidden rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white shadow-sm backdrop-blur-md md:right-8 md:top-8 md:block">
+          Concarneau · Bretagne
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 z-10 p-7 text-white md:p-12 lg:p-14">
+          <div className="max-w-6xl">
+            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.34em] text-white/55">
+              Photographie · contenus · communication
             </p>
 
-            <h1 className="mt-8 text-5xl font-semibold leading-[0.88] tracking-[-0.06em] md:text-7xl lg:text-[5.7rem]">
-              Image.
-              <br />
-              Terrain.
-              <br />
-              Visibilité.
+            <h1 className="max-w-6xl text-6xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-8xl lg:text-[8.4rem]">
+              Un regard de terrain pour raconter ce qui compte.
             </h1>
           </div>
 
-          <div>
-            <p className="max-w-md text-lg leading-8 text-white/70 md:text-xl">
-              Photographe et créateur de contenus basé à Concarneau, j’aide les
-              projets de terrain à construire une communication plus claire,
-              plus vivante et plus identifiable.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="#projets"
-                className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
-              >
-                Voir les projets
-                <ArrowRight size={16} />
-              </Link>
-
-              <Link
-                href="#services"
-                className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-stone-950"
-              >
-                Services
-                <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        <div className="relative min-h-[560px] overflow-hidden rounded-[2.75rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)] lg:min-h-[690px]">
-          <motion.div
-            style={{
-              y: heroY,
-              scale: heroScale,
-            }}
-            className="absolute inset-0"
-          >
-            <Image
-              src="/images/hero5.webp"
-              alt="Image principale du portfolio d’Alexis Yvonnou"
-              fill
-              priority
-              quality={75}
-              sizes="(max-width: 1024px) 100vw, 58vw"
-              className="object-cover object-center"
-            />
-          </motion.div>
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
-
-          <div className="absolute left-6 top-6 rounded-full bg-white/85 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:left-8 md:top-8">
-            Concarneau · Bretagne
-          </div>
-
-          <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8">
+          <div className="mt-10 grid gap-8 md:grid-cols-[0.58fr_0.42fr] md:items-end">
             <div className="flex flex-wrap gap-3">
               {["Nautisme", "Sport", "Outdoor", "Événementiel", "Artisanat"].map(
                 (item) => (
                   <span
                     key={item}
-                    className="rounded-full border border-white/20 bg-white/12 px-4 py-2 text-sm font-medium text-white backdrop-blur-md"
+                    className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/85 backdrop-blur-md"
                   >
                     {item}
                   </span>
                 )
               )}
             </div>
+
+            <div>
+              <p className="max-w-xl text-lg leading-8 text-white/78 md:text-xl">
+                Photographe et créateur de contenus basé à Concarneau, j’accompagne les entreprises, marques et événements dans la création d’images et de supports de communication ancrés dans le réel.
+              </p>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Link
+                  href="#projets"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+                >
+                  Découvrir mon travail
+                  <ArrowRight size={16} />
+                </Link>
+
+                <Link
+                  href="#contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-stone-950"
+                >
+                  Me contacter
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="pointer-events-none absolute -bottom-10 left-1/2 hidden -translate-x-1/2 rounded-full bg-[#f7f4ef] px-8 py-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500 shadow-xl shadow-stone-900/10 lg:block">
-        Photo · contenus · réseaux sociaux · site internet
+        <div className="pointer-events-none absolute bottom-8 left-8 hidden h-24 w-24 rounded-full border border-white/25 md:block" />
+        <div className="pointer-events-none absolute bottom-14 left-14 hidden h-12 w-12 rounded-full border border-white/20 md:block" />
       </div>
     </motion.div>
   </div>
