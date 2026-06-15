@@ -270,7 +270,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           title: "Réseaux sociaux",
           subtitle: "Ligne éditoriale & diffusion",
           text: "Structurer les prises de parole, organiser les contenus et faire vivre vos réseaux avec cohérence et régularité.",
-          image: "/images/homesite.webp",
+          image: "/images/homers.webp",
         },
         {
           title: "Site & identité",
