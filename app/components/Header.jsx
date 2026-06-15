@@ -7,8 +7,8 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const navigationLinks = [
   { label: "Profil", href: "/#qui-suis-je" },
-  { label: "Photos", href: "/#photographie" },
-  { label: "Contenus", href: "/#contenus" },
+  { label: "Photographie", href: "/#photographie" },
+  { label: "Création", href: "/#contenus" },
   { label: "Univers", href: "/#domaines" },
 ];
 
@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-black/5 bg-[#f7f4ef]/90 px-4 py-2.5 shadow-lg shadow-stone-900/5 backdrop-blur-2xl md:px-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-black/5 bg-[#f7f4ef]/92 px-4 py-2.5 shadow-lg shadow-stone-900/5 backdrop-blur-2xl md:px-5">
         <Link
           href="/#top"
           className="group flex items-center gap-3 text-stone-950"
@@ -37,12 +37,12 @@ export default function Header() {
           </div>
         </Link>
 
-        <div className="hidden items-center rounded-full border border-black/5 bg-white/55 p-1 text-sm text-stone-600 backdrop-blur-xl lg:flex">
+        <div className="hidden items-center gap-7 text-sm font-medium text-stone-600 lg:flex xl:gap-10">
           {navigationLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-full px-4 py-1.5 transition duration-300 hover:bg-stone-950 hover:text-white"
+              className="relative py-2 transition duration-300 hover:text-stone-950 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-stone-950 after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </Link>
