@@ -671,59 +671,81 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
       <section id="domaines" className="px-5 py-24 md:px-8">
   <div className="mx-auto max-w-7xl">
-    <div className="relative overflow-hidden rounded-[2.75rem] bg-stone-950 px-8 py-12 text-white md:px-12 md:py-16">
+    <div className="overflow-hidden rounded-[2.75rem] bg-stone-950 text-white">
 
-      {/* Éléments graphiques */}
-      <div className="pointer-events-none absolute right-[-120px] top-1/2 h-[450px] w-[450px] -translate-y-1/2 rounded-full border border-white/[0.04]" />
-      <div className="pointer-events-none absolute right-[-40px] top-1/2 h-[320px] w-[320px] -translate-y-1/2 rounded-full border border-white/[0.04]" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(226,106,44,0.12),transparent_40%)]" />
+      <div className="grid md:grid-cols-[0.45fr_0.55fr]">
+        {/* Bloc gauche */}
+        <div className="flex flex-col justify-between p-8 md:p-14">
+          <div>
+            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+              Terrains de jeu
+            </p>
 
-      <div className="relative z-10 grid gap-12 md:grid-cols-[0.48fr_0.52fr] md:items-start">
-        <div>
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
-            Terrains de jeu
+            <h2 className="text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+              Des univers
+              <br />
+              différents.
+              <br />
+              Une même
+              <br />
+              approche.
+            </h2>
+          </div>
+
+          <p className="mt-10 max-w-md text-lg leading-8 text-white/55">
+            Être présent, comprendre le terrain et raconter ce qui compte.
+            Du large aux entreprises, du sport aux récits d'aventure.
           </p>
-
-          <h2 className="text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-[5.2rem]">
-            Des univers
-            <br />
-            différents.
-            <br />
-            Une même
-            <br />
-            approche.
-          </h2>
         </div>
 
-        <div>
-          <p className="mb-8 max-w-2xl text-lg leading-9 text-white/60">
-            Être présent, comprendre le terrain et raconter ce qui compte —
-            avec des images utiles, sincères et pensées pour durer.
-          </p>
-
-          <div className="space-y-8">
-            {[
-              "Nautisme & course au large",
-              "Sport & événements",
-              "Entreprises & savoir-faire",
-              "Voyage & aventure",
-            ].map((item, index) => (
-              <div
-                key={item}
-                className="group flex items-center gap-6"
-              >
-                <span className="text-xs font-semibold tracking-[0.3em] text-[#e26a2c]">
-                  {(index + 1).toString().padStart(2, "0")}
+        {/* Bloc droit */}
+        <div className="divide-y divide-white/10">
+          {[
+            {
+              number: "01",
+              title: "Nautisme & course au large",
+              text: "Marins, bateaux, régates et vie de ponton.",
+            },
+            {
+              number: "02",
+              title: "Sport & événements",
+              text: "Émotions, performance et moments de partage.",
+            },
+            {
+              number: "03",
+              title: "Entreprises & savoir-faire",
+              text: "Métiers, équipes et gestes qui méritent d'être montrés.",
+            },
+            {
+              number: "04",
+              title: "Voyage & aventure",
+              text: "Territoires, rencontres et récits de terrain.",
+            },
+          ].map((item) => (
+            <div
+              key={item.title}
+              className="group px-8 py-8 transition duration-300 hover:bg-white/[0.03] md:px-12"
+            >
+              <div className="flex items-start gap-6">
+                <span className="mt-2 text-xs font-semibold tracking-[0.3em] text-[#e26a2c]">
+                  {item.number}
                 </span>
 
-                <span className="text-3xl font-semibold tracking-[-0.05em] text-white/35 transition-all duration-300 group-hover:translate-x-3 group-hover:text-white md:text-5xl">
-                  {item}
-                </span>
+                <div>
+                  <h3 className="text-3xl font-semibold tracking-[-0.04em] text-white transition duration-300 group-hover:translate-x-2 md:text-4xl">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-3 max-w-xl text-base leading-7 text-white/50">
+                    {item.text}
+                  </p>
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
+
     </div>
   </div>
 </section>
