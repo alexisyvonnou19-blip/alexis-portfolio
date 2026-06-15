@@ -150,7 +150,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
       className="relative overflow-hidden rounded-[3rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)]"
     >
-      <div className="relative min-h-[720px] overflow-hidden md:min-h-[780px]">
+      <div className="relative min-h-[640px] overflow-hidden md:min-h-[720px]">
         <motion.div
           style={{
             y: heroY,
@@ -169,8 +169,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           />
         </motion.div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/68 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/48 via-black/10 to-transparent" />
 
         <div className="absolute left-6 top-6 z-10 rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:left-8 md:top-8">
           Alexis Yvonnou
@@ -181,33 +181,21 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 z-10 p-7 text-white md:p-12 lg:p-14">
-          <div className="max-w-6xl">
-            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.34em] text-white/55">
-              Photographie · contenus · communication
-            </p>
+          <div className="grid gap-10 md:grid-cols-[0.64fr_0.36fr] md:items-end">
+            <div>
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-white/55">
+                Photographie · contenus · communication
+              </p>
 
-            <h1 className="max-w-6xl text-6xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-8xl lg:text-[8.4rem]">
-              Un regard de terrain pour raconter ce qui compte.
-            </h1>
-          </div>
-
-          <div className="mt-10 grid gap-8 md:grid-cols-[0.58fr_0.42fr] md:items-end">
-            <div className="flex flex-wrap gap-3">
-              {["Nautisme", "Sport", "Outdoor", "Événementiel", "Artisanat"].map(
-                (item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/85 backdrop-blur-md"
-                  >
-                    {item}
-                  </span>
-                )
-              )}
+              <h1 className="max-w-5xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl lg:text-[6.4rem]">
+                Un regard de terrain pour raconter ce qui compte.
+              </h1>
             </div>
 
-            <div>
-              <p className="max-w-xl text-lg leading-8 text-white/78 md:text-xl">
-                Photographe et créateur de contenus basé à Concarneau, j’accompagne les entreprises, marques et événements dans la création d’images et de supports de communication ancrés dans le réel.
+            <div className="max-w-md md:pb-2">
+              <p className="text-lg leading-8 text-white/78 md:text-xl">
+                Photographie, contenu et communication pour les entreprises,
+                marques et événements qui ont quelque chose à transmettre.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -229,10 +217,20 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="pointer-events-none absolute bottom-8 left-8 hidden h-24 w-24 rounded-full border border-white/25 md:block" />
-        <div className="pointer-events-none absolute bottom-14 left-14 hidden h-12 w-12 rounded-full border border-white/20 md:block" />
+          <div className="mt-10 flex flex-wrap gap-3">
+            {["Nautisme", "Sport", "Outdoor", "Événementiel", "Artisanat"].map(
+              (item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/85 backdrop-blur-md"
+                >
+                  {item}
+                </span>
+              )
+            )}
+          </div>
+        </div>
       </div>
     </motion.div>
   </div>
