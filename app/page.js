@@ -233,9 +233,9 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
   </div>
 </section>
 
-<section id="services" className="bg-[#0b0b0a] px-5 py-28 text-white md:px-8">
+<section id="services" className="bg-[#0b0b0a] px-5 py-24 text-white md:px-8 md:py-28">
   <div className="mx-auto max-w-7xl">
-    <div className="mb-16 grid gap-10 md:grid-cols-[0.5fr_0.5fr] md:items-end">
+    <div className="mb-14 grid gap-8 md:grid-cols-[0.52fr_0.48fr] md:items-end">
       <div>
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
           Services
@@ -255,34 +255,38 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
     <div className="grid gap-5 md:grid-cols-2">
       {[
         {
+          number: "01",
           title: "Photographie",
           subtitle: "Images de terrain",
-          text: "Reportages, portraits, événements, sport, nautisme et savoir-faire : produire des images fortes, utiles et sincères.",
+          text: "Reportages, portraits, sport, nautisme, événements et savoir-faire.",
           image: "/images/1.webp",
         },
         {
+          number: "02",
           title: "Création de contenus",
-          subtitle: "Savoir-faire & storytelling",
-          text: "Réels, stories, carrousels, posts : contenus pensés pour donner du rythme à votre présence digitale.",
+          subtitle: "Formats courts & storytelling",
+          text: "Réels, stories, carrousels et contenus pensés pour le digital.",
           image: "/images/crea2.webp",
         },
         {
+          number: "03",
           title: "Réseaux sociaux",
           subtitle: "Ligne éditoriale & diffusion",
-          text: "Structurer les prises de parole, organiser les contenus et faire vivre vos réseaux avec cohérence et régularité.",
+          text: "Structurer, publier et faire vivre votre présence dans le temps.",
           image: "/images/homers.webp",
         },
         {
+          number: "04",
           title: "Site & identité",
           subtitle: "Présence digitale",
-          text: "Créer ou renforcer les supports qui donnent de la crédibilité à votre communication : site internet, identité visuelle et plateforme de diffusion.",
+          text: "Une présence crédible, cohérente et durable.",
           image: "/images/homesite.webp",
         },
       ].map((service, index) => (
         <article
           key={service.title}
-          className={`group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-black/20 md:min-h-[520px] ${
-            index === 0 || index === 3 ? "md:translate-y-10" : ""
+          className={`group relative min-h-[360px] overflow-hidden rounded-[2.35rem] bg-stone-950 shadow-xl shadow-black/20 md:min-h-[430px] ${
+            index === 0 || index === 3 ? "md:translate-y-8" : ""
           }`}
         >
           <Image
@@ -290,26 +294,26 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             alt={`${service.title} par Alexis Yvonnou`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover opacity-72 transition duration-700 group-hover:opacity-55"
+            className="object-cover opacity-78 transition duration-700 group-hover:opacity-62"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/28 to-black/10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/28 to-black/5" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent" />
 
-          <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 backdrop-blur-md md:left-8 md:top-8">
-            {String(index + 1).padStart(2, "0")}
+          <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 backdrop-blur-md md:left-7 md:top-7">
+            {service.number}
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 p-7 md:p-9">
+          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
               {service.subtitle}
             </p>
 
-            <h3 className="mt-4 text-5xl font-semibold leading-[0.9] tracking-[-0.06em] md:text-7xl">
+            <h3 className="mt-3 text-4xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-6xl">
               {service.title}
             </h3>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-white/72 md:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-7 text-white/72 md:text-lg md:leading-8">
               {service.text}
             </p>
           </div>
@@ -317,7 +321,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       ))}
     </div>
 
-    <div className="mt-20">
+    <div className="mt-16">
       <Link
         href="/creation-de-contenus"
         className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
