@@ -142,7 +142,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
     <main className="min-h-screen bg-[#f7f4ef] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.7),transparent_45%)] text-stone-950">
       
 
-     <section id="top" className="px-5 pt-24 md:px-8 md:pt-32">
+     <section id="top" className="px-5 pt-20 md:px-8 md:pt-28">
   <div className="mx-auto max-w-7xl">
     <motion.div
       initial={{ opacity: 0, y: 18 }}
@@ -154,25 +154,21 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           Photographe & créateur de contenus · Bretagne
         </p>
 
-        <h1 className="text-6xl font-semibold leading-[0.9] tracking-[-0.06em] text-stone-950 md:text-8xl lg:text-[7rem]">
-  Des images,
-  <br />
-  des contenus,
-  <br />
-  de la visibilité.
-</h1>
+        <h1 className="text-6xl font-semibold leading-[0.9] tracking-[-0.06em] text-stone-950 md:text-8xl lg:text-[6.8rem]">
+          Photographe.
+          <br />
+          Créateur de contenus.
+          <br />
+          Bretagne.
+        </h1>
 
-<p className="mx-auto mt-8 max-w-3xl text-xl font-medium leading-tight tracking-[-0.035em] text-stone-950 md:text-3xl md:leading-[1.15]">
-  J’aide les entreprises, marques et événements à construire une communication plus claire, plus cohérente et plus incarnée.
-</p>
+        <p className="mx-auto mt-8 max-w-3xl text-xl font-medium leading-tight tracking-[-0.035em] text-stone-950 md:text-3xl md:leading-[1.15]">
+          J’accompagne les entreprises, marques et événements qui veulent rendre leur projet plus visible, plus clair et plus incarné.
+        </p>
 
-<p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-stone-600 md:text-lg">
-  Photographie, création de contenus, réseaux sociaux, site internet et identité visuelle — avec une approche indépendante, directe et ancrée dans le terrain.
-</p>
-
-<p className="mt-7 text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-  Alexis Yvonnou · Concarneau
-</p>
+        <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-stone-600 md:text-lg">
+          Photographie, création de contenus, réseaux sociaux, site internet et identité visuelle — avec une approche indépendante, directe et ancrée dans le terrain.
+        </p>
 
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <Button href="#photographie">
@@ -189,9 +185,9 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
       </div>
 
-      <div className="mt-6">
+      <div className="mt-8">
         <div className="relative overflow-hidden rounded-[2.75rem] shadow-[0_35px_120px_rgba(28,25,23,0.14)]">
-          <div className="relative h-[48vh] min-h-[380px] w-full overflow-hidden md:h-[64vh]">
+          <div className="relative h-[48vh] min-h-[360px] w-full overflow-hidden md:h-[62vh]">
             <motion.div
               style={{
                 y: heroY,
@@ -204,7 +200,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
                 alt="Image principale du portfolio d’Alexis Yvonnou"
                 fill
                 priority
-                quality={82}
+                quality={75}
                 sizes="100vw"
                 className="object-cover object-center"
               />
@@ -217,14 +213,14 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             </div>
 
             <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3 md:bottom-8 md:left-8 md:right-8 md:flex-row md:items-end md:justify-between">
-  <p className="inline-flex w-fit rounded-full bg-white/82 px-5 py-3 text-sm font-medium text-stone-950 shadow-sm backdrop-blur-md md:text-base">
-    Nautisme · Sport · Événementiel · Artisanat
-  </p>
+              <p className="inline-flex w-fit rounded-full bg-white/82 px-5 py-3 text-sm font-medium text-stone-950 shadow-sm backdrop-blur-md md:text-base">
+                Nautisme · Sport · Événementiel · Artisanat
+              </p>
 
-  <p className="inline-flex w-fit rounded-full bg-black/35 px-5 py-3 text-sm font-medium text-white shadow-sm backdrop-blur-md md:ml-auto">
-    Photo · Vidéo · Réseaux sociaux
-  </p>
-</div>
+              <p className="inline-flex w-fit rounded-full bg-black/35 px-5 py-3 text-sm font-medium text-white shadow-sm backdrop-blur-md md:ml-auto">
+                Photo · Vidéo · Réseaux sociaux
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -496,7 +492,6 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           </div>
         </div>
       </section>
-
 
       <section id="qui-suis-je" className="px-5 py-24 md:px-8">
         <div className="mx-auto max-w-7xl">
