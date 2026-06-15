@@ -669,90 +669,51 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
   </div>
 </section>
 
-      <section id="domaines" className="bg-[#f5f3ef] px-5 py-28 md:px-8">
+      <section id="domaines" className="px-5 py-24 md:px-8">
   <div className="mx-auto max-w-7xl">
+    <div className="rounded-[2.75rem] bg-stone-950 p-8 text-white md:p-12">
+      <div className="grid gap-12 md:grid-cols-[0.46fr_0.54fr] md:items-end">
+        <div>
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+            Terrains de jeu
+          </p>
 
-    <div className="mb-16 grid gap-10 md:grid-cols-[0.55fr_0.45fr] md:items-end">
-      <div>
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
-          Terrains de jeu
-        </p>
+          <h2 className="max-w-3xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+            Des univers différents. Une même approche.
+          </h2>
+        </div>
 
-        <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
-          Des univers différents.
-          <br />
-          Une même approche.
-        </h2>
-      </div>
+        <div>
+          <p className="max-w-2xl text-lg leading-9 text-white/62">
+            Être présent, comprendre le terrain et raconter ce qui compte —
+            avec des images utiles, sincères et pensées pour durer.
+          </p>
 
-      <p className="max-w-xl text-lg leading-9 text-stone-600">
-        Être présent, comprendre le terrain et produire des images sincères.
-        Du nautisme aux entreprises, du sport aux récits d’aventure.
-      </p>
-    </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {[
+              "Nautisme",
+              "Sport & événementiel",
+              "Entreprises & artisanat",
+              "Aventure",
+            ].map((item) => (
+              <div
+                key={item}
+                className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
+              >
+                <span className="text-lg font-semibold tracking-[-0.03em] text-white">
+                  {item}
+                </span>
 
-    <div className="grid gap-5 md:grid-cols-2">
-
-      {[
-        {
-          title: "Nautisme",
-          text: "Course au large, régates, équipages, chantiers et marques du monde maritime.",
-          image: "/images/domaine-nautisme.webp",
-        },
-        {
-          title: "Sport & événementiel",
-          text: "Compétition, effort, émotions et événements qui rassemblent.",
-          image: "/images/domaine-sport.webp",
-        },
-        {
-          title: "Entreprises & artisanat",
-          text: "Valoriser un savoir-faire, un métier, une équipe ou une activité.",
-          image: "/images/domaine-entreprise.webp",
-        },
-        {
-          title: "Aventure",
-          text: "Voyages, outdoor, territoires et récits de terrain.",
-          image: "/images/domaine-aventure.webp",
-        },
-      ].map((item) => (
-        <article
-          key={item.title}
-          className="group relative min-h-[420px] overflow-hidden rounded-[2.5rem]"
-        >
-          <Image
-            src={item.image}
-            alt={item.title}
-            fill
-            sizes="(max-width:768px) 100vw, 50vw"
-            className="object-cover transition duration-700 group-hover:scale-105"
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/10" />
-
-          <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
-            <div className="translate-y-5 transition-all duration-500 group-hover:translate-y-0">
-
-              <h3 className="text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
-                {item.title}
-              </h3>
-
-              <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:mt-5 group-hover:max-h-40 group-hover:opacity-100">
-                <p className="max-w-md text-base leading-8 text-white/75">
-                  {item.text}
-                </p>
-
-                <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white">
-                  Explorer
-                  <ArrowRight size={16} />
-                </div>
+                <ArrowRight
+                  size={18}
+                  className="text-white/35 transition duration-300 group-hover:translate-x-1 group-hover:text-[#e26a2c]"
+                />
               </div>
-
-            </div>
+            ))}
           </div>
-        </article>
-      ))}
+        </div>
+      </div>
     </div>
-
   </div>
 </section>
 
