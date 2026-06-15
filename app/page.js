@@ -515,7 +515,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           title: "Sport",
           label: "L’intensité du mouvement.",
           text: "Effort, rythme, émotions et énergie d’une pratique ou d’un événement.",
-          image: "/images/sport.webp",
+          image: "/images/hometrail5.webp",
           href: "/photographie/sport",
           className: "md:col-span-5 md:min-h-[410px]",
           titleClass: "md:text-5xl",
