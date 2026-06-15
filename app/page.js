@@ -169,8 +169,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           />
         </motion.div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/68 via-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/48 via-black/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/24 to-black/5" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/18 to-transparent" />
 
         <div className="absolute left-6 top-6 z-10 rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:left-8 md:top-8">
           Alexis Yvonnou
@@ -181,37 +181,35 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 z-10 p-7 text-white md:p-12 lg:p-14">
-          <div className="grid gap-10 md:grid-cols-[0.64fr_0.36fr] md:items-end">
+          <div className="grid gap-10 md:grid-cols-[0.7fr_0.3fr] md:items-end">
             <div>
               <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-white/55">
                 Photographie · contenus · communication
               </p>
 
-              <h1 className="max-w-5xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl lg:text-[6.4rem]">
-                Un regard de terrain pour raconter ce qui compte.
+              <h1 className="max-w-5xl text-6xl font-semibold leading-[0.86] tracking-[-0.075em] md:text-8xl lg:text-[7.2rem]">
+                Raconter
+                <br />
+                le terrain.
               </h1>
+
+              <p className="mt-7 max-w-3xl text-2xl font-medium leading-tight tracking-[-0.04em] text-white/88 md:text-4xl">
+                Un regard de terrain pour raconter ce qui compte.
+              </p>
             </div>
 
-            <div className="max-w-md md:pb-2">
-              <p className="text-lg leading-8 text-white/78 md:text-xl">
+            <div className="max-w-sm md:pb-2">
+              <p className="text-base leading-8 text-white/72 md:text-lg">
                 Photographie, contenu et communication pour les entreprises,
                 marques et événements qui ont quelque chose à transmettre.
               </p>
 
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-7">
                 <Link
                   href="#projets"
                   className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
                 >
                   Découvrir mon travail
-                  <ArrowRight size={16} />
-                </Link>
-
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-stone-950"
-                >
-                  Me contacter
                   <ArrowRight size={16} />
                 </Link>
               </div>
