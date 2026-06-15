@@ -669,59 +669,90 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
   </div>
 </section>
 
-      <section id="domaines" className="bg-[#f7f4ef] px-5 py-28 text-stone-950 md:px-8">
+      <section id="domaines" className="bg-[#f5f3ef] px-5 py-28 md:px-8">
   <div className="mx-auto max-w-7xl">
-    <div className="mb-16 grid gap-8 md:grid-cols-[0.65fr_0.35fr] md:items-end">
+
+    <div className="mb-16 grid gap-10 md:grid-cols-[0.55fr_0.45fr] md:items-end">
       <div>
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
-          Mes terrains de jeu
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+          Terrains de jeu
         </p>
 
         <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
-          Des univers concrets, vivants et visuels.
+          Des univers différents.
+          <br />
+          Une même approche.
         </h2>
       </div>
 
-      <p className="text-lg leading-9 text-stone-600">
-        Nautisme, sport, événementiel ou artisanat : je travaille au plus près du terrain,
-        des gestes, des lieux et des personnes.
+      <p className="max-w-xl text-lg leading-9 text-stone-600">
+        Être présent, comprendre le terrain et produire des images sincères.
+        Du nautisme aux entreprises, du sport aux récits d’aventure.
       </p>
     </div>
 
-    <div className="grid gap-6 md:grid-cols-2">
-      {domains.map((domain, index) => (
+    <div className="grid gap-5 md:grid-cols-2">
+
+      {[
+        {
+          title: "Nautisme",
+          text: "Course au large, régates, équipages, chantiers et marques du monde maritime.",
+          image: "/images/domaine-nautisme.webp",
+        },
+        {
+          title: "Sport & événementiel",
+          text: "Compétition, effort, émotions et événements qui rassemblent.",
+          image: "/images/domaine-sport.webp",
+        },
+        {
+          title: "Entreprises & artisanat",
+          text: "Valoriser un savoir-faire, un métier, une équipe ou une activité.",
+          image: "/images/domaine-entreprise.webp",
+        },
+        {
+          title: "Aventure",
+          text: "Voyages, outdoor, territoires et récits de terrain.",
+          image: "/images/domaine-aventure.webp",
+        },
+      ].map((item) => (
         <article
-          key={domain.title}
-          className={`group relative overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10 ${
-            index === 0 ? "md:col-span-2 min-h-[520px]" : "min-h-[420px]"
-          }`}
+          key={item.title}
+          className="group relative min-h-[420px] overflow-hidden rounded-[2.5rem]"
         >
           <Image
-            src={domain.image}
-            alt={domain.title}
+            src={item.image}
+            alt={item.title}
             fill
-            sizes={index === 0 ? "100vw" : "(max-width: 768px) 100vw, 50vw"}
-            className="object-cover opacity-85 transition duration-1000 group-hover:scale-[1.035] group-hover:opacity-75"
+            sizes="(max-width:768px) 100vw, 50vw"
+            className="object-cover transition duration-700 group-hover:scale-105"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-black/10" />
 
-          <div className="absolute left-6 top-6 rounded-full bg-[#d8c6ad]/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-stone-950 backdrop-blur-md md:left-8 md:top-8">
-            {domain.number}
-          </div>
+          <div className="absolute inset-x-0 bottom-0 p-8 md:p-10">
+            <div className="translate-y-5 transition-all duration-500 group-hover:translate-y-0">
 
-          <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-10">
-            <h3 className="text-5xl font-semibold tracking-[-0.05em] md:text-7xl">
-              {domain.title}
-            </h3>
+              <h3 className="text-4xl font-semibold tracking-[-0.05em] text-white md:text-6xl">
+                {item.title}
+              </h3>
 
-            <p className="mt-5 max-w-2xl text-base leading-8 text-white/75 md:text-lg">
-              {domain.description}
-            </p>
+              <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:mt-5 group-hover:max-h-40 group-hover:opacity-100">
+                <p className="max-w-md text-base leading-8 text-white/75">
+                  {item.text}
+                </p>
+
+                <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-white">
+                  Explorer
+                  <ArrowRight size={16} />
+                </div>
+              </div>
+
+            </div>
           </div>
         </article>
       ))}
     </div>
+
   </div>
 </section>
 
