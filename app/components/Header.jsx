@@ -2,88 +2,107 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navigationLinks = [
-  { label: "Qui suis-je ?", href: "/#qui-suis-je" },
-  { label: "Photographie", href: "/#photographie" },
-  { label: "Création de contenus", href: "/#contenus" },
-  { label: "Terrains de jeu", href: "/#domaines" },
+  { label: "Profil", href: "/#qui-suis-je" },
+  { label: "Photos", href: "/#photographie" },
+  { label: "Contenus", href: "/#contenus" },
+  { label: "Univers", href: "/#domaines" },
 ];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-black/5 bg-[#f7f4ef]/95 backdrop-blur-2xl">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-        <Link href="/#top" className="flex items-center gap-4 text-stone-950">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-stone-950 text-sm font-semibold text-white">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-black/5 bg-[#f7f4ef]/88 px-4 py-3 shadow-lg shadow-stone-900/5 backdrop-blur-2xl md:px-5">
+        <Link
+          href="/#top"
+          className="group flex items-center gap-3 text-stone-950"
+          onClick={() => setMenuOpen(false)}
+        >
+          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-stone-950 text-sm font-semibold text-white transition duration-300 group-hover:scale-95">
             AY
           </div>
 
-          <span className="text-base font-semibold uppercase tracking-[0.32em] md:text-lg">
-            Alexis Yvonnou
-          </span>
+          <div className="leading-none">
+            <span className="block text-sm font-semibold uppercase tracking-[0.32em] md:text-base">
+              Alexis Yvonnou
+            </span>
+            <span className="mt-1 hidden text-[0.65rem] font-semibold uppercase tracking-[0.24em] text-stone-400 md:block">
+              Photo · contenus · communication
+            </span>
+          </div>
         </Link>
 
-        <div className="hidden items-center gap-8 text-sm text-stone-700 lg:flex xl:gap-12">
+        <div className="hidden items-center rounded-full border border-black/5 bg-white/55 p-1 text-sm text-stone-600 backdrop-blur-xl lg:flex">
           {navigationLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="max-w-[140px] text-center leading-tight transition hover:text-stone-950 xl:max-w-none"
+              className="rounded-full px-4 py-2 transition duration-300 hover:bg-stone-950 hover:text-white"
             >
               {link.label}
             </Link>
           ))}
+        </div>
 
+        <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/#contact"
-            className="rounded-full bg-stone-950 px-6 py-2.5 text-white transition hover:-translate-y-0.5 hover:bg-stone-800"
+            className="group inline-flex items-center gap-2 rounded-full bg-stone-950 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-stone-800"
           >
             Contact
+            <ArrowRight
+              size={15}
+              className="transition duration-300 group-hover:translate-x-1"
+            />
           </Link>
         </div>
 
         <button
           type="button"
           onClick={() => setMenuOpen((value) => !value)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-stone-300 bg-white/70 text-stone-950 backdrop-blur-md lg:hidden"
+          className="flex h-12 w-12 items-center justify-center rounded-full border border-stone-300 bg-white/75 text-stone-950 shadow-sm backdrop-blur-md lg:hidden"
           aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
-          {menuOpen ? <X size={18} /> : <Menu size={18} />}
+          {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </nav>
 
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="absolute left-0 right-0 top-full z-[998] border-t border-black/5 bg-[#f7f4ef]/98 px-5 py-6 shadow-xl shadow-stone-900/10 backdrop-blur-xl lg:hidden"
+            initial={{ opacity: 0, y: -10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.98 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            className="mx-auto mt-3 max-w-7xl overflow-hidden rounded-[2rem] border border-black/5 bg-[#f7f4ef]/96 p-4 shadow-2xl shadow-stone-900/12 backdrop-blur-2xl lg:hidden"
           >
-            <div className="mx-auto flex max-w-7xl flex-col gap-5 text-lg text-stone-800">
-              {navigationLinks.map((link) => (
+            <div className="grid gap-2">
+              {navigationLinks.map((link, index) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="transition hover:text-stone-950"
+                  className="group flex items-center justify-between rounded-2xl bg-white/50 px-5 py-4 text-lg font-semibold tracking-[-0.03em] text-stone-950 transition duration-300 hover:bg-stone-950 hover:text-white"
                 >
-                  {link.label}
+                  <span>{link.label}</span>
+                  <span className="text-xs font-semibold tracking-[0.25em] text-stone-400 transition group-hover:text-white/45">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </Link>
               ))}
 
               <Link
                 href="/#contact"
                 onClick={() => setMenuOpen(false)}
-                className="mt-2 rounded-full bg-stone-950 px-5 py-3 text-center text-sm font-medium text-white"
+                className="mt-2 flex items-center justify-between rounded-2xl bg-stone-950 px-5 py-4 text-lg font-semibold tracking-[-0.03em] text-white"
               >
                 Me contacter
+                <ArrowRight size={18} />
               </Link>
             </div>
           </motion.div>
