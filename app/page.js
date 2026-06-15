@@ -681,7 +681,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               Terrains de jeu
             </p>
 
-            <h2 className="text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-[5.5rem]">
+            <h2 className="text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
               Des univers
               <br />
               différents.
