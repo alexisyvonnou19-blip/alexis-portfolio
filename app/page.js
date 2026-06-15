@@ -184,7 +184,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           <div className="grid gap-10 md:grid-cols-[0.7fr_0.3fr] md:items-end">
             <div>
               <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-white/55">
-                Photographie · contenus · communication
+                Photographie · communication
               </p>
 
               <h1 className="max-w-5xl text-6xl font-semibold leading-[0.86] tracking-[-0.075em] md:text-8xl lg:text-[7.2rem]">
@@ -200,7 +200,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
             <div className="max-w-sm md:pb-2">
               <p className="text-base leading-8 text-white/72 md:text-lg">
-                Photographie, contenu et communication pour les entreprises,
+                Photographie, création de contenus et communication pour les entreprises,
                 marques et événements qui ont quelque chose à transmettre.
               </p>
 
