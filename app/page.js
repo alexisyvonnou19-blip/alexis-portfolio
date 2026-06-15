@@ -472,53 +472,87 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
   </div>
 </section>
 
-      <section id="photographie" className="px-5 pb-24 pt-12 md:px-8 md:pt-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 max-w-5xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-              Photographie
-            </p>
-            <h2 className="text-5xl font-semibold leading-[0.95] tracking-[-0.05em] text-stone-950 md:text-7xl">
-              Des galeries pour entrer dans chaque univers.
-            </h2>
-            <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600">
-              Chaque série raconte un terrain, une ambiance, une lumière ou une énergie particulière.
-            </p>
-          </div>
+      <section id="photographie" className="bg-[#f5f3ef] px-5 py-28 md:px-8">
+  <div className="mx-auto max-w-7xl">
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {photographyCategories.map((category) => (
-              <Link
-                href={category.href}
-                key={category.title}
-                className="group premium-hover premium-image-hover relative overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-  src={category.image}
-  alt={`Galerie photo ${category.title} par Alexis Yvonnou`}
-  fill
-  sizes="(max-width: 768px) 100vw, 50vw"
-  className="object-cover opacity-90"
-/>
+    <div className="mb-20">
+      <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+        Photographie
+      </p>
+
+      <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] text-stone-950 md:text-7xl">
+        Des images pour entrer dans chaque univers.
+      </h2>
+
+      <p className="mt-8 max-w-2xl text-lg leading-9 text-stone-600">
+        Course au large, sport, portraits, nature ou événements.
+        Chaque galerie raconte un terrain, une ambiance et une histoire différente.
+      </p>
+    </div>
+
+    <div className="space-y-8">
+
+      {[
+        {
+          title: "Course au large",
+          image: "/images/IMG_1003.jpg",
+          href: "/photographie/course-au-large",
+        },
+        {
+          title: "Sport",
+          image: "/images/IMG_4341.jpg",
+          href: "/photographie/sport",
+        },
+        {
+          title: "Portraits",
+          image: "/images/portrait2.jpg",
+          href: "/photographie/portraits",
+        },
+        {
+          title: "Nature & paysage",
+          image: "/images/IMG_0671.jpg",
+          href: "/photographie/nature",
+        },
+      ].map((item) => (
+        <Link
+          key={item.title}
+          href={item.href}
+          className="group block"
+        >
+          <div className="relative overflow-hidden rounded-[2.5rem]">
+
+            <div className="relative h-[340px] md:h-[520px]">
+              <Image
+                src={item.image}
+                alt={item.title}
+                fill
+                sizes="100vw"
+                className="object-cover transition duration-700 group-hover:scale-[1.03]"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+
+              <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-8 md:p-12">
+
+                <h3 className="max-w-xl text-4xl font-semibold tracking-[-0.05em] text-white md:text-7xl">
+                  {item.title}
+                </h3>
+
+                <div className="hidden items-center gap-3 rounded-full border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-md transition group-hover:bg-white group-hover:text-black md:flex">
+                  Voir la galerie
+                  <ArrowRight size={16} />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-9">
-                  <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/60">
-                    Galerie photo
-                  </p>
-                  <h3 className="max-w-xl text-3xl font-semibold tracking-tight md:text-5xl">
-                    {category.title}
-                  </h3>
-                  <p className="mt-4 max-w-xl text-sm leading-7 text-white/75 md:text-base">
-                    {category.text}
-                  </p>
-                </div>
-              </Link>
-            ))}
+
+              </div>
+            </div>
+
           </div>
-        </div>
-      </section>
+        </Link>
+      ))}
+    </div>
+
+  </div>
+</section>
 
       <section id="qui-suis-je" className="px-5 py-28 md:px-8">
   <div className="mx-auto max-w-7xl">
