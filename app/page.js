@@ -752,31 +752,29 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
       <section id="contact" className="px-5 py-24 md:px-8 md:py-28">
   <div className="mx-auto max-w-7xl overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
-    <div className="grid md:grid-cols-[0.52fr_0.48fr]">
-      <div className="relative overflow-hidden p-8 md:p-14">
+    <div className="grid md:grid-cols-[0.5fr_0.5fr]">
+      <div className="relative overflow-hidden p-8 md:p-12">
         <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#e26a2c]/20 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-[-120px] right-[-80px] h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-[-140px] right-[-80px] h-96 w-96 rounded-full bg-white/10 blur-3xl" />
 
-        <div className="relative z-10 flex min-h-[620px] flex-col justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
-              Contact
-            </p>
+        <div className="relative z-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+            Contact
+          </p>
 
-            <h2 className="mt-5 max-w-3xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
-              Vous avez un projet à raconter ?
-            </h2>
+          <h2 className="mt-5 max-w-3xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
+            Vous avez un projet à raconter ?
+          </h2>
 
-            <p className="mt-8 max-w-md text-lg leading-9 text-white/62">
-              Photo, contenus, réseaux sociaux ou site internet : un échange
-              suffit pour poser le contexte et voir comment je peux vous aider.
-            </p>
-          </div>
+          <p className="mt-8 max-w-md text-lg leading-9 text-white/62">
+            Photo, contenus, réseaux sociaux ou site internet : un échange
+            suffit pour poser le contexte et voir comment je peux vous aider.
+          </p>
 
-          <div className="mt-12 space-y-4">
+          <div className="mt-10 space-y-3">
             <a
               href="mailto:alexisyvonnou@hotmail.fr"
-              className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
+              className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
             >
               <span className="text-sm text-white/45">Mail</span>
               <span className="font-semibold text-white">alexisyvonnou@hotmail.fr</span>
@@ -784,7 +782,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
             <a
               href="tel:+33602379318"
-              className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
+              className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
             >
               <span className="text-sm text-white/45">Téléphone</span>
               <span className="font-semibold text-white">06 02 37 93 18</span>
@@ -811,7 +809,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             </div>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-3 text-sm text-white/45">
+          <div className="mt-10 flex flex-wrap gap-3 text-sm text-white/45">
             <span className="rounded-full border border-white/10 px-4 py-2">
               Concarneau · Bretagne
             </span>
@@ -825,26 +823,22 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </div>
       </div>
 
-      <div className="bg-[#f5f3ef] p-8 text-stone-950 md:p-14">
-        <div className="flex min-h-[620px] flex-col justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-              Me contacter
-            </p>
+      <div className="bg-[#f5f3ef] p-8 text-stone-950 md:p-12">
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
+          Me contacter
+        </p>
 
-            <h3 className="mt-4 max-w-xl text-4xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-6xl">
-              Dites-moi simplement où vous en êtes.
-            </h3>
+        <h3 className="mt-4 max-w-xl text-4xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-6xl">
+          Dites-moi simplement où vous en êtes.
+        </h3>
 
-            <p className="mt-6 max-w-xl text-lg leading-8 text-stone-600">
-              Le projet, le contexte, la date, le lieu, les besoins déjà
-              identifiés : quelques lignes suffisent pour démarrer l’échange.
-            </p>
-          </div>
+        <p className="mt-6 max-w-xl text-lg leading-8 text-stone-600">
+          Le projet, le contexte, la date, le lieu, les besoins déjà identifiés :
+          quelques lignes suffisent pour démarrer l’échange.
+        </p>
 
-          <div className="mt-10">
-            <ContactForm />
-          </div>
+        <div className="mt-10">
+          <ContactForm />
         </div>
       </div>
     </div>
