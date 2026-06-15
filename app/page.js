@@ -262,8 +262,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         },
         {
           title: "Création de contenus",
-          subtitle: "Formats courts & storytelling",
-          text: "Réels, stories, carrousels, vidéos courtes et contenus pensés pour donner du rythme à votre présence digitale.",
+          subtitle: "Savoir-faire & storytelling",
+          text: "Réels, stories, carrousels, posts : contenus pensés pour donner du rythme à votre présence digitale.",
           image: "/images/crea2.webp",
         },
         {
