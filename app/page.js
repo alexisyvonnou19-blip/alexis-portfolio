@@ -235,65 +235,96 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
 <section id="services" className="bg-[#0b0b0a] px-5 py-28 text-white md:px-8">
   <div className="mx-auto max-w-7xl">
-    <div className="mb-16 grid gap-10 md:grid-cols-[0.42fr_0.58fr] md:items-end">
+    <div className="mb-20 grid gap-10 md:grid-cols-[0.48fr_0.52fr] md:items-end">
       <div>
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
           Services
         </p>
 
         <h2 className="max-w-4xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
-          De l’image à la diffusion.
+          De l’idée à la présence.
         </h2>
       </div>
 
       <p className="max-w-2xl text-lg leading-9 text-white/60">
-        J’interviens là où votre communication a besoin de clarté : stratégie éditoriale, création de contenus, réseaux sociaux, site internet ou identité visuelle.
+        J’interviens sur les étapes clés d’une communication vivante :
+        comprendre votre projet, produire les bons contenus, puis les diffuser
+        avec cohérence.
       </p>
     </div>
 
-    <div className="border-y border-white/10">
+    <div className="grid gap-5">
       {[
         {
           number: "01",
-          title: "Réseaux sociaux",
-          text: "Définir une ligne éditoriale, organiser les prises de parole et faire vivre vos réseaux avec régularité.",
+          verb: "Comprendre",
+          title: "Stratégie éditoriale",
+          text: "Clarifier votre positionnement, vos messages, vos formats et la manière de prendre la parole sur vos supports.",
+          tags: ["Ligne éditoriale", "Calendrier", "Angles", "Messages"],
         },
         {
           number: "02",
-          title: "Création de contenus",
-          text: "Produire des photos, vidéos courtes, réels, stories et contenus pensés pour capter l’attention.",
+          verb: "Créer",
+          title: "Photo & contenus",
+          text: "Produire des images, réels, stories, carrousels et formats courts pensés pour valoriser votre activité.",
+          tags: ["Photo", "Vidéo courte", "Réels", "Stories"],
         },
         {
           number: "03",
-          title: "Sites internet",
-          text: "Créer une présence claire, crédible et durable, au-delà des plateformes sociales.",
+          verb: "Diffuser",
+          title: "Réseaux sociaux",
+          text: "Faire vivre votre présence en ligne avec régularité, cohérence et une vraie attention portée au terrain.",
+          tags: ["Instagram", "TikTok", "LinkedIn", "YouTube"],
         },
         {
           number: "04",
-          title: "Identité visuelle",
-          text: "Donner une direction graphique cohérente pour rendre votre projet plus reconnaissable.",
+          verb: "Structurer",
+          title: "Sites & identité",
+          text: "Créer une base solide pour votre communication : site internet, identité visuelle, direction graphique et supports.",
+          tags: ["Site internet", "Identité", "DA", "Supports"],
         },
       ].map((service) => (
         <article
           key={service.number}
-          className="group grid gap-6 border-b border-white/10 py-9 last:border-b-0 md:grid-cols-[0.12fr_0.38fr_0.38fr_0.12fr] md:items-center md:py-11"
+          className="group relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/[0.03] p-7 transition duration-500 hover:bg-white/[0.06] md:p-10"
         >
-          <p className="text-sm font-semibold tracking-[0.3em] text-[#e26a2c]">
+          <div className="pointer-events-none absolute -right-12 -top-16 text-[9rem] font-semibold leading-none tracking-[-0.08em] text-white/[0.035] transition duration-500 group-hover:text-[#e26a2c]/10 md:text-[13rem]">
             {service.number}
-          </p>
+          </div>
 
-          <h3 className="text-4xl font-semibold tracking-[-0.05em] transition duration-500 group-hover:translate-x-2 md:text-6xl">
-            {service.title}
-          </h3>
+          <div className="relative z-10 grid gap-8 md:grid-cols-[0.22fr_0.36fr_0.42fr] md:items-start">
+            <div>
+              <p className="text-sm font-semibold tracking-[0.3em] text-[#e26a2c]">
+                {service.number}
+              </p>
+            </div>
 
-          <p className="max-w-xl text-base leading-8 text-white/58 md:text-lg">
-            {service.text}
-          </p>
+            <div>
+              <p className="text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+                {service.verb}
+              </p>
 
-          <div className="flex justify-start md:justify-end">
-            <span className="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 transition duration-500 group-hover:border-[#e26a2c] group-hover:bg-[#e26a2c] group-hover:text-black">
-              <ArrowRight size={18} />
-            </span>
+              <h3 className="mt-4 text-2xl font-semibold tracking-[-0.04em] text-white/72 md:text-3xl">
+                {service.title}
+              </h3>
+            </div>
+
+            <div>
+              <p className="max-w-xl text-base leading-8 text-white/62 md:text-lg">
+                {service.text}
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-2">
+                {service.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full border border-white/12 px-4 py-2 text-sm text-white/70"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </article>
       ))}
@@ -301,12 +332,12 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
     <div className="mt-10">
       <Link
-  href="/creation-de-contenus"
-  className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition duration-300 hover:border-white hover:bg-white hover:text-stone-950"
->
-  Découvrir mes services
-  <ArrowRight size={16} />
-</Link>
+        href="/creation-de-contenus"
+        className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+      >
+        Découvrir mes services
+        <ArrowRight size={16} />
+      </Link>
     </div>
   </div>
 </section>
