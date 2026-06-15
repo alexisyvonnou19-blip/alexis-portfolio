@@ -752,83 +752,99 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
       <section id="contact" className="px-5 py-24 md:px-8 md:py-28">
   <div className="mx-auto max-w-7xl overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
-    <div className="grid gap-0 md:grid-cols-[0.95fr_1.05fr]">
-      <div className="flex flex-col justify-between p-8 md:p-14">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/45">
-            Contact
-          </p>
+    <div className="grid md:grid-cols-[0.52fr_0.48fr]">
+      <div className="relative overflow-hidden p-8 md:p-14">
+        <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#e26a2c]/20 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-[-120px] right-[-80px] h-80 w-80 rounded-full bg-white/10 blur-3xl" />
 
-          <h2 className="mt-5 text-5xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-7xl">
-            Discutons de votre projet.
-          </h2>
+        <div className="relative z-10 flex min-h-[620px] flex-col justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+              Contact
+            </p>
 
-          <p className="mt-10 max-w-md text-lg leading-9 text-white/65">
-            Chaque projet commence par un échange simple autour de vos besoins,
-            de votre univers et des images à créer.
-          </p>
-        </div>
+            <h2 className="mt-5 max-w-3xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
+              Vous avez un projet à raconter ?
+            </h2>
 
-          <div className="mt-10 grid gap-3 text-sm text-white/75">
+            <p className="mt-8 max-w-md text-lg leading-9 text-white/62">
+              Photo, contenus, réseaux sociaux ou site internet : un échange
+              suffit pour poser le contexte et voir comment je peux vous aider.
+            </p>
+          </div>
+
+          <div className="mt-12 space-y-4">
             <a
               href="mailto:alexisyvonnou@hotmail.fr"
-              className="transition hover:text-white"
+              className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
             >
-              alexisyvonnou@hotmail.fr
+              <span className="text-sm text-white/45">Mail</span>
+              <span className="font-semibold text-white">alexisyvonnou@hotmail.fr</span>
             </a>
 
             <a
               href="tel:+33602379318"
-              className="transition hover:text-white"
+              className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
             >
-              06 02 37 93 18
+              <span className="text-sm text-white/45">Téléphone</span>
+              <span className="font-semibold text-white">06 02 37 93 18</span>
             </a>
 
-            <a
-              href="https://www.instagram.com/alexis_yvonnou"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-white"
-            >
-              Instagram · @alexis_yvonnou
-            </a>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <a
+                href="https://www.instagram.com/alexis_yvonnou"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 font-semibold transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
+              >
+                Instagram
+              </a>
 
-            <a
-              href="https://www.linkedin.com/in/alexis-yvonnou/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition hover:text-white"
-            >
-              LinkedIn · Alexis Yvonnou
-            </a>
+              <a
+                href="https://www.linkedin.com/in/alexis-yvonnou/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 font-semibold transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
+              >
+                LinkedIn
+              </a>
+            </div>
           </div>
 
-        <div className="mt-14 grid gap-3 text-sm text-white/45">
-          <p>Basé à Concarneau, en Bretagne</p>
-          <p>Déplacements possibles en France</p>
-          <p>Photo · contenus · communication digitale</p>
+          <div className="mt-12 flex flex-wrap gap-3 text-sm text-white/45">
+            <span className="rounded-full border border-white/10 px-4 py-2">
+              Concarneau · Bretagne
+            </span>
+            <span className="rounded-full border border-white/10 px-4 py-2">
+              Déplacements possibles
+            </span>
+            <span className="rounded-full border border-white/10 px-4 py-2">
+              Photo · contenus · communication
+            </span>
+          </div>
         </div>
       </div>
 
-      <div className="bg-white p-8 text-stone-950 md:p-14">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-            Me contacter
-          </p>
+      <div className="bg-[#f5f3ef] p-8 text-stone-950 md:p-14">
+        <div className="flex min-h-[620px] flex-col justify-between">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
+              Me contacter
+            </p>
 
-          <h3 className="mt-4 text-3xl font-semibold tracking-tight md:text-5xl">
-            Un mail suffit pour commencer.
-          </h3>
+            <h3 className="mt-4 max-w-xl text-4xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-6xl">
+              Dites-moi simplement où vous en êtes.
+            </h3>
 
-          <p className="mt-5 text-lg leading-8 text-stone-600">
-            Expliquez-moi simplement votre projet, le contexte, la date et le
-            lieu si vous les connaissez déjà. Je reviendrai vers vous dans les
-            plus brefs délais.
-          </p>
-        </div>
+            <p className="mt-6 max-w-xl text-lg leading-8 text-stone-600">
+              Le projet, le contexte, la date, le lieu, les besoins déjà
+              identifiés : quelques lignes suffisent pour démarrer l’échange.
+            </p>
+          </div>
 
-        <div className="mt-10">
-          <ContactForm />
+          <div className="mt-10">
+            <ContactForm />
+          </div>
         </div>
       </div>
     </div>
