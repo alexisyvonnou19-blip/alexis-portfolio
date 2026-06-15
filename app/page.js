@@ -275,7 +275,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         {
           title: "Site & identité",
           subtitle: "Présence digitale",
-          text: "Créer ou renforcer les supports qui donnent de la crédibilité à votre communication : site internet, identité visuelle et direction graphique.",
+          text: "Créer ou renforcer les supports qui donnent de la crédibilité à votre communication : site internet, identité visuelle et plateforme de diffusion.",
           image: "/images/homesite.webp",
         },
       ].map((service, index) => (
