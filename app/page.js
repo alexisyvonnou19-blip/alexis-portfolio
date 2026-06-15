@@ -671,57 +671,48 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
       <section id="domaines" className="px-5 py-24 md:px-8">
   <div className="mx-auto max-w-7xl">
-    <div className="relative overflow-hidden rounded-[2.75rem] bg-stone-950 p-8 text-white shadow-xl shadow-stone-900/10 md:p-12">
-      <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#e26a2c]/20 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
-
-      <div className="relative z-10 grid gap-12 md:grid-cols-[0.48fr_0.52fr] md:items-end">
+    <div className="rounded-[2.75rem] bg-stone-950 px-8 py-12 text-white md:px-12 md:py-16">
+      <div className="grid gap-12 md:grid-cols-[0.48fr_0.52fr] md:items-start">
         <div>
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
             Terrains de jeu
           </p>
 
-          <h2 className="max-w-3xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
-            Des univers différents.
+          <h2 className="text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
+            Des univers
             <br />
-            Une même approche.
+            différents.
+            <br />
+            Une même
+            <br />
+            approche.
           </h2>
         </div>
 
         <div>
-          <p className="max-w-2xl text-lg leading-9 text-white/62">
+          <p className="mb-12 max-w-2xl text-lg leading-9 text-white/60">
             Être présent, comprendre le terrain et raconter ce qui compte —
             avec des images utiles, sincères et pensées pour durer.
           </p>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+          <div className="space-y-5">
             {[
-              ["01", "Nautisme", "Mer, ports, bateaux, équipages."],
-              ["02", "Sport & événementiel", "Effort, émotions, moments forts."],
-              ["03", "Entreprises & artisanat", "Savoir-faire, gestes, équipes."],
-              ["04", "Aventure", "Outdoor, voyage, territoires."],
-            ].map(([number, title, text]) => (
+              "Nautisme",
+              "Sport & événementiel",
+              "Entreprises & artisanat",
+              "Aventure",
+            ].map((item, index) => (
               <div
-                key={title}
-                className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] px-5 py-5"
+                key={item}
+                className="group flex items-center gap-6 border-b border-white/10 pb-5"
               >
-                <div className="pointer-events-none absolute -right-4 -top-6 text-7xl font-semibold tracking-[-0.08em] text-white/[0.035]">
-                  {number}
-                </div>
+                <span className="text-xs font-semibold tracking-[0.3em] text-[#e26a2c]">
+                  {(index + 1).toString().padStart(2, "0")}
+                </span>
 
-                <div className="relative z-10">
-                  <p className="mb-3 text-xs font-semibold tracking-[0.25em] text-[#e26a2c]">
-                    {number}
-                  </p>
-
-                  <p className="text-xl font-semibold tracking-[-0.04em] text-white">
-                    {title}
-                  </p>
-
-                  <p className="mt-3 max-w-xs text-sm leading-6 text-white/45">
-                    {text}
-                  </p>
-                </div>
+                <span className="text-3xl font-semibold tracking-[-0.05em] text-white/35 transition-all duration-300 group-hover:translate-x-3 group-hover:text-white md:text-5xl">
+                  {item}
+                </span>
               </div>
             ))}
           </div>
