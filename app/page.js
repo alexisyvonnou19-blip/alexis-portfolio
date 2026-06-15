@@ -142,15 +142,15 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
     <main className="min-h-screen bg-[#f7f4ef] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.7),transparent_45%)] text-stone-950">
       
 
-     <section id="top" className="px-5 pt-20 md:px-8 md:pt-28">
+     <section id="top" className="px-4 pt-10 md:px-8 md:pt-28">
   <div className="mx-auto max-w-7xl">
     <motion.div
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-      className="relative overflow-hidden rounded-[3rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)]"
+      className="relative overflow-hidden rounded-[2.25rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)] md:rounded-[3rem]"
     >
-      <div className="relative min-h-[640px] overflow-hidden md:min-h-[720px]">
+      <div className="relative min-h-[620px] overflow-hidden md:min-h-[700px]">
         <motion.div
           style={{
             y: heroY,
@@ -169,45 +169,44 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           />
         </motion.div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/24 to-black/5" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/18 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/34 to-black/8" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/18 to-transparent" />
 
-        <div className="absolute left-6 top-6 z-10 rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:left-8 md:top-8">
+        <div className="absolute left-5 top-5 z-10 rounded-full bg-white/90 px-4 py-2.5 text-[0.62rem] font-semibold uppercase tracking-[0.22em] text-stone-950 shadow-sm backdrop-blur-md md:left-8 md:top-8 md:px-5 md:py-3 md:text-[0.68rem]">
           Alexis Yvonnou
         </div>
 
-        <div className="absolute right-6 top-6 z-10 hidden rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white shadow-sm backdrop-blur-md md:right-8 md:top-8 md:block">
+        <div className="absolute right-8 top-8 z-10 hidden rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white shadow-sm backdrop-blur-md md:block">
           Concarneau · Bretagne
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 z-10 p-7 text-white md:p-12 lg:p-14">
-          <div className="grid gap-10 md:grid-cols-[0.7fr_0.3fr] md:items-end">
+        <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-12 lg:p-14">
+          <div className="grid gap-7 md:grid-cols-[0.64fr_0.36fr] md:items-end">
             <div>
-              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-white/55">
+              <p className="mb-4 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-white/55 md:mb-5 md:text-xs md:tracking-[0.34em]">
                 Photographie · communication
               </p>
 
-              <h1 className="max-w-5xl text-6xl font-semibold leading-[0.86] tracking-[-0.075em] md:text-8xl lg:text-[7.2rem]">
+              <h1 className="max-w-5xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-8xl lg:text-[6.6rem]">
                 Raconter
                 <br />
                 le terrain.
               </h1>
 
-              <p className="mt-7 max-w-3xl text-2xl font-medium leading-tight tracking-[-0.04em] text-white/88 md:text-4xl">
+              <p className="mt-5 max-w-2xl text-2xl font-medium leading-tight tracking-[-0.04em] text-white/88 md:mt-7 md:text-4xl">
                 Un regard de terrain pour raconter ce qui compte.
               </p>
             </div>
 
-            <div className="max-w-sm md:pb-2">
-              <p className="text-base leading-8 text-white/72 md:text-lg">
-                Photographie, création de contenus et communication pour les entreprises,
-                marques et événements qui ont quelque chose à transmettre.
+            <div className="max-w-md md:pb-2">
+              <p className="text-base leading-7 text-white/72 md:text-lg md:leading-8">
+                Photographie, création de contenus et communication pour les entreprises, marques et événements.
               </p>
 
-              <div className="mt-7">
+              <div className="mt-6">
                 <Link
                   href="#projets"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90 md:px-6"
                 >
                   Découvrir mon travail
                   <ArrowRight size={16} />
@@ -216,12 +215,12 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             </div>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-wrap gap-2 md:mt-10 md:gap-3">
             {["Nautisme", "Sport", "Outdoor", "Événementiel", "Artisanat"].map(
               (item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/85 backdrop-blur-md"
+                  className="rounded-full border border-white/20 bg-white/10 px-3.5 py-2 text-sm font-medium text-white/85 backdrop-blur-md md:px-4"
                 >
                   {item}
                 </span>
