@@ -671,15 +671,20 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
       <section id="domaines" className="px-5 py-24 md:px-8">
   <div className="mx-auto max-w-7xl">
-    <div className="rounded-[2.75rem] bg-stone-950 p-8 text-white md:p-12">
-      <div className="grid gap-12 md:grid-cols-[0.46fr_0.54fr] md:items-end">
+    <div className="relative overflow-hidden rounded-[2.75rem] bg-stone-950 p-8 text-white shadow-xl shadow-stone-900/10 md:p-12">
+      <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#e26a2c]/20 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-40 left-1/3 h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+
+      <div className="relative z-10 grid gap-12 md:grid-cols-[0.48fr_0.52fr] md:items-end">
         <div>
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
             Terrains de jeu
           </p>
 
-          <h2 className="max-w-3xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
-            Des univers différents. Une même approche.
+          <h2 className="max-w-3xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
+            Des univers différents.
+            <br />
+            Une même approche.
           </h2>
         </div>
 
@@ -691,23 +696,35 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             {[
-              "Nautisme",
-              "Sport & événementiel",
-              "Entreprises & artisanat",
-              "Aventure",
-            ].map((item) => (
+              ["01", "Nautisme"],
+              ["02", "Sport & événementiel"],
+              ["03", "Entreprises & artisanat"],
+              ["04", "Aventure"],
+            ].map(([number, title]) => (
               <div
-                key={item}
-                className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
+                key={title}
+                className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] px-5 py-5 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
               >
-                <span className="text-lg font-semibold tracking-[-0.03em] text-white">
-                  {item}
-                </span>
+                <div className="pointer-events-none absolute -right-4 -top-6 text-7xl font-semibold tracking-[-0.08em] text-white/[0.035] transition duration-300 group-hover:text-[#e26a2c]/20">
+                  {number}
+                </div>
 
-                <ArrowRight
-                  size={18}
-                  className="text-white/35 transition duration-300 group-hover:translate-x-1 group-hover:text-[#e26a2c]"
-                />
+                <div className="relative z-10 flex items-center justify-between gap-6">
+                  <div>
+                    <p className="mb-3 text-xs font-semibold tracking-[0.25em] text-[#e26a2c]">
+                      {number}
+                    </p>
+
+                    <p className="text-xl font-semibold tracking-[-0.04em] text-white">
+                      {title}
+                    </p>
+                  </div>
+
+                  <ArrowRight
+                    size={18}
+                    className="shrink-0 text-white/35 transition duration-300 group-hover:translate-x-1 group-hover:text-[#e26a2c]"
+                  />
+                </div>
               </div>
             ))}
           </div>
