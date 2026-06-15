@@ -235,95 +235,89 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
 <section id="services" className="bg-[#0b0b0a] px-5 py-28 text-white md:px-8">
   <div className="mx-auto max-w-7xl">
-    <div className="mb-20 grid gap-10 md:grid-cols-[0.5fr_0.5fr] md:items-end">
+    <div className="mb-16 grid gap-10 md:grid-cols-[0.5fr_0.5fr] md:items-end">
       <div>
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
           Services
         </p>
 
         <h2 className="max-w-4xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
-          De l’image au récit.
+          Ce que je peux faire pour votre projet.
         </h2>
       </div>
 
       <p className="max-w-2xl text-lg leading-9 text-white/60">
-        J’accompagne les projets qui ont besoin d’être mieux vus, mieux compris
-        et mieux racontés — de la production d’images jusqu’à leur diffusion.
+        Produire les bonnes images, construire les bons contenus et donner à votre
+        communication une présence plus claire, plus vivante et plus identifiable.
       </p>
     </div>
 
-    <div className="border-y border-white/10">
+    <div className="grid gap-5 md:grid-cols-2">
       {[
         {
-          number: "01",
-          title: "Observer",
-          subtitle: "Comprendre le terrain",
-          text: "Identifier votre univers, vos messages, vos publics et les angles qui peuvent réellement servir votre communication.",
-          tags: ["Positionnement", "Angles", "Ligne éditoriale"],
+          title: "Photographie",
+          subtitle: "Images de terrain",
+          text: "Reportages, portraits, événements, sport, nautisme et savoir-faire : produire des images fortes, utiles et sincères.",
+          image: "/images/homecal5.webp",
         },
         {
-          number: "02",
-          title: "Produire",
-          subtitle: "Créer les images",
-          text: "Réaliser les photos, vidéos courtes, réels, stories et formats visuels nécessaires pour rendre votre projet vivant.",
-          tags: ["Photo", "Vidéo courte", "Formats sociaux"],
+          title: "Création de contenus",
+          subtitle: "Formats courts & storytelling",
+          text: "Réels, stories, carrousels, vidéos courtes et contenus pensés pour donner du rythme à votre présence digitale.",
+          image: "/images/crea2.webp",
         },
         {
-          number: "03",
-          title: "Valoriser",
-          subtitle: "Faire vivre les contenus",
-          text: "Déployer les contenus sur vos réseaux sociaux avec cohérence, régularité et une vraie attention portée à votre identité.",
-          tags: ["Instagram", "TikTok", "LinkedIn"],
+          title: "Réseaux sociaux",
+          subtitle: "Ligne éditoriale & diffusion",
+          text: "Structurer les prises de parole, organiser les contenus et faire vivre vos réseaux avec cohérence et régularité.",
+          image: "/images/service-content.webp",
         },
         {
-          number: "04",
-          title: "Construire",
-          subtitle: "Structurer la présence",
-          text: "Créer ou renforcer les supports qui donnent de la crédibilité à votre communication : site internet, identité visuelle, direction graphique.",
-          tags: ["Site internet", "Identité visuelle", "DA"],
+          title: "Site & identité",
+          subtitle: "Présence digitale",
+          text: "Créer ou renforcer les supports qui donnent de la crédibilité à votre communication : site internet, identité visuelle et direction graphique.",
+          image: "/images/service-web.webp",
         },
-      ].map((service) => (
+      ].map((service, index) => (
         <article
-          key={service.number}
-          className="group grid gap-6 border-b border-white/10 py-10 last:border-b-0 md:grid-cols-[0.16fr_0.34fr_0.5fr] md:items-center md:py-14"
+          key={service.title}
+          className={`group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-black/20 md:min-h-[520px] ${
+            index === 0 || index === 3 ? "md:translate-y-10" : ""
+          }`}
         >
-          <div>
-            <p className="text-6xl font-semibold leading-none tracking-[-0.08em] text-white/10 transition duration-500 group-hover:text-[#e26a2c] md:text-8xl">
-              {service.number}
-            </p>
+          <Image
+            src={service.image}
+            alt={`${service.title} par Alexis Yvonnou`}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover opacity-72 transition duration-700 group-hover:opacity-55"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/28 to-black/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-transparent to-transparent" />
+
+          <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 backdrop-blur-md md:left-8 md:top-8">
+            {String(index + 1).padStart(2, "0")}
           </div>
 
-          <div>
-            <h3 className="text-5xl font-semibold leading-[0.9] tracking-[-0.06em] transition duration-500 group-hover:translate-x-2 md:text-7xl">
+          <div className="absolute bottom-0 left-0 right-0 p-7 md:p-9">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
+              {service.subtitle}
+            </p>
+
+            <h3 className="mt-4 text-5xl font-semibold leading-[0.9] tracking-[-0.06em] md:text-7xl">
               {service.title}
             </h3>
 
-            <p className="mt-4 text-xl font-semibold tracking-[-0.04em] text-white/45 md:text-2xl">
-              {service.subtitle}
-            </p>
-          </div>
-
-          <div>
-            <p className="max-w-2xl text-base leading-8 text-white/62 md:text-lg">
+            <p className="mt-6 max-w-xl text-base leading-8 text-white/72 md:text-lg">
               {service.text}
             </p>
-
-            <div className="mt-6 flex flex-wrap gap-2">
-              {service.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full border border-white/12 px-4 py-2 text-sm text-white/70"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
           </div>
         </article>
       ))}
     </div>
 
-    <div className="mt-10">
+    <div className="mt-20">
       <Link
         href="/creation-de-contenus"
         className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
