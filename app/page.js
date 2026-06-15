@@ -752,10 +752,10 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
       <section id="contact" className="px-5 py-24 md:px-8 md:py-28">
   <div className="mx-auto max-w-7xl overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
-    <div className="grid md:grid-cols-[0.5fr_0.5fr]">
+    <div className="grid md:grid-cols-[0.48fr_0.52fr]">
       <div className="relative overflow-hidden p-8 md:p-12">
         <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#e26a2c]/20 blur-3xl" />
-        <div className="pointer-events-none absolute bottom-[-140px] right-[-80px] h-96 w-96 rounded-full bg-white/10 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-[-160px] right-[-100px] h-96 w-96 rounded-full bg-white/10 blur-3xl" />
 
         <div className="relative z-10">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
@@ -771,42 +771,58 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             suffit pour poser le contexte et voir comment je peux vous aider.
           </p>
 
-          <div className="mt-10 space-y-3">
+          <div className="mt-12 border-t border-white/10">
             <a
               href="mailto:alexisyvonnou@hotmail.fr"
-              className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
+              className="group flex items-center justify-between gap-6 border-b border-white/10 py-5 transition duration-300"
             >
-              <span className="text-sm text-white/45">Mail</span>
-              <span className="font-semibold text-white">alexisyvonnou@hotmail.fr</span>
+              <span className="text-sm uppercase tracking-[0.25em] text-[#e26a2c]">
+                Mail
+              </span>
+              <span className="text-right text-lg font-semibold text-white/75 transition duration-300 group-hover:translate-x-1 group-hover:text-white">
+                alexisyvonnou@hotmail.fr
+              </span>
             </a>
 
             <a
               href="tel:+33602379318"
-              className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
+              className="group flex items-center justify-between gap-6 border-b border-white/10 py-5 transition duration-300"
             >
-              <span className="text-sm text-white/45">Téléphone</span>
-              <span className="font-semibold text-white">06 02 37 93 18</span>
+              <span className="text-sm uppercase tracking-[0.25em] text-[#e26a2c]">
+                Téléphone
+              </span>
+              <span className="text-right text-lg font-semibold text-white/75 transition duration-300 group-hover:translate-x-1 group-hover:text-white">
+                06 02 37 93 18
+              </span>
             </a>
 
-            <div className="grid gap-3 sm:grid-cols-2">
-              <a
-                href="https://www.instagram.com/alexis_yvonnou"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 font-semibold transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
-              >
+            <a
+              href="https://www.instagram.com/alexis_yvonnou"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between gap-6 border-b border-white/10 py-5 transition duration-300"
+            >
+              <span className="text-sm uppercase tracking-[0.25em] text-[#e26a2c]">
                 Instagram
-              </a>
+              </span>
+              <span className="text-right text-lg font-semibold text-white/75 transition duration-300 group-hover:translate-x-1 group-hover:text-white">
+                @alexis_yvonnou
+              </span>
+            </a>
 
-              <a
-                href="https://www.linkedin.com/in/alexis-yvonnou/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-4 font-semibold transition duration-300 hover:border-[#e26a2c]/70 hover:bg-[#e26a2c]/10"
-              >
+            <a
+              href="https://www.linkedin.com/in/alexis-yvonnou/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between gap-6 border-b border-white/10 py-5 transition duration-300"
+            >
+              <span className="text-sm uppercase tracking-[0.25em] text-[#e26a2c]">
                 LinkedIn
-              </a>
-            </div>
+              </span>
+              <span className="text-right text-lg font-semibold text-white/75 transition duration-300 group-hover:translate-x-1 group-hover:text-white">
+                Alexis Yvonnou
+              </span>
+            </a>
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3 text-sm text-white/45">
@@ -837,7 +853,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           quelques lignes suffisent pour démarrer l’échange.
         </p>
 
-        <div className="mt-10">
+        <div className="mt-10 rounded-[2rem] bg-white p-6 shadow-xl shadow-stone-900/10 md:p-8">
           <ContactForm />
         </div>
       </div>
