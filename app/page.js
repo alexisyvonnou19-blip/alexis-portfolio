@@ -481,13 +481,13 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         </p>
 
         <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] text-stone-950 md:text-7xl">
-          Des images pour entrer dans chaque univers.
+          Cinq univers, cinq manières de raconter.
         </h2>
       </div>
 
       <p className="text-lg leading-9 text-stone-600">
-        Course au large, portraits, sport, nature ou Mini 6.50 : chaque série
-        raconte un terrain, une ambiance et une manière de regarder.
+        Course au large, portraits, sport, nature ou Mini 6.50 : des séries
+        pensées comme des portes d’entrée vers chaque terrain.
       </p>
     </div>
 
@@ -499,8 +499,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           text: "Marins, bateaux, pontons, départs et retours : l’intensité de la voile de compétition.",
           image: "/images/homecal5.webp",
           href: "/photographie/course-au-large",
-          className: "md:col-span-7 md:min-h-[540px]",
-          titleClass: "md:text-7xl",
+          className: "md:col-span-7 md:min-h-[520px]",
+          titleClass: "md:text-6xl",
         },
         {
           title: "Portraits",
@@ -508,8 +508,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           text: "Des visages, des présences et des personnalités racontés avec naturel.",
           image: "/images/portrait2.webp",
           href: "/photographie/portraits",
-          className: "md:col-span-5 md:min-h-[540px]",
-          titleClass: "md:text-6xl",
+          className: "md:col-span-5 md:min-h-[520px]",
+          titleClass: "md:text-5xl",
         },
         {
           title: "Sport",
@@ -517,8 +517,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           text: "Effort, rythme, émotions et énergie d’une pratique ou d’un événement.",
           image: "/images/sport.webp",
           href: "/photographie/sport",
-          className: "md:col-span-5 md:min-h-[420px]",
-          titleClass: "md:text-6xl",
+          className: "md:col-span-5 md:min-h-[410px]",
+          titleClass: "md:text-5xl",
         },
         {
           title: "Nature, paysage & architecture",
@@ -526,8 +526,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           text: "Une approche sensible des lieux, des matières, des formes et des paysages.",
           image: "/images/IMG_0671.webp",
           href: "/photographie/nature-paysage-architecture",
-          className: "md:col-span-7 md:min-h-[420px]",
-          titleClass: "md:text-6xl",
+          className: "md:col-span-7 md:min-h-[410px]",
+          titleClass: "md:text-5xl",
         },
         {
           title: "Mini 6.50",
@@ -535,8 +535,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           text: "Bateaux, marins, préparation et moments de course autour de l’univers Mini 6.50.",
           image: "/images/IMG_1538.webp",
           href: "/photographie/mini-650",
-          className: "md:col-span-12 md:min-h-[520px]",
-          titleClass: "md:text-8xl",
+          className: "md:col-span-12 md:min-h-[620px]",
+          titleClass: "md:text-7xl",
         },
       ].map((category) => (
         <Link
@@ -549,33 +549,31 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
             alt={`Galerie photo ${category.title} par Alexis Yvonnou`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover opacity-95 transition duration-700 group-hover:scale-[1.025] group-hover:opacity-82"
+            className="object-cover opacity-95 transition duration-700 group-hover:scale-[1.02] group-hover:opacity-85"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/12 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/24 via-transparent to-transparent" />
 
           <div className="absolute bottom-0 left-0 right-0 p-7 text-white transition duration-500 group-hover:-translate-y-2 md:p-9">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
               {category.label}
             </p>
 
-            <div className="mt-4 flex items-end justify-between gap-6">
-              <h3
-                className={`max-w-4xl text-4xl font-semibold leading-[0.9] tracking-[-0.055em] ${category.titleClass}`}
-              >
-                {category.title}
-              </h3>
-
-              <span className="hidden shrink-0 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white/80 opacity-0 backdrop-blur-md transition duration-500 group-hover:opacity-100 md:inline-flex">
-                Voir la galerie
-                <ArrowRight size={16} className="ml-2" />
-              </span>
-            </div>
+            <h3
+              className={`mt-4 max-w-4xl text-4xl font-semibold leading-[0.9] tracking-[-0.055em] ${category.titleClass}`}
+            >
+              {category.title}
+            </h3>
 
             <p className="mt-5 max-w-2xl text-sm leading-7 text-white/0 transition duration-500 group-hover:text-white/78 md:text-base">
               {category.text}
             </p>
+
+            <div className="mt-5 flex items-center gap-2 text-sm font-semibold text-white/0 transition duration-500 group-hover:text-white/85">
+              Voir la galerie
+              <ArrowRight size={16} />
+            </div>
           </div>
         </Link>
       ))}
