@@ -148,79 +148,79 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+      className="relative overflow-hidden rounded-[3rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)]"
     >
-      <div className="mx-auto max-w-6xl text-center">
-        <p className="mb-6 text-xs font-semibold uppercase tracking-[0.34em] text-stone-500">
-          Photographe & créateur de contenus · Bretagne
-        </p>
+      <div className="relative min-h-[680px] overflow-hidden md:min-h-[760px]">
+        <motion.div
+          style={{
+            y: heroY,
+            scale: heroScale,
+          }}
+          className="absolute inset-0"
+        >
+          <Image
+            src="/images/hero5.webp"
+            alt="Image principale du portfolio d’Alexis Yvonnou"
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </motion.div>
 
-        <h1 className="text-6xl font-semibold leading-[0.9] tracking-[-0.06em] text-stone-950 md:text-8xl lg:text-[6.8rem]">
-          Photographe.
-          <br />
-          Créateur de contenus.
-          <br />
-          Bretagne.
-        </h1>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-white/5" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-transparent to-black/15" />
 
-        <p className="mx-auto mt-8 max-w-3xl text-xl font-medium leading-tight tracking-[-0.035em] text-stone-950 md:text-3xl md:leading-[1.15]">
-          J’accompagne les entreprises, marques et événements qui veulent rendre leur projet plus visible, plus clair et plus incarné.
-        </p>
-
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-stone-600 md:text-lg">
-          Photographie, création de contenus, réseaux sociaux, site internet et identité visuelle — avec une approche indépendante, directe et ancrée dans le terrain.
-        </p>
-
-        <div className="mt-9 flex flex-wrap justify-center gap-3">
-          <Button href="#photographie">
-            Découvrir mes photos
-          </Button>
-
-          <Button href="/creation-de-contenus">
-            Création de contenus
-          </Button>
-
-          <Button href="#contact" variant="secondary">
-            Me contacter
-          </Button>
+        <div className="absolute left-6 top-6 rounded-full bg-white/85 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:left-8 md:top-8">
+          Concarneau · Bretagne
         </div>
-      </div>
 
-      <div className="mt-8">
-        <div className="relative overflow-hidden rounded-[2.75rem] shadow-[0_35px_120px_rgba(28,25,23,0.14)]">
-          <div className="relative h-[48vh] min-h-[360px] w-full overflow-hidden md:h-[62vh]">
-            <motion.div
-              style={{
-                y: heroY,
-                scale: heroScale,
-              }}
-              className="absolute inset-0"
-            >
-              <Image
-                src="/images/hero5.webp"
-                alt="Image principale du portfolio d’Alexis Yvonnou"
-                fill
-                priority
-                quality={75}
-                sizes="100vw"
-                className="object-cover object-center"
-              />
-            </motion.div>
+        <div className="absolute right-6 top-6 hidden rounded-full bg-black/35 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white shadow-sm backdrop-blur-md md:right-8 md:top-8 md:block">
+          Photo · contenus · digital
+        </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/18 via-transparent to-white/8" />
-
-            <div className="absolute left-5 top-5 rounded-full bg-white/80 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:left-8 md:top-8">
-              Concarneau · France
-            </div>
-
-            <div className="absolute bottom-6 left-6 right-6 flex flex-col gap-3 md:bottom-8 md:left-8 md:right-8 md:flex-row md:items-end md:justify-between">
-              <p className="inline-flex w-fit rounded-full bg-white/82 px-5 py-3 text-sm font-medium text-stone-950 shadow-sm backdrop-blur-md md:text-base">
-                Nautisme · Sport · Événementiel · Artisanat
+        <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-12 lg:p-14">
+          <div className="grid gap-10 md:grid-cols-[0.7fr_0.3fr] md:items-end">
+            <div>
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.34em] text-white/55">
+                Photographe & créateur de contenus
               </p>
 
-              <p className="inline-flex w-fit rounded-full bg-black/35 px-5 py-3 text-sm font-medium text-white shadow-sm backdrop-blur-md md:ml-auto">
-                Photo · Vidéo · Réseaux sociaux
-              </p>
+              <h1 className="max-w-5xl text-6xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-8xl lg:text-[8rem]">
+                Rendre visibles les projets qui vivent sur le terrain.
+              </h1>
             </div>
+
+            <div className="max-w-md md:pb-2">
+              <p className="text-lg leading-8 text-white/78 md:text-xl">
+                Images, contenus, réseaux sociaux et sites internet pour les
+                entreprises, marques et événements.
+              </p>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <Button href="#photographie" variant="secondary">
+                  Voir les images
+                </Button>
+
+                <Button href="#services" variant="secondary">
+                  Services
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-3">
+            {["Nautisme", "Sport", "Outdoor", "Événementiel", "Artisanat"].map(
+              (item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/82 backdrop-blur-md"
+                >
+                  {item}
+                </span>
+              )
+            )}
           </div>
         </div>
       </div>
