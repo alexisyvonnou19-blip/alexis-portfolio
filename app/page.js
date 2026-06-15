@@ -474,19 +474,20 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
 
       <section id="photographie" className="px-5 py-28 md:px-8">
   <div className="mx-auto max-w-7xl">
-    <div className="mb-16 grid gap-8 md:grid-cols-[0.6fr_0.4fr] md:items-end">
+    <div className="mb-16 grid gap-8 md:grid-cols-[0.62fr_0.38fr] md:items-end">
       <div>
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
           Photographie
         </p>
 
         <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] text-stone-950 md:text-7xl">
-          Des galeries pour entrer dans chaque univers.
+          Des images pour entrer dans chaque univers.
         </h2>
       </div>
 
       <p className="text-lg leading-9 text-stone-600">
-        Course au large, sport, portraits, nature ou banque d’images : chaque série raconte un terrain, une ambiance et une énergie différente.
+        Course au large, portraits, sport, nature ou Mini 6.50 : chaque série
+        raconte un terrain, une ambiance et une manière de regarder.
       </p>
     </div>
 
@@ -494,75 +495,85 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       {[
         {
           title: "Course au large",
-          label: "Univers fort",
-          text: "Au plus près des marins, des bateaux, des pontons et de l’intensité propre à la voile de compétition.",
+          label: "La mer comme terrain.",
+          text: "Marins, bateaux, pontons, départs et retours : l’intensité de la voile de compétition.",
           image: "/images/homecal5.webp",
           href: "/photographie/course-au-large",
-          className: "md:col-span-7 md:min-h-[560px]",
+          className: "md:col-span-7 md:min-h-[540px]",
+          titleClass: "md:text-7xl",
         },
         {
           title: "Portraits",
-          label: "Présence humaine",
-          text: "Des portraits naturels et incarnés pour raconter une personnalité, un métier ou un projet.",
+          label: "Ceux qui font les projets.",
+          text: "Des visages, des présences et des personnalités racontés avec naturel.",
           image: "/images/portrait2.webp",
           href: "/photographie/portraits",
-          className: "md:col-span-5 md:min-h-[560px]",
+          className: "md:col-span-5 md:min-h-[540px]",
+          titleClass: "md:text-6xl",
         },
         {
           title: "Sport",
-          label: "Action & mouvement",
-          text: "Capturer l’effort, le rythme, les émotions et l’énergie d’une pratique ou d’un événement.",
+          label: "L’intensité du mouvement.",
+          text: "Effort, rythme, émotions et énergie d’une pratique ou d’un événement.",
           image: "/images/sport.webp",
           href: "/photographie/sport",
-          className: "md:col-span-5 md:min-h-[430px]",
+          className: "md:col-span-5 md:min-h-[420px]",
+          titleClass: "md:text-6xl",
         },
         {
           title: "Nature, paysage & architecture",
-          label: "Lumières & matières",
-          text: "Une approche sensible des lieux, des paysages, des lignes et des atmosphères.",
+          label: "Lumières, lignes et atmosphères.",
+          text: "Une approche sensible des lieux, des matières, des formes et des paysages.",
           image: "/images/IMG_0671.webp",
           href: "/photographie/nature-paysage-architecture",
-          className: "md:col-span-7 md:min-h-[430px]",
+          className: "md:col-span-7 md:min-h-[420px]",
+          titleClass: "md:text-6xl",
         },
         {
-          title: "Banque images Mini 6.50",
-          label: "Collection dédiée",
-          text: "Une banque d’images autour de l’univers Mini 6.50 : bateaux, marins, préparation et moments de course.",
+          title: "Mini 6.50",
+          label: "Une banque d’images dédiée.",
+          text: "Bateaux, marins, préparation et moments de course autour de l’univers Mini 6.50.",
           image: "/images/IMG_1538.webp",
           href: "/photographie/mini-650",
-          className: "md:col-span-12 md:min-h-[440px]",
+          className: "md:col-span-12 md:min-h-[520px]",
+          titleClass: "md:text-8xl",
         },
-      ].map((category, index) => (
+      ].map((category) => (
         <Link
           href={category.href}
           key={category.title}
-          className={`group relative min-h-[400px] overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10 ${category.className}`}
+          className={`group relative min-h-[390px] overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10 ${category.className}`}
         >
           <Image
             src={category.image}
             alt={`Galerie photo ${category.title} par Alexis Yvonnou`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover opacity-88 transition duration-700 group-hover:opacity-72"
+            className="object-cover opacity-95 transition duration-700 group-hover:scale-[1.025] group-hover:opacity-82"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/84 via-black/20 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/38 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/12 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
 
-          <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 backdrop-blur-md md:left-8 md:top-8">
-            {String(index + 1).padStart(2, "0")}
-          </div>
-
-          <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-9">
+          <div className="absolute bottom-0 left-0 right-0 p-7 text-white transition duration-500 group-hover:-translate-y-2 md:p-9">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
               {category.label}
             </p>
 
-            <h3 className="mt-4 max-w-4xl text-4xl font-semibold leading-[0.9] tracking-[-0.055em] md:text-6xl">
-              {category.title}
-            </h3>
+            <div className="mt-4 flex items-end justify-between gap-6">
+              <h3
+                className={`max-w-4xl text-4xl font-semibold leading-[0.9] tracking-[-0.055em] ${category.titleClass}`}
+              >
+                {category.title}
+              </h3>
 
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-white/75 md:text-base">
+              <span className="hidden shrink-0 rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white/80 opacity-0 backdrop-blur-md transition duration-500 group-hover:opacity-100 md:inline-flex">
+                Voir la galerie
+                <ArrowRight size={16} className="ml-2" />
+              </span>
+            </div>
+
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-white/0 transition duration-500 group-hover:text-white/78 md:text-base">
               {category.text}
             </p>
           </div>
