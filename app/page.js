@@ -555,8 +555,8 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/10 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/24 via-transparent to-transparent" />
 
-          <div className="absolute bottom-0 left-0 right-0 p-7 text-white md:p-9">
-            <div className="translate-y-3 transition-all duration-500 group-hover:translate-y-0">
+          <div className="absolute bottom-0 left-0 right-0 p-8 text-white md:p-10">
+            <div className="translate-y-2 transition-all duration-500 group-hover:translate-y-0">
   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
     {category.label}
   </p>
