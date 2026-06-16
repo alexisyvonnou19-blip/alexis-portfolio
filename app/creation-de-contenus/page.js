@@ -317,99 +317,107 @@ export default function CreationContenusPage() {
       </section>
 
       <section className="px-5 py-24 md:px-8 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-16 grid gap-8 md:grid-cols-[0.58fr_0.42fr] md:items-end">
-            <div>
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
-                Projets
-              </p>
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-16 grid gap-8 md:grid-cols-[0.58fr_0.42fr] md:items-end">
+      <div>
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+          Projets
+        </p>
 
-              <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
-                Quelques contextes déjà accompagnés.
-              </h2>
+        <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+          Des projets concrets, pensés pour être vus.
+        </h2>
+      </div>
+
+      <p className="max-w-2xl text-lg leading-9 text-stone-600">
+        Nautisme, entreprises ou communication digitale : quelques exemples de
+        contextes où l’image, le contenu et la diffusion travaillent ensemble.
+      </p>
+    </div>
+
+    <div className="grid gap-6">
+      {projectCases.map((project, index) => (
+        <article
+          key={project.name}
+          className="group relative overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/10"
+        >
+          <div className="grid md:grid-cols-[0.58fr_0.42fr]">
+            <div
+              className={`relative min-h-[420px] overflow-hidden md:min-h-[520px] ${
+                index % 2 === 1 ? "md:order-2" : ""
+              }`}
+            >
+              <Image
+                src={project.image}
+                alt={`${project.name} - création de contenus par Alexis Yvonnou`}
+                fill
+                sizes="(max-width: 768px) 100vw, 58vw"
+                className="object-cover opacity-90 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-75"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+
+              <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold tracking-[0.25em] text-white/80 backdrop-blur-md">
+                {String(index + 1).padStart(2, "0")}
+              </div>
             </div>
 
-            <p className="max-w-2xl text-lg leading-9 text-stone-600">
-              Nautisme, entreprises, événements ou communication digitale : des
-              projets différents, avec une même volonté de rendre le réel plus
-              lisible et plus vivant.
-            </p>
-          </div>
+            <div
+              className={`relative flex min-h-[420px] flex-col justify-between p-8 md:min-h-[520px] md:p-10 lg:p-12 ${
+                index % 2 === 1 ? "md:order-1" : ""
+              }`}
+            >
+              <div className="pointer-events-none absolute -right-8 -top-10 text-[9rem] font-semibold tracking-[-0.08em] text-white/[0.035]">
+                {String(index + 1).padStart(2, "0")}
+              </div>
 
-          <div className="grid gap-6">
-            {projectCases.map((project, index) => (
-              <article
-                key={project.name}
-                className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 transition duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-stone-900/20 ${
-                  index % 2 === 1
-                    ? "md:grid-cols-[0.42fr_0.58fr]"
-                    : "md:grid-cols-[0.58fr_0.42fr]"
-                }`}
-              >
-                <div
-                  className={`relative min-h-[340px] md:min-h-[440px] ${
-                    index % 2 === 1 ? "md:order-2" : "md:order-1"
-                  }`}
-                >
-                  <Image
-                    src={project.image}
-                    alt={`${project.name} - création de contenus par Alexis Yvonnou`}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover opacity-85 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-70"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+              <div className="relative z-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                  Projet accompagné
+                </p>
+
+                <h3 className="mt-6 max-w-xl text-5xl font-semibold leading-[0.9] tracking-[-0.06em] transition duration-500 group-hover:translate-x-1 md:text-7xl">
+                  {project.name}
+                </h3>
+              </div>
+
+              <div className="relative z-10 mt-12 grid gap-7">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35">
+                    Contexte
+                  </p>
+                  <p className="mt-3 max-w-xl text-base leading-8 text-white/70 md:text-lg">
+                    {project.context}
+                  </p>
                 </div>
 
-                <div
-                  className={`flex flex-col justify-between p-8 md:p-10 ${
-                    index % 2 === 1 ? "md:order-1" : "md:order-2"
-                  }`}
-                >
+                <div className="grid gap-5 border-t border-white/10 pt-7 md:grid-cols-2">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
-                      Projet accompagné
+                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35">
+                      Mission
                     </p>
-
-                    <h3 className="mt-6 text-4xl font-semibold tracking-[-0.05em] transition duration-500 group-hover:translate-x-1 md:text-6xl">
-                      {project.name}
-                    </h3>
+                    <p className="mt-3 text-base leading-8 text-white/70">
+                      {project.mission}
+                    </p>
                   </div>
 
-                  <div className="mt-12 grid gap-8">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35">
-                        Contexte
-                      </p>
-                      <p className="mt-4 max-w-xl text-base leading-8 text-white/70 md:text-lg">
-                        {project.context}
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35">
-                        Mission
-                      </p>
-                      <p className="mt-4 max-w-xl text-base leading-8 text-white/70 md:text-lg">
-                        {project.mission}
-                      </p>
-                    </div>
-
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35">
-                        Actions
-                      </p>
-                      <p className="mt-4 max-w-xl text-base leading-8 text-white/70 md:text-lg">
-                        {project.actions}
-                      </p>
-                    </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35">
+                      Actions
+                    </p>
+                    <p className="mt-3 text-base leading-8 text-white/70">
+                      {project.actions}
+                    </p>
                   </div>
                 </div>
-              </article>
-            ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section className="bg-[#e9e2d7] px-5 py-24 md:px-8 md:py-28">
         <div className="mx-auto max-w-7xl">
