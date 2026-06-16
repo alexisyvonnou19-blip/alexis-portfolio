@@ -56,7 +56,8 @@ export default function TrailPage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
 
-  const activePhoto = activeIndex !== null ? getPhoto(gallery[activeIndex]) : null;
+  const activePhoto =
+    activeIndex !== null ? getPhoto(gallery[activeIndex]) : null;
 
   const openImage = (num) => {
     setActiveIndex(gallery.indexOf(num));
@@ -92,45 +93,49 @@ export default function TrailPage() {
     };
   }, [activeIndex]);
 
-const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
-  <motion.button
-    type="button"
-    onClick={() => openImage(num)}
-    className={`gallery-mobile-card group relative block w-full cursor-zoom-in overflow-hidden rounded-2xl bg-stone-200 text-left ${ratio}`}
-    initial={{ opacity: 0, y: 26, filter: "blur(8px)" }}
-    whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-    viewport={{ once: true, margin: "0px 0px -80px 0px" }}
-    transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-  >
-    <Image
-      src={getPhoto(num)}
-      alt={`Trail - photo ${num} par Alexis Yvonnou`}
-      fill
-      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-      className="object-cover transition duration-700 ease-out group-hover:scale-[1.018] group-hover:brightness-90"
-    />
+  const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
+    <motion.button
+      type="button"
+      onClick={() => openImage(num)}
+      className={`gallery-mobile-card group relative block w-full cursor-zoom-in overflow-hidden rounded-2xl bg-stone-200 text-left ${ratio}`}
+      initial={{ opacity: 0, y: 26, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <Image
+        src={getPhoto(num)}
+        alt={`Trail - photo ${num} par Alexis Yvonnou`}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+        className="object-cover transition duration-700 ease-out group-hover:scale-[1.018] group-hover:brightness-90"
+      />
 
-    <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
-      <div className="absolute inset-0 bg-black/10" />
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
+        <div className="absolute inset-0 bg-black/10" />
 
-      <div className="absolute bottom-4 right-4 rounded-full bg-white/90 px-4 py-2 text-xs font-medium text-stone-950 backdrop-blur-md">
-        Voir
+        <div className="absolute bottom-4 right-4 rounded-full bg-white/90 px-4 py-2 text-xs font-medium text-stone-950 backdrop-blur-md">
+          Voir
+        </div>
       </div>
-    </div>
-  </motion.button>
-);
+    </motion.button>
+  );
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
-        <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(trailStructuredData),
-  }}
-/>
-      {/* HERO IMMERSIF */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(trailStructuredData),
+        }}
+      />
+
       <section className="gallery-mobile-hero relative mt-[92px] h-[calc(82vh-92px)] min-h-[468px] w-full overflow-hidden">
-        <button type="button" onClick={() => openImage(1)} className="relative h-full w-full">
+        <button
+          type="button"
+          onClick={() => openImage(1)}
+          className="relative h-full w-full cursor-zoom-in"
+        >
           <Image
             src={getPhoto(1)}
             alt="Trail - photographie Alexis Yvonnou"
@@ -141,46 +146,30 @@ const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
           />
         </button>
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/10" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/82 via-black/24 to-black/5" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/52 via-black/12 to-transparent" />
 
-        <div className="pointer-events-none absolute bottom-8 left-5 right-5 text-white md:bottom-12 md:left-10 md:right-10">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
-            Photographie
+        <div className="pointer-events-none absolute bottom-8 left-5 right-5 text-white md:bottom-14 md:left-10 md:right-10">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+            Photographie · trail
           </p>
-          <h1 className="gallery-mobile-title max-w-5xl text-6xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-8xl">
-            Trail
+
+          <h1 className="gallery-mobile-title max-w-5xl text-6xl font-semibold leading-[0.9] tracking-[-0.07em] md:text-8xl lg:text-[8rem]">
+            Trail.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
-            L’effort, le terrain, les visages et l’ambiance d’un sport outdoor en pleine nature.
+
+          <p className="mt-7 max-w-3xl text-2xl font-medium leading-tight tracking-[-0.04em] text-white/86 md:text-4xl">
+            L’effort, le terrain et les émotions d’un sport outdoor.
+          </p>
+
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
+            Une galerie au plus près des coureurs, des paysages, des regards, de
+            la fatigue et des instants qui donnent son intensité à une course.
           </p>
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="px-5 py-20 md:px-8">
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-  className="max-w-3xl"
-  initial={{ opacity: 0, y: 22 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
->
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-              Galerie
-            </p>
-            <h2 className="gallery-mobile-intro-title mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
-              Une histoire d’effort, de terrain et d’émotions.
-            </h2>
-            <p className="mt-6 text-lg leading-9 text-stone-600">
-              Cette galerie rassemble des images de trail entre effort, nature, mouvement et émotions. Une série pensée pour raconter l’intensité d’une course : les coureurs, les terrains, les regards, la fatigue, l’ambiance et les instants qui marquent.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* GALERIE */}
-      <section className="gallery-mobile-section px-5 pb-24 md:px-8">
+      <section className="gallery-mobile-section px-5 py-24 md:px-8 md:py-28">
         <div className="gallery-mobile-spacing mx-auto max-w-7xl space-y-6">
           <GalleryImage num={1} ratio="aspect-[3/2]" />
 
@@ -243,7 +232,39 @@ const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
         </div>
       </section>
 
-      {/* NAVIGATION GALERIES */}
+      <section className="px-5 pb-24 md:px-8 md:pb-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative min-h-[560px] overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20 md:min-h-[660px]">
+            <Image
+              src={getPhoto(21)}
+              alt="Photographie de trail, effort et terrain"
+              fill
+              sizes="100vw"
+              className="object-cover opacity-80"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/28 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
+
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                Regard
+              </p>
+
+              <h2 className="max-w-5xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
+                Photographier le trail, c’est raconter ce que l’effort laisse sur les visages.
+              </h2>
+
+              <p className="mt-8 max-w-2xl text-lg leading-9 text-white/70">
+                Le terrain, la lumière, la fatigue, les encouragements et les
+                gestes racontent autant que la performance. C’est là que se
+                trouvent les images les plus humaines.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="gallery-mobile-section px-5 pb-24 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2">
           <Link
@@ -253,9 +274,11 @@ const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-stone-400">
               Galerie précédente
             </p>
+
             <h3 className="text-3xl font-semibold tracking-tight">
               Wing Foil
             </h3>
+
             <p className="mt-4 text-stone-500 group-hover:text-stone-700">
               ← Voir la galerie
             </p>
@@ -268,9 +291,11 @@ const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
               Galerie suivante
             </p>
+
             <h3 className="text-3xl font-semibold tracking-tight">
               Retour Charlie Dalin
             </h3>
+
             <p className="mt-4 text-white/60 group-hover:text-white">
               Voir la galerie →
             </p>
@@ -278,7 +303,6 @@ const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
         </div>
       </section>
 
-      {/* RETOUR ACCUEIL */}
       <section className="gallery-mobile-section px-5 pb-24 md:px-8">
         <div className="mx-auto flex max-w-7xl justify-center">
           <Link
@@ -290,86 +314,83 @@ const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
         </div>
       </section>
 
-      {/* LIGHTBOX PREMIUM */}
       <AnimatePresence>
         {activeIndex !== null && activePhoto && (
-          
           <motion.div
-  className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 p-3 text-white md:p-6"
-  onClick={closeImage}
-  onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
-  onTouchEnd={(e) => {
-    if (touchStart === null) return;
+            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 p-3 text-white md:p-6"
+            onClick={closeImage}
+            onTouchStart={(e) => setTouchStart(e.touches[0].clientX)}
+            onTouchEnd={(e) => {
+              if (touchStart === null) return;
 
-    const touchEnd = e.changedTouches[0].clientX;
-    const distance = touchStart - touchEnd;
+              const touchEnd = e.changedTouches[0].clientX;
+              const distance = touchStart - touchEnd;
 
-    if (distance > 50) nextImage(e);
-    if (distance < -50) previousImage(e);
+              if (distance > 50) nextImage(e);
+              if (distance < -50) previousImage(e);
 
-    setTouchStart(null);
-  }}
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  exit={{ opacity: 0 }}
-  transition={{ duration: 0.25, ease: "easeOut" }}
->
-  <div className="absolute left-4 top-4 z-50 rounded-full bg-white/10 px-4 py-2 text-xs text-white/75 backdrop-blur-md md:left-6 md:top-6">
-    {activeIndex + 1} / {gallery.length}
-  </div>
+              setTouchStart(null);
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+          >
+            <div className="absolute left-4 top-4 z-50 rounded-full bg-white/10 px-4 py-2 text-xs text-white/75 backdrop-blur-md md:left-6 md:top-6">
+              {activeIndex + 1} / {gallery.length}
+            </div>
 
-  <button
-    type="button"
-    onClick={closeImage}
-    className="absolute right-4 top-4 z-50 rounded-full bg-white/10 px-4 py-2 text-sm backdrop-blur-md transition hover:bg-white/20 md:right-6 md:top-6"
-  >
-    Fermer
-  </button>
+            <button
+              type="button"
+              onClick={closeImage}
+              className="absolute right-4 top-4 z-50 rounded-full bg-white/10 px-4 py-2 text-sm backdrop-blur-md transition hover:bg-white/20 md:right-6 md:top-6"
+            >
+              Fermer
+            </button>
 
-  <button
-    type="button"
-    onClick={previousImage}
-    className="absolute left-3 top-1/2 z-50 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-3xl backdrop-blur-md transition hover:bg-white/20 md:left-6 md:h-14 md:w-14"
-  >
-    ‹
-  </button>
+            <button
+              type="button"
+              onClick={previousImage}
+              className="absolute left-3 top-1/2 z-50 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-3xl backdrop-blur-md transition hover:bg-white/20 md:left-6 md:h-14 md:w-14"
+            >
+              ‹
+            </button>
 
-  <button
-    type="button"
-    onClick={nextImage}
-    className="absolute right-3 top-1/2 z-50 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-3xl backdrop-blur-md transition hover:bg-white/20 md:right-6 md:h-14 md:w-14"
-  >
-    ›
-  </button>
+            <button
+              type="button"
+              onClick={nextImage}
+              className="absolute right-3 top-1/2 z-50 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-3xl backdrop-blur-md transition hover:bg-white/20 md:right-6 md:h-14 md:w-14"
+            >
+              ›
+            </button>
 
-  <motion.div
-    className="relative flex h-full w-full items-center justify-center"
-    onClick={(e) => e.stopPropagation()}
-    initial={{ scale: 0.96, opacity: 0, y: 12 }}
-    animate={{ scale: 1, opacity: 1, y: 0 }}
-    exit={{ scale: 0.96, opacity: 0, y: 12 }}
-    transition={{ duration: 0.3, ease: "easeOut" }}
-  >
-    <motion.div
-      key={activePhoto}
-      className="relative h-[88vh] w-[94vw] md:h-[90vh] md:w-[92vw]"
-      initial={{ opacity: 0, scale: 0.985 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.985 }}
-      transition={{ duration: 0.22, ease: "easeOut" }}
-    >
-      <Image
-        src={activePhoto}
-        alt="Photo en plein écran"
-        fill
-        sizes="94vw"
-        className="object-contain"
-        priority
-      />
-    </motion.div>
-  </motion.div>
-</motion.div>
-
+            <motion.div
+              className="relative flex h-full w-full items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ scale: 0.96, opacity: 0, y: 12 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.96, opacity: 0, y: 12 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <motion.div
+                key={activePhoto}
+                className="relative h-[88vh] w-[94vw] md:h-[90vh] md:w-[92vw]"
+                initial={{ opacity: 0, scale: 0.985 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.985 }}
+                transition={{ duration: 0.22, ease: "easeOut" }}
+              >
+                <Image
+                  src={activePhoto}
+                  alt="Photo en plein écran"
+                  fill
+                  sizes="94vw"
+                  className="object-contain"
+                  priority
+                />
+              </motion.div>
+            </motion.div>
+          </motion.div>
         )}
       </AnimatePresence>
     </main>
