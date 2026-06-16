@@ -5,22 +5,21 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const getPhoto = (num) => `/images/photos/nature/${num}.webp`;
+const getPhoto = (num) => `/images/photos/portraits/${num}.webp`;
 
 const gallery = [
-  1, 2, 5, 4, 7, 6, 3, 9, 8, 16, 10, 11, 12, 13, 14, 15, 19, 17, 20, 18,
-  21, 27, 22, 24, 25, 26, 23,
+  1, 2, 3, 4, 9, 5, 7, 14, 15, 8, 6, 25, 17, 10, 11, 27, 16, 13, 18, 22,
+  19, 20, 21, 24, 26, 12, 23,
 ];
 
-const natureStructuredData = {
+const portraitsStructuredData = {
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  "@id":
-    "https://alexisyvonnou.com/photographie/nature-paysage-architecture#gallery",
-  name: "Nature & architecture — Photographies d’Alexis Yvonnou",
-  url: "https://alexisyvonnou.com/photographie/nature-paysage-architecture",
+  "@id": "https://alexisyvonnou.com/photographie/portraits#gallery",
+  name: "Portraits — Photographies d’Alexis Yvonnou",
+  url: "https://alexisyvonnou.com/photographie/portraits",
   description:
-    "Galerie photo autour de la nature, des paysages, de l’architecture, des détails, des textures et des lumières par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
+    "Galerie de portraits naturels, lifestyle, sportifs et professionnels réalisée par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
   inLanguage: "fr-FR",
   creator: {
     "@type": "Person",
@@ -30,12 +29,12 @@ const natureStructuredData = {
     url: "https://alexisyvonnou.com",
   },
   about: [
-    "Photographie de nature",
-    "Photographie de paysage",
-    "Photographie d’architecture",
-    "Détails",
-    "Textures",
-    "Lumières naturelles",
+    "Portrait",
+    "Photographie portrait",
+    "Portrait lifestyle",
+    "Portrait professionnel",
+    "Portrait sportif",
+    "Storytelling visuel",
     "Bretagne",
     "Concarneau",
     "Finistère",
@@ -43,16 +42,15 @@ const natureStructuredData = {
   image: gallery.map((num) => ({
     "@type": "ImageObject",
     url: `https://alexisyvonnou.com${getPhoto(num)}`,
-    name: `Photographie nature et architecture ${num}`,
-    caption:
-      "Photographie de nature, paysage, architecture, détails et lumières par Alexis Yvonnou.",
+    name: `Portrait photographique ${num}`,
+    caption: "Portrait naturel et incarné photographié par Alexis Yvonnou.",
     creator: {
       "@id": "https://alexisyvonnou.com/#person",
     },
   })),
 };
 
-export default function NaturePage() {
+export default function PortraitsPage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
 
@@ -105,7 +103,7 @@ export default function NaturePage() {
     >
       <Image
         src={getPhoto(num)}
-        alt={`Nature & architecture - photo ${num} par Alexis Yvonnou`}
+        alt={`Portrait - photo ${num} par Alexis Yvonnou`}
         fill
         sizes="(max-width: 768px) 100vw, 33vw"
         className="object-cover transition duration-700 ease-out group-hover:scale-[1.018] group-hover:brightness-90"
@@ -125,7 +123,7 @@ export default function NaturePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(natureStructuredData),
+          __html: JSON.stringify(portraitsStructuredData),
         }}
       />
 
@@ -137,7 +135,7 @@ export default function NaturePage() {
         >
           <Image
             src={getPhoto(1)}
-            alt="Nature & architecture - photographie Alexis Yvonnou"
+            alt="Portrait - photographie Alexis Yvonnou"
             fill
             priority
             sizes="100vw"
@@ -145,27 +143,25 @@ export default function NaturePage() {
           />
         </button>
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/78 via-black/22 to-black/5" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-black/10 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/24 to-black/5" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/48 via-black/10 to-transparent" />
 
         <div className="pointer-events-none absolute bottom-8 left-5 right-5 text-white md:bottom-14 md:left-10 md:right-10">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
-            Photographie · nature & architecture
+            Photographie · portraits
           </p>
 
-          <h1 className="gallery-mobile-title max-w-6xl text-6xl font-semibold leading-[0.9] tracking-[-0.07em] md:text-8xl lg:text-[7.5rem]">
-            Nature &
-            <br />
-            architecture.
+          <h1 className="gallery-mobile-title max-w-5xl text-6xl font-semibold leading-[0.9] tracking-[-0.07em] md:text-8xl lg:text-[8rem]">
+            Portraits.
           </h1>
 
           <p className="mt-7 max-w-3xl text-2xl font-medium leading-tight tracking-[-0.04em] text-white/86 md:text-4xl">
-            Des images pour ralentir le regard.
+            Des visages, des présences, des histoires.
           </p>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
-            Lignes, matières, paysages, détails et lumières naturelles : une
-            galerie pensée comme une respiration visuelle.
+            Des portraits naturels et incarnés pour raconter une personnalité,
+            un métier, une énergie ou un projet.
           </p>
         </div>
       </section>
@@ -174,52 +170,53 @@ export default function NaturePage() {
         <div className="gallery-mobile-spacing mx-auto max-w-7xl space-y-6">
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
             <GalleryImage num={2} />
-            <GalleryImage num={5} />
+            <GalleryImage num={3} />
             <GalleryImage num={4} />
           </div>
 
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
-            <GalleryImage num={7} />
-            <GalleryImage num={6} />
-            <GalleryImage num={3} />
-          </div>
-
-          <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
             <GalleryImage num={9} />
-            <GalleryImage num={8} />
-            <GalleryImage num={16} />
+            <GalleryImage num={5} />
+            <GalleryImage num={7} />
           </div>
 
-          <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
-            <GalleryImage num={10} />
-            <GalleryImage num={11} />
-            <GalleryImage num={12} />
-          </div>
-
-          <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
-            <GalleryImage num={13} />
+          <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-2">
             <GalleryImage num={14} />
             <GalleryImage num={15} />
           </div>
 
-          <GalleryImage num={19} ratio="aspect-[3/2]" />
+          <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
+            <GalleryImage num={8} />
+            <GalleryImage num={6} />
+            <GalleryImage num={25} />
+          </div>
+
+          <GalleryImage num={17} ratio="aspect-[3/2]" />
 
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
-            <GalleryImage num={17} />
-            <GalleryImage num={20} />
-            <GalleryImage num={18} />
+            <GalleryImage num={10} />
+            <GalleryImage num={11} />
+            <GalleryImage num={27} />
           </div>
 
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
+            <GalleryImage num={16} />
+            <GalleryImage num={13} />
+            <GalleryImage num={18} />
+          </div>
+
+          <GalleryImage num={22} ratio="aspect-[3/2]" />
+
+          <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
+            <GalleryImage num={19} />
+            <GalleryImage num={20} />
             <GalleryImage num={21} />
-            <GalleryImage num={27} />
-            <GalleryImage num={22} />
           </div>
 
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
             <GalleryImage num={24} />
-            <GalleryImage num={25} />
             <GalleryImage num={26} />
+            <GalleryImage num={12} />
           </div>
 
           <GalleryImage num={23} ratio="aspect-[3/2]" />
@@ -231,7 +228,7 @@ export default function NaturePage() {
           <div className="relative min-h-[560px] overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20 md:min-h-[660px]">
             <Image
               src={getPhoto(23)}
-              alt="Nature, paysage et architecture"
+              alt="Portrait naturel et incarné"
               fill
               sizes="100vw"
               className="object-cover opacity-80"
@@ -246,13 +243,13 @@ export default function NaturePage() {
               </p>
 
               <h2 className="max-w-5xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
-                Photographier les lieux, c’est aussi raconter ce qu’ils laissent.
+                Photographier quelqu’un, c’est chercher ce qui le rend présent.
               </h2>
 
               <p className="mt-8 max-w-2xl text-lg leading-9 text-white/70">
-                Une lumière, une ligne, une matière ou un détail peuvent suffire
-                à transmettre une ambiance. Cette galerie explore ces moments
-                plus calmes, où l’image devient une trace.
+                Un portrait ne se limite pas à un visage. Il peut raconter une
+                attitude, une énergie, un métier, une histoire ou un moment de
+                vie.
               </p>
             </div>
           </div>
@@ -262,7 +259,7 @@ export default function NaturePage() {
       <section className="gallery-mobile-section px-5 pb-24 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2">
           <Link
-            href="/photographie/portraits"
+            href="/photographie/mini-650"
             className="group rounded-[2rem] bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
           >
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-stone-400">
@@ -270,7 +267,7 @@ export default function NaturePage() {
             </p>
 
             <h3 className="text-3xl font-semibold tracking-tight">
-              Portraits
+              Banque images Mini 6.50
             </h3>
 
             <p className="mt-4 text-stone-500 group-hover:text-stone-700">
@@ -279,7 +276,7 @@ export default function NaturePage() {
           </Link>
 
           <Link
-            href="/photographie/course-au-large"
+            href="/photographie/nature-paysage-architecture"
             className="group rounded-[2rem] bg-stone-950 p-7 text-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
           >
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
@@ -287,7 +284,7 @@ export default function NaturePage() {
             </p>
 
             <h3 className="text-3xl font-semibold tracking-tight">
-              Course au large
+              Nature & architecture
             </h3>
 
             <p className="mt-4 text-white/60 group-hover:text-white">
