@@ -15,83 +15,26 @@ export const metadata = {
   alternates: {
     canonical: "https://alexisyvonnou.com/creation-de-contenus",
   },
-  openGraph: {
-    title: "Création de contenus — Alexis Yvonnou",
-    description:
-      "Photographie, vidéos courtes, reels, storytelling, réseaux sociaux et communication digitale pour marques, événements, projets nautiques et sportifs.",
-    url: "https://alexisyvonnou.com/creation-de-contenus",
-    images: [
-      {
-        url: "/og-cover.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Alexis Yvonnou — Création de contenus en Bretagne",
-      },
-    ],
-  },
-};
-
-const contentCreationStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://alexisyvonnou.com/creation-de-contenus#service",
-  name: "Création de contenus photo, vidéo et réseaux sociaux",
-  url: "https://alexisyvonnou.com/creation-de-contenus",
-  provider: {
-    "@type": "ProfessionalService",
-    "@id": "https://alexisyvonnou.com/#business",
-    name: "Alexis Yvonnou",
-    url: "https://alexisyvonnou.com",
-  },
-  areaServed: [
-    { "@type": "AdministrativeArea", name: "Bretagne" },
-    { "@type": "AdministrativeArea", name: "Finistère" },
-    { "@type": "Country", name: "France" },
-  ],
-  serviceType: [
-    "Création de contenus",
-    "Photographie",
-    "Vidéo courte",
-    "Reels",
-    "Stories",
-    "Carrousels",
-    "Communication digitale",
-    "Storytelling de marque",
-    "Réseaux sociaux",
-  ],
-  audience: {
-    "@type": "Audience",
-    audienceType:
-      "Marques, événements, entreprises, projets nautiques, projets sportifs et acteurs de l’artisanat",
-  },
-  description:
-    "Service de création de contenus par Alexis Yvonnou : photographie, vidéos courtes, reels, carrousels, stories, storytelling et communication digitale pour marques, événements, projets nautiques, sportifs et artisanaux.",
 };
 
 const services = [
   {
     icon: Camera,
-    title: "Photographier",
-    label: "Images de terrain",
-    text: "Reportages, portraits, événements, nautisme, sport et savoir-faire.",
-  },
-  {
-    icon: Clapperboard,
-    title: "Créer",
-    label: "Formats courts",
-    text: "Réels, stories, vidéos verticales, carrousels et contenus sociaux.",
+    title: "Produire",
+    label: "Photo & vidéo",
+    text: "Reportages, portraits, vidéos courtes, réels et formats pensés pour montrer votre activité avec justesse.",
   },
   {
     icon: Smartphone,
     title: "Diffuser",
     label: "Réseaux sociaux",
-    text: "Ligne éditoriale, calendrier, animation et cohérence de prise de parole.",
+    text: "Structurer vos prises de parole, organiser vos contenus et faire vivre votre présence avec régularité.",
   },
   {
     icon: Monitor,
     title: "Structurer",
     label: "Site & identité",
-    text: "Une présence digitale claire, crédible et alignée avec votre image.",
+    text: "Créer ou renforcer les supports qui donnent de la crédibilité à votre communication.",
   },
 ];
 
@@ -101,6 +44,7 @@ const projectCases = [
     context:
       "Développer une présence nautique claire, régulière et identifiable.",
     mission: "Création de contenus · formats courts · communication digitale",
+    actions: "Réels · stories · ligne éditoriale · contenus nautiques",
     image: "/images/good-boats.webp",
   },
   {
@@ -108,6 +52,7 @@ const projectCases = [
     context:
       "Valoriser les bateaux, les chantiers et l’expertise d’un professionnel du nautisme.",
     mission: "Photographie · contenus · réseaux sociaux",
+    actions: "Reportages photo · publications · valorisation de projets",
     image: "/images/pl-yachting.webp",
   },
   {
@@ -115,6 +60,7 @@ const projectCases = [
     context:
       "Rendre visibles les marques, les refits et les projets accompagnés.",
     mission: "Animation réseaux sociaux · création de contenus",
+    actions: "Posts · stories · contenus salons · mise en avant bateaux",
     image: "/images/snip-yachting.webp",
   },
 ];
@@ -122,24 +68,17 @@ const projectCases = [
 export default function CreationContenusPage() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(contentCreationStructuredData),
-        }}
-      />
-
-      <section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
+      <section className="page-offset px-5 pb-20 md:px-8 md:pb-24">
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
             <div className="grid md:grid-cols-[0.55fr_0.45fr]">
-              <div className="relative z-10 flex min-h-[620px] flex-col justify-between p-8 md:p-14">
+              <div className="relative z-10 flex min-h-[560px] flex-col justify-between p-8 md:min-h-[620px] md:p-14">
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
                     Création de contenus
                   </p>
 
-                  <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-7xl lg:text-[6.5rem]">
+                  <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-7xl lg:text-[6rem]">
                     Des contenus qui donnent du relief à votre activité.
                   </h1>
                 </div>
@@ -171,10 +110,10 @@ export default function CreationContenusPage() {
                 </div>
               </div>
 
-              <div className="relative min-h-[520px] md:min-h-[620px]">
+              <div className="relative min-h-[420px] md:min-h-[620px]">
                 <Image
                   src="/images/matos.webp"
-                  alt="Création de contenus photo et vidéo"
+                  alt="Matériel photo et vidéo pour la création de contenus"
                   fill
                   priority
                   sizes="(max-width: 768px) 100vw, 45vw"
@@ -187,59 +126,71 @@ export default function CreationContenusPage() {
         </div>
       </section>
 
-      <section className="px-5 py-24 md:px-8 md:py-28">
+      <section className="px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 md:grid-cols-[0.45fr_0.55fr] md:items-end">
+          <div className="grid gap-12 md:grid-cols-[0.45fr_0.55fr] md:items-start">
             <div>
               <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
                 Méthode
               </p>
 
               <h2 className="max-w-4xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
-                Observer. Créer. Diffuser.
+                Observer.
+                <br />
+                Créer.
+                <br />
+                Diffuser.
               </h2>
             </div>
 
-            <p className="max-w-2xl text-lg leading-9 text-stone-600">
-              L’objectif n’est pas de produire du contenu pour remplir un
-              calendrier. L’objectif est de créer des images et des formats qui
-              servent réellement votre message, votre visibilité et votre
-              crédibilité.
-            </p>
-          </div>
+            <div>
+              <p className="max-w-2xl text-lg leading-9 text-stone-600">
+                L’objectif n’est pas de produire du contenu pour remplir un
+                calendrier. L’objectif est de créer des images et des formats qui
+                servent réellement votre message, votre visibilité et votre
+                crédibilité.
+              </p>
 
-          <div className="mt-14 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                title: "Comprendre",
-                text: "Votre activité, vos publics, vos enjeux et ce qui mérite d’être raconté.",
-              },
-              {
-                title: "Produire",
-                text: "Des images, vidéos et contenus adaptés au terrain comme aux plateformes.",
-              },
-              {
-                title: "Faire vivre",
-                text: "Une communication plus régulière, plus claire et plus identifiable.",
-              },
-            ].map((item, index) => (
-              <div
-                key={item.title}
-                className="rounded-[2rem] border border-stone-200 bg-white/65 p-7 shadow-xl shadow-stone-900/5"
-              >
-                <p className="text-xs font-semibold tracking-[0.3em] text-[#e26a2c]">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
+              <div className="mt-12 space-y-0 border-l border-stone-300">
+                {[
+                  {
+                    title: "Observer",
+                    subtitle: "Comprendre le terrain",
+                    text: "Votre activité, vos publics, vos enjeux et ce qui mérite vraiment d’être raconté.",
+                  },
+                  {
+                    title: "Créer",
+                    subtitle: "Produire les contenus",
+                    text: "Des images, vidéos et formats adaptés au terrain comme aux plateformes.",
+                  },
+                  {
+                    title: "Diffuser",
+                    subtitle: "Faire vivre la communication",
+                    text: "Une présence plus régulière, plus claire et plus identifiable.",
+                  },
+                ].map((item, index) => (
+                  <div key={item.title} className="relative pb-12 pl-10 last:pb-0">
+                    <div className="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-[#e26a2c]" />
 
-                <h3 className="mt-8 text-4xl font-semibold tracking-[-0.05em]">
-                  {item.title}
-                </h3>
+                    <p className="text-xs font-semibold tracking-[0.3em] text-[#e26a2c]">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
 
-                <p className="mt-5 text-base leading-8 text-stone-600">
-                  {item.text}
-                </p>
+                    <h3 className="mt-4 text-4xl font-semibold tracking-[-0.05em]">
+                      {item.title}
+                    </h3>
+
+                    <p className="mt-1 text-lg font-semibold text-stone-400">
+                      {item.subtitle}
+                    </p>
+
+                    <p className="mt-4 max-w-xl text-base leading-8 text-stone-600">
+                      {item.text}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -262,38 +213,40 @@ export default function CreationContenusPage() {
 
             <p className="max-w-2xl text-lg leading-9 text-white/60">
               J’interviens sur les étapes qui donnent de la cohérence à votre
-              communication : création d’images, formats digitaux, réseaux
+              communication : production d’images, contenus digitaux, réseaux
               sociaux, site internet et identité visuelle.
             </p>
           </div>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 md:grid-cols-3">
             {services.map((service, index) => {
               const Icon = service.icon;
 
               return (
                 <div
                   key={service.title}
-                  className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 transition duration-500 hover:-translate-y-2 hover:bg-white/[0.07]"
+                  className="group relative min-h-[420px] overflow-hidden rounded-[2.25rem] border border-white/10 bg-white/[0.04] p-8 transition duration-500 hover:-translate-y-2 hover:bg-white/[0.07]"
                 >
-                  <div className="pointer-events-none absolute -right-6 -top-8 text-8xl font-semibold tracking-[-0.08em] text-white/[0.035] transition duration-500 group-hover:text-[#e26a2c]/15">
+                  <div className="pointer-events-none absolute -right-8 -top-10 text-[9rem] font-semibold tracking-[-0.08em] text-white/[0.035] transition duration-500 group-hover:text-[#e26a2c]/15">
                     {String(index + 1).padStart(2, "0")}
                   </div>
 
-                  <div className="relative z-10">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-[#e26a2c]">
-                      <Icon size={24} />
+                  <div className="relative z-10 flex h-full flex-col justify-between">
+                    <div>
+                      <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-[#e26a2c]">
+                        <Icon size={24} />
+                      </div>
+
+                      <p className="mt-12 text-xs font-semibold uppercase tracking-[0.3em] text-white/35">
+                        {service.label}
+                      </p>
+
+                      <h3 className="mt-4 text-5xl font-semibold tracking-[-0.06em]">
+                        {service.title}
+                      </h3>
                     </div>
 
-                    <p className="mt-10 text-xs font-semibold uppercase tracking-[0.3em] text-white/35">
-                      {service.label}
-                    </p>
-
-                    <h3 className="mt-4 text-4xl font-semibold tracking-[-0.05em]">
-                      {service.title}
-                    </h3>
-
-                    <p className="mt-5 leading-8 text-white/62">
+                    <p className="mt-10 max-w-sm leading-8 text-white/62">
                       {service.text}
                     </p>
                   </div>
@@ -359,7 +312,7 @@ export default function CreationContenusPage() {
                       Projet accompagné
                     </p>
 
-                    <h3 className="mt-6 text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+                    <h3 className="mt-6 text-4xl font-semibold tracking-[-0.05em] transition duration-500 group-hover:translate-x-1 md:text-6xl">
                       {project.name}
                     </h3>
                   </div>
@@ -384,6 +337,16 @@ export default function CreationContenusPage() {
                         {project.mission}
                       </p>
                     </div>
+
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35">
+                        Actions
+                      </p>
+
+                      <p className="mt-4 max-w-xl text-base leading-8 text-white/70 md:text-lg">
+                        {project.actions}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </article>
@@ -394,7 +357,7 @@ export default function CreationContenusPage() {
 
       <section className="px-5 pb-24 md:px-8 md:pb-28">
         <div className="mx-auto max-w-7xl">
-          <div className="relative min-h-[620px] overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
+          <div className="relative min-h-[560px] overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20 md:min-h-[620px]">
             <Image
               src="/images/crea5.webp"
               alt="Création de contenus terrain"
@@ -433,7 +396,7 @@ export default function CreationContenusPage() {
               </p>
 
               <h2 className="mt-5 max-w-4xl text-4xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-6xl">
-                Vous avez une activité à rendre plus visible ?
+                Voyons ce qui mérite d’être raconté.
               </h2>
 
               <p className="mt-7 max-w-2xl text-lg leading-9 text-white/60">
