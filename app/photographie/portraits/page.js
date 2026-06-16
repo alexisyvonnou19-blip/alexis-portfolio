@@ -5,21 +5,22 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-const getPhoto = (num) => `/images/photos/portraits/${num}.webp`;
+const getPhoto = (num) => `/images/photos/nature/${num}.webp`;
 
 const gallery = [
-  1, 2, 3, 4, 9, 5, 7, 14, 15, 8, 6, 25, 17, 10, 11, 27, 16, 13, 18, 22,
-  19, 20, 21, 24, 26, 12, 23,
+  1, 2, 5, 4, 7, 6, 3, 9, 8, 16, 10, 11, 12, 13, 14, 15, 19, 17, 20, 18,
+  21, 27, 22, 24, 25, 26, 23,
 ];
 
-const portraitsStructuredData = {
+const natureStructuredData = {
   "@context": "https://schema.org",
   "@type": "ImageGallery",
-  "@id": "https://alexisyvonnou.com/photographie/portraits#gallery",
-  name: "Portraits — Photographies d’Alexis Yvonnou",
-  url: "https://alexisyvonnou.com/photographie/portraits",
+  "@id":
+    "https://alexisyvonnou.com/photographie/nature-paysage-architecture#gallery",
+  name: "Nature & architecture — Photographies d’Alexis Yvonnou",
+  url: "https://alexisyvonnou.com/photographie/nature-paysage-architecture",
   description:
-    "Galerie de portraits naturels, lifestyle, sportifs et professionnels réalisée par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
+    "Galerie photo autour de la nature, des paysages, de l’architecture, des détails, des textures et des lumières par Alexis Yvonnou, photographe basé à Concarneau en Bretagne.",
   inLanguage: "fr-FR",
   creator: {
     "@type": "Person",
@@ -29,12 +30,12 @@ const portraitsStructuredData = {
     url: "https://alexisyvonnou.com",
   },
   about: [
-    "Portrait",
-    "Photographie portrait",
-    "Portrait lifestyle",
-    "Portrait professionnel",
-    "Portrait sportif",
-    "Storytelling visuel",
+    "Photographie de nature",
+    "Photographie de paysage",
+    "Photographie d’architecture",
+    "Détails",
+    "Textures",
+    "Lumières naturelles",
     "Bretagne",
     "Concarneau",
     "Finistère",
@@ -42,20 +43,21 @@ const portraitsStructuredData = {
   image: gallery.map((num) => ({
     "@type": "ImageObject",
     url: `https://alexisyvonnou.com${getPhoto(num)}`,
-    name: `Portrait photographique ${num}`,
+    name: `Photographie nature et architecture ${num}`,
     caption:
-      "Portrait naturel et incarné photographié par Alexis Yvonnou.",
+      "Photographie de nature, paysage, architecture, détails et lumières par Alexis Yvonnou.",
     creator: {
       "@id": "https://alexisyvonnou.com/#person",
     },
   })),
 };
 
-export default function PortraitsPage() {
+export default function NaturePage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
 
-  const activePhoto = activeIndex !== null ? getPhoto(gallery[activeIndex]) : null;
+  const activePhoto =
+    activeIndex !== null ? getPhoto(gallery[activeIndex]) : null;
 
   const openImage = (num) => {
     setActiveIndex(gallery.indexOf(num));
@@ -103,7 +105,7 @@ export default function PortraitsPage() {
     >
       <Image
         src={getPhoto(num)}
-        alt={`Portrait - photo ${num} par Alexis Yvonnou`}
+        alt={`Nature & architecture - photo ${num} par Alexis Yvonnou`}
         fill
         sizes="(max-width: 768px) 100vw, 33vw"
         className="object-cover transition duration-700 ease-out group-hover:scale-[1.018] group-hover:brightness-90"
@@ -120,17 +122,22 @@ export default function PortraitsPage() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
-        <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(portraitsStructuredData),
-  }}
-/>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(natureStructuredData),
+        }}
+      />
+
       <section className="gallery-mobile-hero relative mt-[92px] h-[calc(82vh-92px)] min-h-[468px] w-full overflow-hidden">
-        <button type="button" onClick={() => openImage(1)} className="relative h-full w-full cursor-zoom-in">
+        <button
+          type="button"
+          onClick={() => openImage(1)}
+          className="relative h-full w-full cursor-zoom-in"
+        >
           <Image
             src={getPhoto(1)}
-            alt="Portrait - photographie Alexis Yvonnou"
+            alt="Nature & architecture - photographie Alexis Yvonnou"
             fill
             priority
             sizes="100vw"
@@ -138,128 +145,151 @@ export default function PortraitsPage() {
           />
         </button>
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/5" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/78 via-black/22 to-black/5" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-black/10 to-transparent" />
 
-        <div className="pointer-events-none absolute bottom-8 left-5 right-5 text-white md:bottom-12 md:left-10 md:right-10">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
-            Photographie
+        <div className="pointer-events-none absolute bottom-8 left-5 right-5 text-white md:bottom-14 md:left-10 md:right-10">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+            Photographie · nature & architecture
           </p>
-          <h1 className="gallery-mobile-title max-w-5xl text-6xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-8xl">
-            Portraits
+
+          <h1 className="gallery-mobile-title max-w-6xl text-6xl font-semibold leading-[0.9] tracking-[-0.07em] md:text-8xl lg:text-[7.5rem]">
+            Nature &
+            <br />
+            architecture.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
-            Des portraits naturels, incarnés, pensés pour raconter une personnalité,
-            un métier ou un projet.
+
+          <p className="mt-7 max-w-3xl text-2xl font-medium leading-tight tracking-[-0.04em] text-white/86 md:text-4xl">
+            Des images pour ralentir le regard.
+          </p>
+
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
+            Lignes, matières, paysages, détails et lumières naturelles : une
+            galerie pensée comme une respiration visuelle.
           </p>
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8">
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-            className="max-w-3xl"
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-              Galerie
-            </p>
-            <h2 className="gallery-mobile-intro-title mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
-              Des visages, des présences, des histoires.
-            </h2>
-            <p className="mt-6 text-lg leading-9 text-stone-600">
-              Cette galerie rassemble différents portraits réalisés dans des contextes variés : sport, projets personnels, univers professionnels ou moments plus spontanés. L’idée reste la même : faire ressortir une présence, une énergie, une personnalité ou une histoire à travers une image sincère et naturelle.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="gallery-mobile-section px-5 pb-24 md:px-8">
+      <section className="gallery-mobile-section px-5 py-24 md:px-8 md:py-28">
         <div className="gallery-mobile-spacing mx-auto max-w-7xl space-y-6">
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
             <GalleryImage num={2} />
-            <GalleryImage num={3} />
+            <GalleryImage num={5} />
             <GalleryImage num={4} />
           </div>
 
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
-            <GalleryImage num={9} />
-            <GalleryImage num={5} />
             <GalleryImage num={7} />
-          </div>
-
-          <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-2">
-            <GalleryImage num={14} />
-            <GalleryImage num={15} />
+            <GalleryImage num={6} />
+            <GalleryImage num={3} />
           </div>
 
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
+            <GalleryImage num={9} />
             <GalleryImage num={8} />
-            <GalleryImage num={6} />
-            <GalleryImage num={25} />
+            <GalleryImage num={16} />
           </div>
-
-          <GalleryImage num={17} ratio="aspect-[3/2]" />
 
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
             <GalleryImage num={10} />
             <GalleryImage num={11} />
-            <GalleryImage num={27} />
+            <GalleryImage num={12} />
           </div>
 
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
-            <GalleryImage num={16} />
             <GalleryImage num={13} />
+            <GalleryImage num={14} />
+            <GalleryImage num={15} />
+          </div>
+
+          <GalleryImage num={19} ratio="aspect-[3/2]" />
+
+          <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
+            <GalleryImage num={17} />
+            <GalleryImage num={20} />
             <GalleryImage num={18} />
           </div>
 
-          <GalleryImage num={22} ratio="aspect-[3/2]" />
-
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
-            <GalleryImage num={19} />
-            <GalleryImage num={20} />
             <GalleryImage num={21} />
+            <GalleryImage num={27} />
+            <GalleryImage num={22} />
           </div>
 
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
             <GalleryImage num={24} />
+            <GalleryImage num={25} />
             <GalleryImage num={26} />
-            <GalleryImage num={12} />
           </div>
 
           <GalleryImage num={23} ratio="aspect-[3/2]" />
         </div>
       </section>
 
+      <section className="px-5 pb-24 md:px-8 md:pb-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative min-h-[560px] overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20 md:min-h-[660px]">
+            <Image
+              src={getPhoto(23)}
+              alt="Nature, paysage et architecture"
+              fill
+              sizes="100vw"
+              className="object-cover opacity-80"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/28 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
+
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                Regard
+              </p>
+
+              <h2 className="max-w-5xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
+                Photographier les lieux, c’est aussi raconter ce qu’ils laissent.
+              </h2>
+
+              <p className="mt-8 max-w-2xl text-lg leading-9 text-white/70">
+                Une lumière, une ligne, une matière ou un détail peuvent suffire
+                à transmettre une ambiance. Cette galerie explore ces moments
+                plus calmes, où l’image devient une trace.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="gallery-mobile-section px-5 pb-24 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2">
           <Link
-            href="/photographie/mini-650"
+            href="/photographie/portraits"
             className="group rounded-[2rem] bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
           >
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-stone-400">
               Galerie précédente
             </p>
+
             <h3 className="text-3xl font-semibold tracking-tight">
-              Banque images Mini 6.50
+              Portraits
             </h3>
+
             <p className="mt-4 text-stone-500 group-hover:text-stone-700">
               ← Voir la galerie
             </p>
           </Link>
 
           <Link
-            href="/photographie/nature-paysage-architecture"
+            href="/photographie/course-au-large"
             className="group rounded-[2rem] bg-stone-950 p-7 text-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
           >
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
               Galerie suivante
             </p>
+
             <h3 className="text-3xl font-semibold tracking-tight">
-              Nature & architecture
+              Course au large
             </h3>
+
             <p className="mt-4 text-white/60 group-hover:text-white">
               Voir la galerie →
             </p>
