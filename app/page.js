@@ -4,7 +4,13 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Mail, ChevronUp } from "lucide-react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import ContactForm from "./components/ContactForm";
 
 const photographyCategories = [
@@ -96,6 +102,33 @@ const domains = [
   },
 ];
 
+const terrainItems = [
+  {
+    number: "01",
+    title: "Nautisme & course au large",
+    text: "Marins, bateaux, régates et vie de ponton.",
+    image: "/images/imoca.webp",
+  },
+  {
+    number: "02",
+    title: "Sport & événements",
+    text: "Émotions, performance et moments de partage.",
+    image: "/images/sport.webp",
+  },
+  {
+    number: "03",
+    title: "Entreprises & savoir-faire",
+    text: "Métiers, équipes et gestes qui méritent d’être montrés.",
+    image: "/images/artisanat.webp",
+  },
+  {
+    number: "04",
+    title: "Voyage & aventure",
+    text: "Territoires, rencontres et récits de terrain.",
+    image: "/images/outdoor.webp",
+  },
+];
+
 function SectionTitle({ eyebrow, title, text }) {
   return (
     <div className="mb-12 max-w-3xl">
@@ -132,15 +165,41 @@ function Button({ children, href = "#contact", variant = "primary" }) {
   );
 }
 
+function FadeIn({ children, delay = 0 }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{
+        duration: 0.8,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export default function AlexisYvonnouHomepage() {
-  const [activeDomain, setActiveDomain] = useState(domains[0]);
-  const { scrollY } = useScroll();
+  const [activeTerrain, setActiveTerrain] = useState(terrainItems[0]);
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const { scrollY, scrollYProgress } = useScroll();
 
 const heroY = useTransform(scrollY, [0, 900], [0, -20]);
 const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
+useMotionValueEvent(scrollY, "change", (latest) => {
+  setShowBackToTop(latest > 500);
+});
   return (
     <main className="min-h-screen bg-[#f7f4ef] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.7),transparent_45%)] text-stone-950">
-      
+      <motion.div
+  className="fixed left-0 top-0 z-[999] h-[2px] w-full origin-left bg-[#e26a2c]"
+  style={{
+    scaleX: scrollYProgress,
+  }}
+/>
 
      <section id="top" className="px-4 pt-8 md:px-8 md:pt-28">
   <div className="mx-auto max-w-7xl">
@@ -172,13 +231,29 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/38 to-black/10" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/16 to-transparent" />
 
-        <div className="absolute left-5 top-5 z-10 hidden rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:block">
-          Alexis Yvonnou
-        </div>
+        <motion.div
+  animate={{ y: [0, -6, 0] }}
+  transition={{
+    duration: 7,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+  className="absolute left-5 top-5 z-10 hidden rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:block"
+>
+  Alexis Yvonnou
+</motion.div>
 
-        <div className="absolute right-8 top-8 z-10 hidden rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white shadow-sm backdrop-blur-md md:block">
-          Concarneau · Bretagne
-        </div>
+        <motion.div
+  animate={{ y: [0, 6, 0] }}
+  transition={{
+    duration: 8,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+  className="absolute right-8 top-8 z-10 hidden rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white shadow-sm backdrop-blur-md md:block"
+>
+  Concarneau · Bretagne
+</motion.div>
 
         <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-12 lg:p-14">
           <div className="grid gap-8 md:grid-cols-[0.64fr_0.36fr] md:items-end">
@@ -284,23 +359,23 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
         },
       ].map((service, index) => (
         <article
-          key={service.title}
-          className={`group relative min-h-[360px] overflow-hidden rounded-[2.35rem] bg-stone-950 shadow-xl shadow-black/20 md:min-h-[430px] ${
-            index === 0 || index === 3 ? "md:translate-y-8" : ""
-          }`}
-        >
+  key={service.title}
+  className={`group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-black/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-black/30 md:min-h-[520px] ${
+    index === 0 || index === 3 ? "md:translate-y-10" : ""
+  }`}
+>
           <Image
-            src={service.image}
-            alt={`${service.title} par Alexis Yvonnou`}
-            fill
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover opacity-78 transition duration-700 group-hover:opacity-62"
-          />
+  src={service.image}
+  alt={`${service.title} par Alexis Yvonnou`}
+  fill
+  sizes="(max-width: 768px) 100vw, 50vw"
+  className="object-cover opacity-72 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-55"
+/>
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/28 to-black/5" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent" />
 
-          <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 backdrop-blur-md md:left-7 md:top-7">
+          <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 backdrop-blur-md transition-all duration-500 group-hover:scale-105 group-hover:bg-white/15 md:left-8 md:top-8">
             {service.number}
           </div>
 
@@ -399,14 +474,16 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           image: "/images/snip-yachting.webp",
         },
       ].map((project, index) => (
-        <article
-          key={project.name}
-          className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 ${
-  index % 2 === 1
-    ? "md:grid-cols-[0.42fr_0.58fr]"
-    : "md:grid-cols-[0.58fr_0.42fr]"
-}`}
-        >
+        <motion.article
+  key={project.name}
+  whileHover={{ y: -6 }}
+  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+  className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 transition-shadow duration-500 hover:shadow-2xl hover:shadow-stone-900/20 ${
+    index % 2 === 1
+      ? "md:grid-cols-[0.42fr_0.58fr]"
+      : "md:grid-cols-[0.58fr_0.42fr]"
+  }`}
+>
           <div
   className={`relative min-h-[340px] md:min-h-[440px] ${
     index % 2 === 1 ? "md:order-2" : "md:order-1"
@@ -417,7 +494,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               alt={`${project.name} - projet accompagné par Alexis Yvonnou`}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover opacity-85 transition duration-1000 group-hover:opacity-70"
+              className="object-cover opacity-85 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-70"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
           </div>
@@ -432,7 +509,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
                 Projet accompagné
               </p>
 
-              <h3 className="mt-6 text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+              <h3 className="mt-6 text-4xl font-semibold tracking-[-0.05em] transition duration-500 group-hover:translate-x-1 md:text-6xl">
                 {project.name}
               </h3>
             </div>
@@ -466,7 +543,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
               </div>
             </div>
           </div>
-        </article>
+        </motion.article>
       ))}
     </div>
   </div>
@@ -556,7 +633,7 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           <div className="absolute inset-0 bg-gradient-to-r from-black/24 via-transparent to-transparent" />
 
           <div className="absolute bottom-0 left-0 right-0 p-8 text-white md:p-10">
-            <div className="translate-y-2 transition-all duration-500 group-hover:translate-y-0">
+            <div className="translate-y-0 transition-all duration-500 md:translate-y-2 md:group-hover:translate-y-0">
   <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
     {category.label}
   </p>
@@ -567,16 +644,16 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
     {category.title}
   </h3>
 
-  <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:mt-5 group-hover:max-h-40 group-hover:opacity-100">
-    <p className="max-w-2xl text-base leading-7 text-white/75">
-      {category.text}
-    </p>
+  <div className="mt-5 max-h-40 overflow-hidden opacity-100 transition-all duration-500 md:mt-0 md:max-h-0 md:opacity-0 md:group-hover:mt-5 md:group-hover:max-h-40 md:group-hover:opacity-100">
+  <p className="max-w-2xl text-sm leading-7 text-white/75 md:text-base">
+    {category.text}
+  </p>
 
-    <div className="mt-5 flex items-center gap-2 text-sm font-semibold">
-      Voir la galerie
-      <ArrowRight size={16} />
-    </div>
+  <div className="mt-5 flex items-center gap-2 text-sm font-semibold">
+    Voir la galerie
+    <ArrowRight size={16} />
   </div>
+</div>
 </div>
           </div>
         </Link>
@@ -672,59 +749,46 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
       <section id="domaines" className="px-5 py-24 md:px-8">
   <div className="mx-auto max-w-7xl">
     <div className="overflow-hidden rounded-[2.75rem] bg-stone-950 text-white">
+      <div className="grid md:grid-cols-[0.44fr_0.56fr]">
+        <div className="relative min-h-[420px] overflow-hidden md:min-h-full">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeTerrain.title}
+              initial={{ opacity: 0, scale: 1.04 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 1.02 }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={activeTerrain.image}
+                alt={activeTerrain.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 44vw"
+                className="object-cover"
+              />
+            </motion.div>
+          </AnimatePresence>
 
-      <div className="grid md:grid-cols-[0.45fr_0.55fr]">
-        {/* Bloc gauche */}
-        <div className="flex flex-col justify-between p-8 md:p-14">
-          <div>
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/25 to-transparent" />
+
+          <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
               Terrains de jeu
             </p>
 
-            <h2 className="text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
-              Des univers
-              <br />
-              différents.
-              <br />
-              Une même
-              <br />
-              approche.
+            <h2 className="mt-5 max-w-md text-4xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-6xl">
+              Des univers différents. Une même approche.
             </h2>
           </div>
-
-          <p className="mt-10 max-w-md text-lg leading-8 text-white/55">
-            Être présent, comprendre le terrain et raconter ce qui compte.
-            Du large aux entreprises, du sport aux récits d'aventure.
-          </p>
         </div>
 
-        {/* Bloc droit */}
         <div className="divide-y divide-white/10">
-          {[
-            {
-              number: "01",
-              title: "Nautisme & course au large",
-              text: "Marins, bateaux, régates et vie de ponton.",
-            },
-            {
-              number: "02",
-              title: "Sport & événements",
-              text: "Émotions, performance et moments de partage.",
-            },
-            {
-              number: "03",
-              title: "Entreprises & savoir-faire",
-              text: "Métiers, équipes et gestes qui méritent d'être montrés.",
-            },
-            {
-              number: "04",
-              title: "Voyage & aventure",
-              text: "Territoires, rencontres et récits de terrain.",
-            },
-          ].map((item) => (
+          {terrainItems.map((item) => (
             <div
               key={item.title}
-              className="group px-8 py-8 transition duration-300 hover:bg-white/[0.03] md:px-12"
+              onMouseEnter={() => setActiveTerrain(item)}
+              className="group px-8 py-8 transition duration-300 hover:bg-white/[0.04] md:px-12"
             >
               <div className="flex items-start gap-6">
                 <span className="mt-2 text-xs font-semibold tracking-[0.3em] text-[#e26a2c]">
@@ -745,7 +809,6 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
           ))}
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -832,12 +895,25 @@ const heroScale = useTransform(scrollY, [0, 900], [1, 1.025]);
   </div>
 </section>
 
+      <AnimatePresence>
+  {showBackToTop && (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85, y: 12 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.85, y: 12 }}
+      transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+      className="fixed bottom-5 right-5 z-40"
+    >
       <Link
-        href="#top" scroll={false}
-        className="fixed bottom-5 right-5 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-stone-950 text-white shadow-2xl shadow-stone-900/20 transition duration-300 hover:-translate-y-1 hover:bg-stone-800"
+        href="#top"
+        scroll={false}
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-stone-950 text-white shadow-2xl shadow-stone-900/20 transition duration-300 hover:-translate-y-1 hover:bg-stone-800"
       >
         <ChevronUp size={18} />
       </Link>
+    </motion.div>
+  )}
+</AnimatePresence>
     </main>
   );
 }
