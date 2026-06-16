@@ -26,18 +26,17 @@ export default function AProposPage() {
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
       <section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
   <div className="mx-auto max-w-7xl">
-    <div className="relative overflow-hidden rounded-[3.2rem] bg-[#11100f] text-white shadow-2xl shadow-stone-900/20">
-      <div className="pointer-events-none absolute -left-32 top-24 h-80 w-80 rounded-full bg-[#e26a2c]/20 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-28 bottom-10 h-96 w-96 rounded-full bg-white/10 blur-[130px]" />
+    <div className="relative overflow-hidden rounded-[3.2rem] bg-[#0b0b0a] text-white shadow-2xl shadow-stone-900/20">
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-full bg-[radial-gradient(circle_at_20%_20%,rgba(226,106,44,0.18),transparent_34%),radial-gradient(circle_at_85%_80%,rgba(255,255,255,0.08),transparent_32%)]" />
 
-      <div className="relative z-10 grid gap-10 p-7 md:grid-cols-[0.58fr_0.42fr] md:p-10 lg:p-14">
+      <div className="relative z-10 grid gap-10 p-7 md:grid-cols-[0.56fr_0.44fr] md:p-10 lg:p-14">
         <div className="flex min-h-[640px] flex-col justify-between">
           <div>
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
               À propos
             </p>
 
-            <h1 className="max-w-5xl text-6xl font-semibold leading-[0.86] tracking-[-0.075em] md:text-8xl lg:text-[8rem]">
+            <h1 className="max-w-5xl text-6xl font-semibold leading-[0.86] tracking-[-0.075em] md:text-8xl lg:text-[7.7rem]">
               Un regard de terrain.
             </h1>
           </div>
@@ -69,33 +68,32 @@ export default function AProposPage() {
               alt="Alexis Yvonnou"
               fill
               priority
-              sizes="(max-width: 768px) 100vw, 42vw"
+              sizes="(max-width: 768px) 100vw, 44vw"
               className="object-cover"
               style={{ objectPosition: "center 22%" }}
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent" />
 
             <div className="absolute left-6 top-6 rounded-full bg-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-stone-950 shadow-xl">
               Alexis Yvonnou
             </div>
           </div>
+        </div>
 
-          <div className="absolute -bottom-7 -left-8 right-8 rounded-[2rem] border border-white/15 bg-[#f7f4ef] p-6 text-stone-950 shadow-2xl shadow-black/25 backdrop-blur-xl md:-left-12 md:right-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
-              Depuis le terrain
-            </p>
+        <div className="absolute bottom-10 right-10 z-20 hidden max-w-[480px] rounded-[2rem] border border-white/10 bg-white p-7 text-stone-950 shadow-2xl shadow-black/30 lg:block">
+          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#e26a2c]">
+            Depuis le terrain
+          </p>
 
-            <p className="mt-3 max-w-xl text-2xl font-semibold leading-tight tracking-[-0.04em]">
-              Raconter ce qui se passe autour de l’action.
-            </p>
+          <p className="mt-4 text-3xl font-semibold leading-[1] tracking-[-0.05em]">
+            Observer, comprendre, raconter.
+          </p>
 
-            <div className="mt-5 flex flex-wrap gap-2 text-sm text-stone-600">
-              <span>Concarneau · Bretagne</span>
-              <span className="text-stone-300">•</span>
-              <span>Photo · contenus · communication</span>
-            </div>
-          </div>
+          <p className="mt-5 text-base leading-7 text-stone-600">
+            Des images pensées pour donner du relief à une histoire, une équipe,
+            un événement ou un savoir-faire.
+          </p>
         </div>
       </div>
     </div>
