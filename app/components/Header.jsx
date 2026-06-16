@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const navigationLinks = [
   { label: "Profil", href: "/#qui-suis-je" },
   { label: "Photographie", href: "/#photographie" },
-  { label: "Création", href: "/#contenus" },
+  { label: "Contenus", href: "/#contenus" },
   { label: "Univers", href: "/#domaines" },
 ];
 
@@ -17,10 +17,10 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-black/5 bg-[#f7f4ef]/92 px-4 py-2.5 shadow-lg shadow-stone-900/5 backdrop-blur-2xl md:px-5">
+      <nav className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center rounded-full border border-black/5 bg-[#f7f4ef]/92 px-4 py-2.5 shadow-lg shadow-stone-900/5 backdrop-blur-2xl md:px-5">
         <Link
           href="/#top"
-          className="group flex items-center gap-3 text-stone-950"
+          className="group flex w-fit items-center gap-3 text-stone-950"
           onClick={() => setMenuOpen(false)}
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-950 text-sm font-semibold text-white transition duration-300 group-hover:scale-95">
@@ -37,7 +37,7 @@ export default function Header() {
           </div>
         </Link>
 
-        <div className="hidden items-center gap-7 text-sm font-medium text-stone-600 lg:flex xl:gap-10">
+        <div className="hidden items-center gap-8 text-sm font-medium text-stone-600 lg:flex">
           {navigationLinks.map((link) => (
             <Link
               key={link.href}
@@ -49,21 +49,23 @@ export default function Header() {
           ))}
         </div>
 
-        <Link
-          href="/#contact"
-          className="group hidden items-center gap-2 rounded-full bg-stone-950 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-stone-800 lg:inline-flex"
-        >
-          Contact
-          <ArrowRight
-            size={15}
-            className="transition duration-300 group-hover:translate-x-1"
-          />
-        </Link>
+        <div className="hidden justify-end lg:flex">
+          <Link
+            href="/#contact"
+            className="group inline-flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-stone-800"
+          >
+            Contact
+            <ArrowRight
+              size={15}
+              className="transition duration-300 group-hover:translate-x-1"
+            />
+          </Link>
+        </div>
 
         <button
           type="button"
           onClick={() => setMenuOpen((value) => !value)}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-stone-300 bg-white/75 text-stone-950 shadow-sm backdrop-blur-md lg:hidden"
+          className="ml-auto flex h-11 w-11 items-center justify-center rounded-full border border-stone-300 bg-white/75 text-stone-950 shadow-sm backdrop-blur-md lg:hidden"
           aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
           {menuOpen ? <X size={20} /> : <Menu size={20} />}
