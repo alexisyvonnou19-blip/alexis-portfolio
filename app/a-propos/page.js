@@ -73,12 +73,12 @@ export default function AProposPage() {
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
 
-        <div className="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-white/15 bg-black/30 p-5 backdrop-blur-xl">
-          <p className="text-sm font-semibold text-white">Alexis Yvonnou</p>
-          <p className="mt-1 text-xs uppercase tracking-[0.25em] text-white/55">
-            Photo · contenus · communication
-          </p>
-        </div>
+        <div className="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-white/15 bg-black/45 p-5 backdrop-blur-xl">
+  <p className="text-sm font-semibold text-white">Alexis Yvonnou</p>
+  <p className="mt-1 text-xs uppercase tracking-[0.25em] text-white/55">
+    Photographe & créateur de contenus
+  </p>
+</div>
       </div>
     </div>
   </div>
