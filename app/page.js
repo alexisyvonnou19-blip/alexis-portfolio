@@ -582,21 +582,21 @@ useMotionValueEvent(scrollY, "change", (latest) => {
       {[
         {
           title: "Portraits",
-          text: "Des visages, des présences et des histoires.",
+          text: "Des visages, des présences, des histoires.",
           href: "/photographie/portraits",
           image: "/images/portrait2.webp",
         },
         {
           title: "Course au large",
-          text: "Marins, pontons, bateaux et récits de mer.",
+          text: "Départs de course, arrivées, manoeuvres, entraînements...",
           href: "/photographie/course-au-large",
           image: "/images/IMG_1003.webp",
         },
         {
-          title: "Sport & glisse",
-          text: "Surf, wing foil, trail et mouvement outdoor.",
+          title: "Surf",
+          text: "L’océan, le mouvement et les instants suspendus entre puissance et équilibre.",
           href: "/photographie/surf",
-          image: "/images/surf.webp",
+          image: "/surf/1.webp",
         },
         {
           title: "Mini 6.50",
