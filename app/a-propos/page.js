@@ -26,51 +26,34 @@ export default function AProposPage() {
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
       <section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
   <div className="mx-auto max-w-7xl">
-    <div className="grid gap-10 md:grid-cols-[0.52fr_0.48fr] md:items-end">
-      <div className="relative z-10">
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
-          À propos
-        </p>
+    <div className="relative overflow-hidden rounded-[3.2rem] bg-[#11100f] text-white shadow-2xl shadow-stone-900/20">
+      <div className="pointer-events-none absolute -left-32 top-24 h-80 w-80 rounded-full bg-[#e26a2c]/20 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-28 bottom-10 h-96 w-96 rounded-full bg-white/10 blur-[130px]" />
 
-        <h1 className="max-w-5xl text-6xl font-semibold leading-[0.86] tracking-[-0.075em] text-stone-950 md:text-8xl lg:text-[8.2rem]">
-          Un regard de terrain.
-        </h1>
-
-        <p className="mt-8 max-w-xl text-xl leading-9 text-stone-650 md:text-2xl">
-          Photographe et créateur de contenus basé à Concarneau, je raconte les
-          projets par ce qu’ils ont de vivant : le terrain, les gestes, les
-          visages et les instants.
-        </p>
-      </div>
-
-      <div className="relative">
-        <div className="relative min-h-[620px] overflow-hidden rounded-[3rem] bg-stone-950 shadow-2xl shadow-stone-900/20">
-          <Image
-            src="/images/moi4.webp"
-            alt="Alexis Yvonnou"
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 48vw"
-            className="object-cover"
-            style={{ objectPosition: "center 22%" }}
-          />
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-
-          <div className="absolute left-6 top-6 rounded-full bg-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-stone-950 shadow-xl">
-            Alexis Yvonnou
-          </div>
-
-          <div className="absolute bottom-6 left-6 right-6 rounded-[2rem] border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
-            <p className="text-2xl font-semibold leading-tight tracking-[-0.04em] text-white">
-              Raconter ce qui se passe autour de l’action.
+      <div className="relative z-10 grid gap-10 p-7 md:grid-cols-[0.58fr_0.42fr] md:p-10 lg:p-14">
+        <div className="flex min-h-[640px] flex-col justify-between">
+          <div>
+            <p className="mb-6 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+              À propos
             </p>
 
-            <div className="mt-6 flex flex-wrap gap-2">
+            <h1 className="max-w-5xl text-6xl font-semibold leading-[0.86] tracking-[-0.075em] md:text-8xl lg:text-[8rem]">
+              Un regard de terrain.
+            </h1>
+          </div>
+
+          <div className="max-w-2xl">
+            <p className="text-xl leading-9 text-white/72 md:text-2xl">
+              Photographe et créateur de contenus basé à Concarneau, je raconte
+              les projets par ce qu’ils ont de vivant : le terrain, les gestes,
+              les visages et les instants.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
               {["Nautisme", "Sport", "Événementiel", "Outdoor"].map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/15 bg-black/20 px-4 py-2 text-sm text-white/75"
+                  className="rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-sm text-white/70 backdrop-blur-md"
                 >
                   {item}
                 </span>
@@ -79,13 +62,40 @@ export default function AProposPage() {
           </div>
         </div>
 
-        <div className="absolute -bottom-8 -left-8 hidden rounded-[2rem] bg-stone-950 px-7 py-6 text-white shadow-2xl shadow-stone-900/20 lg:block">
-          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#e26a2c]">
-            Basé à
-          </p>
-          <p className="mt-2 text-2xl font-semibold tracking-[-0.04em]">
-            Concarneau · Bretagne
-          </p>
+        <div className="relative flex items-end">
+          <div className="relative h-[640px] w-full overflow-hidden rounded-[2.6rem] bg-stone-900 shadow-2xl shadow-black/30">
+            <Image
+              src="/images/moi4.webp"
+              alt="Alexis Yvonnou"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 42vw"
+              className="object-cover"
+              style={{ objectPosition: "center 22%" }}
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/5 to-transparent" />
+
+            <div className="absolute left-6 top-6 rounded-full bg-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-stone-950 shadow-xl">
+              Alexis Yvonnou
+            </div>
+          </div>
+
+          <div className="absolute -bottom-7 -left-8 right-8 rounded-[2rem] border border-white/15 bg-[#f7f4ef] p-6 text-stone-950 shadow-2xl shadow-black/25 backdrop-blur-xl md:-left-12 md:right-10">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
+              Depuis le terrain
+            </p>
+
+            <p className="mt-3 max-w-xl text-2xl font-semibold leading-tight tracking-[-0.04em]">
+              Raconter ce qui se passe autour de l’action.
+            </p>
+
+            <div className="mt-5 flex flex-wrap gap-2 text-sm text-stone-600">
+              <span>Concarneau · Bretagne</span>
+              <span className="text-stone-300">•</span>
+              <span>Photo · contenus · communication</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
