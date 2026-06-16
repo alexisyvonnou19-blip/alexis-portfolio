@@ -229,7 +229,7 @@ export default function CourseAuLargePage() {
   <GalleryImage num={15} />
   <GalleryImage num={20} />
 </div>
-              
+          </div>  
         </div>
       </section>
 
