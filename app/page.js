@@ -596,7 +596,7 @@ useMotionValueEvent(scrollY, "change", (latest) => {
           title: "Surf",
           text: "L’océan, le mouvement et les instants suspendus entre puissance et équilibre.",
           href: "/photographie/surf",
-          image: "/surf/1.webp",
+          image: "/images/photos/surf/1.webp",
         },
         {
           title: "Mini 6.50",
