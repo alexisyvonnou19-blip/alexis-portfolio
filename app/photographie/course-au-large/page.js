@@ -170,65 +170,66 @@ export default function CourseAuLargePage() {
       <section className="px-5 py-24 md:px-8 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6">
-            <div className="grid gap-6 md:grid-cols-[0.58fr_0.42fr]">
-              <GalleryImage num={2} ratio="aspect-[16/10]" />
-              <GalleryImage num={3} ratio="aspect-[4/5]" />
-            </div>
+            <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-2">
+  <GalleryImage num={2} />
+  <GalleryImage num={3} />
+</div>
 
-            <div className="grid gap-6 md:grid-cols-[0.42fr_0.58fr]">
-              <GalleryImage num={4} ratio="aspect-[4/5]" />
-              <GalleryImage num={7} ratio="aspect-[16/10]" />
-            </div>
+<div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-2">
+  <GalleryImage num={4} />
+  <GalleryImage num={7} />
+</div>
 
-            <div className="grid gap-6 md:grid-cols-3">
-              <GalleryImage num={14} ratio="aspect-[2/3]" />
-              <GalleryImage num={11} ratio="aspect-[2/3]" />
-              <GalleryImage num={22} ratio="aspect-[2/3]" />
-            </div>
+<div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
+  <GalleryImage num={14} ratio="aspect-[2/3]" />
+  <GalleryImage num={11} ratio="aspect-[2/3]" />
+  <GalleryImage num={22} ratio="aspect-[2/3]" />
+</div>
 
-            <GalleryImage num={9} ratio="aspect-[21/9]" />
+<div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-2">
+  <GalleryImage num={5} />
+  <GalleryImage num={6} />
+</div>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              <GalleryImage num={5} />
-              <GalleryImage num={6} />
-            </div>
+<div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-2">
+  <GalleryImage num={21} />
+  <GalleryImage num={23} />
+</div>
 
-            <div className="grid gap-6 md:grid-cols-[0.55fr_0.45fr]">
-              <GalleryImage num={21} ratio="aspect-[16/10]" />
-              <GalleryImage num={23} ratio="aspect-[4/5]" />
-            </div>
+<GalleryImage num={9} />
 
-            <div className="grid gap-6 md:grid-cols-3">
-              <GalleryImage num={18} ratio="aspect-[2/3]" />
-              <GalleryImage num={16} ratio="aspect-[2/3]" />
-              <GalleryImage num={24} ratio="aspect-[2/3]" />
-            </div>
+<div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
+  <GalleryImage num={18} ratio="aspect-[2/3]" />
+  <GalleryImage num={16} ratio="aspect-[2/3]" />
+  <GalleryImage num={24} ratio="aspect-[2/3]" />
+</div>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              <GalleryImage num={25} />
-              <GalleryImage num={29} />
-            </div>
+<div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-2">
+  <GalleryImage num={25} />
+  <GalleryImage num={29} />
+</div>
 
-            <div className="grid gap-6 md:grid-cols-[0.42fr_0.58fr]">
-              <GalleryImage num={12} ratio="aspect-[4/5]" />
-              <GalleryImage num={13} ratio="aspect-[16/10]" />
-            </div>
+<div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-2">
+  <GalleryImage num={12} />
+  <GalleryImage num={13} />
+</div>
 
-            <GalleryImage num={8} ratio="aspect-[21/9]" />
+<div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-2">
+  <GalleryImage num={8} />
+  <GalleryImage num={10} />
+</div>
 
-            <div className="grid gap-6 md:grid-cols-2">
-              <GalleryImage num={10} />
-              <GalleryImage num={15} />
-            </div>
+<div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
+  <GalleryImage num={26} ratio="aspect-[2/3]" />
+  <GalleryImage num={27} ratio="aspect-[2/3]" />
+  <GalleryImage num={28} ratio="aspect-[2/3]" />
+</div>
 
-            <div className="grid gap-6 md:grid-cols-3">
-              <GalleryImage num={26} ratio="aspect-[2/3]" />
-              <GalleryImage num={27} ratio="aspect-[2/3]" />
-              <GalleryImage num={28} ratio="aspect-[2/3]" />
-            </div>
-
-            <GalleryImage num={20} ratio="aspect-[16/9]" />
-          </div>
+<div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-2">
+  <GalleryImage num={15} />
+  <GalleryImage num={20} />
+</div>
+              
         </div>
       </section>
 
