@@ -81,20 +81,17 @@ export default function AProposPage() {
           </div>
         </div>
 
-        <div className="absolute bottom-10 right-10 z-20 hidden max-w-[480px] rounded-[2rem] border border-white/10 bg-white p-7 text-stone-950 shadow-2xl shadow-black/30 lg:block">
-          <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#e26a2c]">
-            Depuis le terrain
-          </p>
+        <div className="absolute bottom-6 left-6 hidden lg:block">
+  <div className="rounded-full border border-white/15 bg-black/45 px-6 py-4 backdrop-blur-xl">
+    <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#e26a2c]">
+      Depuis le terrain
+    </p>
 
-          <p className="mt-4 text-3xl font-semibold leading-[1] tracking-[-0.05em]">
-            Observer, comprendre, raconter.
-          </p>
-
-          <p className="mt-5 text-base leading-7 text-stone-600">
-            Des images pensées pour donner du relief à une histoire, une équipe,
-            un événement ou un savoir-faire.
-          </p>
-        </div>
+    <p className="mt-2 text-lg font-medium text-white">
+      Observer, comprendre, raconter.
+    </p>
+  </div>
+</div>
       </div>
     </div>
   </div>
