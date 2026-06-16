@@ -31,7 +31,7 @@ const galleries = [
     title: "Surf",
     text: "L’énergie de l’océan, entre puissance et équilibre.",
     href: "/photographie/surf",
-    image: "/images/surf.webp",
+    image: "/images/photos/surf/1.webp",
   },
   {
     title: "Wing Foil",
