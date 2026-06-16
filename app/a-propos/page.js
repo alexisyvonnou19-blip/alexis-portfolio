@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export const metadata = {
   title: "À propos — Photographe & créateur de contenus à Concarneau",
@@ -8,20 +8,6 @@ export const metadata = {
     "Découvrez le parcours d’Alexis Yvonnou, photographe et créateur de contenus basé à Concarneau en Bretagne, spécialisé dans le nautisme, le sport, l’événementiel, l’outdoor et les récits humains.",
   alternates: {
     canonical: "https://alexisyvonnou.com/a-propos",
-  },
-  openGraph: {
-    title: "À propos — Alexis Yvonnou",
-    description:
-      "Photographe et créateur de contenus basé à Concarneau en Bretagne. Un regard de terrain construit autour du nautisme, du sport, de l’événementiel et des récits humains.",
-    url: "https://alexisyvonnou.com/a-propos",
-    images: [
-      {
-        url: "/og-cover.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Alexis Yvonnou — Photographe et créateur de contenus en Bretagne",
-      },
-    ],
   },
 };
 
@@ -36,6 +22,24 @@ const experiences = [
   "EFTM",
   "SNIP Yachting",
   "Trampoline Park",
+];
+
+const values = [
+  {
+    number: "01",
+    title: "Terrain",
+    text: "Être au plus proche des lieux, des gestes, des équipes et des moments qui racontent quelque chose de réel.",
+  },
+  {
+    number: "02",
+    title: "Humain",
+    text: "Chercher les visages, les émotions, les détails et les instants qui donnent du sens à un projet.",
+  },
+  {
+    number: "03",
+    title: "Usage",
+    text: "Créer des images belles, oui, mais surtout utiles pour une communication, une histoire ou une diffusion.",
+  },
 ];
 
 const aboutPageStructuredData = {
@@ -76,207 +80,198 @@ const aboutPageStructuredData = {
 export default function AProposPage() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
-        <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(aboutPageStructuredData),
-  }}
-/>
-      {/* HERO */}
-<section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
-  <div className="mx-auto max-w-7xl">
-    <div className="mb-10 flex items-center justify-between">
-    </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutPageStructuredData),
+        }}
+      />
 
-    <div className="grid gap-10 md:grid-cols-[1.05fr_0.95fr] md:items-center">
-      <div className="relative z-10">
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
-          À propos
-        </p>
-
-        <h1 className="max-w-5xl text-5xl font-semibold leading-[0.9] tracking-[-0.07em] md:text-7xl lg:text-8xl">
-          Derrière les images, un regard construit sur le terrain.
-        </h1>
-
-        <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600 md:text-xl">
-          Je suis Alexis Yvonnou, photographe et créateur de contenus basé
-à Concarneau, en Bretagne. Mon univers s’est construit autour du
-sport, du nautisme, des événements, de l’outdoor et des récits humains.
-        </p>
-
-        <div className="mt-10 flex flex-wrap gap-3">
-          <span className="rounded-full bg-white px-4 py-2 text-sm text-stone-700 shadow-sm">
-            Sport
-          </span>
-          <span className="rounded-full bg-white px-4 py-2 text-sm text-stone-700 shadow-sm">
-            Nautisme
-          </span>
-          <span className="rounded-full bg-white px-4 py-2 text-sm text-stone-700 shadow-sm">
-            Outdoor
-          </span>
-          <span className="rounded-full bg-white px-4 py-2 text-sm text-stone-700 shadow-sm">
-            Événementiel
-          </span>
-          <span className="rounded-full bg-white px-4 py-2 text-sm text-stone-700 shadow-sm">
-            Artisanat
-          </span>
-        </div>
-      </div>
-
-      <div className="relative">
-        <div className="absolute -left-8 -top-8 hidden h-40 w-40 rounded-full bg-white/70 blur-2xl md:block" />
-        <div className="absolute -bottom-8 -right-8 hidden h-56 w-56 rounded-full bg-stone-300/30 blur-3xl md:block" />
-
-        <div className="premium-image">
-          <div className="relative aspect-[2/3] w-full">
+      <section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
             <Image
               src="/images/moi4.webp"
               alt="Portrait d’Alexis Yvonnou"
               fill
               priority
-              sizes="(max-width: 768px) 100vw, 40vw"
-              className="object-cover"
+              sizes="100vw"
+              className="object-cover opacity-45"
             />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/15" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent" />
+
+            <div className="relative z-10 grid min-h-[680px] gap-10 p-8 md:grid-cols-[0.62fr_0.38fr] md:items-end md:p-14">
+              <div>
+                <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                  À propos
+                </p>
+
+                <h1 className="max-w-5xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-7xl lg:text-[6.8rem]">
+                  Un regard de terrain pour raconter ce qui compte.
+                </h1>
+              </div>
+
+              <div className="max-w-xl md:ml-auto">
+                <p className="text-lg leading-9 text-white/70 md:text-xl">
+                  Je suis Alexis Yvonnou, photographe et créateur de contenus
+                  basé à Concarneau. Mon univers s’est construit autour du sport,
+                  du nautisme, des événements, de l’outdoor et des récits humains.
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {["Sport", "Nautisme", "Outdoor", "Événementiel", "Artisanat"].map(
+                    (item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/75 backdrop-blur-md"
+                      >
+                        {item}
+                      </span>
+                    )
+                  )}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+      </section>
 
-        <div className="absolute bottom-6 left-6 rounded-2xl bg-white/90 px-5 py-4 shadow-xl backdrop-blur-md">
-          <p className="text-sm font-semibold text-stone-950">
-            Alexis Yvonnou
-          </p>
-          <p className="mt-1 text-xs uppercase tracking-[0.22em] text-stone-500">
-            Photographe & créateur de contenus
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      <section className="px-5 py-24 md:px-8 md:py-28">
+        <div className="mx-auto grid max-w-7xl gap-14 md:grid-cols-[0.48fr_0.52fr] md:items-center">
+          <div className="relative">
+            <div className="premium-image">
+              <div className="relative aspect-[4/5] w-full">
+                <Image
+                  src="/images/moi2.webp"
+                  alt="Alexis Yvonnou sur le terrain"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 45vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
 
-<section className="px-5 md:px-8">
-  <div className="mx-auto max-w-7xl soft-divider" />
-</section>
-
-      {/* TEXTE */}
-<section className="px-5 pb-20 pt-8 md:px-8 md:pb-28 md:pt-16">
-        <div className="mx-auto grid max-w-7xl gap-14 md:grid-cols-[0.95fr_1.05fr] md:items-center">
-          <div className="premium-image">
-            <div className="relative aspect-[4/5] w-full">
-              <Image
-                src="/images/moi2.webp"
-                alt="Alexis Yvonnou sur le terrain"
-                fill
-                sizes="(max-width: 768px) 100vw, 45vw"
-                className="object-cover"
-              />
+            <div className="absolute bottom-6 left-6 rounded-2xl bg-white/90 px-5 py-4 shadow-xl backdrop-blur-md">
+              <p className="text-sm font-semibold text-stone-950">
+                Alexis Yvonnou
+              </p>
+              <p className="mt-1 text-xs uppercase tracking-[0.22em] text-stone-500">
+                Photographe & créateur de contenus
+              </p>
             </div>
           </div>
 
           <div className="max-w-2xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
               Mon approche
             </p>
 
-            <h2 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
+            <h2 className="text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
               Photographier ce qui se passe autour de l’action.
             </h2>
 
-            <div className="mt-8 space-y-6 text-lg leading-9 text-stone-700">
+            <div className="mt-9 space-y-6 text-lg leading-9 text-stone-700">
               <p>
                 Mon parcours s’est construit entre communication, événementiel
-                sportif et création de contenus. Avant la photographie, il y a
-                eu des expériences en logistique, en marketing sportif, en
-                gestion de projets et en communication.
+                sportif et création de contenus. Avant la photographie, il y a eu
+                des expériences en logistique, en marketing sportif, en gestion
+                de projets et en communication.
               </p>
 
               <p>
-                Aujourd’hui, cette polyvalence me permet de comprendre les
-                besoins d’un projet dans son ensemble : les images bien sûr,
-                mais aussi leur usage, leur diffusion et ce qu’elles doivent
-                transmettre.
+                Aujourd’hui, cette polyvalence me permet de comprendre les besoins
+                d’un projet dans son ensemble : les images bien sûr, mais aussi
+                leur usage, leur diffusion et ce qu’elles doivent transmettre.
               </p>
 
               <p>
-                J’aime les univers vivants : les événements, les
-                ambiances sportives, les regards, les détails, les moments de
-                tension ou les instants plus calmes qui racontent quelque chose
-                de vrai.
+                J’aime les univers vivants : les événements, les ambiances
+                sportives, les regards, les détails, les moments de tension ou
+                les instants plus calmes qui racontent quelque chose de vrai.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-5 md:px-8">
-  <div className="mx-auto max-w-7xl soft-divider" />
-</section>
-
-      {/* BLOC SOMBRE */}
-      <section className="bg-stone-950 px-5 py-24 text-white md:px-8 md:py-28">
+      <section className="bg-[#e9e2d7] px-5 py-24 md:px-8 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-5xl">
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-white/40">
-              Ce que je cherche dans mes images
-            </p>
+          <div className="mb-14 grid gap-10 md:grid-cols-[0.52fr_0.48fr] md:items-end">
+            <div>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                Ce que je cherche
+              </p>
 
-            <h2 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-              Des images sincères, vivantes et utiles.
-            </h2>
+              <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+                Des images sincères, vivantes et utiles.
+              </h2>
+            </div>
+
+            <p className="max-w-2xl text-lg leading-9 text-stone-700">
+              Je ne cherche pas seulement une belle image. Je cherche une image
+              qui raconte, qui sert un projet, qui transmet une ambiance ou qui
+              aide à mieux comprendre ce qui se joue.
+            </p>
           </div>
 
-          <div className="mt-14 grid gap-5 md:grid-cols-3">
-            <div className="rounded-[2rem] border border-white/10 p-7">
-  <h3 className="text-2xl font-semibold">Terrain</h3>
-  <p className="mt-5 leading-8 text-white/60">
-    Être au plus proche des lieux, des équipes, des gestes et des moments pour raconter quelque chose de réel.
-  </p>
-</div>
+          <div className="grid gap-5 md:grid-cols-3">
+            {values.map((value) => (
+              <article
+                key={value.title}
+                className="group relative min-h-[360px] overflow-hidden rounded-[2.25rem] bg-[#f7f4ef] p-8 shadow-xl shadow-stone-900/5 transition duration-500 hover:-translate-y-2 hover:bg-stone-950 hover:text-white"
+              >
+                <div className="pointer-events-none absolute -right-7 -top-10 text-[8rem] font-semibold tracking-[-0.08em] text-stone-950/[0.04] transition duration-500 group-hover:text-white/[0.06]">
+                  {value.number}
+                </div>
 
-<div className="rounded-[2rem] border border-white/10 p-7">
-  <h3 className="text-2xl font-semibold">Humain</h3>
-  <p className="mt-5 leading-8 text-white/60">
-    Mettre en avant les visages, les émotions, les détails et les instants qui donnent du sens à un projet.
-  </p>
-</div>
+                <div className="relative z-10 flex h-full flex-col justify-between">
+                  <p className="text-xs font-semibold tracking-[0.35em] text-[#e26a2c]">
+                    {value.number}
+                  </p>
 
-<div className="rounded-[2rem] border border-white/10 p-7">
-  <h3 className="text-2xl font-semibold">Immersion</h3>
-  <p className="mt-5 leading-8 text-white/60">
-    Produire des images vivantes, naturelles et sincères, au plus près de l’ambiance et de l’énergie du terrain.
-  </p>
-</div>
+                  <div>
+                    <h3 className="text-5xl font-semibold tracking-[-0.06em]">
+                      {value.title}
+                    </h3>
+
+                    <p className="mt-6 text-base leading-8 text-stone-600 transition group-hover:text-white/65">
+                      {value.text}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="px-5 md:px-8">
-  <div className="mx-auto max-w-7xl soft-divider" />
-</section>
-
-      {/* EXPERIENCES */}
       <section className="px-5 py-24 md:px-8 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-4xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
-              Expériences & collaborations
-            </p>
+          <div className="mb-12 grid gap-10 md:grid-cols-[0.58fr_0.42fr] md:items-end">
+            <div>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                Expériences & collaborations
+              </p>
 
-            <h2 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-              Des projets entre événementiel, sport et communication.
-            </h2>
+              <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+                Des projets entre événementiel, sport et communication.
+              </h2>
+            </div>
 
-            <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600">
+            <p className="max-w-2xl text-lg leading-9 text-stone-600">
               Au fil des années, j’ai travaillé auprès d’événements, de médias,
               de marques et de projets liés au sport et au nautisme, en photo,
               communication ou événementiel.
             </p>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3">
             {experiences.map((experience) => (
               <span
                 key={experience}
-                className="rounded-full border border-stone-300 bg-white/60 px-5 py-3 text-sm text-stone-700"
+                className="rounded-full border border-stone-300 bg-white/60 px-5 py-3 text-sm text-stone-700 transition hover:border-stone-950 hover:bg-white"
               >
                 {experience}
               </span>
@@ -285,112 +280,83 @@ sport, du nautisme, des événements, de l’outdoor et des récits humains.
         </div>
       </section>
 
-      <section className="px-5 md:px-8">
-  <div className="mx-auto max-w-7xl soft-divider" />
-</section>
-
-      {/* GALERIE VISUELLE */}
-      <section className="px-5 pb-24 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2">
-          <div className="premium-image">
-            <div className="relative aspect-[4/3] w-full">
-              <Image
-                src="/images/marex.webp"
-                alt="Projet nautique"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
+      <section className="px-5 pb-24 md:px-8 md:pb-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-6 md:grid-cols-[0.42fr_0.58fr]">
+            <div className="premium-image">
+              <div className="relative aspect-[4/5] w-full">
+                <Image
+                  src="/images/marex.webp"
+                  alt="Projet nautique"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 42vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
-          </div>
 
-          <div className="premium-image">
-            <div className="relative aspect-[4/3] w-full">
-              <Image
-                src="/images/svr.webp"
-                alt="Univers sportif et événementiel"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
+            <div className="premium-image">
+              <div className="relative aspect-[16/10] h-full min-h-[420px] w-full">
+                <Image
+                  src="/images/svr.webp"
+                  alt="Univers sportif et événementiel"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 58vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-5 md:px-8">
-  <div className="mx-auto max-w-7xl soft-divider" />
-</section>
-
-            {/* CTA */}
       <section className="px-5 pb-28 md:px-8">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[3rem] bg-stone-950 p-8 text-white shadow-2xl shadow-stone-900/20 md:p-14">
-          <div className="grid gap-10 md:grid-cols-[1fr_0.75fr] md:items-end">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/40">
-                Contact
-              </p>
+        <div className="mx-auto max-w-7xl">
+          <div className="relative overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
+            <Image
+              src="/images/moi4.webp"
+              alt="Alexis Yvonnou photographe et créateur de contenus"
+              fill
+              sizes="100vw"
+              className="object-cover opacity-25"
+            />
 
-              <h2 className="mt-5 max-w-4xl text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-                Vous avez un projet à raconter en images ?
-              </h2>
+            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/35" />
 
-              <p className="mt-7 max-w-2xl text-lg leading-9 text-white/60">
-                Événement sportif, projet nautique, marque ou création de
-                contenus : échangeons simplement autour de votre besoin.
-              </p>
+            <div className="relative z-10 grid gap-12 p-8 md:grid-cols-[1fr_0.55fr] md:items-end md:p-14">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                  Contact
+                </p>
 
-              <div className="mt-10 grid gap-3 text-sm text-white/45">
-                <a
-                  href="mailto:alexisyvonnou@hotmail.fr"
-                  className="transition hover:text-white"
-                >
-                  alexisyvonnou@hotmail.fr
-                </a>
+                <h2 className="mt-5 max-w-4xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+                  Voyons ce qui mérite d’être raconté.
+                </h2>
 
-                <a
-    href="tel:+33602379318"
-    className="transition hover:text-white"
-  >
-    06 02 37 93 18
-  </a>
-
-                <a
-                  href="https://www.instagram.com/alexis_yvonnou"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition hover:text-white"
-                >
-                  Instagram · @alexis_yvonnou
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/alexis-yvonnou/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition hover:text-white"
-                >
-                  LinkedIn · Alexis Yvonnou
-                </a>
+                <p className="mt-8 max-w-2xl text-lg leading-9 text-white/65">
+                  Photo, contenus, réseaux sociaux ou site internet : échangeons
+                  simplement autour de votre projet, de vos besoins et de votre
+                  contexte.
+                </p>
               </div>
-            </div>
 
-            <div className="flex flex-col gap-3 md:items-end">
-              <Link
-  href="/#contact"
-  className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-medium text-stone-950 transition hover:-translate-y-0.5 hover:bg-stone-200"
->
-  <Mail size={18} />
-  Me contacter
-</Link>
+              <div className="flex flex-col gap-3 md:items-end">
+                <Link
+                  href="/#contact"
+                  className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-semibold text-stone-950 transition hover:-translate-y-0.5 hover:bg-white/90"
+                >
+                  Me contacter
+                  <ArrowRight size={16} />
+                </Link>
 
-              <Link
-                href="/"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-4 text-sm font-medium text-white/75 transition hover:border-white/40 hover:text-white"
-              >
-                Retour à l’accueil
-                <ArrowRight size={16} />
-              </Link>
+                <Link
+                  href="/photographie"
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-4 text-sm font-semibold text-white/75 transition hover:border-white/40 hover:text-white"
+                >
+                  Voir les galeries
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
