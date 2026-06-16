@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Mail, Camera, Clapperboard, Smartphone } from "lucide-react";
+import {
+  ArrowRight,
+  Camera,
+  Clapperboard,
+  Smartphone,
+  Monitor,
+} from "lucide-react";
 
 export const metadata = {
   title: "Création de contenus — Photo, vidéo & réseaux sociaux",
@@ -25,42 +31,6 @@ export const metadata = {
   },
 };
 
-const services = [
-  {
-    icon: Camera,
-    title: "Photographie",
-    text: "Reportage, portraits, images de marque, événements, sport, nautisme, artisanat et contenus pensés pour la communication.",
-  },
-  {
-    icon: Clapperboard,
-    title: "Contenus digitaux",
-    text: "Réels, vidéos verticales, carrousels, stories et contenus adaptés aux usages des réseaux sociaux.",
-  },
-  {
-    icon: Smartphone,
-    title: "Stratégie éditoriale",
-    text: "Ligne éditoriale, stratégie de contenus, animation de réseaux sociaux, communication visuelle et accompagnement global.",
-  },
-  {
-    icon: ArrowRight,
-    title: "Site internet",
-    text: "Création de site internet performant, moderne et cohérent avec votre image.",
-  },
-];
-
-const projects = [
-  "Solo Guy Cotten",
-  "Tip & Shaft",
-  "Studio K37",
-  "Good Boats",
-  "Reboat",
-  "Ino-Rope",
-  "PL Yachting",
-  "EFTM",
-  "SNIP Yachting",
-  "Trampoline Park",
-];
-
 const contentCreationStructuredData = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -74,18 +44,9 @@ const contentCreationStructuredData = {
     url: "https://alexisyvonnou.com",
   },
   areaServed: [
-    {
-      "@type": "AdministrativeArea",
-      name: "Bretagne",
-    },
-    {
-      "@type": "AdministrativeArea",
-      name: "Finistère",
-    },
-    {
-      "@type": "Country",
-      name: "France",
-    },
+    { "@type": "AdministrativeArea", name: "Bretagne" },
+    { "@type": "AdministrativeArea", name: "Finistère" },
+    { "@type": "Country", name: "France" },
   ],
   serviceType: [
     "Création de contenus",
@@ -107,39 +68,110 @@ const contentCreationStructuredData = {
     "Service de création de contenus par Alexis Yvonnou : photographie, vidéos courtes, reels, carrousels, stories, storytelling et communication digitale pour marques, événements, projets nautiques, sportifs et artisanaux.",
 };
 
+const services = [
+  {
+    icon: Camera,
+    title: "Photographier",
+    label: "Images de terrain",
+    text: "Reportages, portraits, événements, nautisme, sport et savoir-faire.",
+  },
+  {
+    icon: Clapperboard,
+    title: "Créer",
+    label: "Formats courts",
+    text: "Réels, stories, vidéos verticales, carrousels et contenus sociaux.",
+  },
+  {
+    icon: Smartphone,
+    title: "Diffuser",
+    label: "Réseaux sociaux",
+    text: "Ligne éditoriale, calendrier, animation et cohérence de prise de parole.",
+  },
+  {
+    icon: Monitor,
+    title: "Structurer",
+    label: "Site & identité",
+    text: "Une présence digitale claire, crédible et alignée avec votre image.",
+  },
+];
+
+const projectCases = [
+  {
+    name: "Good Boats",
+    context:
+      "Développer une présence nautique claire, régulière et identifiable.",
+    mission: "Création de contenus · formats courts · communication digitale",
+    image: "/images/good-boats.webp",
+  },
+  {
+    name: "PL Yachting",
+    context:
+      "Valoriser les bateaux, les chantiers et l’expertise d’un professionnel du nautisme.",
+    mission: "Photographie · contenus · réseaux sociaux",
+    image: "/images/pl-yachting.webp",
+  },
+  {
+    name: "SNIP Yachting",
+    context:
+      "Rendre visibles les marques, les refits et les projets accompagnés.",
+    mission: "Animation réseaux sociaux · création de contenus",
+    image: "/images/snip-yachting.webp",
+  },
+];
+
 export default function CreationContenusPage() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
-        <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(contentCreationStructuredData),
-  }}
-/>
-      {/* HERO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(contentCreationStructuredData),
+        }}
+      />
+
       <section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
         <div className="mx-auto max-w-7xl">
+          <div className="relative overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
+            <div className="grid md:grid-cols-[0.55fr_0.45fr]">
+              <div className="relative z-10 flex min-h-[620px] flex-col justify-between p-8 md:p-14">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                    Création de contenus
+                  </p>
 
-          <div className="mt-14 grid gap-14 md:grid-cols-[1fr_0.95fr] md:items-end">
-            <div>
-              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
-                Création de contenus
-              </p>
+                  <h1 className="mt-6 max-w-4xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-7xl lg:text-[6.5rem]">
+                    Des contenus qui donnent du relief à votre activité.
+                  </h1>
+                </div>
 
-              <h1 className="max-w-5xl text-2xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-7xl lg:text-8xl">
-                Créer des contenus pensés pour raconter et valoriser.
-              </h1>
+                <div>
+                  <p className="max-w-xl text-lg leading-9 text-white/68 md:text-xl">
+                    Photographie, vidéos courtes, réseaux sociaux, site internet
+                    et communication digitale pour les projets qui veulent être
+                    mieux vus, mieux compris et mieux racontés.
+                  </p>
 
-              <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600 md:text-xl">
-                Aujourd’hui, les réseaux sociaux sont devenus de véritables outils d’image, de visibilité et de communication. Mais c'est aussi de puissants outils de fidélisation et de conversion lorsqu'ils sont utilisés de manière stratégique. 
-                </p>
-                <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600 md:text-xl">
-                Mon rôle est de créer des contenus cohérents, incarnés et adaptés aux usages actuels, pour vous permettre de raconter votre projet, valoriser votre image et diffuser votre message de manière claire et efficace.
-              </p>
-            </div>
+                  <div className="mt-8 flex flex-wrap gap-3">
+                    <Link
+                      href="#services"
+                      className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+                    >
+                      Voir les services
+                      <ArrowRight size={16} />
+                    </Link>
 
-            <div className="premium-image">
-              <div className="relative aspect-[4/5] w-full">
+                    <Link
+                      href="/#contact"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-white hover:bg-white hover:text-stone-950"
+                    >
+                      Me contacter
+                      <ArrowRight size={16} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative min-h-[520px] md:min-h-[620px]">
                 <Image
                   src="/images/matos.webp"
                   alt="Création de contenus photo et vidéo"
@@ -148,97 +180,123 @@ export default function CreationContenusPage() {
                   sizes="(max-width: 768px) 100vw, 45vw"
                   className="object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent md:bg-gradient-to-r md:from-stone-950 md:via-stone-950/20 md:to-transparent" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-5 md:px-8">
-  <div className="mx-auto max-w-7xl soft-divider" />
-</section>
+      <section className="px-5 py-24 md:px-8 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 md:grid-cols-[0.45fr_0.55fr] md:items-end">
+            <div>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
+                Méthode
+              </p>
 
-      {/* APPROCHE */}
-      <section className="px-5 py-20 md:px-8 md:py-28">
-        <div className="mx-auto grid max-w-7xl gap-14 md:grid-cols-[0.9fr_1.1fr] md:items-center">
-          <div className="premium-image">
-            <div className="relative aspect-[4/5] w-full">
-              <Image
-                src="/images/crea5.webp"
-                alt="Production de contenus"
-                fill
-                sizes="(max-width: 768px) 100vw, 45vw"
-                className="object-cover"
-              />
+              <h2 className="max-w-4xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+                Observer. Créer. Diffuser.
+              </h2>
             </div>
+
+            <p className="max-w-2xl text-lg leading-9 text-stone-600">
+              L’objectif n’est pas de produire du contenu pour remplir un
+              calendrier. L’objectif est de créer des images et des formats qui
+              servent réellement votre message, votre visibilité et votre
+              crédibilité.
+            </p>
           </div>
 
-          <div className="max-w-2xl pt-6 md:pt-10">
-  <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
-    Mon approche
-  </p>
+          <div className="mt-14 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                title: "Comprendre",
+                text: "Votre activité, vos publics, vos enjeux et ce qui mérite d’être raconté.",
+              },
+              {
+                title: "Produire",
+                text: "Des images, vidéos et contenus adaptés au terrain comme aux plateformes.",
+              },
+              {
+                title: "Faire vivre",
+                text: "Une communication plus régulière, plus claire et plus identifiable.",
+              },
+            ].map((item, index) => (
+              <div
+                key={item.title}
+                className="rounded-[2rem] border border-stone-200 bg-white/65 p-7 shadow-xl shadow-stone-900/5"
+              >
+                <p className="text-xs font-semibold tracking-[0.3em] text-[#e26a2c]">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
 
-  <h2 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-    Créer et mettre en oeuvre une stratégie de contenus adaptée à votre projet.
-  </h2>
+                <h3 className="mt-8 text-4xl font-semibold tracking-[-0.05em]">
+                  {item.title}
+                </h3>
 
-            <div className="mt-8 space-y-6 text-lg leading-9 text-stone-700">
-              <p>
-                Mon parcours entre gestion de projets événementiel, communication et logistique me
-                permet d’aborder un projet dans son ensemble : ses besoins, son
-                public, son image et ses enjeux.
-              </p>
-
-              <p>
-                L’idée n’est pas seulement de produire de “belles images”, mais
-                de créer des contenus cohérents avec une identité et une stratégie pour atteindre les objectifs fixés.
-              </p>
-
-              <p>
-                Le sport, le nautisme, l’événementiel, l’artisanat et les projets humains font partie des univers avec lesquels je travaille le plus régulièrement. Des expériences dans des secteurs variés qui nourrissent ma capacité à m’adapter à différents projets, à comprendre leurs enjeux et à créer des contenus qui leur correspondent.
-              </p>
-            </div>
+                <p className="mt-5 text-base leading-8 text-stone-600">
+                  {item.text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="px-5 md:px-8">
-  <div className="mx-auto max-w-7xl soft-divider" />
-</section>
-
-      {/* SERVICES */}
-      <section className="bg-stone-950 px-5 py-24 text-white md:px-8 md:py-28">
+      <section
+        id="services"
+        className="bg-stone-950 px-5 py-24 text-white md:px-8 md:py-28"
+      >
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-5xl">
-            <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-white/40">
-              Mes services
-            </p>
+          <div className="mb-16 grid gap-10 md:grid-cols-[0.5fr_0.5fr] md:items-end">
+            <div>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                Services
+              </p>
 
-            <h2 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-              Des contenus adaptés aux usages actuels.
-            </h2>
+              <h2 className="max-w-4xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+                Une présence construite de l’image à la diffusion.
+              </h2>
+            </div>
+
+            <p className="max-w-2xl text-lg leading-9 text-white/60">
+              J’interviens sur les étapes qui donnent de la cohérence à votre
+              communication : création d’images, formats digitaux, réseaux
+              sociaux, site internet et identité visuelle.
+            </p>
           </div>
 
-          <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => {
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {services.map((service, index) => {
               const Icon = service.icon;
 
               return (
                 <div
                   key={service.title}
-                  className="rounded-[2rem] border border-white/10 p-7"
+                  className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 transition duration-500 hover:-translate-y-2 hover:bg-white/[0.07]"
                 >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10">
-                    <Icon size={24} />
+                  <div className="pointer-events-none absolute -right-6 -top-8 text-8xl font-semibold tracking-[-0.08em] text-white/[0.035] transition duration-500 group-hover:text-[#e26a2c]/15">
+                    {String(index + 1).padStart(2, "0")}
                   </div>
 
-                  <h3 className="mt-6 text-2xl font-semibold">
-                    {service.title}
-                  </h3>
+                  <div className="relative z-10">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-[#e26a2c]">
+                      <Icon size={24} />
+                    </div>
 
-                  <p className="mt-5 leading-8 text-white/60">
-                    {service.text}
-                  </p>
+                    <p className="mt-10 text-xs font-semibold uppercase tracking-[0.3em] text-white/35">
+                      {service.label}
+                    </p>
+
+                    <h3 className="mt-4 text-4xl font-semibold tracking-[-0.05em]">
+                      {service.title}
+                    </h3>
+
+                    <p className="mt-5 leading-8 text-white/62">
+                      {service.text}
+                    </p>
+                  </div>
                 </div>
               );
             })}
@@ -246,136 +304,157 @@ export default function CreationContenusPage() {
         </div>
       </section>
 
-      <section className="px-5 md:px-8">
-  <div className="mx-auto max-w-7xl soft-divider" />
-</section>
-
-      {/* EXEMPLES */}
       <section className="px-5 py-24 md:px-8 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-4xl">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
-              Exemples de projets
-            </p>
+          <div className="mb-16 grid gap-8 md:grid-cols-[0.58fr_0.42fr] md:items-end">
+            <div>
+              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
+                Projets
+              </p>
 
-            <h2 className="text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-              Des projets entre événementiel, sport et entreprises locales.
-            </h2>
-
-            <p className="mt-8 max-w-3xl text-lg leading-9 text-stone-600">
-              Ces dernières années, j’ai accompagné différents projets en
-              photographie, communication et création de contenus digitaux, ainsi qu'en événementiel.
-            </p>
-          </div>
-
-          <div className="mt-12 flex flex-wrap gap-3">
-            {projects.map((project) => (
-              <span
-                key={project}
-                className="rounded-full border border-stone-300 bg-white/60 px-5 py-3 text-sm text-stone-700"
-              >
-                {project}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-16 grid gap-6 md:grid-cols-2">
-            <div className="premium-image">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/images/crea6.webp"
-                  alt="Projet de création de contenus"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
+              <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
+                Quelques contextes déjà accompagnés.
+              </h2>
             </div>
 
-            <div className="premium-image">
-              <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src="/images/crea7.webp"
-                  alt="Projet nautique et storytelling"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
+            <p className="max-w-2xl text-lg leading-9 text-stone-600">
+              Nautisme, entreprises, événements ou communication digitale : des
+              projets différents, avec une même volonté de rendre le réel plus
+              lisible et plus vivant.
+            </p>
+          </div>
+
+          <div className="grid gap-6">
+            {projectCases.map((project, index) => (
+              <article
+                key={project.name}
+                className={`group grid overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 ${
+                  index % 2 === 1
+                    ? "md:grid-cols-[0.42fr_0.58fr]"
+                    : "md:grid-cols-[0.58fr_0.42fr]"
+                }`}
+              >
+                <div
+                  className={`relative min-h-[340px] md:min-h-[440px] ${
+                    index % 2 === 1 ? "md:order-2" : "md:order-1"
+                  }`}
+                >
+                  <Image
+                    src={project.image}
+                    alt={`${project.name} - création de contenus par Alexis Yvonnou`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover opacity-85 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-70"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+                </div>
+
+                <div
+                  className={`flex flex-col justify-between p-8 md:p-10 ${
+                    index % 2 === 1 ? "md:order-1" : "md:order-2"
+                  }`}
+                >
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
+                      Projet accompagné
+                    </p>
+
+                    <h3 className="mt-6 text-4xl font-semibold tracking-[-0.05em] md:text-6xl">
+                      {project.name}
+                    </h3>
+                  </div>
+
+                  <div className="mt-12 grid gap-8">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35">
+                        Contexte
+                      </p>
+
+                      <p className="mt-4 max-w-xl text-base leading-8 text-white/70 md:text-lg">
+                        {project.context}
+                      </p>
+                    </div>
+
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white/35">
+                        Mission
+                      </p>
+
+                      <p className="mt-4 max-w-xl text-base leading-8 text-white/70 md:text-lg">
+                        {project.mission}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 pb-24 md:px-8 md:pb-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative min-h-[620px] overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
+            <Image
+              src="/images/crea5.webp"
+              alt="Création de contenus terrain"
+              fill
+              sizes="100vw"
+              className="object-cover opacity-80"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/15 to-transparent" />
+
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                Vision
+              </p>
+
+              <h2 className="max-w-5xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
+                Du contenu utile. Pas du contenu pour faire du contenu.
+              </h2>
+
+              <p className="mt-8 max-w-2xl text-lg leading-9 text-white/70">
+                Chaque image, chaque vidéo, chaque publication doit aider votre
+                projet à être mieux compris, mieux identifié et mieux raconté.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="px-5 md:px-8">
-  <div className="mx-auto max-w-7xl soft-divider" />
-</section>
-
-      {/* CTA */}
       <section className="px-5 pb-28 md:px-8">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-[3rem] bg-stone-950 p-8 text-white shadow-2xl shadow-stone-900/20 md:p-14">
           <div className="grid gap-10 md:grid-cols-[1fr_0.75fr] md:items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/40">
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
                 Contact
               </p>
 
-              <h2 className="mt-5 max-w-4xl text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-                Vous avez un projet à raconter en images ?
+              <h2 className="mt-5 max-w-4xl text-4xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-6xl">
+                Vous avez une activité à rendre plus visible ?
               </h2>
 
               <p className="mt-7 max-w-2xl text-lg leading-9 text-white/60">
-                Événement sportif, projet nautique, marque ou création de
-                contenus : échangeons simplement autour de votre besoin.
+                Photo, contenus, réseaux sociaux ou site internet : échangeons
+                simplement autour de votre projet, de vos besoins et de votre
+                contexte.
               </p>
-
-              <div className="mt-10 grid gap-3 text-sm text-white/45">
-                <a
-                  href="mailto:alexisyvonnou@hotmail.fr"
-                  className="transition hover:text-white"
-                >
-                  alexisyvonnou@hotmail.fr
-                </a>
-
-               <a
-  href="tel:+33602379318"
-  className="transition hover:text-white"
->
-  06 02 37 93 18
-</a>
-
-                <a
-                  href="https://www.instagram.com/alexis_yvonnou"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition hover:text-white"
-                >
-                  Instagram · @alexis_yvonnou
-                </a>
-
-                <a
-                  href="https://www.linkedin.com/in/alexis-yvonnou/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition hover:text-white"
-                >
-                  LinkedIn · Alexis Yvonnou
-                </a>
-              </div>
             </div>
 
             <div className="flex flex-col gap-3 md:items-end">
               <Link
-  href="/#contact"
-  className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-medium text-stone-950 transition hover:-translate-y-0.5 hover:bg-stone-200"
->
-  <Mail size={18} />
-  Me contacter
-</Link>
+                href="/#contact"
+                className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-sm font-semibold text-stone-950 transition hover:-translate-y-0.5 hover:bg-white/90"
+              >
+                Me contacter
+                <ArrowRight size={16} />
+              </Link>
 
               <Link
                 href="/"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-4 text-sm font-medium text-white/75 transition hover:border-white/40 hover:text-white"
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-4 text-sm font-semibold text-white/75 transition hover:border-white/40 hover:text-white"
               >
                 Retour à l’accueil
                 <ArrowRight size={16} />
