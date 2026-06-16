@@ -549,112 +549,94 @@ useMotionValueEvent(scrollY, "change", (latest) => {
   </div>
 </section>
 
-      <section id="photographie" className="px-5 py-28 md:px-8">
+      <section id="photographie" className="px-5 py-24 md:px-8 md:py-28">
   <div className="mx-auto max-w-7xl">
-    <div className="mb-16 grid gap-8 md:grid-cols-[0.62fr_0.38fr] md:items-end">
+    <div className="mb-16 grid gap-10 md:grid-cols-[0.58fr_0.42fr] md:items-end">
       <div>
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
           Photographie
         </p>
 
         <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] text-stone-950 md:text-7xl">
-          Cinq univers, cinq manières de raconter.
+          Des galeries pour entrer dans chaque univers.
         </h2>
       </div>
 
-      <p className="text-lg leading-9 text-stone-600">
-        Course au large, portraits, sport, nature ou Mini 6.50 : des séries
-        pensées comme des portes d’entrée vers chaque terrain.
-      </p>
+      <div>
+        <p className="max-w-2xl text-lg leading-9 text-stone-600">
+          Une sélection de séries photo entre portraits, mer, sport, paysages et
+          récits de terrain.
+        </p>
+
+        <Link
+          href="/photographie"
+          className="mt-8 inline-flex items-center gap-2 rounded-full bg-stone-950 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-stone-800"
+        >
+          Voir toutes les galeries
+          <ArrowRight size={16} />
+        </Link>
+      </div>
     </div>
 
-    <div className="grid gap-5 md:grid-cols-12">
+    <div className="grid gap-6 md:grid-cols-2">
       {[
         {
-          title: "Course au large",
-          label: "La mer comme terrain.",
-          text: "Marins, bateaux, pontons, départs et retours : l’intensité de la voile de compétition.",
-          image: "/images/IMG_1003.webp",
-          href: "/photographie/course-au-large",
-          className: "md:col-span-7 md:min-h-[520px]",
-          titleClass: "md:text-6xl",
-        },
-        {
           title: "Portraits",
-          label: "Ceux qui font les projets.",
-          text: "Des visages, des présences et des personnalités racontés avec naturel.",
-          image: "/images/portrait2.webp",
+          text: "Des visages, des présences et des histoires.",
           href: "/photographie/portraits",
-          className: "md:col-span-5 md:min-h-[520px]",
-          titleClass: "md:text-5xl",
+          image: "/images/portrait2.webp",
         },
         {
-          title: "Sport",
-          label: "L’intensité du mouvement.",
-          text: "Effort, rythme, émotions et énergie d’une pratique ou d’un événement.",
-          image: "/images/hometrail5.webp",
-          href: "/photographie/sport",
-          className: "md:col-span-5 md:min-h-[410px]",
-          titleClass: "md:text-5xl",
+          title: "Course au large",
+          text: "Marins, pontons, bateaux et récits de mer.",
+          href: "/photographie/course-au-large",
+          image: "/images/IMG_1003.webp",
         },
         {
-          title: "Nature, paysage & architecture",
-          label: "Lumières, lignes et atmosphères.",
-          text: "Une approche sensible des lieux, des matières, des formes et des paysages.",
-          image: "/images/IMG_0671.webp",
-          href: "/photographie/nature-paysage-architecture",
-          className: "md:col-span-7 md:min-h-[410px]",
-          titleClass: "md:text-5xl",
+          title: "Sport & glisse",
+          text: "Surf, wing foil, trail et mouvement outdoor.",
+          href: "/photographie/surf",
+          image: "/images/surf.webp",
         },
         {
           title: "Mini 6.50",
-          label: "Une banque d’images dédiée.",
-          text: "Bateaux, marins, préparation et moments de course autour de l’univers Mini 6.50.",
-          image: "/images/IMG_1538.webp",
+          text: "Une banque d’images construite autour d’un projet Mini.",
           href: "/photographie/mini-650",
-          className: "md:col-span-12 md:min-h-[620px]",
-          titleClass: "md:text-7xl",
+          image: "/images/IMG_1538.webp",
         },
-      ].map((category) => (
+      ].map((gallery) => (
         <Link
-          href={category.href}
-          key={category.title}
-          className={`group relative min-h-[390px] overflow-hidden rounded-[2.5rem] bg-stone-950 shadow-xl shadow-stone-900/10 ${category.className}`}
+          key={gallery.title}
+          href={gallery.href}
+          className="group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10 transition duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-stone-900/20 md:min-h-[520px]"
         >
           <Image
-            src={category.image}
-            alt={`Galerie photo ${category.title} par Alexis Yvonnou`}
+            src={gallery.image}
+            alt={gallery.title}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition duration-700 group-hover:scale-105"
+            className="object-cover opacity-80 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-65"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/10 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/24 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/25 to-transparent" />
 
-          <div className="absolute bottom-0 left-0 right-0 p-8 text-white md:p-10">
-            <div className="translate-y-0 transition-all duration-500 md:translate-y-2 md:group-hover:translate-y-0">
-  <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
-    {category.label}
-  </p>
+          <div className="absolute bottom-0 left-0 right-0 p-7 md:p-9">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-[#e26a2c]">
+              Galerie photo
+            </p>
 
-  <h3
-    className={`mt-4 max-w-4xl text-4xl font-semibold leading-[0.9] tracking-[-0.055em] ${category.titleClass}`}
-  >
-    {category.title}
-  </h3>
+            <h3 className="max-w-xl text-4xl font-semibold leading-[0.95] tracking-[-0.055em] md:text-6xl">
+              {gallery.title}
+            </h3>
 
-  <div className="mt-5 max-h-40 overflow-hidden opacity-100 transition-all duration-500 md:mt-0 md:max-h-0 md:opacity-0 md:group-hover:mt-5 md:group-hover:max-h-40 md:group-hover:opacity-100">
-  <p className="max-w-2xl text-sm leading-7 text-white/75 md:text-base">
-    {category.text}
-  </p>
+            <p className="mt-5 max-w-xl text-base leading-8 text-white/72">
+              {gallery.text}
+            </p>
 
-  <div className="mt-5 flex items-center gap-2 text-sm font-semibold">
-    Voir la galerie
-    <ArrowRight size={16} />
-  </div>
-</div>
-</div>
+            <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold">
+              Voir la galerie
+              <ArrowRight size={16} />
+            </div>
           </div>
         </Link>
       ))}

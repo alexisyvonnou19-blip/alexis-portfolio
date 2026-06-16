@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const navigationLinks = [
   { label: "Qui suis-je ?", href: "/#qui-suis-je" },
-  { label: "Photographie", href: "/#photographie" },
+  { label: "Photographie", href: "/photographie" },
   { label: "Création de contenus", href: "/creation-de-contenus" },
   { label: "Terrains de jeu", href: "/#domaines" },
 ];
