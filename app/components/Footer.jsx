@@ -51,16 +51,16 @@ export default function Footer() {
               </p>
 
               <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href="mailto:alexisyvonnou@hotmail.fr"
-                  className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
-                >
-                  Écrire un mail
-                  <ArrowRight
-                    size={16}
-                    className="transition duration-300 group-hover:translate-x-1"
-                  />
-                </a>
+                <Link
+  href="/#contact"
+  className="group inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90"
+>
+  Me contacter
+  <ArrowRight
+    size={16}
+    className="transition duration-300 group-hover:translate-x-1"
+  />
+</Link>
 
                 <a
                   href="https://www.instagram.com/alexis_yvonnou"
@@ -132,20 +132,6 @@ export default function Footer() {
                   {link.label}
                 </Link>
               ))}
-
-              <Link
-                href="/a-propos"
-                className="w-fit transition duration-300 hover:translate-x-1 hover:text-white"
-              >
-                À propos
-              </Link>
-
-              <Link
-                href="/creation-de-contenus"
-                className="w-fit transition duration-300 hover:translate-x-1 hover:text-white"
-              >
-                Création de contenus
-              </Link>
             </div>
           </div>
         </div>
