@@ -76,7 +76,7 @@ export default function AProposPage() {
         <div className="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-white/15 bg-black/30 p-5 backdrop-blur-xl">
           <p className="text-sm font-semibold text-white">Alexis Yvonnou</p>
           <p className="mt-1 text-xs uppercase tracking-[0.25em] text-white/55">
-            Photo · contenus · communication
+            Photo · contenus · communicatio
           </p>
         </div>
       </div>
