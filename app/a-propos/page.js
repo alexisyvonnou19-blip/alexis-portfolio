@@ -25,56 +25,64 @@ export default function AProposPage() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
       <section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="relative overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
-            <Image
-  src="/images/moi4.webp"
-  alt="Portrait d’Alexis Yvonnou"
-  fill
-  priority
-  sizes="100vw"
-  className="object-cover opacity-40"
-  style={{ objectPosition: "center 25%" }}
-/>
+  <div className="mx-auto max-w-7xl">
+    <div className="grid gap-8 rounded-[3rem] bg-stone-950 p-7 text-white shadow-2xl shadow-stone-900/20 md:grid-cols-[0.58fr_0.42fr] md:p-10 lg:p-14">
+      <div className="flex min-h-[620px] flex-col justify-between">
+        <div>
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+            À propos
+          </p>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/15" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent" />
+          <h1 className="max-w-5xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-7xl lg:text-[6.6rem]">
+            Un regard de terrain pour raconter ce qui compte.
+          </h1>
+        </div>
 
-            <div className="relative z-10 grid min-h-[680px] gap-10 p-8 md:grid-cols-[0.62fr_0.38fr] md:items-end md:p-14">
-              <div>
-                <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
-                  À propos
-                </p>
+        <div className="max-w-2xl">
+          <p className="text-lg leading-9 text-white/68 md:text-xl">
+            Je suis Alexis Yvonnou, photographe et créateur de contenus basé à
+            Concarneau. Mon univers s’est construit autour du sport, du nautisme,
+            des événements, de l’outdoor et des récits humains.
+          </p>
 
-                <h1 className="max-w-5xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-7xl lg:text-[6.8rem]">
-                  Un regard de terrain pour raconter ce qui compte.
-                </h1>
-              </div>
-
-              <div className="max-w-xl md:ml-auto">
-                <p className="text-lg leading-9 text-white/70 md:text-xl">
-                  Je suis Alexis Yvonnou, photographe et créateur de contenus
-                  basé à Concarneau. Mon univers s’est construit autour du sport,
-                  du nautisme, des événements, de l’outdoor et des récits humains.
-                </p>
-
-                <div className="mt-8 flex flex-wrap gap-3">
-                  {["Sport", "Nautisme", "Outdoor", "Événementiel", "Artisanat"].map(
-                    (item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/75 backdrop-blur-md"
-                      >
-                        {item}
-                      </span>
-                    )
-                  )}
-                </div>
-              </div>
-            </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            {["Sport", "Nautisme", "Outdoor", "Événementiel", "Artisanat"].map(
+              (item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/75 backdrop-blur-md"
+                >
+                  {item}
+                </span>
+              )
+            )}
           </div>
         </div>
-      </section>
+      </div>
+
+      <div className="relative min-h-[520px] overflow-hidden rounded-[2.5rem] bg-white/10 md:min-h-full">
+        <Image
+          src="/images/moi4.webp"
+          alt="Portrait d’Alexis Yvonnou"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, 42vw"
+          className="object-cover"
+          style={{ objectPosition: "center 22%" }}
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+
+        <div className="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-white/15 bg-black/30 p-5 backdrop-blur-xl">
+          <p className="text-sm font-semibold text-white">Alexis Yvonnou</p>
+          <p className="mt-1 text-xs uppercase tracking-[0.25em] text-white/55">
+            Photo · contenus · communication
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <section className="px-5 py-24 md:px-8 md:py-28">
         <div className="mx-auto grid max-w-7xl gap-14 md:grid-cols-[0.48fr_0.52fr] md:items-center">
