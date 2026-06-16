@@ -26,59 +26,67 @@ export default function AProposPage() {
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
       <section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
   <div className="mx-auto max-w-7xl">
-    <div className="grid gap-8 rounded-[3rem] bg-stone-950 p-7 text-white shadow-2xl shadow-stone-900/20 md:grid-cols-[0.58fr_0.42fr] md:p-10 lg:p-14">
-      <div className="flex min-h-[620px] flex-col justify-between">
-        <div>
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
-            À propos
-          </p>
+    <div className="grid gap-10 md:grid-cols-[0.52fr_0.48fr] md:items-end">
+      <div className="relative z-10">
+        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+          À propos
+        </p>
 
-          <h1 className="max-w-5xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-7xl lg:text-[6.6rem]">
-            Un regard de terrain pour raconter ce qui compte.
-          </h1>
-        </div>
+        <h1 className="max-w-5xl text-6xl font-semibold leading-[0.86] tracking-[-0.075em] text-stone-950 md:text-8xl lg:text-[8.2rem]">
+          Un regard de terrain.
+        </h1>
 
-        <div className="max-w-2xl">
-          <p className="text-lg leading-9 text-white/68 md:text-xl">
-            Je suis Alexis Yvonnou, photographe et créateur de contenus basé à
-            Concarneau. Mon univers s’est construit autour du sport, du nautisme,
-            des événements, de l’outdoor et des récits humains.
-          </p>
+        <p className="mt-8 max-w-xl text-xl leading-9 text-stone-650 md:text-2xl">
+          Photographe et créateur de contenus basé à Concarneau, je raconte les
+          projets par ce qu’ils ont de vivant : le terrain, les gestes, les
+          visages et les instants.
+        </p>
+      </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            {["Sport", "Nautisme", "Outdoor", "Événementiel", "Artisanat"].map(
-              (item) => (
+      <div className="relative">
+        <div className="relative min-h-[620px] overflow-hidden rounded-[3rem] bg-stone-950 shadow-2xl shadow-stone-900/20">
+          <Image
+            src="/images/moi4.webp"
+            alt="Alexis Yvonnou"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 48vw"
+            className="object-cover"
+            style={{ objectPosition: "center 22%" }}
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+          <div className="absolute left-6 top-6 rounded-full bg-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.25em] text-stone-950 shadow-xl">
+            Alexis Yvonnou
+          </div>
+
+          <div className="absolute bottom-6 left-6 right-6 rounded-[2rem] border border-white/15 bg-white/10 p-6 backdrop-blur-xl">
+            <p className="text-2xl font-semibold leading-tight tracking-[-0.04em] text-white">
+              Raconter ce qui se passe autour de l’action.
+            </p>
+
+            <div className="mt-6 flex flex-wrap gap-2">
+              {["Nautisme", "Sport", "Événementiel", "Outdoor"].map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm text-white/75 backdrop-blur-md"
+                  className="rounded-full border border-white/15 bg-black/20 px-4 py-2 text-sm text-white/75"
                 >
                   {item}
                 </span>
-              )
-            )}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <div className="relative min-h-[520px] overflow-hidden rounded-[2.5rem] bg-white/10 md:min-h-full">
-        <Image
-          src="/images/moi4.webp"
-          alt="Portrait d’Alexis Yvonnou"
-          fill
-          priority
-          sizes="(max-width: 768px) 100vw, 42vw"
-          className="object-cover"
-          style={{ objectPosition: "center 22%" }}
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
-
-        <div className="absolute bottom-6 left-6 right-6 rounded-[1.5rem] border border-white/15 bg-black/45 p-5 backdrop-blur-xl">
-  <p className="text-sm font-semibold text-white">Alexis Yvonnou</p>
-  <p className="mt-1 text-xs uppercase tracking-[0.25em] text-white/55">
-    Photographe & créateur de contenus
-  </p>
-</div>
+        <div className="absolute -bottom-8 -left-8 hidden rounded-[2rem] bg-stone-950 px-7 py-6 text-white shadow-2xl shadow-stone-900/20 lg:block">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#e26a2c]">
+            Basé à
+          </p>
+          <p className="mt-2 text-2xl font-semibold tracking-[-0.04em]">
+            Concarneau · Bretagne
+          </p>
+        </div>
       </div>
     </div>
   </div>
