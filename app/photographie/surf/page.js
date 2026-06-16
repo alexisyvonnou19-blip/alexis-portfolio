@@ -43,8 +43,7 @@ const surfStructuredData = {
     "@type": "ImageObject",
     url: `https://alexisyvonnou.com${getPhoto(num)}`,
     name: `Photographie de surf ${num}`,
-    caption:
-      "Photographie de surf, de glisse et d’océan par Alexis Yvonnou.",
+    caption: "Photographie de surf, de glisse et d’océan par Alexis Yvonnou.",
     creator: {
       "@id": "https://alexisyvonnou.com/#person",
     },
@@ -55,7 +54,8 @@ export default function SurfPage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
 
-  const activePhoto = activeIndex !== null ? getPhoto(gallery[activeIndex]) : null;
+  const activePhoto =
+    activeIndex !== null ? getPhoto(gallery[activeIndex]) : null;
 
   const openImage = (num) => {
     setActiveIndex(gallery.indexOf(num));
@@ -92,31 +92,47 @@ export default function SurfPage() {
   }, [activeIndex]);
 
   const GalleryImage = ({ num, ratio = "aspect-[2/3]" }) => (
-    <button
+    <motion.button
       type="button"
       onClick={() => openImage(num)}
-      className={`gallery-mobile-card relative block w-full overflow-hidden rounded-2xl bg-stone-200 text-left ${ratio}`}
+      className={`gallery-mobile-card group relative block w-full cursor-zoom-in overflow-hidden rounded-2xl bg-stone-200 text-left ${ratio}`}
+      initial={{ opacity: 0, y: 26, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
       <Image
         src={getPhoto(num)}
         alt={`Surf - photo ${num} par Alexis Yvonnou`}
         fill
         sizes="(max-width: 768px) 100vw, 33vw"
-        className="object-cover transition duration-300 hover:brightness-90"
+        className="object-cover transition duration-700 ease-out group-hover:scale-[1.018] group-hover:brightness-90"
       />
-    </button>
+
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
+        <div className="absolute inset-0 bg-black/10" />
+        <div className="absolute bottom-4 right-4 rounded-full bg-white/90 px-4 py-2 text-xs font-medium text-stone-950 backdrop-blur-md">
+          Voir
+        </div>
+      </div>
+    </motion.button>
   );
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
       <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(surfStructuredData),
-  }}
-/>
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(surfStructuredData),
+        }}
+      />
+
       <section className="gallery-mobile-hero relative mt-[92px] h-[calc(82vh-92px)] min-h-[468px] w-full overflow-hidden">
-        <button type="button" onClick={() => openImage(3)} className="relative h-full w-full">
+        <button
+          type="button"
+          onClick={() => openImage(3)}
+          className="relative h-full w-full cursor-zoom-in"
+        >
           <Image
             src={getPhoto(3)}
             alt="Surf - photographie Alexis Yvonnou"
@@ -127,38 +143,30 @@ export default function SurfPage() {
           />
         </button>
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/10" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/82 via-black/24 to-black/5" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/52 via-black/12 to-transparent" />
 
-        <div className="pointer-events-none absolute bottom-8 left-5 right-5 text-white md:bottom-12 md:left-10 md:right-10">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
-            Photographie
+        <div className="pointer-events-none absolute bottom-8 left-5 right-5 text-white md:bottom-14 md:left-10 md:right-10">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+            Photographie · surf
           </p>
-          <h1 className="gallery-mobile-title max-w-5xl text-6xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-8xl">
-            Surf
+
+          <h1 className="gallery-mobile-title max-w-5xl text-6xl font-semibold leading-[0.9] tracking-[-0.07em] md:text-8xl lg:text-[8rem]">
+            Surf.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
-            L’énergie de l’océan, le mouvement et les instants suspendus entre puissance et équilibre.
+
+          <p className="mt-7 max-w-3xl text-2xl font-medium leading-tight tracking-[-0.04em] text-white/86 md:text-4xl">
+            L’énergie de l’océan, entre puissance et équilibre.
+          </p>
+
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
+            Une galerie dédiée au mouvement, à la glisse, à la lumière et aux
+            instants suspendus entre le sportif, la vague et l’environnement.
           </p>
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-              Galerie
-            </p>
-            <h2 className="gallery-mobile-intro-title mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
-              Une série entre puissance, équilibre et mouvement.
-            </h2>
-            <p className="mt-6 text-lg leading-9 text-stone-600">
-              Cette série rassemble des images de surf entre glisse, concentration, mouvement et énergie de l’océan. Une galerie pensée pour capter l’instant juste : la trajectoire, l’équilibre, la lumière, la vague et la présence du sportif dans son environnement.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="gallery-mobile-section px-5 pb-24 md:px-8">
+      <section className="gallery-mobile-section px-5 py-24 md:px-8 md:py-28">
         <div className="gallery-mobile-spacing mx-auto max-w-7xl space-y-6">
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-2">
             <GalleryImage num={1} />
@@ -216,6 +224,39 @@ export default function SurfPage() {
         </div>
       </section>
 
+      <section className="px-5 pb-24 md:px-8 md:pb-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative min-h-[560px] overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20 md:min-h-[660px]">
+            <Image
+              src={getPhoto(4)}
+              alt="Photographie de surf et de mouvement"
+              fill
+              sizes="100vw"
+              className="object-cover opacity-80"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/28 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
+
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                Regard
+              </p>
+
+              <h2 className="max-w-5xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
+                Photographier la glisse, c’est attendre le bon déséquilibre.
+              </h2>
+
+              <p className="mt-8 max-w-2xl text-lg leading-9 text-white/70">
+                La vague, le corps, la trajectoire et la lumière ne se répètent
+                jamais exactement. C’est dans cet instant court que l’image
+                trouve son intensité.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="gallery-mobile-section px-5 pb-24 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2">
           <Link
@@ -225,9 +266,11 @@ export default function SurfPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-stone-400">
               Galerie précédente
             </p>
+
             <h3 className="text-3xl font-semibold tracking-tight">
               Course au large
             </h3>
+
             <p className="mt-4 text-stone-500 group-hover:text-stone-700">
               ← Voir la galerie
             </p>
@@ -240,7 +283,9 @@ export default function SurfPage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
               Galerie suivante
             </p>
+
             <h3 className="text-3xl font-semibold tracking-tight">Wing Foil</h3>
+
             <p className="mt-4 text-white/60 group-hover:text-white">
               Voir la galerie →
             </p>
@@ -281,10 +326,14 @@ export default function SurfPage() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
           >
+            <div className="absolute left-4 top-4 z-50 rounded-full bg-white/10 px-4 py-2 text-xs text-white/75 backdrop-blur-md md:left-6 md:top-6">
+              {activeIndex + 1} / {gallery.length}
+            </div>
+
             <button
               type="button"
               onClick={closeImage}
-              className="absolute right-5 top-5 z-50 rounded-full bg-white/10 px-4 py-2 text-sm backdrop-blur-md hover:bg-white/20"
+              className="absolute right-4 top-4 z-50 rounded-full bg-white/10 px-4 py-2 text-sm backdrop-blur-md transition hover:bg-white/20 md:right-6 md:top-6"
             >
               Fermer
             </button>
@@ -292,7 +341,7 @@ export default function SurfPage() {
             <button
               type="button"
               onClick={previousImage}
-              className="absolute left-4 top-1/2 z-50 hidden -translate-y-1/2 rounded-full bg-white/10 px-5 py-4 text-3xl backdrop-blur-md hover:bg-white/20 md:block"
+              className="absolute left-3 top-1/2 z-50 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-3xl backdrop-blur-md transition hover:bg-white/20 md:left-6 md:h-14 md:w-14"
             >
               ‹
             </button>
@@ -300,7 +349,7 @@ export default function SurfPage() {
             <button
               type="button"
               onClick={nextImage}
-              className="absolute right-4 top-1/2 z-50 hidden -translate-y-1/2 rounded-full bg-white/10 px-5 py-4 text-3xl backdrop-blur-md hover:bg-white/20 md:block"
+              className="absolute right-3 top-1/2 z-50 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-3xl backdrop-blur-md transition hover:bg-white/20 md:right-6 md:h-14 md:w-14"
             >
               ›
             </button>
@@ -315,7 +364,7 @@ export default function SurfPage() {
             >
               <motion.div
                 key={activePhoto}
-                className="relative h-[90vh] w-[92vw]"
+                className="relative h-[88vh] w-[94vw] md:h-[90vh] md:w-[92vw]"
                 initial={{ opacity: 0, scale: 0.985 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.985 }}
@@ -325,14 +374,11 @@ export default function SurfPage() {
                   src={activePhoto}
                   alt="Photo en plein écran"
                   fill
-                  sizes="92vw"
+                  sizes="94vw"
                   className="object-contain"
+                  priority
                 />
               </motion.div>
-
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-2 text-xs text-white/80 backdrop-blur-md">
-                {activeIndex + 1} / {gallery.length}
-              </div>
             </motion.div>
           </motion.div>
         )}
