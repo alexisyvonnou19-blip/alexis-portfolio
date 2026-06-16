@@ -56,7 +56,8 @@ export default function NaturePage() {
   const [activeIndex, setActiveIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
 
-  const activePhoto = activeIndex !== null ? getPhoto(gallery[activeIndex]) : null;
+  const activePhoto =
+    activeIndex !== null ? getPhoto(gallery[activeIndex]) : null;
 
   const openImage = (num) => {
     setActiveIndex(gallery.indexOf(num));
@@ -121,14 +122,19 @@ export default function NaturePage() {
 
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
-        <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(natureStructuredData),
-  }}
-/>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(natureStructuredData),
+        }}
+      />
+
       <section className="gallery-mobile-hero relative mt-[92px] h-[calc(82vh-92px)] min-h-[468px] w-full overflow-hidden">
-        <button type="button" onClick={() => openImage(1)} className="relative h-full w-full cursor-zoom-in">
+        <button
+          type="button"
+          onClick={() => openImage(1)}
+          className="relative h-full w-full cursor-zoom-in"
+        >
           <Image
             src={getPhoto(1)}
             alt="Nature & architecture - photographie Alexis Yvonnou"
@@ -139,45 +145,32 @@ export default function NaturePage() {
           />
         </button>
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/5" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/78 via-black/22 to-black/5" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/45 via-black/10 to-transparent" />
 
-        <div className="pointer-events-none absolute bottom-8 left-5 right-5 text-white md:bottom-12 md:left-10 md:right-10">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-white/70">
-            Photographie
+        <div className="pointer-events-none absolute bottom-8 left-5 right-5 text-white md:bottom-14 md:left-10 md:right-10">
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+            Photographie · nature & architecture
           </p>
-          <h1 className="gallery-mobile-title max-w-5xl text-6xl font-semibold leading-[0.95] tracking-[-0.06em] md:text-8xl">
-            Nature & architecture
+
+          <h1 className="gallery-mobile-title max-w-6xl text-6xl font-semibold leading-[0.9] tracking-[-0.07em] md:text-8xl lg:text-[7.5rem]">
+            Nature &
+            <br />
+            architecture.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
-            Lumières, lignes, matières et atmosphères : une approche sensible des lieux,
-            des paysages et des formes.
+
+          <p className="mt-7 max-w-3xl text-2xl font-medium leading-tight tracking-[-0.04em] text-white/86 md:text-4xl">
+            Des images pour ralentir le regard.
+          </p>
+
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
+            Lignes, matières, paysages, détails et lumières naturelles : une
+            galerie pensée comme une respiration visuelle.
           </p>
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8">
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-            className="max-w-3xl"
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-              Galerie
-            </p>
-            <h2 className="gallery-mobile-intro-title mt-4 text-4xl font-semibold tracking-[-0.04em] md:text-6xl">
-              Des images pour ralentir le regard.
-            </h2>
-            <p className="mt-6 text-lg leading-9 text-stone-600">
-              Cette galerie rassemble des images plus calmes, entre paysages, lignes architecturales, matières, détails, textures et lumières naturelles. Une série pensée comme une respiration visuelle, où le regard se pose sur les formes, les ambiances et les lieux.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="gallery-mobile-section px-5 pb-24 md:px-8">
+      <section className="gallery-mobile-section px-5 py-24 md:px-8 md:py-28">
         <div className="gallery-mobile-spacing mx-auto max-w-7xl space-y-6">
           <div className="gallery-mobile-spacing grid grid-cols-1 gap-6 md:grid-cols-3">
             <GalleryImage num={2} />
@@ -233,6 +226,39 @@ export default function NaturePage() {
         </div>
       </section>
 
+      <section className="px-5 pb-24 md:px-8 md:pb-28">
+        <div className="mx-auto max-w-7xl">
+          <div className="relative min-h-[560px] overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20 md:min-h-[660px]">
+            <Image
+              src={getPhoto(23)}
+              alt="Nature, paysage et architecture"
+              fill
+              sizes="100vw"
+              className="object-cover opacity-80"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/28 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/20 to-transparent" />
+
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
+              <p className="mb-5 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+                Regard
+              </p>
+
+              <h2 className="max-w-5xl text-5xl font-semibold leading-[0.9] tracking-[-0.065em] md:text-7xl">
+                Photographier les lieux, c’est aussi raconter ce qu’ils laissent.
+              </h2>
+
+              <p className="mt-8 max-w-2xl text-lg leading-9 text-white/70">
+                Une lumière, une ligne, une matière ou un détail peuvent suffire
+                à transmettre une ambiance. Cette galerie explore ces moments
+                plus calmes, où l’image devient une trace.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="gallery-mobile-section px-5 pb-24 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-2">
           <Link
@@ -242,9 +268,11 @@ export default function NaturePage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-stone-400">
               Galerie précédente
             </p>
+
             <h3 className="text-3xl font-semibold tracking-tight">
               Portraits
             </h3>
+
             <p className="mt-4 text-stone-500 group-hover:text-stone-700">
               ← Voir la galerie
             </p>
@@ -257,9 +285,11 @@ export default function NaturePage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/45">
               Galerie suivante
             </p>
+
             <h3 className="text-3xl font-semibold tracking-tight">
               Course au large
             </h3>
+
             <p className="mt-4 text-white/60 group-hover:text-white">
               Voir la galerie →
             </p>
