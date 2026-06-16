@@ -37,19 +37,19 @@ const galleries = [
     title: "Wing Foil",
     text: "Vitesse, envol et mouvement au-dessus de l’eau.",
     href: "/photographie/wing-foil",
-    image: "/images/photos/wing-foil/1.webp",
+    image: "/images/photos/wing-foil/3.webp",
   },
   {
     title: "Trail",
     text: "L’effort, les visages et l’intensité du terrain.",
     href: "/photographie/trail",
-    image: "/images/photos/trail/1.webp",
+    image: "/images/photos/trail/2.webp",
   },
   {
     title: "Retour Charlie Dalin",
     text: "Un retour populaire, maritime et profondément humain.",
     href: "/photographie/retour-charlie-dalin-vendee-globe-24-25",
-    image: "/images/photos/retour-charlie-dalin/1.webp",
+    image: "/images/photos/retour-charlie-dalin/2.webp",
   },
   {
     title: "Banque images Mini 6.50",
