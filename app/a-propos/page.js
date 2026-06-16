@@ -33,8 +33,8 @@ export default function AProposPage() {
   fill
   priority
   sizes="100vw"
-  className="object-cover opacity-45"
-  style={{ objectPosition: "center 30%" }}
+  className="object-cover opacity-40"
+  style={{ objectPosition: "center 25%" }}
 />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/15" />
