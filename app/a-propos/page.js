@@ -5,10 +5,7 @@ import { ArrowRight } from "lucide-react";
 export const metadata = {
   title: "À propos — Photographe & créateur de contenus à Concarneau",
   description:
-    "Découvrez le parcours d’Alexis Yvonnou, photographe et créateur de contenus basé à Concarneau en Bretagne, spécialisé dans le nautisme, le sport, l’événementiel, l’outdoor et les récits humains.",
-  alternates: {
-    canonical: "https://alexisyvonnou.com/a-propos",
-  },
+    "Découvrez le parcours d’Alexis Yvonnou, photographe et créateur de contenus basé à Concarneau en Bretagne.",
 };
 
 const experiences = [
@@ -24,69 +21,9 @@ const experiences = [
   "Trampoline Park",
 ];
 
-const values = [
-  {
-    number: "01",
-    title: "Terrain",
-    text: "Être au plus proche des lieux, des gestes, des équipes et des moments qui racontent quelque chose de réel.",
-  },
-  {
-    number: "02",
-    title: "Humain",
-    text: "Chercher les visages, les émotions, les détails et les instants qui donnent du sens à un projet.",
-  },
-  {
-    number: "03",
-    title: "Usage",
-    text: "Créer des images belles, oui, mais surtout utiles pour une communication, une histoire ou une diffusion.",
-  },
-];
-
-const aboutPageStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "@id": "https://alexisyvonnou.com/a-propos#webpage",
-  url: "https://alexisyvonnou.com/a-propos",
-  name: "À propos — Alexis Yvonnou",
-  description:
-    "Page à propos d’Alexis Yvonnou, photographe et créateur de contenus basé à Concarneau en Bretagne.",
-  inLanguage: "fr-FR",
-  about: {
-    "@type": "Person",
-    "@id": "https://alexisyvonnou.com/#person",
-    name: "Alexis Yvonnou",
-    jobTitle: "Photographe et créateur de contenus",
-    url: "https://alexisyvonnou.com",
-    image: "https://alexisyvonnou.com/images/moi4.webp",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Concarneau",
-      addressRegion: "Bretagne",
-      postalCode: "29900",
-      addressCountry: "FR",
-    },
-    knowsAbout: [
-      "Photographie nautique",
-      "Course au large",
-      "Sport outdoor",
-      "Événementiel sportif",
-      "Création de contenus",
-      "Communication digitale",
-      "Storytelling visuel",
-    ],
-  },
-};
-
 export default function AProposPage() {
   return (
     <main className="min-h-screen bg-[#f7f4ef] text-stone-950">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(aboutPageStructuredData),
-        }}
-      />
-
       <section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
@@ -192,57 +129,6 @@ export default function AProposPage() {
                 les instants plus calmes qui racontent quelque chose de vrai.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#e9e2d7] px-5 py-24 md:px-8 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-14 grid gap-10 md:grid-cols-[0.52fr_0.48fr] md:items-end">
-            <div>
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
-                Ce que je cherche
-              </p>
-
-              <h2 className="max-w-5xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
-                Des images sincères, vivantes et utiles.
-              </h2>
-            </div>
-
-            <p className="max-w-2xl text-lg leading-9 text-stone-700">
-              Je ne cherche pas seulement une belle image. Je cherche une image
-              qui raconte, qui sert un projet, qui transmet une ambiance ou qui
-              aide à mieux comprendre ce qui se joue.
-            </p>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-3">
-            {values.map((value) => (
-              <article
-                key={value.title}
-                className="group relative min-h-[360px] overflow-hidden rounded-[2.25rem] bg-[#f7f4ef] p-8 shadow-xl shadow-stone-900/5 transition duration-500 hover:-translate-y-2 hover:bg-stone-950 hover:text-white"
-              >
-                <div className="pointer-events-none absolute -right-7 -top-10 text-[8rem] font-semibold tracking-[-0.08em] text-stone-950/[0.04] transition duration-500 group-hover:text-white/[0.06]">
-                  {value.number}
-                </div>
-
-                <div className="relative z-10 flex h-full flex-col justify-between">
-                  <p className="text-xs font-semibold tracking-[0.35em] text-[#e26a2c]">
-                    {value.number}
-                  </p>
-
-                  <div>
-                    <h3 className="text-5xl font-semibold tracking-[-0.06em]">
-                      {value.title}
-                    </h3>
-
-                    <p className="mt-6 text-base leading-8 text-stone-600 transition group-hover:text-white/65">
-                      {value.text}
-                    </p>
-                  </div>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
