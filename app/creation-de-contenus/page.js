@@ -142,57 +142,117 @@ export default function CreationContenusPage() {
       </section>
 
       <section className="bg-[#e9e2d7] px-5 py-24 md:px-8 md:py-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-14 grid gap-8 md:grid-cols-[0.48fr_0.52fr] md:items-end">
-            <div>
-              <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-stone-500">
-                Méthode
-              </p>
+  <div className="mx-auto max-w-7xl">
+    <div className="grid gap-12 md:grid-cols-[0.44fr_0.56fr] md:items-end">
+      <div>
+        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+          Méthode
+        </p>
 
-              <h2 className="max-w-4xl text-5xl font-semibold leading-[0.92] tracking-[-0.06em] md:text-7xl">
-                Une méthode simple. Pensée pour le réel.
-              </h2>
+        <h2 className="max-w-4xl text-5xl font-semibold leading-[0.9] tracking-[-0.06em] md:text-7xl">
+          Observer le terrain.
+          <br />
+          Créer juste.
+          <br />
+          Diffuser mieux.
+        </h2>
+      </div>
+
+      <div className="max-w-2xl md:ml-auto">
+        <p className="text-lg leading-9 text-stone-700">
+          L’objectif n’est pas de publier pour remplir un calendrier. L’objectif
+          est de construire une communication utile : comprendre ce qui compte,
+          produire les bons contenus, puis les faire vivre avec cohérence.
+        </p>
+      </div>
+    </div>
+
+    <div className="mt-16 grid gap-5 lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="relative min-h-[560px] overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
+        <Image
+          src="/images/crea5.webp"
+          alt="Création de contenus sur le terrain"
+          fill
+          sizes="(max-width: 1024px) 100vw, 55vw"
+          className="object-cover opacity-75"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-transparent to-transparent" />
+
+        <div className="absolute bottom-0 left-0 right-0 p-8 md:p-10">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+            Une approche terrain
+          </p>
+
+          <h3 className="mt-5 max-w-3xl text-5xl font-semibold leading-[0.9] tracking-[-0.06em] md:text-7xl">
+            Partir du réel, pas d’une idée générique.
+          </h3>
+
+          <p className="mt-7 max-w-2xl text-lg leading-9 text-white/70">
+            Avant de produire, il faut comprendre : le lieu, les personnes,
+            les contraintes, les usages et ce que votre public doit vraiment
+            retenir.
+          </p>
+        </div>
+      </div>
+
+      <div className="grid gap-5">
+        {[
+          {
+            number: "01",
+            title: "Observer",
+            subtitle: "Comprendre le terrain",
+            text: "Identifier votre activité, vos publics, vos messages, vos angles et ce qui mérite d’être raconté.",
+          },
+          {
+            number: "02",
+            title: "Créer",
+            subtitle: "Produire les bons contenus",
+            text: "Photos, vidéos courtes, réels, stories, carrousels ou formats plus longs selon le contexte.",
+          },
+          {
+            number: "03",
+            title: "Diffuser",
+            subtitle: "Faire vivre la communication",
+            text: "Structurer la prise de parole, organiser les contenus et installer une présence régulière.",
+          },
+        ].map((step) => (
+          <article
+            key={step.title}
+            className="group relative overflow-hidden rounded-[2rem] border border-stone-950/10 bg-[#f7f4ef] p-7 shadow-xl shadow-stone-900/5 transition duration-500 hover:-translate-y-1 hover:bg-stone-950 hover:text-white md:p-8"
+          >
+            <div className="pointer-events-none absolute -right-5 -top-8 text-[7rem] font-semibold tracking-[-0.08em] text-stone-950/[0.04] transition duration-500 group-hover:text-white/[0.06]">
+              {step.number}
             </div>
 
-            <p className="max-w-2xl text-lg leading-9 text-stone-650">
-              L’objectif n’est pas de produire du contenu pour remplir un
-              calendrier. L’objectif est de créer des images et des formats qui
-              servent vraiment votre message, votre visibilité et votre
-              crédibilité.
-            </p>
-          </div>
+            <div className="relative z-10">
+              <div className="mb-10 flex items-center justify-between">
+                <p className="text-xs font-semibold tracking-[0.35em] text-[#e26a2c]">
+                  {step.number}
+                </p>
 
-          <div className="grid gap-px overflow-hidden rounded-[2.5rem] bg-stone-950/10 md:grid-cols-3">
-            {processSteps.map((step) => (
-              <article
-                key={step.title}
-                className="group min-h-[360px] bg-[#f7f4ef] p-8 transition duration-500 hover:bg-stone-950 hover:text-white md:p-10"
-              >
-                <div className="flex items-center justify-between">
-                  <p className="text-xs font-semibold tracking-[0.35em] text-[#e26a2c]">
-                    {step.number}
-                  </p>
-                  <div className="h-2 w-2 rounded-full bg-[#e26a2c]" />
-                </div>
+                <div className="h-2 w-2 rounded-full bg-[#e26a2c]" />
+              </div>
 
-                <div className="mt-28">
-                  <p className="mb-4 text-xs font-semibold uppercase tracking-[0.3em] text-stone-400 transition group-hover:text-white/35">
-                    {step.subtitle}
-                  </p>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-400 transition group-hover:text-white/35">
+                {step.subtitle}
+              </p>
 
-                  <h3 className="text-5xl font-semibold tracking-[-0.06em] md:text-6xl">
-                    {step.title}
-                  </h3>
+              <h3 className="mt-4 text-4xl font-semibold tracking-[-0.05em] md:text-5xl">
+                {step.title}
+              </h3>
 
-                  <p className="mt-6 max-w-sm text-base leading-8 text-stone-600 transition group-hover:text-white/60">
-                    {step.text}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+              <p className="mt-5 max-w-xl text-base leading-8 text-stone-600 transition group-hover:text-white/65">
+                {step.text}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       <section
         id="services"
