@@ -6,10 +6,10 @@ import { Menu, X, ArrowRight } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const navigationLinks = [
-  { label: "Profil", href: "/#qui-suis-je" },
+  { label: "Qui suis-je ?", href: "/#qui-suis-je" },
   { label: "Photographie", href: "/#photographie" },
-  { label: "Contenus", href: "/#contenus" },
-  { label: "Univers", href: "/#domaines" },
+  { label: "Création de contenus", href: "/#contenus" },
+  { label: "Terrains de jeu", href: "/#domaines" },
 ];
 
 export default function Header() {
@@ -17,10 +17,10 @@ export default function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6">
-      <nav className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center rounded-full border border-black/5 bg-[#f7f4ef]/92 px-4 py-2.5 shadow-lg shadow-stone-900/5 backdrop-blur-2xl md:px-5">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-black/5 bg-[#f7f4ef]/92 px-4 py-2.5 shadow-lg shadow-stone-900/5 backdrop-blur-2xl md:px-5">
         <Link
           href="/#top"
-          className="group flex w-fit items-center gap-3 text-stone-950"
+          className="group flex shrink-0 items-center gap-3 text-stone-950"
           onClick={() => setMenuOpen(false)}
         >
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-stone-950 text-sm font-semibold text-white transition duration-300 group-hover:scale-95">
@@ -37,22 +37,20 @@ export default function Header() {
           </div>
         </Link>
 
-        <div className="hidden items-center gap-8 text-sm font-medium text-stone-600 lg:flex">
+        <div className="ml-auto hidden items-center gap-7 text-sm font-medium text-stone-600 lg:flex xl:gap-9">
           {navigationLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="relative py-2 transition duration-300 hover:text-stone-950 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-stone-950 after:transition-all after:duration-300 hover:after:w-full"
+              className="relative whitespace-nowrap py-2 transition duration-300 hover:text-stone-950 after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-stone-950 after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </Link>
           ))}
-        </div>
 
-        <div className="hidden justify-end lg:flex">
           <Link
             href="/#contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-stone-800"
+            className="group ml-2 inline-flex items-center gap-2 rounded-full bg-stone-950 px-5 py-2.5 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:bg-stone-800"
           >
             Contact
             <ArrowRight
