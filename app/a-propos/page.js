@@ -28,13 +28,14 @@ export default function AProposPage() {
         <div className="mx-auto max-w-7xl">
           <div className="relative overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
             <Image
-              src="/images/moi4.webp"
-              alt="Portrait d’Alexis Yvonnou"
-              fill
-              priority
-              sizes="100vw"
-              className="object-top opacity-45"
-            />
+  src="/images/moi4.webp"
+  alt="Portrait d’Alexis Yvonnou"
+  fill
+  priority
+  sizes="100vw"
+  className="object-cover opacity-45"
+  style={{ objectPosition: "center 15%" }}
+/>
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/45 to-black/15" />
             <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-transparent" />
