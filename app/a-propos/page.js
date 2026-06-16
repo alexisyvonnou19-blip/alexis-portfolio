@@ -27,7 +27,7 @@ export default function AProposPage() {
       <section className="page-offset px-5 pb-20 md:px-8 md:pb-28">
   <div className="mx-auto max-w-7xl">
     <div className="relative overflow-hidden rounded-[3.2rem] bg-[#0b0b0a] text-white shadow-2xl shadow-stone-900/20">
-      <div className="pointer-events-none absolute left-0 top-0 h-full w-full bg-[radial-gradient(circle_at_20%_20%,rgba(226,106,44,0.18),transparent_34%),radial-gradient(circle_at_85%_80%,rgba(255,255,255,0.08),transparent_32%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(226,106,44,0.22),transparent_34%),radial-gradient(circle_at_82%_78%,rgba(255,255,255,0.08),transparent_34%)]" />
 
       <div className="relative z-10 grid gap-10 p-7 md:grid-cols-[0.56fr_0.44fr] md:p-10 lg:p-14">
         <div className="flex min-h-[640px] flex-col justify-between">
@@ -73,25 +73,17 @@ export default function AProposPage() {
               style={{ objectPosition: "center 22%" }}
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/0 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/0 to-transparent" />
 
             <div className="absolute left-6 top-6 rounded-full bg-white px-5 py-3 text-xs font-semibold uppercase tracking-[0.28em] text-stone-950 shadow-xl">
               Alexis Yvonnou
             </div>
+
+            <div className="absolute bottom-6 left-6 rounded-full border border-white/15 bg-black/40 px-5 py-3 text-sm text-white/80 backdrop-blur-xl">
+              Concarneau · Bretagne
+            </div>
           </div>
         </div>
-
-        <div className="absolute bottom-6 left-6 hidden lg:block">
-  <div className="rounded-full border border-white/15 bg-black/45 px-6 py-4 backdrop-blur-xl">
-    <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-[#e26a2c]">
-      Depuis le terrain
-    </p>
-
-    <p className="mt-2 text-lg font-medium text-white">
-      Observer, comprendre, raconter.
-    </p>
-  </div>
-</div>
       </div>
     </div>
   </div>
