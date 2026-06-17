@@ -58,14 +58,14 @@ function FadeIn({ children, delay = 0, className = "" }) {
   );
 }
 
-function PhotoTransition({ image, label = "image de transition" }) {
+function PhotoTransition({ image, label }) {
   return (
-    <section className="relative w-full overflow-hidden bg-[#f7f4ef] pt-0 pb-20 md:pb-28">
+    <section className="relative w-full overflow-hidden bg-[#f7f4ef] pt-0 pb-0">
       <FadeIn>
         <div className="relative h-[420px] w-full overflow-hidden bg-stone-950 shadow-2xl shadow-stone-900/15 md:h-[620px]">
           <Image
             src={image}
-            alt={label}
+            alt={label ? `Photographie ${label} réalisée par Alexis Yvonnou` : "Photographie de transition réalisée par Alexis Yvonnou"}
             fill
             sizes="100vw"
             className="object-cover opacity-100"
