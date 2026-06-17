@@ -297,7 +297,7 @@ export default function AlexisYvonnouHomepage() {
         </div>
       </section>
 
-      <PhotoTransition image="/images/hero3.webp" label="Photo · contenus · communication" />
+      <PhotoTransition image="/images/horizontal1.webp" label="Photo · contenus · communication" />
 
       <section id="projets" className="relative px-5 py-28 md:px-8">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(226,106,44,0.08),transparent_28%),linear-gradient(180deg,#f7f4ef_0%,#efe8dd_100%)]" />
