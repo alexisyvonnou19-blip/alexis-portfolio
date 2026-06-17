@@ -98,8 +98,8 @@ export default function AlexisYvonnouHomepage() {
         style={{ scaleX: scrollYProgress }}
       />
 
-      <section id="top" className="px-4 pt-12 md:px-8 md:pt-28">
-  <div className="mx-auto max-w-7xl pt-16 md:pt-0">
+      <section id="top" className="px-4 pt-10 md:px-8 md:pt-28">
+  <div className="mx-auto max-w-7xl pt-14 md:pt-0">
     <motion.div
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
