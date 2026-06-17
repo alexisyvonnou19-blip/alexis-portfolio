@@ -107,7 +107,7 @@ export default function AlexisYvonnouHomepage() {
       className="relative overflow-hidden rounded-[2rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)] md:rounded-[3rem]"
     >
       <div className="relative min-h-[650px] overflow-hidden md:min-h-[700px]">
-        <motion.div style={{ y: heroY, scale: heroScale }} className="absolute inset-0">
+        
           <Image
   src="/images/hero5.webp"
   alt="Image principale du portfolio d’Alexis Yvonnou"
@@ -118,7 +118,7 @@ export default function AlexisYvonnouHomepage() {
   sizes="(max-width: 768px) 100vw, 1280px"
   className="object-cover object-center"
 />
-        </motion.div>
+        
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/42 to-black/8" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/62 via-black/22 to-transparent" />
