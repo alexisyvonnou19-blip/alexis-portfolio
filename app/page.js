@@ -65,7 +65,7 @@ function PhotoTransition({ image, label }) {
         <div className="relative h-[420px] w-full overflow-hidden bg-stone-950 shadow-2xl shadow-stone-900/15 md:h-[620px]">
           <Image
             src={image}
-            alt={label}
+            alt={`Photographie ${label} réalisée par Alexis Yvonnou`}
             fill
             sizes="100vw"
             className="object-cover opacity-100"
