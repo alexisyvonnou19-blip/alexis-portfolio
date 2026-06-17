@@ -109,14 +109,15 @@ export default function AlexisYvonnouHomepage() {
       <div className="relative min-h-[650px] overflow-hidden md:min-h-[700px]">
         <motion.div style={{ y: heroY, scale: heroScale }} className="absolute inset-0">
           <Image
-            src="/images/hero5.webp"
-            alt="Image principale du portfolio d’Alexis Yvonnou"
-            fill
-            priority
-            quality={75}
-            sizes="100vw"
-            className="object-cover object-center"
-          />
+  src="/images/hero5.webp"
+  alt="Image principale du portfolio d’Alexis Yvonnou"
+  fill
+  priority
+  fetchPriority="high"
+  quality={75}
+  sizes="100vw"
+  className="object-cover object-center"
+/>
         </motion.div>
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/42 to-black/8" />
