@@ -132,7 +132,7 @@ export default function AlexisYvonnouHomepage() {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-12 lg:p-14">
-          <div className="grid gap-10 md:grid-cols-[0.62fr_0.38fr] md:items-end">
+          <div className="grid gap-10 md:grid-cols-[0.66fr_0.34fr] md:items-end">
             <div>
               <h1 className="max-w-5xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-8xl lg:text-[6.6rem]">
                 Raconter
@@ -145,7 +145,7 @@ export default function AlexisYvonnouHomepage() {
               </p>
             </div>
 
-            <div className="max-w-md rounded-[2rem] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-md md:translate-y-4 md:p-6">
+            <div className="max-w-md rounded-[2rem] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-md md:translate-y-24 md:p-6">
               <p className="text-base leading-7 text-white/76 md:text-lg md:leading-8">
                 Pour les entreprises, marques et événements qui veulent être mieux vus,
                 mieux compris et mieux racontés.
