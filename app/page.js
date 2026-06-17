@@ -140,7 +140,7 @@ export default function AlexisYvonnouHomepage() {
                       le terrain.
                     </h1>
 
-                    <p className="mt-6 max-w-3xl text-2xl font-medium leading-tight tracking-[-0.04em] text-white/90 md:text-4xl">
+                    <p className="mt-6 max-w-3xl text-3xl font-light text-white md:text-4xl">
                       Photographie · Création de contenus · Communication
                     </p>
                   </div>
