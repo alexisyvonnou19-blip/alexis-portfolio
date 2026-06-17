@@ -770,7 +770,7 @@ export default function AlexisYvonnouHomepage() {
             </div>
           </div>
         </div>
-      </section> 
+      </section>
 
       <AnimatePresence>
         {showBackToTop && (
