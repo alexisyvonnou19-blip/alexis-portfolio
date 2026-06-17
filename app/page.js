@@ -135,7 +135,7 @@ export default function AlexisYvonnouHomepage() {
           Concarneau · Bretagne
         </div>
 
-        <div className="absolute inset-0 z-10 flex flex-col justify-center px-6 pt-24 text-white md:bottom-0 md:left-0 md:right-0 md:block md:p-12 lg:p-14">
+        <div className="absolute left-0 right-0 top-44 z-10 p-6 text-white md:bottom-0 md:top-auto md:p-12 lg:p-14">
           <div className="grid gap-10 md:grid-cols-[0.66fr_0.34fr] md:items-end">
             <div>
               <h1 className="max-w-5xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-8xl lg:text-[6.6rem]">
