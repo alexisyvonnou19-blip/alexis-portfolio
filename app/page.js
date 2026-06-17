@@ -58,14 +58,14 @@ function FadeIn({ children, delay = 0, className = "" }) {
   );
 }
 
-function PhotoTransition({ image, label }) {
+function PhotoTransition({ image, label = "image de transition" }) {
   return (
     <section className="relative w-full overflow-hidden bg-[#f7f4ef] py-20 md:py-28">
       <FadeIn>
         <div className="relative h-[420px] w-full overflow-hidden bg-stone-950 shadow-2xl shadow-stone-900/15 md:h-[620px]">
           <Image
             src={image}
-            alt={`Photographie ${label} réalisée par Alexis Yvonnou`}
+            alt={label}
             fill
             sizes="100vw"
             className="object-cover opacity-100"
@@ -288,7 +288,10 @@ export default function AlexisYvonnouHomepage() {
         </div>
       </section>
 
-      <PhotoTransition image="/images/horizontal1.webp"/>
+      <PhotoTransition
+  image="/images/horizontal1.webp"
+  label="Photo de transition montrant un paysage de terrain photographié par Alexis Yvonnou"
+/>
 
       <section id="projets" className="relative px-5 py-28 md:px-8">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(226,106,44,0.08),transparent_28%),linear-gradient(180deg,#f7f4ef_0%,#efe8dd_100%)]" />
@@ -513,7 +516,10 @@ export default function AlexisYvonnouHomepage() {
         </div>
       </section>
 
-      <PhotoTransition image="/images/horizontal2.webp"/>
+      <PhotoTransition
+  image="/images/horizontal2.webp"
+  label="Photo de transition autour du nautisme et du récit de terrain"
+/>
 
       <section id="domaines" className="px-5 py-24 md:px-8">
         <div className="mx-auto max-w-7xl">
