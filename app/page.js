@@ -60,7 +60,7 @@ function FadeIn({ children, delay = 0, className = "" }) {
 
 function PhotoTransition({ image, label = "image de transition" }) {
   return (
-    <section className="relative w-full overflow-hidden bg-[#f7f4ef] py-20 md:py-28">
+    <section className="relative w-full overflow-hidden bg-[#f7f4ef] py-20 md:py-20">
       <FadeIn>
         <div className="relative h-[420px] w-full overflow-hidden bg-stone-950 shadow-2xl shadow-stone-900/15 md:h-[620px]">
           <Image
