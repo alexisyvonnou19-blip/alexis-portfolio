@@ -535,22 +535,6 @@ export default function AlexisYvonnouHomepage() {
   label="Photo de transition autour du nautisme et du récit de terrain"
 />
 
-<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-
-  <div className="absolute -left-[6vw] top-[10rem]">
-    <span className="select-none text-[18vw] font-semibold leading-none tracking-[-0.08em] text-stone-950/[0.06]">
-      TERRAIN
-    </span>
-  </div>
-
-  <div className="absolute right-[-4vw] top-[55rem]">
-    <span className="select-none text-[15vw] font-semibold leading-none tracking-[-0.08em] text-[#e26a2c]/[0.08]">
-      RACONTER
-    </span>
-  </div>
-
-  <div className="relative z-10">
-
       <section id="domaines" className="px-5 py-24 md:px-8">
         <div className="mx-auto max-w-7xl">
           <FadeIn>
@@ -786,9 +770,7 @@ export default function AlexisYvonnouHomepage() {
             </div>
           </div>
         </div>
-      </section>
-    </div>
-</div>  
+      </section> 
 
       <AnimatePresence>
         {showBackToTop && (
