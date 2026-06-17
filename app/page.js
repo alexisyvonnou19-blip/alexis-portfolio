@@ -99,88 +99,85 @@ export default function AlexisYvonnouHomepage() {
       />
 
       <section id="top" className="px-4 pt-8 md:px-8 md:pt-28">
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="relative overflow-hidden rounded-[2rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)] md:rounded-[3rem]"
-          >
-            <div className="relative min-h-[650px] overflow-hidden md:min-h-[700px]">
-              <motion.div style={{ y: heroY, scale: heroScale }} className="absolute inset-0">
-                <Image
-                  src="/images/hero5.webp"
-                  alt="Image principale du portfolio d’Alexis Yvonnou"
-                  fill
-                  priority
-                  quality={75}
-                  sizes="100vw"
-                  className="object-cover object-center"
-                />
-              </motion.div>
+  <div className="mx-auto max-w-7xl">
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+      className="relative overflow-hidden rounded-[2rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)] md:rounded-[3rem]"
+    >
+      <div className="relative min-h-[650px] overflow-hidden md:min-h-[700px]">
+        <motion.div style={{ y: heroY, scale: heroScale }} className="absolute inset-0">
+          <Image
+            src="/images/hero5.webp"
+            alt="Image principale du portfolio d’Alexis Yvonnou"
+            fill
+            priority
+            quality={75}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </motion.div>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/38 to-black/10" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/16 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/42 to-black/8" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/62 via-black/22 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_70%,rgba(255,255,255,0.12),transparent_28%)]" />
 
-              <div className="absolute left-5 top-5 z-10 hidden rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:block">
-                Alexis Yvonnou
-              </div>
+        <div className="absolute left-5 top-5 z-10 hidden rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:block">
+          Alexis Yvonnou
+        </div>
 
-              <div className="absolute right-8 top-8 z-10 hidden rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white shadow-sm backdrop-blur-md md:block">
-                Concarneau · Bretagne
-              </div>
+        <div className="absolute right-8 top-8 z-10 hidden rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white shadow-sm backdrop-blur-md md:block">
+          Concarneau · Bretagne
+        </div>
 
-              <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-12 lg:p-14">
-                <div className="grid gap-8 md:grid-cols-[0.64fr_0.36fr] md:items-end">
-                  <div>
+        <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-12 lg:p-14">
+          <div className="grid gap-10 md:grid-cols-[0.62fr_0.38fr] md:items-end">
+            <div>
+              <h1 className="max-w-5xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-8xl lg:text-[6.6rem]">
+                Raconter
+                <br />
+                le terrain.
+              </h1>
 
-                    <h1 className="max-w-5xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-8xl lg:text-[6.6rem]">
-                      Raconter
-                      <br />
-                      le terrain.
-                    </h1>
+              <p className="mt-7 max-w-3xl text-xl font-light leading-snug tracking-[-0.035em] text-white/90 md:text-2xl">
+                Photographie · Création de contenus · Communication
+              </p>
+            </div>
 
-                    <p className="mt-6 max-w-3xl text-3xl font-light text-white md:text-2xl">
-                       <br />
-                      Photographie · Création de contenus · Communication
-                    </p>
-                  </div>
+            <div className="max-w-md rounded-[2rem] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-md md:translate-y-4 md:p-6">
+              <p className="text-base leading-7 text-white/76 md:text-lg md:leading-8">
+                Pour les entreprises, marques et événements qui veulent être mieux vus,
+                mieux compris et mieux racontés.
+              </p>
 
-                  <div className="max-w-md md:translate-y-8">
-                    <p className="text-base leading-7 text-white/72 md:text-lg md:leading-8">
-                      Pour les entreprises, marques et événements qui veulent être mieux vus,
-                      mieux compris et mieux racontés.
-                    </p>
-
-                    <div className="mt-6">
-                      <Link
-                        href="#projets"
-                        className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90 md:px-6"
-                      >
-                        Découvrir mon travail
-                        <ArrowRight size={16} />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-7 flex flex-wrap gap-2 md:mt-14 md:gap-3">
-                  {["Nautisme", "Sport", "Outdoor", "Événementiel", "Artisanat"].map(
-                    (item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-white/20 bg-white/10 px-3.5 py-2 text-sm font-medium text-white/85 backdrop-blur-md md:px-4"
-                      >
-                        {item}
-                      </span>
-                    )
-                  )}
-                </div>
+              <div className="mt-6">
+                <Link
+                  href="#projets"
+                  className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-stone-950 transition duration-300 hover:-translate-y-0.5 hover:bg-white/90 md:px-6"
+                >
+                  Découvrir mon travail
+                  <ArrowRight size={16} />
+                </Link>
               </div>
             </div>
-          </motion.div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-2 md:mt-12 md:gap-3">
+            {["Nautisme", "Sport", "Outdoor", "Événementiel", "Artisanat"].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-white/18 bg-white/10 px-3.5 py-2 text-sm font-medium text-white/85 backdrop-blur-md md:px-4"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
-      </section>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       <section
   id="services"
