@@ -32,20 +32,28 @@ export default function ContactForm() {
     >
       <div className="grid gap-6 md:grid-cols-2">
         <div>
-          <label className="mb-3 block text-sm font-medium text-stone-700">
+          <label
+            htmlFor="name"
+            className="mb-3 block text-sm font-medium text-stone-700"
+          >
             Nom
           </label>
 
           <input
+            id="name"
             type="text"
             name="name"
+            autoComplete="name"
             required
             className="w-full rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 text-stone-950 outline-none transition focus:border-stone-950"
           />
         </div>
 
         <div>
-          <label className="mb-3 block text-sm font-medium text-stone-700">
+          <label
+            htmlFor="email"
+            className="mb-3 block text-sm font-medium text-stone-700"
+          >
             Email
           </label>
 
@@ -53,6 +61,7 @@ export default function ContactForm() {
             id="email"
             type="email"
             name="email"
+            autoComplete="email"
             required
             className="w-full rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 text-stone-950 outline-none transition focus:border-stone-950"
           />
@@ -66,26 +75,34 @@ export default function ContactForm() {
       </div>
 
       <div className="mt-6">
-        <label className="mb-3 block text-sm font-medium text-stone-700">
+        <label
+          htmlFor="project"
+          className="mb-3 block text-sm font-medium text-stone-700"
+        >
           Projet / société
         </label>
 
         <input
+          id="project"
           type="text"
           name="project"
+          autoComplete="organization"
           className="w-full rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 text-stone-950 outline-none transition focus:border-stone-950"
         />
       </div>
 
       <div className="mt-6">
-        <label className="mb-3 block text-sm font-medium text-stone-700">
+        <label
+          htmlFor="message"
+          className="mb-3 block text-sm font-medium text-stone-700"
+        >
           Message
         </label>
 
         <textarea
           id="message"
           name="message"
-          rows="6"
+          rows={6}
           required
           className="w-full rounded-2xl border border-stone-200 bg-stone-50 px-5 py-4 text-stone-950 outline-none transition focus:border-stone-950"
         />
@@ -100,9 +117,9 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={state.submitting}
-        className="mt-8 inline-flex items-center justify-center rounded-full bg-stone-950 px-7 py-4 text-sm font-medium text-white transition hover:opacity-90"
+        className="mt-8 inline-flex items-center justify-center rounded-full bg-stone-950 px-7 py-4 text-sm font-medium text-white transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
       >
-        Envoyer le message
+        {state.submitting ? "Envoi en cours..." : "Envoyer le message"}
       </button>
 
       <p className="mt-6 text-sm leading-6 text-stone-500">
