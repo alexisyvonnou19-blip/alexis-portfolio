@@ -114,8 +114,8 @@ export default function AlexisYvonnouHomepage() {
   fill
   priority
   fetchPriority="high"
-  quality={75}
-  sizes="100vw"
+  quality={70}
+  sizes="(max-width: 768px) 100vw, 1280px"
   className="object-cover object-center"
 />
         </motion.div>
