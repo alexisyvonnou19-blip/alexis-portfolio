@@ -72,10 +72,6 @@ function PhotoTransition({ image, label }) {
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-
-          <div className="absolute bottom-8 left-5 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-xl md:left-8">
-            {label}
-          </div>
         </div>
       </FadeIn>
     </section>
@@ -297,7 +293,7 @@ export default function AlexisYvonnouHomepage() {
         </div>
       </section>
 
-      <PhotoTransition image="/images/horizontal1.webp" />
+      <PhotoTransition image="/images/horizontal1.webp"/>
 
       <section id="projets" className="relative px-5 py-28 md:px-8">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(226,106,44,0.08),transparent_28%),linear-gradient(180deg,#f7f4ef_0%,#efe8dd_100%)]" />
