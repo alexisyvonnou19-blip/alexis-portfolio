@@ -606,6 +606,7 @@ export default function AlexisYvonnouHomepage() {
 
       <section id="qui-suis-je" className="px-5 py-28 md:px-8">
         <div className="mx-auto max-w-7xl">
+          <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e26a2c]/5 blur-3xl" />
           <FadeIn>
             <div className="grid gap-6 md:grid-cols-[0.44fr_0.56fr] md:items-stretch">
               <div className="relative overflow-hidden rounded-[2.75rem] bg-stone-950 text-white shadow-xl shadow-stone-900/10">
