@@ -106,23 +106,26 @@ export default function AlexisYvonnouHomepage() {
       transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
       className="relative overflow-hidden rounded-[2rem] bg-stone-950 shadow-[0_35px_120px_rgba(28,25,23,0.18)] md:rounded-[3rem]"
     >
-      <div className="relative min-h-[650px] overflow-hidden md:min-h-[700px]">
-        <motion.div style={{ y: heroY, scale: heroScale }} className="absolute inset-0">
+      <div className="relative min-h-[560px] overflow-hidden md:min-h-[700px]">
+        <motion.div
+          style={{ y: heroY, scale: heroScale }}
+          className="absolute inset-0"
+        >
           <Image
-  src="/images/hero5.webp"
-  alt="Image principale du portfolio d’Alexis Yvonnou"
-  fill
-  priority
-  fetchPriority="high"
-  quality={70}
-  sizes="(max-width: 768px) 100vw, 1280px"
-  className="object-cover object-center"
-/>
+            src="/images/hero5.webp"
+            alt="Image principale du portfolio d’Alexis Yvonnou"
+            fill
+            priority
+            fetchPriority="high"
+            quality={70}
+            sizes="(max-width: 768px) 100vw, 1280px"
+            className="object-cover object-center"
+          />
         </motion.div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/42 to-black/8" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/62 via-black/22 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_70%,rgba(255,255,255,0.12),transparent_28%)]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/78 via-black/30 to-black/5 md:from-black/88 md:via-black/42 md:to-black/8" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/48 via-black/12 to-transparent md:from-black/62 md:via-black/22" />
+        <div className="absolute inset-0 hidden bg-[radial-gradient(circle_at_25%_70%,rgba(255,255,255,0.12),transparent_28%)] md:block" />
 
         <div className="absolute left-5 top-5 z-10 hidden rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:block">
           Alexis Yvonnou
@@ -141,12 +144,12 @@ export default function AlexisYvonnouHomepage() {
                 le terrain.
               </h1>
 
-              <p className="mt-7 max-w-3xl text-xl font-light leading-snug tracking-[-0.035em] text-white/90 md:text-2xl">
+              <p className="mt-6 max-w-3xl text-lg font-light leading-snug tracking-[-0.035em] text-white/90 md:mt-7 md:text-2xl">
                 Photographie · Création de contenus · Communication
               </p>
             </div>
 
-            <div className="max-w-md rounded-[2rem] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-md md:translate-y-24 md:p-6">
+            <div className="hidden max-w-md rounded-[2rem] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-md md:block md:translate-y-24 md:p-6">
               <p className="text-base leading-7 text-white/76 md:text-lg md:leading-8">
                 Pour les entreprises, marques et événements qui veulent être mieux vus,
                 mieux compris et mieux racontés.
@@ -164,7 +167,7 @@ export default function AlexisYvonnouHomepage() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-2 md:mt-12 md:gap-3">
+          <div className="mt-8 hidden flex-wrap gap-2 md:mt-12 md:flex md:gap-3">
             {["Nautisme", "Sport", "Outdoor", "Événementiel", "Artisanat"].map((item) => (
               <span
                 key={item}
@@ -173,6 +176,16 @@ export default function AlexisYvonnouHomepage() {
                 {item}
               </span>
             ))}
+          </div>
+
+          <div className="mt-8 md:hidden">
+            <Link
+              href="#projets"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-stone-950"
+            >
+              Découvrir mon travail
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </div>
