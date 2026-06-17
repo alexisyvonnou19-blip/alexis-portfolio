@@ -535,20 +535,18 @@ export default function AlexisYvonnouHomepage() {
   label="Photo de transition autour du nautisme et du récit de terrain"
 />
 
-<div className="relative overflow-hidden">
+<div className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
 
-  <div className="pointer-events-none absolute inset-0 overflow-hidden">
-    <div className="absolute left-1/2 top-[35%] -translate-x-1/2">
-      <span className="select-none text-[22vw] font-semibold tracking-[-0.08em] text-stone-950/[0.025]">
-        TERRAIN
-      </span>
-    </div>
+  <div className="absolute -left-[6vw] top-[10rem]">
+    <span className="select-none text-[18vw] font-semibold leading-none tracking-[-0.08em] text-stone-950/[0.06]">
+      TERRAIN
+    </span>
+  </div>
 
-    <div className="absolute left-1/2 top-[72%] -translate-x-1/2">
-      <span className="select-none text-[18vw] font-semibold tracking-[-0.08em] text-stone-950/[0.02]">
-        RACONTER
-      </span>
-    </div>
+  <div className="absolute right-[-4vw] top-[55rem]">
+    <span className="select-none text-[15vw] font-semibold leading-none tracking-[-0.08em] text-[#e26a2c]/[0.08]">
+      RACONTER
+    </span>
   </div>
 
   <div className="relative z-10">
