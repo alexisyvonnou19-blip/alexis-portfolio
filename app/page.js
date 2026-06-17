@@ -307,7 +307,7 @@ export default function AlexisYvonnouHomepage() {
   label="Photo de transition montrant un paysage de terrain photographié par Alexis Yvonnou"
 />
 
-      <section id="projets" className="relative px-3 pt-16 pb-20 md:px-8 md:pt-26 md:pb-24">
+      <section id="projets" className="relative px-3 pt-26 pb-20 md:px-8 md:pt-30 md:pb-24">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(226,106,44,0.08),transparent_28%),linear-gradient(180deg,#f7f4ef_0%,#efe8dd_100%)]" />
 
         <div className="relative z-10 mx-auto max-w-7xl">
