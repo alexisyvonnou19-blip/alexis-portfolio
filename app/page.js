@@ -60,24 +60,24 @@ function FadeIn({ children, delay = 0, className = "" }) {
 
 function PhotoTransition({ image, label }) {
   return (
-    <section className="px-5 py-16 md:px-8 md:py-20">
-      <div className="mx-auto max-w-7xl">
-        <FadeIn>
-          <div className="relative h-[360px] overflow-hidden rounded-[3rem] bg-stone-950 shadow-2xl shadow-stone-900/10 md:h-[520px]">
-            <Image
-              src={image}
-              alt={label}
-              fill
-              sizes="100vw"
-              className="object-cover opacity-80"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            <div className="absolute bottom-8 left-8 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-xl">
-              {label}
-            </div>
+    <section className="relative w-full overflow-hidden bg-[#f7f4ef] py-20 md:py-28">
+      <FadeIn>
+        <div className="relative h-[420px] w-full overflow-hidden bg-stone-950 shadow-2xl shadow-stone-900/15 md:h-[620px]">
+          <Image
+            src={image}
+            alt={label}
+            fill
+            sizes="100vw"
+            className="object-cover opacity-85"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+          <div className="absolute bottom-8 left-5 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-xl md:left-8">
+            {label}
           </div>
-        </FadeIn>
-      </div>
+        </div>
+      </FadeIn>
     </section>
   );
 }
@@ -189,9 +189,9 @@ export default function AlexisYvonnouHomepage() {
       </section>
 
       <section
-        id="services"
-        className="relative bg-[#0b0b0a] px-5 py-24 text-white md:px-8 md:py-28"
-      >
+  id="services"
+  className="relative mt-24 bg-[#0b0b0a] px-5 py-28 text-white md:mt-32 md:px-8 md:py-32"
+>
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(226,106,44,0.16),transparent_30%),radial-gradient(circle_at_85%_85%,rgba(255,255,255,0.08),transparent_28%)]" />
 
         <div className="relative z-10 mx-auto max-w-7xl">
@@ -306,9 +306,9 @@ export default function AlexisYvonnouHomepage() {
           <FadeIn>
             <div className="mb-16 grid gap-8 md:grid-cols-[0.6fr_0.4fr] md:items-end">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-stone-500">
-                  Réalisations
-                </p>
+                <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
+  Réalisations
+</p>
 
                 <h2 className="mt-4 text-5xl font-semibold leading-[0.95] tracking-[-0.05em] md:text-7xl">
                   Des projets, des contextes, des résultats.
