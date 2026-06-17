@@ -535,7 +535,7 @@ export default function AlexisYvonnouHomepage() {
   label="Photo de transition autour du nautisme et du récit de terrain"
 />
 
-      <section id="domaines" className="px-5 py-16 md:px-8">
+      <section id="domaines" className="px-5 pt-16 pb-12 md:px-8 md:pt-20 md:pb-14">
         <div className="mx-auto max-w-7xl">
           <FadeIn>
             <div className="overflow-hidden rounded-[2.75rem] bg-stone-950 text-white">
@@ -604,7 +604,7 @@ export default function AlexisYvonnouHomepage() {
         </div>
       </section>
 
-      <section id="qui-suis-je" className="px-5 py-16 md:px-8">
+      <section id="qui-suis-je" className="px-5 pt-12 pb-12 md:px-8 md:pt-14 md:pb-14">
         <div className="mx-auto max-w-7xl">
           <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#e26a2c]/5 blur-3xl" />
           <FadeIn>
@@ -691,7 +691,7 @@ export default function AlexisYvonnouHomepage() {
         </div>
       </section>
 
-      <section id="contact" className="px-5 py-16 md:px-8 md:py-28">
+      <section id="contact" className="px-5 pt-12 pb-24 md:px-8 md:pt-14 md:pb-28">
         <div className="mx-auto max-w-7xl overflow-hidden rounded-[3rem] bg-stone-950 text-white shadow-2xl shadow-stone-900/20">
           <div className="grid md:grid-cols-[0.46fr_0.54fr]">
             <div className="relative overflow-hidden p-8 md:p-12">
