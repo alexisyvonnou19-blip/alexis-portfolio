@@ -518,7 +518,7 @@ export default function AlexisYvonnouHomepage() {
         </div>
       </section>
 
-      <PhotoTransition image="/images/IMG_0671.webp" label="Le terrain comme point de départ" />
+      <PhotoTransition image="/images/horizontal2.webp"/>
 
       <section id="domaines" className="px-5 py-24 md:px-8">
         <div className="mx-auto max-w-7xl">
