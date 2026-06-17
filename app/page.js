@@ -58,6 +58,30 @@ function FadeIn({ children, delay = 0, className = "" }) {
   );
 }
 
+function PhotoTransition({ image, label }) {
+  return (
+    <section className="px-5 py-16 md:px-8 md:py-20">
+      <div className="mx-auto max-w-7xl">
+        <FadeIn>
+          <div className="relative h-[360px] overflow-hidden rounded-[3rem] bg-stone-950 shadow-2xl shadow-stone-900/10 md:h-[520px]">
+            <Image
+              src={image}
+              alt={label}
+              fill
+              sizes="100vw"
+              className="object-cover opacity-80"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            <div className="absolute bottom-8 left-8 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white backdrop-blur-xl">
+              {label}
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  );
+}
+
 export default function AlexisYvonnouHomepage() {
   const [activeTerrain, setActiveTerrain] = useState(terrainItems[0]);
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -72,7 +96,7 @@ export default function AlexisYvonnouHomepage() {
   });
 
   return (
-    <main className="min-h-screen bg-[#f7f4ef] bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.7),transparent_45%)] text-stone-950">
+    <main className="min-h-screen overflow-hidden bg-[#f7f4ef] text-stone-950">
       <motion.div
         className="fixed left-0 top-0 z-[999] h-[2px] w-full origin-left bg-[#e26a2c]"
         style={{ scaleX: scrollYProgress }}
@@ -102,26 +126,18 @@ export default function AlexisYvonnouHomepage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/82 via-black/38 to-black/10" />
               <div className="absolute inset-0 bg-gradient-to-r from-black/58 via-black/16 to-transparent" />
 
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute left-5 top-5 z-10 hidden rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:block"
-              >
+              <div className="absolute left-5 top-5 z-10 hidden rounded-full bg-white/90 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-stone-950 shadow-sm backdrop-blur-md md:block">
                 Alexis Yvonnou
-              </motion.div>
+              </div>
 
-              <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute right-8 top-8 z-10 hidden rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white shadow-sm backdrop-blur-md md:block"
-              >
+              <div className="absolute right-8 top-8 z-10 hidden rounded-full border border-white/20 bg-white/10 px-5 py-3 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-white shadow-sm backdrop-blur-md md:block">
                 Concarneau · Bretagne
-              </motion.div>
+              </div>
 
               <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-12 lg:p-14">
                 <div className="grid gap-8 md:grid-cols-[0.64fr_0.36fr] md:items-end">
                   <div>
-                    <p className="mb-4 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-white/55 md:mb-5 md:text-xs md:tracking-[0.34em]">
+                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] text-white/55">
                       Photographie · communication
                     </p>
 
@@ -131,15 +147,15 @@ export default function AlexisYvonnouHomepage() {
                       le terrain.
                     </h1>
 
-                    <p className="mt-5 max-w-2xl text-2xl font-medium leading-tight tracking-[-0.04em] text-white/88 md:mt-7 md:text-4xl">
-                      Un regard de terrain pour raconter ce qui compte.
+                    <p className="mt-6 max-w-3xl text-2xl font-medium leading-tight tracking-[-0.04em] text-white/90 md:text-4xl">
+                      Photographie · Création de contenus · Communication
                     </p>
                   </div>
 
                   <div className="max-w-md md:translate-y-8">
                     <p className="text-base leading-7 text-white/72 md:text-lg md:leading-8">
-                      Photographie, création de contenus et communication pour les entreprises,
-                      marques et événements.
+                      Pour les entreprises, marques et événements qui veulent être mieux vus,
+                      mieux compris et mieux racontés.
                     </p>
 
                     <div className="mt-6">
@@ -172,8 +188,13 @@ export default function AlexisYvonnouHomepage() {
         </div>
       </section>
 
-      <section id="services" className="bg-[#0b0b0a] px-5 py-24 text-white md:px-8 md:py-28">
-        <div className="mx-auto max-w-7xl">
+      <section
+        id="services"
+        className="relative bg-[#0b0b0a] px-5 py-24 text-white md:px-8 md:py-28"
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(226,106,44,0.16),transparent_30%),radial-gradient(circle_at_85%_85%,rgba(255,255,255,0.08),transparent_28%)]" />
+
+        <div className="relative z-10 mx-auto max-w-7xl">
           <FadeIn>
             <div className="mb-14 grid gap-8 md:grid-cols-[0.52fr_0.48fr] md:items-end">
               <div>
@@ -239,9 +260,8 @@ export default function AlexisYvonnouHomepage() {
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/88 via-black/28 to-black/5" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-black/10 to-transparent" />
 
-                  <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 backdrop-blur-md transition-all duration-500 group-hover:scale-105 group-hover:bg-white/15 md:left-8 md:top-8">
+                  <div className="absolute left-6 top-6 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.25em] text-white/80 backdrop-blur-md">
                     {service.number}
                   </div>
 
@@ -277,8 +297,12 @@ export default function AlexisYvonnouHomepage() {
         </div>
       </section>
 
-      <section id="projets" className="px-5 py-28 md:px-8">
-        <div className="mx-auto max-w-7xl">
+      <PhotoTransition image="/images/hero3.webp" label="Photo · contenus · communication" />
+
+      <section id="projets" className="relative px-5 py-28 md:px-8">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(226,106,44,0.08),transparent_28%),linear-gradient(180deg,#f7f4ef_0%,#efe8dd_100%)]" />
+
+        <div className="relative z-10 mx-auto max-w-7xl">
           <FadeIn>
             <div className="mb-16 grid gap-8 md:grid-cols-[0.6fr_0.4fr] md:items-end">
               <div>
@@ -320,13 +344,6 @@ export default function AlexisYvonnouHomepage() {
                   "Développer la visibilité d’un média nautique à travers des contenus réguliers, clairs et incarnés.",
                 mission: ["Création de contenus", "Communication digitale", "Gestion éditoriale"],
                 image: "/images/good-boats.webp",
-              },
-              {
-                name: "SNIP Yachting",
-                context:
-                  "Rendre plus visibles les bateaux, les marques distribuées et les refits.",
-                mission: ["Animation réseaux sociaux", "Création de contenus", "Communication digitale"],
-                image: "/images/snip-yachting.webp",
               },
             ].map((project, index) => (
               <FadeIn key={project.name} delay={index * 0.04}>
@@ -405,8 +422,10 @@ export default function AlexisYvonnouHomepage() {
         </div>
       </section>
 
-      <section id="photographie" className="bg-[#e9e2d7] px-5 py-24 md:px-8 md:py-28">
-        <div className="mx-auto max-w-7xl">
+      <section id="photographie" className="relative bg-[#e9e2d7] px-5 py-24 md:px-8 md:py-28">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.7),transparent_30%)]" />
+
+        <div className="relative z-10 mx-auto max-w-7xl">
           <FadeIn>
             <div className="mb-16 grid gap-10 md:grid-cols-[0.58fr_0.42fr] md:items-end">
               <div>
@@ -502,6 +521,8 @@ export default function AlexisYvonnouHomepage() {
           </div>
         </div>
       </section>
+
+      <PhotoTransition image="/images/IMG_0671.webp" label="Le terrain comme point de départ" />
 
       <section id="domaines" className="px-5 py-24 md:px-8">
         <div className="mx-auto max-w-7xl">
@@ -606,7 +627,6 @@ export default function AlexisYvonnouHomepage() {
 
               <div className="relative overflow-hidden rounded-[2.75rem] bg-stone-950 p-8 text-white shadow-xl shadow-stone-900/10 md:p-12">
                 <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#e26a2c]/20 blur-3xl" />
-                <div className="pointer-events-none absolute -bottom-28 left-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
 
                 <div className="relative z-10">
                   <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
@@ -625,14 +645,9 @@ export default function AlexisYvonnouHomepage() {
                     </p>
 
                     <p>
-                      Mon univers s’est construit autour du nautisme, de la course au large et du
-                      sport : des environnements où il faut comprendre vite, bouger juste et capter
-                      les moments qui comptent.
-                    </p>
-
-                    <p>
-                      Aujourd’hui, la photographie reste mon point de départ, mais elle s’inscrit
-                      dans une approche plus large : contenus digitaux, réseaux sociaux, storytelling,
+                      Mon univers s’est construit autour du nautisme, du sport et des récits de
+                      terrain. La photographie reste mon point de départ, mais elle s’inscrit dans
+                      une approche plus large : contenus digitaux, réseaux sociaux, storytelling,
                       sites internet et communication visuelle.
                     </p>
                   </div>
@@ -669,7 +684,6 @@ export default function AlexisYvonnouHomepage() {
           <div className="grid md:grid-cols-[0.46fr_0.54fr]">
             <div className="relative overflow-hidden p-8 md:p-12">
               <div className="pointer-events-none absolute -left-32 -top-32 h-80 w-80 rounded-full bg-[#e26a2c]/20 blur-3xl" />
-              <div className="pointer-events-none absolute bottom-[-120px] right-[-120px] h-96 w-96 rounded-full bg-white/10 blur-3xl" />
 
               <div className="relative z-10">
                 <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[#e26a2c]">
