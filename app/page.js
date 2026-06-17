@@ -133,9 +133,6 @@ export default function AlexisYvonnouHomepage() {
               <div className="absolute bottom-0 left-0 right-0 z-10 p-6 text-white md:p-12 lg:p-14">
                 <div className="grid gap-8 md:grid-cols-[0.64fr_0.36fr] md:items-end">
                   <div>
-                    <p className="mb-4 text-xs font-semibold uppercase tracking-[0.34em] text-white/55">
-                      Photographie · communication
-                    </p>
 
                     <h1 className="max-w-5xl text-5xl font-semibold leading-[0.88] tracking-[-0.07em] md:text-8xl lg:text-[6.6rem]">
                       Raconter
